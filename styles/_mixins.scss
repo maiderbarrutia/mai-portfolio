@@ -1,0 +1,95 @@
+@forward '@/styles/helpers';
+@use 'sass:math';
+@use 'sass:map';
+@use '@/styles/helpers' as *;
+
+// ----------------------------------------
+//               FUNCTIONS
+// ----------------------------------------
+
+@function rem($value) {
+  @if unit($value) == 'px' {
+    @return math.div($value, 16px) * 1rem;
+  } @else if unit($value) == '%' {
+    @return $value;
+  } @else if unitless($value) {
+    @return math.div($value * 1px, 16px) * 1rem;
+  } @else {
+    @return ($value / 16) * 1rem;
+  }
+}
+
+@function font-size-token($label, $bp) {
+  $map: map.get($typography, $label);
+  $keys: map.keys($map);
+  $last-value: null;
+
+  @each $k in $keys {
+    @if map.has-key($map, $k) {
+      $last-value: map.get(map.get($map, $k), font-size);
+    }
+    @if $k == $bp {
+      @return rem($last-value);
+    }
+  }
+  @return null;
+}
+
+@function line-height-token($label, $bp) {
+  $map: map.get($typography, $label);
+  $keys: map.keys($map);
+  $last-value: null;
+
+  @each $k in $keys {
+    @if map.has-key($map, $k) {
+      $last-value: map.get(map.get($map, $k), line-height);
+    }
+    @if $k == $bp {
+      @return rem($last-value);
+    }
+  }
+  @return null;
+}
+
+// ----------------------------------------
+//               MIXINS
+// ----------------------------------------
+
+@mixin media-min($bp) {
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin media-max($bp) {
+  $max: map.get($breakpoints, $bp);
+  @media (max-width: ($max - 1px)) {
+    @content;
+  }
+}
+
+@mixin font-resp($label, $important: false) {
+  $last-font: font-size-token($label, xs);
+  $last-line: line-height-token($label, xs);
+
+  @if $last-font != null and $last-line != null {
+    font-size: $last-font#{if($important, ' !important', '')};
+    line-height: $last-line#{if($important, ' !important', '')};
+  }
+
+  @each $bp, $min in $breakpoints {
+    $fs: font-size-token($label, $bp);
+    $lh: line-height-token($label, $bp);
+    @if $fs == null { $fs: $last-font; }
+    @if $lh == null { $lh: $last-line; }
+
+    @if ($fs != $last-font) or ($lh != $last-line) {
+      @media (min-width: $min) {
+        font-size: $fs#{if($important, ' !important', '')};
+        line-height: $lh#{if($important, ' !important', '')};
+      }
+      $last-font: $fs;
+      $last-line: $lh;
+    }
+  }
+}

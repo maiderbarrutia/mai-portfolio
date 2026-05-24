@@ -21,12 +21,12 @@ const siteUrl = 'https://maiderbarrutia.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Maider Barrutia | Frontend Developer',
-  description: 'Portfolio de Maider Barrutia - Desarrolladora Frontend especializada en React, TypeScript y experiencias web modernas',
+  title: 'Maider Barrutia | Fullstack Developer & UI Architect',
+  description: 'Desarrolladora FullStack especializada en SASS, React.js, TypeScript y arquitecturas escalables. Optimizando la lógica backend y el diseño UI con flujos de trabajo de IA para crear aplicaciones de alto rendimiento.',
   keywords: ['Frontend Developer', 'React', 'TypeScript', 'Next.js', 'Web Development'],
   authors: [{ name: 'Maider Barrutia' }],
   openGraph: {
-    title: 'Maider Barrutia | Frontend Developer',
+    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
     description: 'Desarrolladora Frontend especializada en crear experiencias web excepcionales',
     type: 'website',
     siteName: 'Maider Barrutia Portfolio',
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maider Barrutia | Frontend Developer',
-    description: 'Desarrolladora Frontend especializada en crear experiencias web excepcionales',
+    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
+    description: 'Desarrolladora FullStack especializada en SASS, React.js, TypeScript y arquitecturas escalables. Optimizando la lógica backend y el diseño UI con flujos de trabajo de IA para crear aplicaciones de alto rendimiento.',
   },
   robots: {
     index: true,
@@ -43,14 +43,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
       {
         url: '/icon.svg',
         type: 'image/svg+xml',
@@ -64,7 +56,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Maider Barrutia',
-  jobTitle: 'Fullstack Engineer & UX Architect',
+  jobTitle: 'Fullstack Developer & UI Architect',
   url: siteUrl,
   sameAs: [
     'https://github.com/maiderbarrutia',

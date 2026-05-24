@@ -35,28 +35,28 @@ export default function Experience() {
 
   return (
     <section id="experience" className={styles.experience}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <span className={styles.sectionTag}>{t('experience.tag')}</span>
-          <h2 className={styles.title}>{t('experience.title')}</h2>
-          <p className={styles.subtitle}>{t('experience.subtitle')}</p>
+      <div className={styles['experience__container']}>
+        <div className={styles['experience__header']}>
+          <span className={styles['experience__section-tag']}>{t('experience.tag')}</span>
+          <h2 className={styles['experience__title']}>{t('experience.title')}</h2>
+          <p className={styles['experience__subtitle']}>{t('experience.subtitle')}</p>
         </div>
 
-        <div className={styles.timeline}>
+        <div className={styles['experience__timeline']}>
           {experiences.map((exp, index) => (
-            <div key={exp.id} className={styles.timelineItem}>
-              <div className={styles.timelineMarker}>
-                <div className={styles.dot} />
-                {index !== experiences.length - 1 && <div className={styles.line} />}
+            <div key={exp.id} className={styles['experience__timeline-item']}>
+              <div className={styles['experience__timeline-marker']}>
+                <div className={styles['experience__dot']} />
+                {index !== experiences.length - 1 && <div className={styles['experience__line']} />}
               </div>
-              <div className={styles.content}>
-                <div className={styles.period}>{exp.period}</div>
-                <h3 className={styles.role}>{exp.role}</h3>
-                <h4 className={styles.company}>{exp.company}</h4>
-                <p className={styles.description}>{exp.description}</p>
-                <div className={styles.technologies}>
+              <div className={styles['experience__content']}>
+                <div className={styles['experience__period']}>{exp.period}</div>
+                <h3 className={styles['experience__role']}>{exp.role}</h3>
+                <h4 className={styles['experience__company']}>{exp.company}</h4>
+                <p className={styles['experience__description']}>{exp.description}</p>
+                <div className={styles['experience__technologies']}>
                   {exp.technologies.map((tech) => (
-                    <span key={tech} className={styles.tech}>{tech}</span>
+                    <span key={tech} className={styles['experience__tech']}>{tech}</span>
                   ))}
                 </div>
               </div>

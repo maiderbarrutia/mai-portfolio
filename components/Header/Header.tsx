@@ -29,19 +29,17 @@ export default function Header() {
   ];
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
-      <div className={styles.container}>
-        <Link href="/" className={styles.logo} aria-label="Maider Barrutia - Home">
-          {/* <span className={styles.logoText}>MB</span> */}
-          <img src="/mai-logo.svg" alt="Maider Barrutia Logo" className={styles.logoImg} />
+    <header className={`${styles.header} ${isScrolled ? styles['header--scrolled'] : ''}`}>
+      <div className={styles.header__container}>
+        <Link href="/" className={styles.header__logo} aria-label="Maider Barrutia - Home">
+          <img src="/mai-logo.svg" alt="Maider Barrutia Logo" />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className={styles.desktopNav} aria-label="Main navigation">
-          <ul className={styles.navList}>
+        <nav className={styles['header__desktop-nav']} aria-label="Main navigation">
+          <ul className={styles['header__nav-list']}>
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className={styles.navLink}>
+                <a href={item.href} className={styles['header__nav-link']}>
                   {item.label}
                 </a>
               </li>
@@ -49,21 +47,18 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Controls */}
-        <div className={styles.controls}>
-          {/* Language Toggle */}
+        <div className={styles.header__controls}>
           <button
-            className={styles.controlBtn}
+            className={styles['header__control-btn']}
             onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
             aria-label={t('language.toggle')}
             title={t('language.toggle')}
           >
-            <span className={styles.langText}>{language.toUpperCase()}</span>
+            <span className={styles['header__lang-text']}>{language.toUpperCase()}</span>
           </button>
 
-          {/* Theme Toggle */}
           <button
-            className={styles.controlBtn}
+            className={styles['header__control-btn']}
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             aria-label={t('theme.toggle')}
             title={theme === 'light' ? t('theme.dark') : t('theme.light')}
@@ -71,14 +66,13 @@ export default function Header() {
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
 
-          {/* Mobile Menu Toggle */}
           <button
-            className={styles.menuToggle}
+            className={styles['header__menu-toggle']}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
           >
-            <span className={`${styles.hamburger} ${isMobileMenuOpen ? styles.active : ''}`}>
+            <span className={`${styles.header__hamburger} ${isMobileMenuOpen ? styles['header__hamburger--active'] : ''}`}>
               <span></span>
               <span></span>
               <span></span>
@@ -87,18 +81,17 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <nav 
-        className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.open : ''}`}
+      <nav
+        className={`${styles['header__mobile-nav']} ${isMobileMenuOpen ? styles['header__mobile-nav--open'] : ''}`}
         aria-label="Mobile navigation"
         aria-hidden={!isMobileMenuOpen}
       >
-        <ul className={styles.mobileNavList}>
+        <ul className={styles['header__mobile-nav-list']}>
           {navItems.map((item) => (
             <li key={item.href}>
-              <a 
-                href={item.href} 
-                className={styles.mobileNavLink}
+              <a
+                href={item.href}
+                className={styles['header__mobile-nav-link']}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}

@@ -1,0 +1,36 @@
+// ----------------------------------------
+//               NEUTRAL
+// ----------------------------------------
+$neutral-000: #FFFFFF;
+$neutral-900: #0D0D0D;
+
+// ----------------------------------------
+//               BRAND
+// ----------------------------------------
+$brand: #00a292;
+
+// ----------------------------------------
+//               SUPPORT
+// ----------------------------------------
+$support-muted: #5a6b6b;
+$support-border: #e0e8e8;
+
+// ----------------------------------------
+//               THEME LIGHT
+// ----------------------------------------
+$light-bg: #f8fafa;
+$light-bg-alt: $neutral-000;
+$light-surface: $neutral-000;
+$light-text: #1a2a2a;
+$light-text-muted: $support-muted;
+$light-border: $support-border;
+
+// ----------------------------------------
+//               THEME DARK
+// ----------------------------------------
+$dark-bg: #0a1414;
+$dark-bg-alt: #121e1e;
+$dark-surface: #1a2828;
+$dark-text: #f0f5f5;
+$dark-text-muted: #a8b8b8;
+$dark-border: #2a3a3a;

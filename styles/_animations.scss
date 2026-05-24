@@ -1,18 +1,6 @@
-// ===========================================
-// ANIMATIONS - Keyframes & Transitions
-// ===========================================
-
-@use 'variables' as *;
-
-// Keyframes
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+// ----------------------------------------
+//               ANIMATIONS
+// ----------------------------------------
 
 @keyframes fadeInUp {
   from {
@@ -25,154 +13,21 @@
   }
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
-// Animation mixins
-@mixin animate-fade-in($duration: 0.5s, $delay: 0s) {
-  animation: fadeIn $duration ease-out $delay forwards;
-  opacity: 0;
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
-@mixin animate-fade-in-up($duration: 0.5s, $delay: 0s) {
-  animation: fadeInUp $duration ease-out $delay forwards;
-  opacity: 0;
-}
-
-@mixin animate-fade-in-down($duration: 0.5s, $delay: 0s) {
-  animation: fadeInDown $duration ease-out $delay forwards;
-  opacity: 0;
-}
-
-@mixin animate-slide-in-left($duration: 0.5s, $delay: 0s) {
-  animation: slideInLeft $duration ease-out $delay forwards;
-  opacity: 0;
-}
-
-@mixin animate-slide-in-right($duration: 0.5s, $delay: 0s) {
-  animation: slideInRight $duration ease-out $delay forwards;
-  opacity: 0;
-}
-
-@mixin animate-scale-in($duration: 0.3s, $delay: 0s) {
-  animation: scaleIn $duration ease-out $delay forwards;
-  opacity: 0;
-}
-
-// Transition helpers
-@mixin transition-base {
-  transition: all $transition-base;
-}
-
-@mixin transition-fast {
-  transition: all $transition-fast;
-}
-
-@mixin transition-slow {
-  transition: all $transition-slow;
-}
-
-@mixin transition-colors {
-  transition: color $transition-base, background-color $transition-base, border-color $transition-base;
-}
-
-@mixin transition-transform {
-  transition: transform $transition-base;
-}
-
-@mixin transition-opacity {
-  transition: opacity $transition-base;
-}
-
-// Hover transform helpers
-@mixin hover-lift {
-  @include transition-base;
-  
-  &:hover {
-    transform: translateY(-4px);
-  }
-}
-
-@mixin hover-scale {
-  @include transition-base;
-  
-  &:hover {
-    transform: scale(1.02);
-  }
-}
-
-@mixin hover-glow($color: $color-accent) {
-  @include transition-base;
-  
-  &:hover {
-    box-shadow: 0 0 20px rgba($color, 0.3);
-  }
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

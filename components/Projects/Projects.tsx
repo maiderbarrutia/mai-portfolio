@@ -10,18 +10,18 @@ export default function Projects() {
   const featuredProjects = getFeaturedProjects();
 
   return (
-    <section className={styles.section} id="projects">
-      <div className={styles.container}>
-        <header className={styles.header}>
-          <h2 className={styles.title}>{t('projects.title')}</h2>
-          <p className={styles.subtitle}>{t('projects.subtitle')}</p>
+    <section className={styles.projects} id="projects">
+      <div className={styles['projects__container']}>
+        <header className={styles['projects__header']}>
+          <h2 className={styles['projects__title']}>{t('projects.title')}</h2>
+          <p className={styles['projects__subtitle']}>{t('projects.subtitle')}</p>
         </header>
         
-        <div className={styles.grid}>
+        <div className={styles['projects__grid']}>
           {featuredProjects.map((project, index) => (
             <div 
               key={project.id} 
-              className={styles.gridItem}
+              className={styles['projects__grid-item']}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <ProjectCard project={project} />
