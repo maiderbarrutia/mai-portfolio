@@ -59,7 +59,7 @@ export function ProyectosClient({ categories }: Props) {
               {activeCategory.items.map((project) => (
                 <Link
                   key={project.id}
-                  href={`/projects/${project.id}`}
+                  href={`${language === 'es' ? '/proyectos' : '/projects'}/${project.id}`}
                   className={styles.card}
                 >
                   <div className={styles.card__image}>

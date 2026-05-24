@@ -43,7 +43,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        <Link href={`/projects/${project.id}`} className={styles['project-card__link']}>
+        <Link href={`${language === 'es' ? '/proyectos' : '/projects'}/${project.id}`} className={styles['project-card__link']}>
           {t('projects.viewProject')}
           <ArrowRight size={16} />
         </Link>

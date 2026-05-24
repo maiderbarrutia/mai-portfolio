@@ -3,8 +3,8 @@ import { projects, type ProjectCategory } from '@/data/projects'
 import { ProyectosClient } from '../proyectos-shared/ProyectosClient'
 
 export const metadata: Metadata = {
-  title: 'Todos los Proyectos | Maider Barrutia',
-  description: 'Explora todos los proyectos de Maider Barrutia organizados por categorías: diseño gráfico, diseño web y desarrollo web.',
+  title: 'All Projects | Maider Barrutia',
+  description: 'Explore all projects by Maider Barrutia organized by categories: graphic design, web design, and web development.',
 }
 
 const categoryLabels: Record<ProjectCategory, { es: string; en: string }> = {
@@ -13,7 +13,7 @@ const categoryLabels: Record<ProjectCategory, { es: string; en: string }> = {
   'web-development': { es: 'Desarrollo Web', en: 'Web Development' },
 }
 
-export default function ProyectosPage() {
+export default function ProjectsPage() {
   const nonFeatured = projects.filter(p => !p.featured)
   const grouped = (Object.keys(categoryLabels) as ProjectCategory[])
     .map(key => ({

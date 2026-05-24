@@ -8,8 +8,9 @@ import ProjectCard from './ProjectCard';
 import styles from './Projects.module.scss';
 
 export default function Projects() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const featuredProjects = getFeaturedProjects().slice(0, 3);
+  const projectsHref = language === 'es' ? '/proyectos' : '/projects';
 
   return (
     <section className={styles.projects} id="projects">
@@ -32,7 +33,7 @@ export default function Projects() {
         </div>
 
         <div className={styles['projects__actions']}>
-          <Link href="/proyectos" className={styles['projects__view-all']}>
+          <Link href={projectsHref} className={styles['projects__view-all']}>
             {t('projects.viewAll')}
             <ArrowRight size={18} />
           </Link>
