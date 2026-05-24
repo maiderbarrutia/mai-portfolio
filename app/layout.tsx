@@ -1,120 +1,76 @@
 import type { Metadata } from 'next'
 import { Inter, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/components/theme-provider'
 import { LanguageProvider } from '@/context/LanguageContext'
-import { ThemeProvider } from '@/context/ThemeContext'
 import '@/styles/globals.scss'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 })
 
-const firaCode = Fira_Code({ 
+const firaCode = Fira_Code({
   subsets: ['latin'],
   variable: '--font-fira-code',
   display: 'swap',
 })
 
-export const metadata = {
-  title: 'Maider Barrutia | Fullstack Developer & UI Architect',
-  description: 'Desarrolladora FullStack especializada en React.js, TypeScript y arquitecturas escalables. Optimizando la lógica backend y el diseño UX con flujos de trabajo de IA para crear aplicaciones de alto rendimiento.',
-  keywords: [
-    'Maider Barrutia', 
-    'FullStack Engineer', 
-    'Frontend Engineer',
-    'UX Architect', 
-    'React.js Developer', 
-    'Next.js',
-    'TypeScript expert', 
-    'SASS modules',
-    'Ingeniera FullStack', 
-    'AI-driven development', 
-    'Web performance optimization', 
-    'Node.js backend', 
-    'PostgreSQL'
-  ],
-  authors: [{ name: 'Maider Barrutia', url: 'https://github.com/maiderbarrutia' }],
-  creator: 'Maider Barrutia',
-  
-  // OpenGraph optimizado para que cuando publiques tu web en LinkedIn se vea un resumen premium
-  openGraph: {
-    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
-    description: 'Construyo aplicaciones web robustas y escalables con un enfoque milimétrico en la experiencia de usuario y optimización de rendimiento.',
-    url: 'https://maiderbarrutia.github.io/',
-    siteName: 'Maider Barrutia Portfolio',
-    images: [
-      {
-        url: '/og-image.png', // Un mockup o captura premium de tu web (1200x630px) que la IA o humanos verán en redes
-        width: 1200,
-        height: 630,
-        alt: 'Maider Barrutia - Fullstack Developer & UI Architect Portfolio',
-      },
-    ],
-    locale: 'es_ES',
-    type: 'website',
-  },
+const siteUrl = 'https://maiderbarrutia.com'
 
-  // Etiquetas específicas para mejorar la visibilidad en Twitter/X y herramientas de scraping de IA
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: 'Maider Barrutia | Frontend Developer',
+  description: 'Portfolio de Maider Barrutia - Desarrolladora Frontend especializada en React, TypeScript y experiencias web modernas',
+  keywords: ['Frontend Developer', 'React', 'TypeScript', 'Next.js', 'Web Development'],
+  authors: [{ name: 'Maider Barrutia' }],
+  openGraph: {
+    title: 'Maider Barrutia | Frontend Developer',
+    description: 'Desarrolladora Frontend especializada en crear experiencias web excepcionales',
+    type: 'website',
+    siteName: 'Maider Barrutia Portfolio',
+    locale: 'es_ES',
+  },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
-    description: 'Ingeniería FullStack y Diseño de Experiencias optimizadas con IA.',
-    images: ['/og-image.png'],
+    title: 'Maider Barrutia | Frontend Developer',
+    description: 'Desarrolladora Frontend especializada en crear experiencias web excepcionales',
   },
-
-  // Instrucción explícita para indexadores de IA y buscadores habituales
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
   icons: {
     icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' }
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
     ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
-    ],
+    apple: '/apple-icon.png',
   },
-};
+}
 
-// export const metadata: Metadata = {
-//   title: 'Maider Barrutia | FullStack Developer',
-//   description: 'Portfolio de Maider Barrutia - Desarrolladora FullStack especializada en React, TypeScript y experiencias web modernas',
-//   keywords: ['FullStack Developer', 'Frontend', 'React', 'TypeScript', 'Next.js', 'Web Development'],
-//   authors: [{ name: 'Maider Barrutia' }],
-//   openGraph: {
-//     title: 'Maider Barrutia | FullStack Developer',
-//     description: 'Desarrolladora FullStack especializada en crear experiencias web excepcionales',
-//     type: 'website',
-//   },
-//   icons: {
-//     icon: [
-//       {
-//         url: '/icon.svg',
-//         media: '(prefers-color-scheme: light)',
-//       },
-//       {
-//         url: '/icon.svg',
-//         media: '(prefers-color-scheme: dark)',
-//       },
-//       {
-//         url: '/icon.svg',
-//         type: 'image/svg+xml',
-//       },
-//     ],
-//     apple: '/icon.png',
-//   },
-// }
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Maider Barrutia',
+  jobTitle: 'Fullstack Engineer & UX Architect',
+  url: siteUrl,
+  sameAs: [
+    'https://github.com/maiderbarrutia',
+    'https://linkedin.com/in/maiderbarrutia',
+  ],
+}
 
 export default function RootLayout({
   children,
@@ -123,8 +79,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} ${firaCode.variable}`}>
-        <ThemeProvider>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           <LanguageProvider>
             {children}
             {process.env.NODE_ENV === 'production' && <Analytics />}

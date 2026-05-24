@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
-import DOMPurify from 'isomorphic-dompurify';
+import { sanitizeHtml } from '@/lib/sanitize';
 import { translations, type Language } from '@/lib/translations';
 
 type TranslationFunction = (key: string) => string;
@@ -64,15 +64,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const tHtml: TranslationHtmlFunction = (key: string) => {
     const raw = getNestedValue(translations[language] as unknown as Record<string, unknown>, key);
-    // Sanitize the HTML to avoid XSS. Allow only a small safe set of tags/attributes.
-    try {
-      return DOMPurify.sanitize(raw, {
-        ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'ul', 'ol', 'li', 'br', 'span', 'div'],
-        ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
-      });
-    } catch (e) {
-      return String(raw);
-    }
+    return sanitizeHtml(raw);
   };
 
   return (

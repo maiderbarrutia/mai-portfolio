@@ -115,7 +115,7 @@ export const translations = {
     hero: {
       title: 'Maider Barrutia',
       subtitle: 'Fullstack Developer & UI Architect',
-      description: 'I build full-stack applications with a UI architect mindset. I combine robust code and user-centered design, leveraging AI to streamline development and deliver native, seamless, and scalable solutions.',
+      description: 'I build <strong>full-stack applications</strong> with a <strong>UI architect mindset</strong>. I combine robust code and user-centered design, leveraging AI to streamline development and deliver native, seamless, and scalable solutions.',
       ctaProjects: 'View Projects',
       ctaContact: 'Contact',
     },
