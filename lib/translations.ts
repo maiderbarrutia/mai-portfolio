@@ -4,6 +4,7 @@ export const translations = {
     nav: {
       about: 'Sobre mí',
       projects: 'Proyectos',
+      tech: 'Stack',
       experience: 'Experiencia',
       contact: 'Contacto',
     },
@@ -24,6 +25,11 @@ export const translations = {
       viewProject: 'Ver Proyecto',
       viewAll: 'Ver Más Proyectos',
       backToHome: 'Volver al Inicio',
+      allTitle: 'Todos los Proyectos',
+      allSubtitle: 'Explora todos mis trabajos organizados por categorías.',
+      categoryGraphic: 'Diseño Gráfico',
+      categoryWebDesign: 'Diseño Web',
+      categoryWebDev: 'Desarrollo Web',
       challenge: 'El Reto',
       uxDecisions: 'Decisiones UX/UI',
       architecture: 'Arquitectura del Código',
@@ -41,9 +47,11 @@ export const translations = {
     techStack: {
       title: 'Stack Tecnológico',
       subtitle: 'Las herramientas y tecnologías que utilizo para construir productos digitales de alta calidad.',
-      core: 'Core',
+      frontend: 'Frontend',
+      backend: 'Backend & BBDD',
+      design: 'Diseño',
+      ai: 'IA',
       tools: 'Herramientas',
-      aiData: 'IA & Datos',
     },
     
     // Experience Section
@@ -53,6 +61,7 @@ export const translations = {
       subtitle: 'Mi recorrido en el sector tecnológico, combinando desarrollo y diseño.',
       experienceTab: 'Experiencia',
       educationTab: 'Educación',
+      certifications: 'Cursos y Certificaciones',
       present: 'Actualidad',
       viewMore: 'Ver Más',
     },
@@ -107,6 +116,7 @@ export const translations = {
     nav: {
       about: 'About',
       projects: 'Projects',
+      tech: 'Stack',
       experience: 'Experience',
       contact: 'Contact',
     },
@@ -127,6 +137,11 @@ export const translations = {
       viewProject: 'View Project',
       viewAll: 'View More Projects',
       backToHome: 'Back to Home',
+      allTitle: 'All Projects',
+      allSubtitle: 'Explore all my work organized by categories.',
+      categoryGraphic: 'Graphic Design',
+      categoryWebDesign: 'Web Design',
+      categoryWebDev: 'Web Development',
       challenge: 'The Challenge',
       uxDecisions: 'UX/UI Decisions',
       architecture: 'Code Architecture',
@@ -144,9 +159,11 @@ export const translations = {
     techStack: {
       title: 'Tech Stack',
       subtitle: 'The tools and technologies I use to build high-quality digital products.',
-      core: 'Core',
+      frontend: 'Frontend',
+      backend: 'Backend & DB',
+      design: 'Design',
+      ai: 'AI',
       tools: 'Tools',
-      aiData: 'AI & Data',
     },
     
     // Experience Section
@@ -156,6 +173,7 @@ export const translations = {
       subtitle: 'My path in the tech industry, combining development and design.',
       experienceTab: 'Experience',
       educationTab: 'Education',
+      certifications: 'Courses & Certifications',
       present: 'Present',
       viewMore: 'View More',
     },

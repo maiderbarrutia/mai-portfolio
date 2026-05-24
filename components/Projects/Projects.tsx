@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { getFeaturedProjects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
@@ -7,7 +9,7 @@ import styles from './Projects.module.scss';
 
 export default function Projects() {
   const { t } = useLanguage();
-  const featuredProjects = getFeaturedProjects();
+  const featuredProjects = getFeaturedProjects().slice(0, 3);
 
   return (
     <section className={styles.projects} id="projects">
@@ -27,6 +29,13 @@ export default function Projects() {
               <ProjectCard project={project} />
             </div>
           ))}
+        </div>
+
+        <div className={styles['projects__actions']}>
+          <Link href="/proyectos" className={styles['projects__view-all']}>
+            {t('projects.viewAll')}
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+export type ProjectCategory = 'graphic-design' | 'web-design' | 'web-development';
+
 export interface ProjectMedia {
   src: string;
   type: 'image' | 'video';
@@ -13,6 +15,7 @@ export interface ProjectMedia {
 
 export interface Project {
   id: string;
+  category: ProjectCategory;
   title: {
     es: string;
     en: string;
@@ -49,227 +52,498 @@ export interface Project {
   };
 }
 
+const placeholder = '/projects/text-gen.svg';
+
 export const projects: Project[] = [
   {
-    id: 'text-generation-tool',
-    title: {
-      es: 'Herramienta de Generación de Textos',
-      en: 'Text Generation Tool',
-    },
+    id: 'aisiplan',
+    category: 'web-development',
+    title: { es: 'Aisiplan', en: 'Aisiplan' },
     subtitle: {
-      es: 'Automatización de contenido con IA para equipos de marketing',
-      en: 'AI-powered content automation for marketing teams',
+      es: 'Plataforma para la gestión de actividades de ocio y tiempo libre',
+      en: 'Platform for managing leisure and free time activities',
     },
     description: {
-      es: 'Plataforma web que permite generar textos optimizados para diferentes canales utilizando inteligencia artificial.',
-      en: 'Web platform that enables generating optimized texts for different channels using artificial intelligence.',
+      es: 'Plataforma para la gestión de actividades de ocio y tiempo libre',
+      en: 'Platform for managing leisure and free time activities',
     },
-    tags: ['React', 'TypeScript', 'OpenAI API', 'Node.js', 'SASS'],
-    image: '/projects/text-gen.svg',
+    tags: ['TypeScript', 'React.js', 'MySQL', 'Vite', 'SASS', 'Node.js', 'Express'],
+    image: placeholder,
     media: [
-      {
-        src: '/projects/text-gen.svg',
-        type: 'image',
-        alt: { es: 'Vista principal de la herramienta de generación de textos', en: 'Main view of the text generation tool' },
-        caption: { es: 'Interfaz principal con editor en tiempo real', en: 'Main interface with real-time editor' },
-      },
-      {
-        src: '/projects/text-gen-2.svg',
-        type: 'image',
-        alt: { es: 'Preview del diseño UI', en: 'UI Design Preview' },
-        caption: { es: 'Diseño de interfaz con preview en vivo', en: 'Interface design with live preview' },
-      },
-      {
-        src: '/projects/text-gen-3.svg',
-        type: 'image',
-        alt: { es: 'Diagrama de arquitectura del código', en: 'Code architecture diagram' },
-        caption: { es: 'Arquitectura del backend y sistema de caché', en: 'Backend architecture and cache system' },
-      },
+      { src: placeholder, type: 'image', alt: { es: 'Aisiplan', en: 'Aisiplan' } },
     ],
     featured: true,
-    demoUrl: 'https://example.com/demo',
-    repoUrl: 'https://github.com/example/project',
+    demoUrl: 'https://aisiplan.vercel.app/',
     challenge: {
-      es: 'El equipo de marketing necesitaba una herramienta que pudiera generar contenido de alta calidad de manera consistente, manteniendo el tono de la marca y optimizando para diferentes plataformas (redes sociales, email, web).',
-      en: 'The marketing team needed a tool that could generate high-quality content consistently, maintaining brand tone and optimizing for different platforms (social media, email, web).',
+      es: 'Desarrollar una plataforma web completa para la gestión de actividades de ocio, con autenticación de usuarios, perfiles y paneles de administración.',
+      en: 'Develop a complete web platform for managing leisure activities, with user authentication, profiles and administration panels.',
     },
     uxDecisions: {
-      es: 'Diseñé una interfaz minimalista con un flujo de 3 pasos: selección de tipo de contenido, configuración de parámetros, y generación con preview en tiempo real. Implementé un sistema de plantillas guardadas para acelerar flujos recurrentes.',
-      en: 'I designed a minimalist interface with a 3-step flow: content type selection, parameter configuration, and generation with real-time preview. Implemented a saved templates system to speed up recurring workflows.',
+      es: 'Interfaz limpia y moderna con formularios optimizados. Navegación intuitiva para búsqueda y gestión de actividades.',
+      en: 'Clean and modern interface with optimized forms. Intuitive navigation for searching and managing activities.',
     },
     architecture: {
-      es: 'Frontend en React con TypeScript y SASS modules. Backend en Node.js con Express, conectando con la API de OpenAI. Sistema de caché para respuestas frecuentes y rate limiting para optimizar costes.',
-      en: 'Frontend in React with TypeScript and SASS modules. Backend in Node.js with Express, connecting to OpenAI API. Cache system for frequent responses and rate limiting to optimize costs.',
+      es: 'Frontend con React + Vite + SASS. Backend con Node.js + Express + MySQL. API REST con Postman para testing.',
+      en: 'Frontend with React + Vite + SASS. Backend with Node.js + Express + MySQL. REST API with Postman for testing.',
     },
     aiIntegration: {
-      es: 'Utilicé GitHub Copilot para acelerar el desarrollo de componentes repetitivos. Implementé prompt engineering avanzado para guiar a GPT-4 en la generación de contenido con el tono adecuado.',
-      en: 'Used GitHub Copilot to speed up development of repetitive components. Implemented advanced prompt engineering to guide GPT-4 in generating content with the right tone.',
+      es: 'Sin integración de IA en este proyecto.',
+      en: 'No AI integration in this project.',
     },
   },
   {
-    id: 'tcs-corporate',
-    title: {
-      es: 'TCS Corporate Website',
-      en: 'TCS Corporate Website',
-    },
+    id: 'landing-gasnature',
+    category: 'web-design',
+    title: { es: 'Landing GasNature', en: 'GasNature Landing Page' },
     subtitle: {
-      es: 'Rediseño completo de sitio corporativo con enfoque en conversión',
-      en: 'Complete corporate site redesign focused on conversion',
+      es: 'Landing page para empresa de gas natural',
+      en: 'Landing page for a natural gas company',
     },
     description: {
-      es: 'Desarrollo del sitio web corporativo para Técnicos de Captación y Servicios, optimizado para generación de leads.',
-      en: 'Development of the corporate website for Técnicos de Captación y Servicios, optimized for lead generation.',
+      es: 'Diseño de landing page para GasNature, empresa de servicios energéticos.',
+      en: 'Landing page design for GasNature, an energy services company.',
     },
-    tags: ['Next.js', 'TypeScript', 'SASS', 'SEO', 'Analytics'],
-    image: '/projects/tcs.svg',
+    tags: ['Photoshop', 'Landing Page'],
+    image: placeholder,
     media: [
-      {
-        src: '/projects/tcs.svg',
-        type: 'image',
-        alt: { es: 'Vista principal del sitio corporativo TCS', en: 'Main view of TCS corporate website' },
-        caption: { es: 'Homepage con hero section', en: 'Homepage with hero section' },
-      },
-      {
-        src: '/projects/tcs-2.svg',
-        type: 'image',
-        alt: { es: 'Concepto de la sección Hero', en: 'Hero section concept' },
-        caption: { es: 'Diseño del hero con CTA principal', en: 'Hero design with primary CTA' },
-      },
-      {
-        src: '/projects/tcs-3.svg',
-        type: 'image',
-        alt: { es: 'Página de embudo de conversión', en: 'Conversion funnel page' },
-        caption: { es: 'Página optimizada para generación de leads', en: 'Page optimized for lead generation' },
-      },
+      { src: placeholder, type: 'image', alt: { es: 'Landing GasNature', en: 'GasNature Landing Page' } },
     ],
     featured: true,
-    demoUrl: 'https://example.com/tcs',
     challenge: {
-      es: 'La empresa necesitaba modernizar su presencia digital, mejorar el posicionamiento SEO y crear un embudo de conversión efectivo para servicios B2B.',
-      en: 'The company needed to modernize its digital presence, improve SEO positioning, and create an effective conversion funnel for B2B services.',
+      es: 'Crear una landing page atractiva y funcional que comunique los servicios de la empresa.',
+      en: 'Create an attractive and functional landing page that communicates the company services.',
     },
     uxDecisions: {
-      es: 'Estructura de información reorganizada basada en journey del usuario. CTAs estratégicos en cada sección. Formularios progresivos que minimizan fricción. Mobile-first con atención a tiempos de carga.',
-      en: 'Information structure reorganized based on user journey. Strategic CTAs in each section. Progressive forms that minimize friction. Mobile-first with attention to load times.',
+      es: 'Diseño limpio con llamadas a la acción claras. Optimización para conversión.',
+      en: 'Clean design with clear calls to action. Conversion optimization.',
     },
     architecture: {
-      es: 'Next.js con SSG para máximo rendimiento SEO. Sistema de componentes modulares. Integración con CRM para gestión de leads. Analytics avanzado con eventos personalizados.',
-      en: 'Next.js with SSG for maximum SEO performance. Modular component system. CRM integration for lead management. Advanced analytics with custom events.',
+      es: 'Diseño en Photoshop, maquetación con HTML5 y CSS3.',
+      en: 'Design in Photoshop, layout with HTML5 and CSS3.',
     },
     aiIntegration: {
-      es: 'ChatGPT para generación inicial de copy y optimización de meta descriptions. Herramientas AI para análisis de competencia y sugerencias de keywords.',
-      en: 'ChatGPT for initial copy generation and meta descriptions optimization. AI tools for competitor analysis and keyword suggestions.',
+      es: 'No aplica.',
+      en: 'Not applicable.',
     },
   },
   {
-    id: 'e-commerce-dashboard',
-    title: {
-      es: 'Dashboard E-commerce',
-      en: 'E-commerce Dashboard',
-    },
+    id: 'landing-tcs',
+    category: 'web-design',
+    title: { es: 'Landing TCS', en: 'TCS Landing Page' },
     subtitle: {
-      es: 'Panel de administración con visualización de datos en tiempo real',
-      en: 'Admin panel with real-time data visualization',
+      es: 'Landing page para empresa de servicios técnicos',
+      en: 'Landing page for a technical services company',
     },
     description: {
-      es: 'Dashboard administrativo para gestión de tienda online con métricas, inventario y gestión de pedidos.',
-      en: 'Administrative dashboard for online store management with metrics, inventory and order management.',
+      es: 'Diseño de landing page para TCS, empresa de servicios técnicos.',
+      en: 'Landing page design for TCS, a technical services company.',
     },
-    tags: ['React', 'TypeScript', 'Chart.js', 'Node.js', 'PostgreSQL'],
-    image: '/projects/dashboard.svg',
+    tags: ['Photoshop', 'Landing Page'],
+    image: placeholder,
     media: [
-      {
-        src: '/projects/dashboard.svg',
-        type: 'image',
-        alt: { es: 'Dashboard principal del e-commerce', en: 'Main e-commerce dashboard' },
-        caption: { es: 'Panel de administración con métricas en tiempo real', en: 'Admin panel with real-time metrics' },
-      },
-      {
-        src: '/projects/dashboard-2.svg',
-        type: 'image',
-        alt: { es: 'Vista de analíticas del dashboard', en: 'Dashboard analytics view' },
-        caption: { es: 'Gráficos interactivos y widgets personalizables', en: 'Interactive charts and customizable widgets' },
-      },
-      {
-        src: '/projects/dashboard-3.svg',
-        type: 'image',
-        alt: { es: 'Gestión de inventario', en: 'Inventory management' },
-        caption: { es: 'Panel de gestión de inventario y pedidos', en: 'Inventory and order management panel' },
-      },
+      { src: placeholder, type: 'image', alt: { es: 'Landing TCS', en: 'TCS Landing Page' } },
     ],
     featured: true,
-    demoUrl: 'https://example.com/dashboard',
-    repoUrl: 'https://github.com/example/dashboard',
     challenge: {
-      es: 'El cliente gestionaba su e-commerce con múltiples herramientas desconectadas. Necesitaba una visión unificada de ventas, inventario y comportamiento del cliente.',
-      en: 'The client was managing their e-commerce with multiple disconnected tools. They needed a unified view of sales, inventory, and customer behavior.',
+      es: 'Diseñar una landing page profesional que refleje la experiencia técnica de la empresa.',
+      en: 'Design a professional landing page that reflects the company technical expertise.',
     },
     uxDecisions: {
-      es: 'Dashboard con widgets personalizables. Gráficos interactivos con drill-down. Sistema de alertas configurables. Dark mode para reducir fatiga visual en uso prolongado.',
-      en: 'Dashboard with customizable widgets. Interactive charts with drill-down. Configurable alert system. Dark mode to reduce eye strain during extended use.',
+      es: 'Enfoque en la presentación de servicios y datos de contacto. Diseño corporativo.',
+      en: 'Focus on service presentation and contact information. Corporate design.',
     },
     architecture: {
-      es: 'SPA en React con estado global en Redux. API REST en Node.js con PostgreSQL. WebSockets para actualizaciones en tiempo real. Sistema de caché con Redis.',
-      en: 'SPA in React with Redux global state. REST API in Node.js with PostgreSQL. WebSockets for real-time updates. Cache system with Redis.',
+      es: 'Diseño en Photoshop, maquetación responsive con HTML5 y CSS3.',
+      en: 'Design in Photoshop, responsive layout with HTML5 and CSS3.',
     },
     aiIntegration: {
-      es: 'Implementé predicciones de demanda usando modelos de ML. El sistema sugiere reposición de inventario y detecta anomalías en patrones de venta.',
-      en: 'Implemented demand predictions using ML models. The system suggests inventory replenishment and detects anomalies in sales patterns.',
+      es: 'No aplica.',
+      en: 'Not applicable.',
     },
   },
   {
-    id: 'design-system',
-    title: {
-      es: 'Design System Corporativo',
-      en: 'Corporate Design System',
-    },
+    id: 'landing-traductor-itzulpen',
+    category: 'web-design',
+    title: { es: 'Landing Traductor Itzulpen', en: 'Itzulpen Translator Landing' },
     subtitle: {
-      es: 'Sistema de diseño escalable para múltiples productos digitales',
-      en: 'Scalable design system for multiple digital products',
+      es: 'Landing page para servicio de traducción',
+      en: 'Landing page for a translation service',
     },
     description: {
-      es: 'Creación de un design system completo con componentes reutilizables, documentación y herramientas de desarrollo.',
-      en: 'Creation of a complete design system with reusable components, documentation and development tools.',
+      es: 'Diseño de landing page para Itzulpen, servicio profesional de traducción.',
+      en: 'Landing page design for Itzulpen, a professional translation service.',
     },
-    tags: ['React', 'Storybook', 'SASS', 'Figma', 'TypeScript'],
-    image: '/projects/design-system.svg',
+    tags: ['Photoshop', 'Landing Page'],
+    image: placeholder,
     media: [
-      {
-        src: '/projects/design-system.svg',
-        type: 'image',
-        alt: { es: 'Vista general del Design System', en: 'Design System overview' },
-        caption: { es: 'Biblioteca de componentes del design system', en: 'Design system component library' },
-      },
-      {
-        src: '/projects/design-system-2.svg',
-        type: 'image',
-        alt: { es: 'Librería de componentes', en: 'Component library' },
-        caption: { es: 'Catálogo de componentes reutilizables', en: 'Reusable component catalog' },
-      },
-      {
-        src: '/projects/design-system-3.svg',
-        type: 'image',
-        alt: { es: 'Tokens de diseño y theming', en: 'Design tokens and theming' },
-        caption: { es: 'Sistema de tokens y variables de diseño', en: 'Design token and variable system' },
-      },
+      { src: placeholder, type: 'image', alt: { es: 'Landing Itzulpen', en: 'Itzulpen Landing Page' } },
+    ],
+    featured: true,
+    challenge: {
+      es: 'Crear una página que transmita confianza y profesionalidad en servicios lingüísticos.',
+      en: 'Create a page that conveys trust and professionalism in language services.',
+    },
+    uxDecisions: {
+      es: 'Diseño minimalista con énfasis en el formulario de contacto y servicios.',
+      en: 'Minimalist design with emphasis on the contact form and services.',
+    },
+    architecture: {
+      es: 'Diseño en Photoshop con maquetación web estándar.',
+      en: 'Design in Photoshop with standard web layout.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'web-araex',
+    category: 'web-design',
+    title: { es: 'Web Araex', en: 'Araex Website' },
+    subtitle: {
+      es: 'Sitio web corporativo para empresa del sector industrial',
+      en: 'Corporate website for an industrial sector company',
+    },
+    description: {
+      es: 'Diseño de sitio web corporativo para Araex.',
+      en: 'Corporate website design for Araex.',
+    },
+    tags: ['Photoshop'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Web Araex', en: 'Araex Website' } },
     ],
     featured: false,
-    repoUrl: 'https://github.com/example/design-system',
     challenge: {
-      es: 'La empresa tenía inconsistencias visuales entre sus diferentes productos. Los equipos duplicaban esfuerzos creando componentes similares.',
-      en: 'The company had visual inconsistencies between their different products. Teams were duplicating efforts creating similar components.',
+      es: 'Diseñar un sitio web corporativo que represente la solidez de la empresa.',
+      en: 'Design a corporate website that represents the company strength.',
     },
     uxDecisions: {
-      es: 'Tokens de diseño como única fuente de verdad. Componentes atómicos combinables. Documentación interactiva en Storybook. Guías de accesibilidad integradas.',
-      en: 'Design tokens as single source of truth. Combinable atomic components. Interactive documentation in Storybook. Integrated accessibility guidelines.',
+      es: 'Estructura clara con secciones bien definidas. Diseño profesional.',
+      en: 'Clear structure with well-defined sections. Professional design.',
     },
     architecture: {
-      es: 'Monorepo con packages separados para tokens, componentes React y utilidades. Build optimizado con tree-shaking. Versionado semántico con changelog automático.',
-      en: 'Monorepo with separate packages for tokens, React components and utilities. Optimized build with tree-shaking. Semantic versioning with automatic changelog.',
+      es: 'Diseño en Photoshop con maquetación responsive.',
+      en: 'Design in Photoshop with responsive layout.',
     },
     aiIntegration: {
-      es: 'Copilot para generar variantes de componentes. AI para sugerir mejoras de accesibilidad. Automatización de tests visuales con herramientas AI.',
-      en: 'Copilot for generating component variants. AI for suggesting accessibility improvements. Automation of visual tests with AI tools.',
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'piatto-ristorante',
+    category: 'graphic-design',
+    title: { es: 'Piatto Ristorante Italiano', en: 'Piatto Ristorante Italiano' },
+    subtitle: {
+      es: 'Identidad corporativa para restaurante italiano',
+      en: 'Corporate identity for an Italian restaurant',
+    },
+    description: {
+      es: 'Desarrollo de identidad corporativa completa para restaurante italiano, incluyendo logotipo, papelería y publicidad.',
+      en: 'Complete corporate identity development for an Italian restaurant, including logo, stationery and advertising.',
+    },
+    tags: ['Illustrator'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Identidad Piatto', en: 'Piatto Identity' } },
+    ],
+    featured: false,
+    challenge: {
+      es: 'Crear una identidad visual que refleje la esencia de la cocina italiana.',
+      en: 'Create a visual identity that reflects the essence of Italian cuisine.',
+    },
+    uxDecisions: {
+      es: 'Selección de colores y tipografía que evocan la tradición italiana.',
+      en: 'Color and typography selection that evoke Italian tradition.',
+    },
+    architecture: {
+      es: 'Diseño vectorial con Illustrator.',
+      en: 'Vector design with Illustrator.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'revista-grafik',
+    category: 'graphic-design',
+    title: { es: 'Revista GrafiK', en: 'GrafiK Magazine' },
+    subtitle: {
+      es: 'Diseño editorial para revista de diseño gráfico',
+      en: 'Editorial design for a graphic design magazine',
+    },
+    description: {
+      es: 'Diseño y maquetación completa de la revista GrafiK, publicación especializada en diseño gráfico.',
+      en: 'Complete design and layout of GrafiK magazine, a publication specialized in graphic design.',
+    },
+    tags: ['InDesign', 'Illustrator', 'Photoshop'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Revista GrafiK', en: 'GrafiK Magazine' } },
+    ],
+    featured: true,
+    challenge: {
+      es: 'Maquetar una revista con contenido variado manteniendo coherencia visual en todas las páginas.',
+      en: 'Layout a magazine with varied content maintaining visual coherence across all pages.',
+    },
+    uxDecisions: {
+      es: 'Jerarquía visual clara con uso de retículas y estilos coherentes.',
+      en: 'Clear visual hierarchy with grid systems and consistent styles.',
+    },
+    architecture: {
+      es: 'Maquetación con InDesign, ilustraciones y tratamiento de imágenes con Illustrator y Photoshop.',
+      en: 'Layout with InDesign, illustrations and image processing with Illustrator and Photoshop.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'folleto-camara-comercio-bilbao',
+    category: 'graphic-design',
+    title: { es: 'Folleto Cámara de Comercio de Bilbao', en: 'Bilbao Chamber of Commerce Brochure' },
+    subtitle: {
+      es: 'Folleto publicitario para la Cámara de Comercio de Bilbao',
+      en: 'Advertising brochure for the Bilbao Chamber of Commerce',
+    },
+    description: {
+      es: 'Diseño y maquetación de folleto publicitario para la Cámara de Comercio de Bilbao.',
+      en: 'Design and layout of advertising brochure for the Bilbao Chamber of Commerce.',
+    },
+    tags: ['InDesign', 'Illustrator'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Folleto Cámara Comercio', en: 'Chamber of Commerce Brochure' } },
+    ],
+    featured: false,
+    challenge: {
+      es: 'Crear un folleto informativo que comunique los servicios de la cámara de forma clara y profesional.',
+      en: 'Create an informative brochure that communicates the chamber services clearly and professionally.',
+    },
+    uxDecisions: {
+      es: 'Estructura plegable con información jerarquizada para fácil lectura.',
+      en: 'Folding structure with hierarchical information for easy reading.',
+    },
+    architecture: {
+      es: 'Maquetación con InDesign e ilustraciones vectoriales con Illustrator.',
+      en: 'Layout with InDesign and vector illustrations with Illustrator.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'folleto-colonias-2010',
+    category: 'graphic-design',
+    title: { es: 'Folleto Colonias 2010', en: 'Summer Camp 2010 Brochure' },
+    subtitle: {
+      es: 'Folleto publicitario para colonias de verano',
+      en: 'Advertising brochure for summer camps',
+    },
+    description: {
+      es: 'Diseño de folleto publicitario para colonias de verano.',
+      en: 'Design of advertising brochure for summer camps.',
+    },
+    tags: ['InDesign', 'Illustrator'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Folleto Colonias', en: 'Summer Camp Brochure' } },
+    ],
+    featured: false,
+    challenge: {
+      es: 'Diseñar un folleto atractivo para captar la atención de familias con niños.',
+      en: 'Design an attractive brochure to capture the attention of families with children.',
+    },
+    uxDecisions: {
+      es: 'Colores vivos y fotografías atractivas para conectar con el público infantil y familiar.',
+      en: 'Vibrant colors and attractive photographs to connect with children and family audience.',
+    },
+    architecture: {
+      es: 'Maquetación con InDesign e ilustraciones con Illustrator.',
+      en: 'Layout with InDesign and illustrations with Illustrator.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'optica-pop-eye',
+    category: 'graphic-design',
+    title: { es: 'Óptica Pop Eye', en: 'Pop Eye Optician' },
+    subtitle: {
+      es: 'Identidad corporativa para óptica',
+      en: 'Corporate identity for an optician',
+    },
+    description: {
+      es: 'Desarrollo de identidad corporativa para óptica Pop Eye, incluyendo logotipo y papelería.',
+      en: 'Corporate identity development for Pop Eye optician, including logo and stationery.',
+    },
+    tags: ['InDesign', 'Illustrator'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Óptica Pop Eye', en: 'Pop Eye Optician' } },
+    ],
+    featured: false,
+    challenge: {
+      es: 'Crear una marca visualmente llamativa y memorable para una óptica.',
+      en: 'Create a visually striking and memorable brand for an optician.',
+    },
+    uxDecisions: {
+      es: 'Juego tipográfico y cromático que refleja el nombre Pop Eye.',
+      en: 'Typographic and chromatic play that reflects the Pop Eye name.',
+    },
+    architecture: {
+      es: 'Diseño vectorial con Illustrator e InDesign.',
+      en: 'Vector design with Illustrator and InDesign.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'pack-zensacion',
+    category: 'graphic-design',
+    title: { es: 'Pack Zensación', en: 'Zensación Pack' },
+    subtitle: {
+      es: 'Identidad corporativa y packaging',
+      en: 'Corporate identity and packaging',
+    },
+    description: {
+      es: 'Desarrollo de identidad corporativa y diseño de packaging para la marca Zensación.',
+      en: 'Corporate identity development and packaging design for the Zensación brand.',
+    },
+    tags: ['InDesign', 'Illustrator'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Pack Zensación', en: 'Zensación Pack' } },
+    ],
+    featured: false,
+    challenge: {
+      es: 'Diseñar un packaging atractivo que destaque en el punto de venta.',
+      en: 'Design attractive packaging that stands out at the point of sale.',
+    },
+    uxDecisions: {
+      es: 'Diseño minimalista con colores relajantes que evocan la sensación de bienestar.',
+      en: 'Minimalist design with relaxing colors that evoke a feeling of well-being.',
+    },
+    architecture: {
+      es: 'Diseño vectorial con Illustrator y maquetación con InDesign.',
+      en: 'Vector design with Illustrator and layout with InDesign.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'bodegas-ubide',
+    category: 'graphic-design',
+    title: { es: 'Bodegas Ubide', en: 'Ubide Wineries' },
+    subtitle: {
+      es: 'Identidad corporativa para bodega',
+      en: 'Corporate identity for a winery',
+    },
+    description: {
+      es: 'Desarrollo de identidad corporativa para bodega, incluyendo papelería y aplicaciones.',
+      en: 'Corporate identity development for a winery, including stationery and applications.',
+    },
+    tags: ['InDesign', 'Illustrator', 'Photoshop'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Bodegas Ubide', en: 'Ubide Wineries' } },
+    ],
+    featured: false,
+    challenge: {
+      es: 'Crear una identidad visual que refleje la tradición vinícola.',
+      en: 'Create a visual identity that reflects winemaking tradition.',
+    },
+    uxDecisions: {
+      es: 'Paleta de colores asociada al vino. Tipografía clásica y elegante.',
+      en: 'Color palette associated with wine. Classic and elegant typography.',
+    },
+    architecture: {
+      es: 'Diseño con Illustrator, tratamiento de imágenes con Photoshop y maquetación con InDesign.',
+      en: 'Design with Illustrator, image processing with Photoshop and layout with InDesign.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'anuncios-publicitarios',
+    category: 'graphic-design',
+    title: { es: 'Anuncios Publicitarios', en: 'Advertising Ads' },
+    subtitle: {
+      es: 'Diseño de anuncios publicitarios',
+      en: 'Advertising design',
+    },
+    description: {
+      es: 'Creación de anuncios publicitarios para diversos medios y campañas.',
+      en: 'Creation of advertisements for various media and campaigns.',
+    },
+    tags: ['Photoshop'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Anuncios', en: 'Advertisements' } },
+    ],
+    featured: false,
+    challenge: {
+      es: 'Diseñar anuncios impactantes que capturen la atención del público objetivo.',
+      en: 'Design impactful ads that capture the attention of the target audience.',
+    },
+    uxDecisions: {
+      es: 'Composición visual equilibrada con mensajes claros y directos.',
+      en: 'Balanced visual composition with clear and direct messages.',
+    },
+    architecture: {
+      es: 'Diseño y tratamiento de imágenes con Photoshop.',
+      en: 'Design and image processing with Photoshop.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
+    },
+  },
+  {
+    id: 'carteles-aste-nagusia-jazzaldia',
+    category: 'graphic-design',
+    title: { es: 'Carteles Aste Nagusia y Jazzaldia', en: 'Aste Nagusia & Jazzaldia Posters' },
+    subtitle: {
+      es: 'Cartelería para festivales de Bilbao',
+      en: 'Posters for Bilbao festivals',
+    },
+    description: {
+      es: 'Diseño de carteles para los festivales Aste Nagusia y Jazzaldia de Bilbao.',
+      en: 'Poster design for the Aste Nagusia and Jazzaldia festivals in Bilbao.',
+    },
+    tags: ['Illustrator', 'Photoshop'],
+    image: placeholder,
+    media: [
+      { src: placeholder, type: 'image', alt: { es: 'Carteles Festivales', en: 'Festival Posters' } },
+    ],
+    featured: true,
+    challenge: {
+      es: 'Crear carteles que capturen la esencia y el espíritu de cada festival.',
+      en: 'Create posters that capture the essence and spirit of each festival.',
+    },
+    uxDecisions: {
+      es: 'Tipografía y composición llamativas para destacar en entornos urbanos.',
+      en: 'Striking typography and composition to stand out in urban environments.',
+    },
+    architecture: {
+      es: 'Diseño vectorial con Illustrator y tratamiento de imágenes con Photoshop.',
+      en: 'Vector design with Illustrator and image processing with Photoshop.',
+    },
+    aiIntegration: {
+      es: 'No aplica.',
+      en: 'Not applicable.',
     },
   },
 ];

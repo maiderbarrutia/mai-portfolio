@@ -8,11 +8,11 @@
 // ----------------------------------------
 
 @function rem($value) {
-  @if unit($value) == 'px' {
+  @if math.unit($value) == 'px' {
     @return math.div($value, 16px) * 1rem;
-  } @else if unit($value) == '%' {
+  } @else if math.unit($value) == '%' {
     @return $value;
-  } @else if unitless($value) {
+  } @else if math.is-unitless($value) {
     @return math.div($value * 1px, 16px) * 1rem;
   } @else {
     @return ($value / 16) * 1rem;
@@ -73,8 +73,13 @@
   $last-line: line-height-token($label, xs);
 
   @if $last-font != null and $last-line != null {
-    font-size: $last-font#{if($important, ' !important', '')};
-    line-height: $last-line#{if($important, ' !important', '')};
+    @if $important {
+      font-size: $last-font !important;
+      line-height: $last-line !important;
+    } @else {
+      font-size: $last-font;
+      line-height: $last-line;
+    }
   }
 
   @each $bp, $min in $breakpoints {
@@ -85,8 +90,13 @@
 
     @if ($fs != $last-font) or ($lh != $last-line) {
       @media (min-width: $min) {
-        font-size: $fs#{if($important, ' !important', '')};
-        line-height: $lh#{if($important, ' !important', '')};
+        @if $important {
+          font-size: $fs !important;
+          line-height: $lh !important;
+        } @else {
+          font-size: $fs;
+          line-height: $lh;
+        }
       }
       $last-font: $fs;
       $last-line: $lh;

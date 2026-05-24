@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'colors' as *;
 @use 'fonts' as *;
 @use 'texts';
@@ -11,7 +12,7 @@
   --color-text: #{$light-text};
   --color-text-muted: #{$light-text-muted};
   --color-primary: #{$brand};
-  --color-primary-hover: #{darken($brand, 8%)};
+  --color-primary-hover: #{color.adjust($brand, $lightness: -8%)};
   --color-primary-alpha: #{rgba($brand, 0.1)};
   --color-border: #{$light-border};
   --color-success: #10b981;

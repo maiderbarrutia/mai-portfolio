@@ -24,6 +24,7 @@ export default function Header() {
   const navItems = [
     { href: '#about', label: t('nav.about') },
     { href: '#projects', label: t('nav.projects') },
+    { href: '#tech', label: t('nav.tech') },
     { href: '#experience', label: t('nav.experience') },
     { href: '#contact', label: t('nav.contact') },
   ];
@@ -54,7 +55,7 @@ export default function Header() {
             aria-label={t('language.toggle')}
             title={t('language.toggle')}
           >
-            <span className={styles['header__lang-text']}>{language.toUpperCase()}</span>
+            <span className={styles['header__lang-text']}>{language === 'es' ? 'EN' : 'ES'}</span>
           </button>
 
           <button

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { LanguageProvider } from '@/context/LanguageContext'
@@ -58,14 +59,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
-        <ThemeProvider
+      <head />
+      <body suppressHydrationWarning>
+         <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"
           enableSystem
@@ -76,6 +72,12 @@ export default function RootLayout({
             {process.env.NODE_ENV === 'production' && <Analytics />}
           </LanguageProvider>
         </ThemeProvider>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   )
