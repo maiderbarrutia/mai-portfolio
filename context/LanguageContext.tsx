@@ -1,14 +1,17 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import DOMPurify from 'isomorphic-dompurify';
 import { translations, type Language } from '@/lib/translations';
 
 type TranslationFunction = (key: string) => string;
+type TranslationHtmlFunction = (key: string) => string;
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: TranslationFunction;
+  tHtml: TranslationHtmlFunction;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -40,15 +43,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
       // Si el usuario ya eligió un idioma en el pasado, lo respetamos
       setLanguageState(savedLang);
-    } else {
-      // SI NO HAY NADA GUARDADO: Detectamos el idioma del navegador
-      const browserLang = navigator.language || navigator.languages[0];
-      
-      if (browserLang.startsWith('en')) {
-        setLanguageState('en');
-      } else {
-        setLanguageState('es'); // Por defecto para cualquier otro idioma (español)
-      }
     }
   }, []);
 
@@ -68,8 +62,21 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return getNestedValue(translations[language] as unknown as Record<string, unknown>, key);
   };
 
+  const tHtml: TranslationHtmlFunction = (key: string) => {
+    const raw = getNestedValue(translations[language] as unknown as Record<string, unknown>, key);
+    // Sanitize the HTML to avoid XSS. Allow only a small safe set of tags/attributes.
+    try {
+      return DOMPurify.sanitize(raw, {
+        ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'ul', 'ol', 'li', 'br', 'span', 'div'],
+        ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
+      });
+    } catch (e) {
+      return String(raw);
+    }
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, tHtml }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -1,3 +1,16 @@
+export interface ProjectMedia {
+  src: string;
+  type: 'image' | 'video';
+  alt: {
+    es: string;
+    en: string;
+  };
+  caption?: {
+    es: string;
+    en: string;
+  };
+}
+
 export interface Project {
   id: string;
   title: {
@@ -14,6 +27,7 @@ export interface Project {
   };
   tags: string[];
   image: string;
+  media: ProjectMedia[];
   featured: boolean;
   demoUrl?: string;
   repoUrl?: string;
@@ -51,7 +65,27 @@ export const projects: Project[] = [
       en: 'Web platform that enables generating optimized texts for different channels using artificial intelligence.',
     },
     tags: ['React', 'TypeScript', 'OpenAI API', 'Node.js', 'SASS'],
-    image: '/projects/text-gen.jpg',
+    image: '/projects/text-gen.svg',
+    media: [
+      {
+        src: '/projects/text-gen.svg',
+        type: 'image',
+        alt: { es: 'Vista principal de la herramienta de generación de textos', en: 'Main view of the text generation tool' },
+        caption: { es: 'Interfaz principal con editor en tiempo real', en: 'Main interface with real-time editor' },
+      },
+      {
+        src: '/projects/text-gen-2.svg',
+        type: 'image',
+        alt: { es: 'Preview del diseño UI', en: 'UI Design Preview' },
+        caption: { es: 'Diseño de interfaz con preview en vivo', en: 'Interface design with live preview' },
+      },
+      {
+        src: '/projects/text-gen-3.svg',
+        type: 'image',
+        alt: { es: 'Diagrama de arquitectura del código', en: 'Code architecture diagram' },
+        caption: { es: 'Arquitectura del backend y sistema de caché', en: 'Backend architecture and cache system' },
+      },
+    ],
     featured: true,
     demoUrl: 'https://example.com/demo',
     repoUrl: 'https://github.com/example/project',
@@ -87,7 +121,27 @@ export const projects: Project[] = [
       en: 'Development of the corporate website for Técnicos de Captación y Servicios, optimized for lead generation.',
     },
     tags: ['Next.js', 'TypeScript', 'SASS', 'SEO', 'Analytics'],
-    image: '/projects/tcs.jpg',
+    image: '/projects/tcs.svg',
+    media: [
+      {
+        src: '/projects/tcs.svg',
+        type: 'image',
+        alt: { es: 'Vista principal del sitio corporativo TCS', en: 'Main view of TCS corporate website' },
+        caption: { es: 'Homepage con hero section', en: 'Homepage with hero section' },
+      },
+      {
+        src: '/projects/tcs-2.svg',
+        type: 'image',
+        alt: { es: 'Concepto de la sección Hero', en: 'Hero section concept' },
+        caption: { es: 'Diseño del hero con CTA principal', en: 'Hero design with primary CTA' },
+      },
+      {
+        src: '/projects/tcs-3.svg',
+        type: 'image',
+        alt: { es: 'Página de embudo de conversión', en: 'Conversion funnel page' },
+        caption: { es: 'Página optimizada para generación de leads', en: 'Page optimized for lead generation' },
+      },
+    ],
     featured: true,
     demoUrl: 'https://example.com/tcs',
     challenge: {
@@ -122,7 +176,27 @@ export const projects: Project[] = [
       en: 'Administrative dashboard for online store management with metrics, inventory and order management.',
     },
     tags: ['React', 'TypeScript', 'Chart.js', 'Node.js', 'PostgreSQL'],
-    image: '/projects/dashboard.jpg',
+    image: '/projects/dashboard.svg',
+    media: [
+      {
+        src: '/projects/dashboard.svg',
+        type: 'image',
+        alt: { es: 'Dashboard principal del e-commerce', en: 'Main e-commerce dashboard' },
+        caption: { es: 'Panel de administración con métricas en tiempo real', en: 'Admin panel with real-time metrics' },
+      },
+      {
+        src: '/projects/dashboard-2.svg',
+        type: 'image',
+        alt: { es: 'Vista de analíticas del dashboard', en: 'Dashboard analytics view' },
+        caption: { es: 'Gráficos interactivos y widgets personalizables', en: 'Interactive charts and customizable widgets' },
+      },
+      {
+        src: '/projects/dashboard-3.svg',
+        type: 'image',
+        alt: { es: 'Gestión de inventario', en: 'Inventory management' },
+        caption: { es: 'Panel de gestión de inventario y pedidos', en: 'Inventory and order management panel' },
+      },
+    ],
     featured: true,
     demoUrl: 'https://example.com/dashboard',
     repoUrl: 'https://github.com/example/dashboard',
@@ -158,7 +232,27 @@ export const projects: Project[] = [
       en: 'Creation of a complete design system with reusable components, documentation and development tools.',
     },
     tags: ['React', 'Storybook', 'SASS', 'Figma', 'TypeScript'],
-    image: '/projects/design-system.jpg',
+    image: '/projects/design-system.svg',
+    media: [
+      {
+        src: '/projects/design-system.svg',
+        type: 'image',
+        alt: { es: 'Vista general del Design System', en: 'Design System overview' },
+        caption: { es: 'Biblioteca de componentes del design system', en: 'Design system component library' },
+      },
+      {
+        src: '/projects/design-system-2.svg',
+        type: 'image',
+        alt: { es: 'Librería de componentes', en: 'Component library' },
+        caption: { es: 'Catálogo de componentes reutilizables', en: 'Reusable component catalog' },
+      },
+      {
+        src: '/projects/design-system-3.svg',
+        type: 'image',
+        alt: { es: 'Tokens de diseño y theming', en: 'Design tokens and theming' },
+        caption: { es: 'Sistema de tokens y variables de diseño', en: 'Design token and variable system' },
+      },
+    ],
     featured: false,
     repoUrl: 'https://github.com/example/design-system',
     challenge: {

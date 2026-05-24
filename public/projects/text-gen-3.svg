@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a1414"/>
+  <rect width="800" height="500" fill="url(#g)" opacity="0.1"/>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="800" y2="500"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#b45309"/></linearGradient></defs>
+  <rect x="100" y="60" width="600" height="100" rx="12" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <circle cx="130" cy="110" r="8" fill="#ef4444" opacity="0.7"/>
+  <circle cx="155" cy="110" r="8" fill="#f59e0b" opacity="0.7"/>
+  <circle cx="180" cy="110" r="8" fill="#10b981" opacity="0.7"/>
+  <rect x="600" y="85" width="80" height="10" rx="5" fill="url(#g)" opacity="0.4"/>
+  <rect x="100" y="180" width="600" height="250" rx="12" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="120" y="200" width="560" height="12" rx="6" fill="#a8b8b8" opacity="0.15"/>
+  <rect x="120" y="222" width="400" height="8" rx="4" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="120" y="245" width="560" height="8" rx="4" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="120" y="263" width="300" height="8" rx="4" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="120" y="290" width="560" height="1" fill="#2a3a3a"/>
+  <rect x="120" y="305" width="160" height="8" rx="4" fill="#00a292" opacity="0.3"/>
+  <rect x="290" y="305" width="160" height="8" rx="4" fill="#6366f1" opacity="0.3"/>
+  <rect x="460" y="305" width="160" height="8" rx="4" fill="#f59e0b" opacity="0.3"/>
+  <text x="400" y="470" font-family="Inter, sans-serif" font-size="12" fill="#5a6b6b" text-anchor="middle">Code Architecture — Text Generation Tool</text>
+</svg>

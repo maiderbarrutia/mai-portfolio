@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a1414"/>
+  <rect width="800" height="500" fill="url(#g)" opacity="0.1"/>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="800" y2="500"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#065f46"/></linearGradient></defs>
+  <rect x="100" y="60" width="600" height="80" rx="8" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="120" y="78" width="100" height="10" rx="5" fill="url(#g)" opacity="0.5"/>
+  <rect x="130" y="98" width="60" height="6" rx="3" fill="#a8b8b8" opacity="0.3"/>
+  <rect x="200" y="98" width="60" height="6" rx="3" fill="#a8b8b8" opacity="0.3"/>
+  <rect x="270" y="98" width="60" height="6" rx="3" fill="#a8b8b8" opacity="0.3"/>
+  <rect x="620" y="85" width="60" height="10" rx="5" fill="#00a292" opacity="0.3"/>
+  <rect x="690" y="85" width="10" height="10" rx="3" fill="#a8b8b8" opacity="0.15"/>
+  <rect x="100" y="160" width="600" height="280" rx="8" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="120" y="180" width="560" height="200" rx="8" fill="url(#g)" opacity="0.15"/>
+  <rect x="140" y="200" width="200" height="160" rx="6" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="160" y="220" width="80" height="8" rx="4" fill="#a8b8b8" opacity="0.2"/>
+  <rect x="160" y="238" width="60" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="160" y="260" width="40" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="160" y="282" width="140" height="30" rx="4" fill="#00a292" opacity="0.2"/>
+  <rect x="360" y="200" width="300" height="160" rx="6" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="380" y="220" width="260" height="8" rx="4" fill="#a8b8b8" opacity="0.2"/>
+  <rect x="380" y="238" width="200" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="380" y="254" width="240" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="380" y="270" width="100" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <text x="400" y="470" font-family="Inter, sans-serif" font-size="12" fill="#5a6b6b" text-anchor="middle">TCS Corporate — Hero Section Concept</text>
+</svg>

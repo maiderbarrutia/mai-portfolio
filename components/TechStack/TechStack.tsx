@@ -7,6 +7,7 @@ import styles from './TechStack.module.scss'
 
 export default function TechStack() {
   const { t } = useLanguage()
+  
 
   return (
     <section id="tech" className={styles.techStack}>

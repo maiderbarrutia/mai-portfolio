@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { use } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -13,6 +14,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
   const { id } = use(params)
   const { t, language } = useLanguage()
   const project = getProjectById(id)
+  const [selectedMedia, setSelectedMedia] = useState(0)
 
   if (!project) {
     notFound()
@@ -62,6 +64,49 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               )}
             </div>
           </header>
+
+          {project.media.length > 0 && (
+            <section className={styles.gallery}>
+              <div className={styles.galleryMain}>
+                {project.media[selectedMedia].type === 'video' ? (
+                  <video
+                    src={project.media[selectedMedia].src}
+                    controls
+                    className={styles.galleryMedia}
+                  />
+                ) : (
+                  <img
+                    src={project.media[selectedMedia].src}
+                    alt={project.media[selectedMedia].alt[language]}
+                    className={styles.galleryMedia}
+                  />
+                )}
+                {project.media[selectedMedia].caption && (
+                  <p className={styles.galleryCaption}>
+                    {project.media[selectedMedia].caption![language]}
+                  </p>
+                )}
+              </div>
+              {project.media.length > 1 && (
+                <div className={styles.galleryThumbs}>
+                  {project.media.map((item, index) => (
+                    <button
+                      key={item.src}
+                      className={`${styles.thumbBtn} ${index === selectedMedia ? styles.thumbActive : ''}`}
+                      onClick={() => setSelectedMedia(index)}
+                      aria-label={item.alt[language]}
+                    >
+                      <img
+                        src={item.src}
+                        alt={item.alt[language]}
+                        className={styles.thumbImg}
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </section>
+          )}
 
           <div className={styles.content}>
             <section className={styles.section}>

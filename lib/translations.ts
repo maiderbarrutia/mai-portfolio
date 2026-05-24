@@ -11,8 +11,8 @@ export const translations = {
     // Hero Section
     hero: {
       title: 'Maider Barrutia',
-      subtitle: 'Fullstack Engineer & UX Architect',
-      description: 'Fusiono código robusto con diseño centrado en el usuario, potenciado con flujos de trabajo de IA para crear experiencias digitales excepcionales.',
+      subtitle: 'Fullstack Developer & UI Architect',
+      description: 'Construyo <strong>aplicaciones full-stack</strong> con mentalidad de <strong>arquitecta UI</strong>. Combino código robusto y diseño centrado en el usuario, optimizando el desarrollo con IA para crear soluciones nativas, fluidas y escalables.',
       ctaProjects: 'Ver Proyectos',
       ctaContact: 'Contacto',
     },
@@ -114,8 +114,8 @@ export const translations = {
     // Hero Section
     hero: {
       title: 'Maider Barrutia',
-      subtitle: 'Fullstack Engineer & UX Architect',
-      description: 'I merge robust code with user-centered design, powered by AI workflows to create exceptional digital experiences.',
+      subtitle: 'Fullstack Developer & UI Architect',
+      description: 'I build full-stack applications with a UI architect mindset. I combine robust code and user-centered design, leveraging AI to streamline development and deliver native, seamless, and scalable solutions.',
       ctaProjects: 'View Projects',
       ctaContact: 'Contact',
     },

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a1414"/>
+  <rect width="800" height="500" fill="url(#g)" opacity="0.15"/>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="800" y2="500"><stop offset="0%" stop-color="#00a292"/><stop offset="100%" stop-color="#004d45"/></linearGradient></defs>
+  <rect x="250" y="100" width="300" height="300" rx="16" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="200" y="150" width="400" height="200" rx="8" fill="url(#g)" opacity="0.3"/>
+  <text x="400" y="250" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#00c4b0" text-anchor="middle">tcs-corporate</text>
+  <text x="400" y="280" font-family="Inter, sans-serif" font-size="14" fill="#a8b8b8" text-anchor="middle">TCS Corporate Website</text>
+</svg>

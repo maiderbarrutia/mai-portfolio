@@ -18,7 +18,7 @@ const firaCode = Fira_Code({
 })
 
 export const metadata = {
-  title: 'Maider Barrutia | FullStack Engineer & UX Architect',
+  title: 'Maider Barrutia | Fullstack Developer & UI Architect',
   description: 'Desarrolladora FullStack especializada en React.js, TypeScript y arquitecturas escalables. Optimizando la lógica backend y el diseño UX con flujos de trabajo de IA para crear aplicaciones de alto rendimiento.',
   keywords: [
     'Maider Barrutia', 
@@ -40,7 +40,7 @@ export const metadata = {
   
   // OpenGraph optimizado para que cuando publiques tu web en LinkedIn se vea un resumen premium
   openGraph: {
-    title: 'Maider Barrutia | FullStack Engineer & UX Architect',
+    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
     description: 'Construyo aplicaciones web robustas y escalables con un enfoque milimétrico en la experiencia de usuario y optimización de rendimiento.',
     url: 'https://maiderbarrutia.github.io/',
     siteName: 'Maider Barrutia Portfolio',
@@ -49,7 +49,7 @@ export const metadata = {
         url: '/og-image.png', // Un mockup o captura premium de tu web (1200x630px) que la IA o humanos verán en redes
         width: 1200,
         height: 630,
-        alt: 'Maider Barrutia - FullStack Engineer Portfolio',
+        alt: 'Maider Barrutia - Fullstack Developer & UI Architect Portfolio',
       },
     ],
     locale: 'es_ES',
@@ -59,7 +59,7 @@ export const metadata = {
   // Etiquetas específicas para mejorar la visibilidad en Twitter/X y herramientas de scraping de IA
   twitter: {
     card: 'summary_large_image',
-    title: 'Maider Barrutia | FullStack Engineer & UX Architect',
+    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
     description: 'Ingeniería FullStack y Diseño de Experiencias optimizadas con IA.',
     images: ['/og-image.png'],
   },

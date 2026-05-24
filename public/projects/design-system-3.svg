@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a1414"/>
+  <rect width="800" height="500" fill="url(#g)" opacity="0.1"/>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="800" y2="500"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#581c87"/></linearGradient></defs>
+  <rect x="100" y="60" width="600" height="380" rx="12" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="120" y="80" width="100" height="12" rx="6" fill="#a8b8b8" opacity="0.15"/>
+  <rect x="120" y="102" width="560" height="1" fill="#2a3a3a"/>
+  <rect x="120" y="125" width="560" height="140" rx="8" fill="url(#g)" opacity="0.08"/>
+  <rect x="140" y="145" width="80" height="80" rx="8" fill="#a855f7" opacity="0.15"/>
+  <rect x="235" y="145" width="80" height="80" rx="8" fill="#00a292" opacity="0.15"/>
+  <rect x="330" y="145" width="80" height="80" rx="8" fill="#f59e0b" opacity="0.15"/>
+  <rect x="425" y="145" width="80" height="80" rx="8" fill="#6366f1" opacity="0.15"/>
+  <rect x="520" y="145" width="80" height="80" rx="8" fill="#10b981" opacity="0.15"/>
+  <rect x="140" y="240" width="30" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="140" y="285" width="560" height="1" fill="#2a3a3a"/>
+  <rect x="120" y="305" width="200" height="12" rx="6" fill="#a8b8b8" opacity="0.15"/>
+  <rect x="140" y="335" width="100" height="8" rx="4" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="255" y="335" width="100" height="8" rx="4" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="370" y="335" width="100" height="8" rx="4" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="140" y="360" width="200" height="60" rx="6" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="160" y="378" width="160" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="160" y="394" width="120" height="6" rx="3" fill="#a8b8b8" opacity="0.05"/>
+  <rect x="360" y="360" width="200" height="60" rx="6" fill="#1a2828" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="380" y="378" width="160" height="6" rx="3" fill="#a8b8b8" opacity="0.1"/>
+  <rect x="380" y="394" width="120" height="6" rx="3" fill="#a8b8b8" opacity="0.05"/>
+  <text x="400" y="470" font-family="Inter, sans-serif" font-size="12" fill="#5a6b6b" text-anchor="middle">Design System — Design Tokens & Theming</text>
+</svg>

@@ -4,7 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, tHtml } = useLanguage();
 
   return (
     <section className={styles.hero} id="about">
@@ -12,7 +12,7 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.badge}>
             <span className={styles.badgeDot}></span>
-            <span>Available for projects</span>
+            <span>Open to new challenges</span>
           </div>
           
           <h1 className={styles.title}>
@@ -20,9 +20,7 @@ export default function Hero() {
             <span className={styles.role}>{t('hero.subtitle')}</span>
           </h1>
           
-          <p className={styles.description}>
-            {t('hero.description')}
-          </p>
+          <p className={styles.description} dangerouslySetInnerHTML={{ __html: tHtml('hero.description') }} />
           
           <div className={styles.ctas}>
             <a href="#projects" className={styles.ctaPrimary}>
@@ -48,7 +46,7 @@ export default function Hero() {
                   </svg>
                 </span>
                 <span className={styles.bentoLabel}>Frontend</span>
-                <span className={styles.bentoStat}>5+ years</span>
+                <span className={styles.bentoStat}>6+ years</span>
               </div>
             </div>
             
@@ -60,7 +58,7 @@ export default function Hero() {
                     <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/>
                   </svg>
                 </span>
-                <span className={styles.bentoLabel}>UX Design</span>
+                <span className={styles.bentoLabel}>UI Design (pixel-perfect)</span>
               </div>
             </div>
             
@@ -72,7 +70,7 @@ export default function Hero() {
                     <circle cx="12" cy="12" r="4"/>
                   </svg>
                 </span>
-                <span className={styles.bentoLabel}>Backend</span>
+                <span className={styles.bentoLabel}>Backend (Node.js)</span>
               </div>
             </div>
             
@@ -88,7 +86,7 @@ export default function Hero() {
                     <path d="M9 13v2"/>
                   </svg>
                 </span>
-                <span className={styles.bentoLabel}>AI Workflows</span>
+                <span className={styles.bentoLabel}>AI-Driven Development & Workflows</span>
               </div>
             </div>
           </div>
