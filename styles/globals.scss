@@ -1,5 +1,5 @@
 @use 'colors' as *;
-@use 'fonts';
+@use 'fonts' as *;
 @use 'texts';
 @use 'common';
 @use 'animations';
@@ -16,8 +16,8 @@
   --color-border: #{$light-border};
   --color-success: #10b981;
   --color-error: #ef4444;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-sans: #{$font-primary};
+  --font-mono: #{$font-secondary};
 }
 
 [data-theme='dark'] {

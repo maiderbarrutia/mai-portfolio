@@ -1,21 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { LanguageProvider } from '@/context/LanguageContext'
 import '@/styles/globals.scss'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const firaCode = Fira_Code({
-  subsets: ['latin'],
-  variable: '--font-fira-code',
-  display: 'swap',
-})
 
 const siteUrl = 'https://maiderbarrutia.com'
 
@@ -77,7 +64,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${firaCode.variable}`}>
+      <body>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"
