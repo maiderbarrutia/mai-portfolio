@@ -41,8 +41,18 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
+  const WEB3FORMS_KEY = '51ffc07c-9503-4bf8-a837-98cede1289cb';
+
   const onSubmit = async (data: ContactFormData) => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        ...data,
+      }),
+    });
+    if (!response.ok) throw new Error('Failed to send');
     reset();
   };
 
