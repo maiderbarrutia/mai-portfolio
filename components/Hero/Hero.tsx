@@ -77,8 +77,12 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className={`${styles.hero__decor} ${styles['hero__decor--1']}`}></div>
-      <div className={`${styles.hero__decor} ${styles['hero__decor--2']}`}></div>
+      <div className={styles['hero__decor-circle']} />
+      <div className={styles['hero__decor-circle']} />
+      <div className={styles['hero__decor-circle']} />
+      <div className={styles['hero__decor-circle']} />
+      <div className={styles['hero__decor-circle']} />
+      <div className={styles['hero__decor-circle']} />
     </section>
   );
 }

@@ -201,41 +201,84 @@
     color: var(--color-text-muted);
   }
 
-  &__decor-circle1 {
+  &__decor-circle {
     position: absolute;
-    top: 20%;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--color-primary-alpha) 0%, transparent 70%);
     border-radius: 50%;
-    opacity: 0.5;
+    background: var(--color-primary);
+    opacity: 0.04;
     pointer-events: none;
-    animation: float 8s ease-in-out infinite;
+    animation: hero-float 12s ease-in-out infinite;
 
-    @include media-min(md) {
-      width: 400px;
-      height: 400px;
-      right: -150px;
-    }
-  }
-
-  &__decor-circle2 {
-    position: absolute;
-    bottom: 10%;
-    left: -50px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, var(--color-primary-alpha) 0%, transparent 70%);
-    border-radius: 50%;
-    opacity: 0.3;
-    pointer-events: none;
-    animation: float 6s ease-in-out infinite reverse;
-
-    @include media-min(md) {
+    &:nth-child(1) {
       width: 250px;
       height: 250px;
-      left: -80px;
+      top: 10%;
+      right: 5%;
+      animation-delay: 0s;
+      animation-duration: 15s;
+    }
+
+    &:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      bottom: 20%;
+      left: 3%;
+      animation-delay: -4s;
+      animation-duration: 11s;
+    }
+
+    &:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      top: 40%;
+      left: 30%;
+      animation-delay: -8s;
+      animation-duration: 18s;
+    }
+
+    &:nth-child(4) {
+      width: 120px;
+      height: 120px;
+      bottom: 10%;
+      right: 25%;
+      animation-delay: -2s;
+      animation-duration: 13s;
+    }
+
+    &:nth-child(5) {
+      width: 60px;
+      height: 60px;
+      top: 5%;
+      left: 15%;
+      animation-delay: -1s;
+      animation-duration: 9s;
+    }
+
+    &:nth-child(6) {
+      width: 40px;
+      height: 40px;
+      top: 15%;
+      left: 55%;
+      animation-delay: -6s;
+      animation-duration: 7s;
+    }
+
+    @include media-max(md) {
+      &:nth-child(1) {
+        width: 180px;
+        height: 180px;
+      }
+
+      &:nth-child(2) {
+        width: 100px;
+        height: 100px;
+      }
+
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: none;
+      }
     }
   }
 }
@@ -259,4 +302,16 @@
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
+}
+
+@keyframes hero-float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(20px, -15px);
+  }
+  66% {
+    transform: translate(-15px, 10px);
+  }
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, type ReactNode } from 'react'
+import { Download } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import styles from './Experience.module.scss'
 
@@ -149,6 +150,7 @@ export default function Experience() {
           <h2 className={styles['experience__title']}>{t('experience.title')}</h2>
           <p className={styles['experience__subtitle']}>{t('experience.subtitle')}</p>
           <a href="/cv-maider-barrutia.pdf" target="_blank" rel="noopener noreferrer" className={styles['experience__cv-btn']}>
+            <Download size={16} />
             {t('experience.downloadCV')}
           </a>
         </div>

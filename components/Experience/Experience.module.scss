@@ -52,18 +52,22 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--color-primary);
-    color: #fff;
+    padding: 0.75rem 1.75rem;
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
     border-radius: 2rem;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: all 0.25s ease;
+    box-shadow: 0 0 0 0 transparent;
 
     &:hover {
-      background-color: var(--color-primary-hover);
-      transform: translateY(-1px);
+      background-color: var(--color-primary);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px var(--color-primary-alpha);
     }
   }
 }
