@@ -8,18 +8,17 @@ export const metadata: Metadata = {
 }
 
 const categoryLabels: Record<ProjectCategory, { es: string; en: string }> = {
-  'graphic-design': { es: 'Diseño Gráfico', en: 'Graphic Design' },
-  'web-design': { es: 'Diseño Web', en: 'Web Design' },
   'web-development': { es: 'Desarrollo Web', en: 'Web Development' },
+  'web-design': { es: 'Diseño Web', en: 'Web Design' },
+  'graphic-design': { es: 'Diseño Gráfico', en: 'Graphic Design' },
 }
 
 export default function ProjectsPage() {
-  const nonFeatured = projects.filter(p => !p.featured)
   const grouped = (Object.keys(categoryLabels) as ProjectCategory[])
     .map(key => ({
       key,
       label: categoryLabels[key],
-      items: nonFeatured.filter(p => p.category === key).map(p => ({
+      items: projects.filter(p => p.category === key).map(p => ({
         id: p.id,
         title: p.title,
         subtitle: p.subtitle,

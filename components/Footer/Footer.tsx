@@ -22,10 +22,10 @@ export default function Footer() {
           </div>
 
           <nav className={styles.footer__nav} aria-label="Footer navigation">
-            <a href="#about" className={styles['footer__nav-link']}>{t('nav.about')}</a>
-            <a href="#projects" className={styles['footer__nav-link']}>{t('nav.projects')}</a>
-            <a href="#experience" className={styles['footer__nav-link']}>{t('nav.experience')}</a>
-            <a href="#contact" className={styles['footer__nav-link']}>{t('nav.contact')}</a>
+            <a href="/#about" className={styles['footer__nav-link']}>{t('nav.about')}</a>
+            <a href="/#projects" className={styles['footer__nav-link']}>{t('nav.projects')}</a>
+            <a href="/#experience" className={styles['footer__nav-link']}>{t('nav.experience')}</a>
+            <a href="/#contact" className={styles['footer__nav-link']}>{t('nav.contact')}</a>
           </nav>
 
           <div className={styles.footer__social}>

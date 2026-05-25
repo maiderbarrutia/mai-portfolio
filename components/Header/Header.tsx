@@ -22,11 +22,11 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { href: '#about', label: t('nav.about') },
-    { href: '#projects', label: t('nav.projects') },
-    { href: '#tech', label: t('nav.tech') },
-    { href: '#experience', label: t('nav.experience') },
-    { href: '#contact', label: t('nav.contact') },
+    { href: '/#about', label: t('nav.about') },
+    { href: '/#projects', label: t('nav.projects') },
+    { href: '/#tech', label: t('nav.tech') },
+    { href: '/#experience', label: t('nav.experience') },
+    { href: '/#contact', label: t('nav.contact') },
   ];
 
   return (

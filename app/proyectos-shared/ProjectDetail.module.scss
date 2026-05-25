@@ -136,25 +136,25 @@
   &__gallery-main {
     position: relative;
     border-radius: 1rem;
-    overflow: hidden;
-    background-color: var(--color-surface);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 500px;
+    height: 500px;
+    background-color: var(--color-background);
     border: 1px solid var(--color-border);
     margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-primary);
+    }
   }
 
   &__gallery-media {
     width: 100%;
+    height: auto;
     display: block;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-  }
-
-  &__gallery-caption {
-    padding: 0.75rem 1rem;
-    font-size: 0.8125rem;
-    color: var(--color-text-muted);
-    text-align: center;
-    border-top: 1px solid var(--color-border);
   }
 
   &__gallery-thumbs {
@@ -222,4 +222,98 @@
     color: var(--color-text-muted);
     line-height: 1.7;
   }
+}
+
+// Lightbox overlay
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightbox-fade 0.2s ease;
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    line-height: 0;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    line-height: 0;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    &--prev {
+      left: 1rem;
+    }
+
+    &--next {
+      right: 1rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 95vw;
+    max-height: 90vh;
+  }
+
+  &__media {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  &__counter {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.35rem 0.85rem;
+    border-radius: 1rem;
+  }
+}
+
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

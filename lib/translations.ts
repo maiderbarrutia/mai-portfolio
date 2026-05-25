@@ -64,6 +64,7 @@ export const translations = {
       certifications: 'Cursos y Certificaciones',
       present: 'Actualidad',
       viewMore: 'Ver Más',
+      downloadCV: 'Descargar CV',
     },
     
     // Contact Section
@@ -176,6 +177,7 @@ export const translations = {
       certifications: 'Courses & Certifications',
       present: 'Present',
       viewMore: 'View More',
+      downloadCV: 'Download CV',
     },
     
     // Contact Section

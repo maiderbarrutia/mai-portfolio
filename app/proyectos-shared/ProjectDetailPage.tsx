@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, use } from 'react';
+import { useState, use, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { useLanguage } from '@/context/LanguageContext';
@@ -15,10 +15,43 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
   const { t, language } = useLanguage();
   const project = getProjectById(id);
   const [selectedMedia, setSelectedMedia] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const goNext = useCallback(() => {
+    if (lightboxIndex === null || !project) return;
+    setLightboxIndex((lightboxIndex + 1) % project.media.length);
+  }, [lightboxIndex, project]);
+
+  const goPrev = useCallback(() => {
+    if (lightboxIndex === null || !project) return;
+    setLightboxIndex((lightboxIndex - 1 + project.media.length) % project.media.length);
+  }, [lightboxIndex, project]);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowRight') goNext();
+      if (e.key === 'ArrowLeft') goPrev();
+    };
+    document.addEventListener('keydown', handler);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handler);
+      document.body.style.overflow = '';
+    };
+  }, [lightboxIndex, goNext, goPrev]);
 
   if (!project) {
     notFound();
   }
+
+  const hasContent = (text: string) => {
+    const trimmed = text?.trim();
+    if (!trimmed) return false;
+    const noPatterns = ['sin integración de ia', 'no ai integration', 'sin integración'];
+    return !noPatterns.some(p => trimmed.toLowerCase().startsWith(p));
+  };
 
   return (
     <>
@@ -59,12 +92,13 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
 
           {project.media.length > 0 && (
             <section className={styles['project-detail__gallery']}>
-              <div className={styles['project-detail__gallery-main']}>
+              <button className={styles['project-detail__gallery-main']} onClick={() => setLightboxIndex(selectedMedia)} aria-label={project.media[selectedMedia].alt[language]}>
                 {project.media[selectedMedia].type === 'video' ? (
                   <video
                     src={project.media[selectedMedia].src}
                     controls
                     className={styles['project-detail__gallery-media']}
+                    onClick={(e) => e.stopPropagation()}
                   />
                 ) : (
                   <img
@@ -73,12 +107,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                     className={styles['project-detail__gallery-media']}
                   />
                 )}
-                {project.media[selectedMedia].caption && (
-                  <p className={styles['project-detail__gallery-caption']}>
-                    {project.media[selectedMedia].caption![language]}
-                  </p>
-                )}
-              </div>
+              </button>
               {project.media.length > 1 && (
                 <div className={styles['project-detail__gallery-thumbs']}>
                   {project.media.map((item, index) => (
@@ -97,29 +126,72 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           )}
 
           <div className={styles['project-detail__sections']}>
-            <section className={styles['project-detail__section']}>
-              <h2 className={styles['project-detail__section-title']}>{t('projects.challenge')}</h2>
-              <p className={styles['project-detail__section-text']}>{project.challenge[language]}</p>
-            </section>
+            {hasContent(project.challenge[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.challenge')}</h2>
+                <p className={styles['project-detail__section-text']}>{project.challenge[language]}</p>
+              </section>
+            )}
 
-            <section className={styles['project-detail__section']}>
-              <h2 className={styles['project-detail__section-title']}>{t('projects.uxDecisions')}</h2>
-              <p className={styles['project-detail__section-text']}>{project.uxDecisions[language]}</p>
-            </section>
+            {hasContent(project.uxDecisions[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.uxDecisions')}</h2>
+                <p className={styles['project-detail__section-text']}>{project.uxDecisions[language]}</p>
+              </section>
+            )}
 
-            <section className={styles['project-detail__section']}>
-              <h2 className={styles['project-detail__section-title']}>{t('projects.architecture')}</h2>
-              <p className={styles['project-detail__section-text']}>{project.architecture[language]}</p>
-            </section>
+            {hasContent(project.architecture[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.architecture')}</h2>
+                <p className={styles['project-detail__section-text']}>{project.architecture[language]}</p>
+              </section>
+            )}
 
-            <section className={styles['project-detail__section']}>
-              <h2 className={styles['project-detail__section-title']}>{t('projects.aiIntegration')}</h2>
-              <p className={styles['project-detail__section-text']}>{project.aiIntegration[language]}</p>
-            </section>
+            {hasContent(project.aiIntegration[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.aiIntegration')}</h2>
+                <p className={styles['project-detail__section-text']}>{project.aiIntegration[language]}</p>
+              </section>
+            )}
           </div>
         </div>
       </main>
       <Footer />
+
+      {lightboxIndex !== null && (
+        <div className={styles.lightbox} onClick={() => setLightboxIndex(null)} role="dialog" aria-label={project.media[lightboxIndex].alt[language]}>
+          <button className={styles.lightbox__close} onClick={() => setLightboxIndex(null)} aria-label="Close">
+            <X size={28} />
+          </button>
+
+          {project.media.length > 1 && (
+            <>
+              <button className={`${styles.lightbox__nav} ${styles['lightbox__nav--prev']}`} onClick={(e) => { e.stopPropagation(); goPrev(); }} aria-label="Previous">
+                <ChevronLeft size={32} />
+              </button>
+              <button className={`${styles.lightbox__nav} ${styles['lightbox__nav--next']}`} onClick={(e) => { e.stopPropagation(); goNext(); }} aria-label="Next">
+                <ChevronRight size={32} />
+              </button>
+            </>
+          )}
+
+          <div className={styles.lightbox__content} onClick={(e) => e.stopPropagation()}>
+            {project.media[lightboxIndex].type === 'video' ? (
+              <video src={project.media[lightboxIndex].src} controls className={styles.lightbox__media} autoPlay />
+            ) : (
+              <img
+                src={project.media[lightboxIndex].src}
+                alt={project.media[lightboxIndex].alt[language]}
+                className={styles.lightbox__media}
+              />
+            )}
+          </div>
+
+          <div className={styles.lightbox__counter}>
+            {lightboxIndex + 1} / {project.media.length}
+          </div>
+        </div>
+      )}
     </>
   );
 }

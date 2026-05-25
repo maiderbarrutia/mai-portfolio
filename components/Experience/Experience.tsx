@@ -24,14 +24,10 @@ const experiences = [
     period: { es: '2025 - Actualidad', en: '2025 - Present' },
     achievements: {
       es: [
-        'Para integrar una **tecnología específica** requerida por el cliente, lideré su aprendizaje y despliegue autónomo **asistido por IA** en una semana, reduciendo el tiempo de entrega un **20%** y cumpliendo con el lanzamiento previsto.',
-        'Para facilitar la escalabilidad del sistema, refactoricé módulos críticos de código **PHP** logrando acelerar el despliegue de nuevas funcionalidades en un **15%**.',
-        'En el rediseño de una plataforma energética para **+100.000 usuarios**, lideré la maquetación **pixel-perfect** con SASS y el despliegue funcional, resolviendo desafíos técnicos para garantizar una interfaz optimizada y una transición sin errores.',
+        'Responsable del desarrollo Full Stack de aplicaciones web corporativas, liderando la adopción de herramientas de **IA** para optimizar tiempos de desarrollo, la refactorización de código crítico y la maquetación avanzada de plataformas de alta concurrencia.',
       ],
       en: [
-        'To integrate a **specific technology** required by the client, I led its self-directed learning and **AI-assisted** deployment in one week, reducing delivery time by **20%** and meeting the planned launch.',
-        'To improve system scalability, I refactored critical **PHP modules**, accelerating new feature deployment by **15%**.',
-        'In the redesign of an energy platform for **+100,000 users**, I led **pixel-perfect** layout with SASS and functional deployment, resolving technical challenges to ensure an optimized interface and a seamless transition.',
+        'Responsible for Full Stack development of corporate web applications, leading the adoption of **AI** tools to optimize development times, critical code refactoring, and advanced layout of high-concurrency platforms.',
       ],
     },
     technologies: ['php', 'scss', 'typescript', 'react'],
@@ -43,12 +39,10 @@ const experiences = [
     period: { es: '2023 - 2025', en: '2023 - 2025' },
     achievements: {
       es: [
-        'Para lanzar una plataforma robusta y escalable, arquitecturé desde cero la **BBDD MySQL** y la **API REST en Node.js/Express**, mejorando el rendimiento del sistema un **30%** mediante consultas SQL optimizadas e índices.',
-        'Para optimizar la experiencia móvil, diseñé en **Figma** y desarrollé componentes en **React** bajo una metodología **mobile first** (CSS Grid/Flexbox), logrando una alta fidelidad visual y una navegación más fluida.',
+        'Gestión integral de proyectos de desarrollo a medida para clientes independientes, encargándome desde la arquitectura de bases de datos y creación de **APIs** robustas en el backend, hasta el diseño **UI/UX** y desarrollo de interfaces optimizadas para dispositivos móviles.',
       ],
       en: [
-        'To launch a robust and scalable platform, I architected the **MySQL database** and **REST API in Node.js/Express** from scratch, improving system performance by **30%** through optimized SQL queries and indexes.',
-        'To optimize the mobile experience, I designed in **Figma** and developed **React** components under a **mobile-first** methodology (CSS Grid/Flexbox), achieving high visual fidelity and smoother navigation.',
+        'End-to-end management of custom development projects for independent clients, handling everything from database architecture and robust **API** creation on the backend, to **UI/UX** design and development of mobile-optimized interfaces.',
       ],
     },
     technologies: ['mysql', 'nodejs', 'express', 'react', 'figma', 'scss'],
@@ -60,16 +54,10 @@ const experiences = [
     period: { es: '2017 - 2023', en: '2017 - 2023' },
     achievements: {
       es: [
-        'Ante la caída de tráfico por tiempos de carga elevados en ecosistemas **WordPress**, implementé estrategias de **WPO** como caché, minificación y gestión de imágenes (WebP/Lazy loading), elevando el PageSpeed de **60 a 90** y mejorando la velocidad de carga un **30%**.',
-        'Ante incidentes de seguridad que comprometieron la integridad web, lideré la **limpieza y restauración de código** coordinando con sistemas el bloqueo de amenazas, logrando la recuperación y continuidad del servicio **sin pérdida de datos**.',
-        'Para facilitar la escalabilidad de la arquitectura frontend, sistematicé el flujo de trabajo mediante la creación de estilos reutilizables con **SASS** bajo metodologías **Scrum/Kanban**, reduciendo los tiempos de entrega en un **20%**.',
-        'Para asegurar una experiencia visual impecable en sitios de alto tráfico, desarrollé interfaces **Pixel-Perfect** para clientes referentes en **Salud, Seguros y Media**, logrando el cumplimiento total de estándares corporativos y **accesibilidad**.',
+        'Especialista en desarrollo de interfaces de usuario para grandes cuentas (**Salud, Seguros y Media**), enfocada en la optimización extrema del rendimiento web (**WPO**), la resolución de incidentes críticos de seguridad y la estructuración de flujos de trabajo escalables bajo metodologías ágiles.',
       ],
       en: [
-        'Facing traffic drops due to high load times in **WordPress** ecosystems, I implemented **WPO strategies** — caching, minification, and image management (WebP/Lazy loading) — raising PageSpeed from **60 to 90** and improving load speed by **30%**.',
-        'After security incidents that compromised website integrity, I led **code cleanup and restoration**, coordinating with systems teams to block threats, achieving service recovery with **zero data loss**.',
-        'To enable frontend architecture scalability, I systematized the workflow by creating **reusable SASS styles** under **Scrum/Kanban** methodologies, reducing delivery times by **20%**.',
-        'To ensure a flawless visual experience on high-traffic sites, I developed **pixel-perfect interfaces** for leading clients in **Health, Insurance, and Media**, achieving full compliance with corporate standards and **accessibility** requirements.',
+        'Specialist in user interface development for major accounts (**Health, Insurance, and Media**), focused on extreme web performance optimization (**WPO**), resolution of critical security incidents, and structuring scalable workflows under agile methodologies.',
       ],
     },
     technologies: ['wordpress', 'scss', 'javascript', 'scrum', 'kanban', 'jira'],
@@ -160,6 +148,9 @@ export default function Experience() {
           <span className={styles['experience__section-tag']}>{t('experience.tag')}</span>
           <h2 className={styles['experience__title']}>{t('experience.title')}</h2>
           <p className={styles['experience__subtitle']}>{t('experience.subtitle')}</p>
+          <a href="/cv-maider-barrutia.pdf" target="_blank" rel="noopener noreferrer" className={styles['experience__cv-btn']}>
+            {t('experience.downloadCV')}
+          </a>
         </div>
 
         <div className={styles.tabs} role="tablist">

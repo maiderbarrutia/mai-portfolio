@@ -68,9 +68,17 @@ export const projects: Project[] = [
       en: 'Platform for managing leisure and free time activities',
     },
     tags: ['TypeScript', 'React.js', 'MySQL', 'Vite', 'SASS', 'Node.js', 'Express'],
-    image: placeholder,
+    image: '/projects/web-develop/aisiplan/cabecera-sin-login.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Aisiplan', en: 'Aisiplan' } },
+      { src: '/projects/web-develop/aisiplan/pagina-inicio.jpg', type: 'image', alt: { es: 'Página de inicio Aisiplan', en: 'Aisiplan home page' } },
+      { src: '/projects/web-develop/aisiplan/pagina-inicio-sesion.jpg', type: 'image', alt: { es: 'Inicio de sesión Aisiplan', en: 'Aisiplan login' } },
+      { src: '/projects/web-develop/aisiplan/pagina-actividades.jpg', type: 'image', alt: { es: 'Página de actividades Aisiplan', en: 'Aisiplan activities page' } },
+      { src: '/projects/web-develop/aisiplan/pagina-detalle-actividades.jpg', type: 'image', alt: { es: 'Detalle de actividad Aisiplan', en: 'Aisiplan activity detail' } },
+      { src: '/projects/web-develop/aisiplan/pagina-perfil.jpg', type: 'image', alt: { es: 'Perfil de usuario Aisiplan', en: 'Aisiplan user profile' } },
+      { src: '/projects/web-develop/aisiplan/cabecera-logueado.jpg', type: 'image', alt: { es: 'Cabecera logueado Aisiplan', en: 'Aisiplan logged-in header' } },
+      { src: '/projects/web-develop/aisiplan/cabecera-sin-login.jpg', type: 'image', alt: { es: 'Cabecera sin login Aisiplan', en: 'Aisiplan logged-out header' } },
+      { src: '/projects/web-develop/aisiplan/formularios.jpg', type: 'image', alt: { es: 'Formularios Aisiplan', en: 'Aisiplan forms' } },
+      { src: '/projects/web-develop/aisiplan/footer.jpg', type: 'image', alt: { es: 'Footer Aisiplan', en: 'Aisiplan footer' } },
     ],
     featured: true,
     demoUrl: 'https://aisiplan.vercel.app/',
@@ -104,9 +112,9 @@ export const projects: Project[] = [
       en: 'Landing page design for GasNature, an energy services company.',
     },
     tags: ['Photoshop', 'Landing Page'],
-    image: placeholder,
+    image: '/projects/web-design/gasnature-landing.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Landing GasNature', en: 'GasNature Landing Page' } },
+      { src: '/projects/web-design/gasnature-landing.jpg', type: 'image', alt: { es: 'Landing GasNature', en: 'GasNature Landing Page' } },
     ],
     featured: true,
     challenge: {
@@ -139,9 +147,10 @@ export const projects: Project[] = [
       en: 'Landing page design for TCS, a technical services company.',
     },
     tags: ['Photoshop', 'Landing Page'],
-    image: placeholder,
+    image: '/projects/web-design/tcs.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Landing TCS', en: 'TCS Landing Page' } },
+      { src: '/projects/web-design/tcs.jpg', type: 'image', alt: { es: 'Landing TCS', en: 'TCS Landing Page' } },
+      { src: '/projects/tcs.svg', type: 'image', alt: { es: 'Landing TCS detalle', en: 'TCS Landing detail' } },
     ],
     featured: true,
     challenge: {
@@ -174,9 +183,9 @@ export const projects: Project[] = [
       en: 'Landing page design for Itzulpen, a professional translation service.',
     },
     tags: ['Photoshop', 'Landing Page'],
-    image: placeholder,
+    image: '/projects/web-design/traductor-web-itzulpen.png',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Landing Itzulpen', en: 'Itzulpen Landing Page' } },
+      { src: '/projects/web-design/traductor-web-itzulpen.png', type: 'image', alt: { es: 'Landing Itzulpen', en: 'Itzulpen Landing Page' } },
     ],
     featured: true,
     challenge: {
@@ -209,9 +218,10 @@ export const projects: Project[] = [
       en: 'Corporate website design for Araex.',
     },
     tags: ['Photoshop'],
-    image: placeholder,
+    image: '/projects/web-design/araex/home-araex.png',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Web Araex', en: 'Araex Website' } },
+      { src: '/projects/web-design/araex/home-araex.png', type: 'image', alt: { es: 'Web Araex', en: 'Araex Website' } },
+      { src: '/projects/web-design/araex/Gran sello2.jpg', type: 'image', alt: { es: 'Araex sello', en: 'Araex seal' } },
     ],
     featured: false,
     challenge: {
@@ -244,9 +254,13 @@ export const projects: Project[] = [
       en: 'Complete corporate identity development for an Italian restaurant, including logo, stationery and advertising.',
     },
     tags: ['Illustrator'],
-    image: placeholder,
+    image: '/projects/graphic-design/corporate-identity/piatto-restaurante/logoPiatto.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Identidad Piatto', en: 'Piatto Identity' } },
+      { src: '/projects/graphic-design/corporate-identity/piatto-restaurante/logoPiatto.jpg', type: 'image', alt: { es: 'Logo Piatto', en: 'Piatto logo' } },
+      { src: '/projects/graphic-design/corporate-identity/piatto-restaurante/identidadPiatto.jpg', type: 'image', alt: { es: 'Identidad Piatto', en: 'Piatto identity' } },
+      { src: '/projects/graphic-design/corporate-identity/piatto-restaurante/logoPiattoBlancoNegro.jpg', type: 'image', alt: { es: 'Piatto blanco y negro', en: 'Piatto black and white' } },
+      { src: '/projects/graphic-design/corporate-identity/piatto-restaurante/anuncioPrensaPiatto.png', type: 'image', alt: { es: 'Anuncio prensa Piatto', en: 'Piatto press ad' } },
+      { src: '/projects/graphic-design/corporate-identity/piatto-restaurante/stufferPiatto.jpg', type: 'image', alt: { es: 'Stuffer Piatto', en: 'Piatto stuffer' } },
     ],
     featured: false,
     challenge: {
@@ -279,9 +293,16 @@ export const projects: Project[] = [
       en: 'Complete design and layout of GrafiK magazine, a publication specialized in graphic design.',
     },
     tags: ['InDesign', 'Illustrator', 'Photoshop'],
-    image: placeholder,
+    image: '/projects/graphic-design/editorial/revista-grafik/revistaBansky.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Revista GrafiK', en: 'GrafiK Magazine' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/revistaBansky.jpg', type: 'image', alt: { es: 'Revista GrafiK Bansky', en: 'GrafiK Bansky issue' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/indiceRevista.jpg', type: 'image', alt: { es: 'Índice revista GrafiK', en: 'GrafiK magazine index' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/logo.jpg', type: 'image', alt: { es: 'Logo revisa GrafiK', en: 'GrafiK magazine logo' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/revistaBauhaus.jpg', type: 'image', alt: { es: 'Revista GrafiK Bauhaus', en: 'GrafiK Bauhaus issue' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/revistaGauckler.jpg', type: 'image', alt: { es: 'Revista GrafiK Gauckler', en: 'GrafiK Gauckler issue' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/revistaLehanneur.jpg', type: 'image', alt: { es: 'Revista GrafiK Lehanneur', en: 'GrafiK Lehanneur issue' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/revistaMuebles.jpg', type: 'image', alt: { es: 'Revista GrafiK muebles', en: 'GrafiK furniture issue' } },
+      { src: '/projects/graphic-design/editorial/revista-grafik/revistaSillas.jpg', type: 'image', alt: { es: 'Revista GrafiK sillas', en: 'GrafiK chairs issue' } },
     ],
     featured: true,
     challenge: {
@@ -314,9 +335,10 @@ export const projects: Project[] = [
       en: 'Design and layout of advertising brochure for the Bilbao Chamber of Commerce.',
     },
     tags: ['InDesign', 'Illustrator'],
-    image: placeholder,
+    image: '/projects/graphic-design/camara-comercio-bilbao/camara-comercio-bilbao.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Folleto Cámara Comercio', en: 'Chamber of Commerce Brochure' } },
+      { src: '/projects/graphic-design/camara-comercio-bilbao/camara-comercio-bilbao.jpg', type: 'image', alt: { es: 'Folleto Cámara Comercio Bilbao', en: 'Bilbao Chamber of Commerce brochure' } },
+      { src: '/projects/graphic-design/camara-comercio-bilbao/camara-comercio-bilbao-portada.jpg', type: 'image', alt: { es: 'Portada folleto Cámara Comercio', en: 'Chamber of Commerce cover' } },
     ],
     featured: false,
     challenge: {
@@ -349,9 +371,11 @@ export const projects: Project[] = [
       en: 'Design of advertising brochure for summer camps.',
     },
     tags: ['InDesign', 'Illustrator'],
-    image: placeholder,
+    image: '/projects/graphic-design/colonias/coloniasExterior.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Folleto Colonias', en: 'Summer Camp Brochure' } },
+      { src: '/projects/graphic-design/colonias/coloniasExterior.jpg', type: 'image', alt: { es: 'Folleto Colonias exterior', en: 'Summer camp brochure exterior' } },
+      { src: '/projects/graphic-design/colonias/coloniasInterior.jpg', type: 'image', alt: { es: 'Folleto Colonias interior', en: 'Summer camp brochure interior' } },
+      { src: '/projects/graphic-design/colonias/folleto3.jpg', type: 'image', alt: { es: 'Folleto Colonias detalle', en: 'Summer camp brochure detail' } },
     ],
     featured: false,
     challenge: {
@@ -384,9 +408,12 @@ export const projects: Project[] = [
       en: 'Corporate identity development for Pop Eye optician, including logo and stationery.',
     },
     tags: ['InDesign', 'Illustrator'],
-    image: placeholder,
+    image: '/projects/graphic-design/corporate-identity/pop-eye/popEye-logo.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Óptica Pop Eye', en: 'Pop Eye Optician' } },
+      { src: '/projects/graphic-design/corporate-identity/pop-eye/popEye-logo.jpg', type: 'image', alt: { es: 'Logo Pop Eye', en: 'Pop Eye logo' } },
+      { src: '/projects/graphic-design/corporate-identity/pop-eye/portadaPopeye.jpg', type: 'image', alt: { es: 'Portada Pop Eye', en: 'Pop Eye cover' } },
+      { src: '/projects/graphic-design/corporate-identity/pop-eye/investigacionPopeye.jpg', type: 'image', alt: { es: 'Investigación Pop Eye', en: 'Pop Eye research' } },
+      { src: '/projects/graphic-design/corporate-identity/pop-eye/alternativasLogoPopeye.jpg', type: 'image', alt: { es: 'Alternativas logo Pop Eye', en: 'Pop Eye logo alternatives' } },
     ],
     featured: false,
     challenge: {
@@ -419,9 +446,10 @@ export const projects: Project[] = [
       en: 'Corporate identity development and packaging design for the Zensación brand.',
     },
     tags: ['InDesign', 'Illustrator'],
-    image: placeholder,
+    image: '/projects/graphic-design/corporate-identity/zensacion/montaje-zensacion.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Pack Zensación', en: 'Zensación Pack' } },
+      { src: '/projects/graphic-design/corporate-identity/zensacion/montaje-zensacion.jpg', type: 'image', alt: { es: 'Pack Zensación montaje', en: 'Zensación pack mockup' } },
+      { src: '/projects/graphic-design/corporate-identity/zensacion/logo-zensacion.jpg', type: 'image', alt: { es: 'Logo Zensación', en: 'Zensación logo' } },
     ],
     featured: false,
     challenge: {
@@ -454,9 +482,9 @@ export const projects: Project[] = [
       en: 'Corporate identity development for a winery, including stationery and applications.',
     },
     tags: ['InDesign', 'Illustrator', 'Photoshop'],
-    image: placeholder,
+    image: '/projects/graphic-design/corporate-identity/bodegas-ubide/papeleria-bodegas-ubide.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Bodegas Ubide', en: 'Ubide Wineries' } },
+      { src: '/projects/graphic-design/corporate-identity/bodegas-ubide/papeleria-bodegas-ubide.jpg', type: 'image', alt: { es: 'Papelería Bodegas Ubide', en: 'Ubide Wineries stationery' } },
     ],
     featured: false,
     challenge: {
@@ -489,9 +517,9 @@ export const projects: Project[] = [
       en: 'Creation of advertisements for various media and campaigns.',
     },
     tags: ['Photoshop'],
-    image: placeholder,
+    image: '/projects/graphic-design/advertisements/advertisements.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Anuncios', en: 'Advertisements' } },
+      { src: '/projects/graphic-design/advertisements/advertisements.jpg', type: 'image', alt: { es: 'Anuncios publicitarios', en: 'Advertisements' } },
     ],
     featured: false,
     challenge: {
@@ -524,9 +552,10 @@ export const projects: Project[] = [
       en: 'Poster design for the Aste Nagusia and Jazzaldia festivals in Bilbao.',
     },
     tags: ['Illustrator', 'Photoshop'],
-    image: placeholder,
+    image: '/projects/graphic-design/carteles-jazzaldia-aste-nagusia.jpg',
     media: [
-      { src: placeholder, type: 'image', alt: { es: 'Carteles Festivales', en: 'Festival Posters' } },
+      { src: '/projects/graphic-design/carteles-jazzaldia-aste-nagusia.jpg', type: 'image', alt: { es: 'Carteles Aste Nagusia y Jazzaldia', en: 'Aste Nagusia & Jazzaldia posters' } },
+      { src: '/projects/graphic-design/jazzaldia/Jazzaldia.jpg', type: 'image', alt: { es: 'Cartel Jazzaldia', en: 'Jazzaldia poster' } },
     ],
     featured: true,
     challenge: {
