@@ -1,55 +1,45 @@
-'use client';
+'use client'
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 
-type Theme = 'light' | 'dark';
+type Theme = 'light' | 'dark'
 
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
+interface ThemeContextValue {
+  theme: Theme
+  setTheme: (theme: Theme) => void
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeCtx = createContext<ThemeContextValue>({
+  theme: 'light',
+  setTheme: () => {},
+})
+
+export function useTheme() {
+  return useContext(ThemeCtx)
+}
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
+  const [theme, setThemeState] = useState<Theme>('light')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem('portfolio-theme') as Theme;
-    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    }
-  }, []);
+    const stored = localStorage.getItem('theme') as Theme | null
+    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    const initial = stored || preferred
+    setThemeState(initial)
+    document.documentElement.setAttribute('data-theme', initial)
+    setMounted(true)
+  }, [])
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('portfolio-theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
-
-  if (!mounted) {
-    return (
-      <ThemeContext.Provider value={{ theme: 'light', toggleTheme: () => {} }}>
-        {children}
-      </ThemeContext.Provider>
-    );
+  const setTheme = (t: Theme) => {
+    setThemeState(t)
+    localStorage.setItem('theme', t)
+    document.documentElement.setAttribute('data-theme', t)
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeCtx.Provider value={{ theme, setTheme }}>
       {children}
-    </ThemeContext.Provider>
-  );
-}
-
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
+    </ThemeCtx.Provider>
+  )
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
-import { ThemeProvider } from '@/components/theme-provider'
+import ClientProviders from '@/components/ClientProviders'
 import { LanguageProvider } from '@/context/LanguageContext'
 import '@/styles/globals.scss'
 
@@ -59,19 +59,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <head />
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})()`
+        }} />
+      </head>
       <body suppressHydrationWarning>
-         <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
+         <ClientProviders>
           <LanguageProvider>
             {children}
             {process.env.NODE_ENV === 'production' && <Analytics />}
           </LanguageProvider>
-        </ThemeProvider>
+        </ClientProviders>
         <Script
           id="json-ld"
           type="application/ld+json"

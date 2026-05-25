@@ -21,7 +21,7 @@ export const translations = {
     // Projects Section
     projects: {
       title: 'Proyectos Destacados',
-      subtitle: 'Una selección de mis trabajos más relevantes donde combino desarrollo frontend, backend y estrategias de IA.',
+      subtitle: 'Una selección de mis trabajos más relevantes donde combino diseño UI, desarrollo frontend, backend y estrategias de IA.',
       viewProject: 'Ver Proyecto',
       viewAll: 'Ver Más Proyectos',
       backToHome: 'Volver al Inicio',
@@ -71,9 +71,9 @@ export const translations = {
     contact: {
       tag: 'Contacto',
       title: 'Hablemos',
-      subtitle: '¿Tienes un proyecto en mente? Me encantaría escucharte.',
+      subtitle: 'Tanto si tienes un proyecto entre manos como una oportunidad profesional, estaré encantada de escucharte.',
       letsConnect: 'Conectemos',
-      description: 'Estoy siempre abierta a nuevas oportunidades y proyectos interesantes. No dudes en contactarme.',
+      description: 'Si buscas una perfil Full Stack con experiencia en arquitectura UI, desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
       name: 'Nombre',
       email: 'Email',
       message: 'Mensaje',
@@ -184,9 +184,9 @@ export const translations = {
     contact: {
       tag: 'Contact',
       title: 'Let\'s Talk',
-      subtitle: 'Have a project in mind? I would love to hear from you.',
+      subtitle: 'Whether you have a project in mind or a professional opportunity, I\'d love to hear about it.',
       letsConnect: 'Let\'s Connect',
-      description: 'I\'m always open to new opportunities and interesting projects. Feel free to reach out.',
+      description: 'If you\'re looking for a Full Stack profile with experience in UI architecture, backend development, and AI integration, let\'s talk and see if we\'re a match.',
       name: 'Name',
       email: 'Email',
       message: 'Message',
