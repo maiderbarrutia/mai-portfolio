@@ -151,20 +151,6 @@
   }
 }
 
-@keyframes dotPulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--color-primary-alpha);
-    transform: scale(0.6);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    box-shadow: 0 0 0 6px transparent;
-    transform: scale(1);
-  }
-}
-
 .experience__line {
   width: 2px;
   flex: 1;
@@ -274,6 +260,18 @@
     border-radius: 0.75rem;
     padding: 1.5rem;
     margin-bottom: 2.5rem;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    animation: eduCardIn 0.5s ease forwards;
+    opacity: 0;
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+
+    &:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--color-primary-alpha);
+    }
   }
 
   &__title {
@@ -349,24 +347,23 @@
   }
 }
 
+@keyframes dotPulse {
+  0% { transform: scale(0.6); box-shadow: 0 0 0 0 var(--color-primary-alpha); }
+  50% { transform: scale(1.2); box-shadow: 0 0 0 12px transparent; }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 transparent; }
+}
+
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes eduCardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes certReveal {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }

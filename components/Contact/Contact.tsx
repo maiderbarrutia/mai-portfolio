@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import { Mail, Linkedin, Github, CheckCircle2, Send, Loader2 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -26,6 +27,20 @@ export default function Contact() {
     resolver: zodResolver(contactSchema),
   });
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const onSubmit = async (data: ContactFormData) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();
@@ -33,14 +48,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className={styles.contact}>
-      <div className={styles.contact__container}>
-        <div className={styles.contact__header}>
+      <div className={styles.contact__container} ref={sectionRef}>
+        <div className={`${styles.contact__header} ${isVisible ? styles['contact__header--visible'] : ''}`}>
           <span className={styles['contact__section-tag']}>{t('contact.tag')}</span>
           <h2 className={styles.contact__title}>{t('contact.title')}</h2>
           <p className={styles.contact__subtitle}>{t('contact.subtitle')}</p>
         </div>
 
-        <div className={styles.contact__content}>
+        <div className={`${styles.contact__content} ${isVisible ? styles['contact__content--visible'] : ''}`}>
           <div className={styles.contact__info}>
             <h3 className={styles['contact__info-title']}>{t('contact.letsConnect')}</h3>
             <p className={styles['contact__info-text']}>{t('contact.description')}</p>
@@ -63,7 +78,7 @@ export default function Contact() {
 
           <form className={styles.contact__form} onSubmit={handleSubmit(onSubmit)} noValidate>
             {isSubmitSuccessful ? (
-              <div className={styles.contact__success}>
+              <div className={`${styles.contact__success} ${styles['contact__success--visible']}`}>
                 <CheckCircle2 size={48} />
                 <p>{t('contact.success')}</p>
               </div>

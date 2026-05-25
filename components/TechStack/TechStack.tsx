@@ -43,6 +43,7 @@ export default function TechStack() {
         </div>
 
         <div
+          key={activeTab}
           className={styles['tech-stack__grid']}
           role="tabpanel"
           aria-label={tabLabel(activeTab)}
@@ -51,7 +52,7 @@ export default function TechStack() {
             <div
               key={tech.techKey}
               className={styles['tech-stack__tech-card']}
-              style={{ animationDelay: `${index * 0.05}s` }}
+              style={{ animationDelay: `${index * 0.06}s` }}
             >
               <span className={styles['tech-stack__icon']}>
                 <TechnologyIcon techKey={tech.techKey} className="w-full h-full" />

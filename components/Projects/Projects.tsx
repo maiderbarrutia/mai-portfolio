@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
@@ -11,6 +12,19 @@ export default function Projects() {
   const { t, language } = useLanguage();
   const featuredProjects = getFeaturedProjects().slice(0, 3);
   const projectsHref = language === 'es' ? '/proyectos' : '/projects';
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className={styles.projects} id="projects">
@@ -20,12 +34,12 @@ export default function Projects() {
           <p className={styles['projects__subtitle']}>{t('projects.subtitle')}</p>
         </header>
         
-        <div className={styles['projects__grid']}>
+        <div className={styles['projects__grid']} ref={gridRef}>
           {featuredProjects.map((project, index) => (
             <div 
               key={project.id} 
-              className={styles['projects__grid-item']}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`${styles['projects__grid-item']} ${isVisible ? styles['projects__grid-item--visible'] : ''}`}
+              style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <ProjectCard project={project} />
             </div>

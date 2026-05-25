@@ -54,8 +54,14 @@
   }
 
   &__grid-item {
-    animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__actions {
@@ -90,16 +96,5 @@
     &:hover svg {
       transform: translateX(4px);
     }
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
