@@ -135,6 +135,7 @@
 
   &__gallery-main {
     position: relative;
+    width: 100%;
     border-radius: 1rem;
     overflow-y: auto;
     overflow-x: hidden;
@@ -152,8 +153,7 @@
   }
 
   &__gallery-media {
-    width: 100%;
-    height: auto;
+    object-fit: contain;
     display: block;
   }
 
@@ -165,6 +165,7 @@
   }
 
   &__thumb {
+    position: relative;
     flex-shrink: 0;
     width: 80px;
     height: 50px;
@@ -184,12 +185,6 @@
     &--active {
       border-color: var(--color-primary);
       opacity: 1;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
   }
 
@@ -282,18 +277,15 @@
   }
 
   &__content {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 95vw;
-    max-height: 90vh;
   }
 
   &__media {
-    max-width: 95vw;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
     object-fit: contain;
     border-radius: 0.5rem;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);

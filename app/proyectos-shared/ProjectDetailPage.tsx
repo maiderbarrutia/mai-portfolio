@@ -2,6 +2,7 @@
 
 import { useState, use, useEffect, useCallback, type ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ExternalLink, Github, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header/Header';
@@ -111,10 +112,12 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                     onClick={(e) => e.stopPropagation()}
                   />
                 ) : (
-                  <img
+                  <Image
                     src={project.media[selectedMedia].src}
                     alt={project.media[selectedMedia].alt[language]}
                     className={styles['project-detail__gallery-media']}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 800px"
                   />
                 )}
               </button>
@@ -127,7 +130,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                       onClick={() => setSelectedMedia(index)}
                       aria-label={item.alt[language]}
                     >
-                      <img src={item.src} alt={item.alt[language]} />
+                      <Image src={item.src} alt={item.alt[language]} fill sizes="80px" />
                     </button>
                   ))}
                 </div>
@@ -225,10 +228,12 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             {project.media[lightboxIndex].type === 'video' ? (
               <video src={project.media[lightboxIndex].src} controls className={styles.lightbox__media} autoPlay />
             ) : (
-              <img
+              <Image
                 src={project.media[lightboxIndex].src}
                 alt={project.media[lightboxIndex].alt[language]}
                 className={styles.lightbox__media}
+                fill
+                sizes="100vw"
               />
             )}
           </div>

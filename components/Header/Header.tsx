@@ -88,6 +88,7 @@ export default function Header() {
         className={`${styles['header__mobile-nav']} ${isMobileMenuOpen ? styles['header__mobile-nav--open'] : ''}`}
         aria-label="Mobile navigation"
         aria-hidden={!isMobileMenuOpen}
+        inert={!isMobileMenuOpen ? true : undefined}
       >
         <ul className={styles['header__mobile-nav-list']}>
           {navItems.map((item) => (

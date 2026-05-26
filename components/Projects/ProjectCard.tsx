@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ImageIcon, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import type { Project } from '@/data/projects';
@@ -25,11 +26,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <ImageIcon size={48} />
             </div>
           ) : (
-            <img
+            <Image
               src={project.image}
               alt={project.title[language]}
               className={styles['project-card__image']}
-              loading="lazy"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               onError={() => setImgError(true)}
             />
           )}

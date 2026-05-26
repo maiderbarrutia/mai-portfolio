@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
@@ -69,10 +70,11 @@ export function ProyectosClient({ categories }: Props) {
                   >
                     <div className={styles.card__image}>
                       <div className={styles['card__image-wrapper']}>
-                        <img
+                        <Image
                           src={project.image}
                           alt={project.title[language]}
-                          loading="lazy"
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                     </div>
