@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, use, useEffect, useCallback } from 'react';
+import { useState, use, useEffect, useCallback, type ReactNode } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ExternalLink, Github, X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -9,6 +9,16 @@ import Footer from '@/components/Footer/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { getProjectById } from '@/data/projects';
 import styles from './ProjectDetail.module.scss';
+
+function parseBold(text: string): ReactNode {
+  const parts = text.split(/(\*\*.*?\*\*)/)
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>
+    }
+    return part
+  })
+}
 
 export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -151,6 +161,42 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.aiIntegration')}</h2>
                 <p className={styles['project-detail__section-text']}>{project.aiIntegration[language]}</p>
+              </section>
+            )}
+
+            {project.problemsSolved && hasContent(project.problemsSolved[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.problemsSolved')}</h2>
+                <p className={styles['project-detail__section-text']}>{project.problemsSolved[language]}</p>
+              </section>
+            )}
+
+            {project.metrics && hasContent(project.metrics[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.metrics')}</h2>
+                <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
+                  {project.metrics[language].split('\n').map((line, i) => (
+                    <p key={i}>{parseBold(line)}</p>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {project.myRole && hasContent(project.myRole[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.myRole')}</h2>
+                <p className={styles['project-detail__section-text']}>{parseBold(project.myRole[language])}</p>
+              </section>
+            )}
+
+            {project.techDetails && hasContent(project.techDetails[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.techDetails')}</h2>
+                <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
+                  {project.techDetails[language].split('\n').map((line, i) => (
+                    <p key={i}>{parseBold(line)}</p>
+                  ))}
+                </div>
               </section>
             )}
           </div>

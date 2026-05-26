@@ -31,7 +31,7 @@ const experiences = [
         'Responsible for Full Stack development of corporate web applications, leading the adoption of **AI** tools to optimize development times, critical code refactoring, and advanced layout of high-concurrency platforms.',
       ],
     },
-    technologies: ['scss', 'javaScript', 'php', 'mySql', 'wordpress', 'figma', 'Copilot'],
+    technologies: ['Sass', 'JavaScript', 'Php', 'MySql', 'Wordpress', 'Figma', 'Copilot'],
   },
   {
     role: { es: 'Fullstack Developer', en: 'Fullstack Developer' },
@@ -46,7 +46,7 @@ const experiences = [
         'End-to-end management of custom development projects for independent clients, handling everything from database architecture and robust **API** creation on the backend, to **UI/UX** design and development of mobile-optimized interfaces.',
       ],
     },
-    technologies: ['react', 'figma', 'scss', 'mySql', 'nodejs', 'express'],
+    technologies: ['React', 'Figma', 'Sass', 'MySql', 'Nodejs', 'Express'],
   },
   {
     role: { es: 'Frontend UI Developer', en: 'Frontend UI Developer' },
@@ -61,7 +61,7 @@ const experiences = [
         'Specialist in user interface development for major accounts (**Health, Insurance, and Media**), focused on extreme web performance optimization (**WPO**), resolution of critical security incidents, and structuring scalable workflows under agile methodologies.',
       ],
     },
-    technologies: ['wordpress', 'scss', 'javascript', 'scrum', 'kanban'],
+    technologies: ['Wordpress', 'Sass', 'JavaScript', 'Scrum', 'Kanban'],
   },
 ]
 
@@ -69,25 +69,37 @@ const education = [
   {
     es: {
       title: 'Técnico Superior en Desarrollo de Aplicaciones Web (DAW)',
-      institution: 'Ilerna',
+      institution: 'Ilerna (Online)',
       period: '2023 - 2025',
     },
     en: {
       title: 'Advanced Vocational Diploma in Web Application Development',
-      institution: 'Ilerna',
+      institution: 'Ilerna (Online)',
       period: '2023 - 2025',
     },
   },
   {
     es: {
+      title: 'Confección y Publicación de Páginas Web',
+      institution: 'Centro San Luis (Bilbao)',
+      period: '2014 - 2015',
+    },
+    en: {
+      title: 'Web Page Design and Publishing',
+      institution: 'Centro San Luis (Bilbao)',
+      period: '2014 - 2015',
+    },
+  },
+  {
+    es: {
       title: 'Técnico Superior de Artes Plásticas y Diseño en Gráfica Publicitaria',
-      institution: 'Escuela de Arte',
-      period: '2016 - 2020',
+      institution: 'Instituto Ibarrekolanda (Bilbao)',
+      period: '2009 - 2013',
     },
     en: {
       title: 'Advanced Vocational Diploma in Plastic Arts and Graphic Design',
-      institution: 'School of Arts',
-      period: '2016 - 2020',
+      institution: 'Instituto Ibarrekolanda (Bilbao)',
+      period: '2009 - 2013',
     },
   },
 ]

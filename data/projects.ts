@@ -50,6 +50,22 @@ export interface Project {
     es: string;
     en: string;
   };
+  problemsSolved?: {
+    es: string;
+    en: string;
+  };
+  metrics?: {
+    es: string;
+    en: string;
+  };
+  myRole?: {
+    es: string;
+    en: string;
+  };
+  techDetails?: {
+    es: string;
+    en: string;
+  };
 }
 
 const placeholder = '/projects/text-gen.svg';
@@ -98,6 +114,22 @@ export const projects: Project[] = [
     aiIntegration: {
       es: '',
       en: '',
+    },
+    problemsSolved: {
+      es: 'Organizadores de actividades necesitaban una plataforma centralizada para gestionar inscripciones, pagos y comunicación con los asistentes, reemplazando procesos manuales con hojas de cálculo y correos electrónicos.',
+      en: 'Activity organizers needed a centralized platform to manage registrations, payments, and communication with attendees, replacing manual processes with spreadsheets and emails.',
+    },
+    metrics: {
+      es: '• Gestión centralizada de actividades, usuarios y pagos\n• Autenticación segura con roles (admin/usuario)\n• Panel de administración para gestión de contenidos',
+      en: '• Centralized management of activities, users, and payments\n• Secure authentication with roles (admin/user)\n• Admin panel for content management',
+    },
+    myRole: {
+      es: 'Desarrollo full-stack completo: diseño de base de datos, implementación del backend con Node.js y Express, desarrollo del frontend con React, y despliegue en Vercel y Render.',
+      en: 'Complete full-stack development: database design, backend implementation with Node.js and Express, frontend development with React, and deployment on Vercel and Render.',
+    },
+    techDetails: {
+      es: '• **Autenticación:** Sistema de login/registro con JWT y protección de rutas\n• **Base de datos:** MySQL con esquema relacional para usuarios, actividades e inscripciones\n• **API REST:** Endpoints completos con Express, validación con Postman\n• **Arquitectura:** MVC con separación de concerns (routes, controllers, models)\n• **Frontend:** React + Vite con SASS, componentes reutilizables y manejo de estado',
+      en: '• **Authentication:** Login/register system with JWT and route protection\n• **Database:** MySQL with relational schema for users, activities, and registrations\n• **REST API:** Complete endpoints with Express, validated with Postman\n• **Architecture:** MVC with separation of concerns (routes, controllers, models)\n• **Frontend:** React + Vite with SASS, reusable components, and state management',
     },
   },
   {
