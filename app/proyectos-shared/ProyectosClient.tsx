@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import { useLanguage } from '@/context/LanguageContext'
@@ -65,13 +65,16 @@ export function ProyectosClient({ categories }: Props) {
                     key={project.id}
                     href={`${language === 'es' ? '/proyectos' : '/projects'}/${project.id}`}
                     className={styles.card}
+                    aria-label={project.title[language]}
                   >
                     <div className={styles.card__image}>
-                      <img
-                        src={project.image}
-                        alt={project.title[language]}
-                        loading="lazy"
-                      />
+                      <div className={styles['card__image-wrapper']}>
+                        <img
+                          src={project.image}
+                          alt={project.title[language]}
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                     <div className={styles.card__content}>
                       <h3 className={styles.card__title}>{project.title[language]}</h3>
@@ -83,6 +86,10 @@ export function ProyectosClient({ categories }: Props) {
                           </span>
                         ))}
                       </div>
+                      <span className={styles.card__link}>
+                        {t('projects.viewProject')}
+                        <ArrowRight size={16} />
+                      </span>
                     </div>
                   </Link>
                 ))}

@@ -14,40 +14,43 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const { t, language } = useLanguage();
   const [imgError, setImgError] = useState(false);
+  const href = `${language === 'es' ? '/proyectos' : '/projects'}/${project.id}`;
 
   return (
-    <article className={styles['project-card']}>
-      <div className={styles['project-card__image-wrapper']}>
-        {imgError ? (
-          <div className={styles['project-card__image-placeholder']}>
-            <ImageIcon size={48} />
-          </div>
-        ) : (
-          <img
-            src={project.image}
-            alt={project.title[language]}
-            className={styles['project-card__image']}
-            loading="lazy"
-            onError={() => setImgError(true)}
-          />
-        )}
-      </div>
-
-      <div className={styles['project-card__content']}>
-        <h3 className={styles['project-card__title']}>{project.title[language]}</h3>
-        <p className={styles['project-card__subtitle']}>{project.subtitle[language]}</p>
-
-        <div className={styles['project-card__tags']}>
-          {project.tags.slice(0, 4).map((tag) => (
-            <span key={tag} className={styles['project-card__tag']}>{tag}</span>
-          ))}
+    <Link href={href} className={styles['project-card']} aria-label={project.title[language]}>
+      <article className={styles['project-card__inner']}>
+        <div className={styles['project-card__image-wrapper']}>
+          {imgError ? (
+            <div className={styles['project-card__image-placeholder']}>
+              <ImageIcon size={48} />
+            </div>
+          ) : (
+            <img
+              src={project.image}
+              alt={project.title[language]}
+              className={styles['project-card__image']}
+              loading="lazy"
+              onError={() => setImgError(true)}
+            />
+          )}
         </div>
 
-        <Link href={`${language === 'es' ? '/proyectos' : '/projects'}/${project.id}`} className={styles['project-card__link']}>
-          {t('projects.viewProject')}
-          <ArrowRight size={16} />
-        </Link>
-      </div>
-    </article>
+        <div className={styles['project-card__content']}>
+          <h3 className={styles['project-card__title']}>{project.title[language]}</h3>
+          <p className={styles['project-card__subtitle']}>{project.subtitle[language]}</p>
+
+          <div className={styles['project-card__tags']}>
+            {project.tags.slice(0, 4).map((tag) => (
+              <span key={tag} className={styles['project-card__tag']}>{tag}</span>
+            ))}
+          </div>
+
+          <span className={styles['project-card__link']}>
+            {t('projects.viewProject')}
+            <ArrowRight size={16} />
+          </span>
+        </div>
+      </article>
+    </Link>
   );
 }

@@ -91,16 +91,19 @@
 
     &:hover {
       border-color: var(--color-primary);
+      background: var(--color-primary-alpha);
       color: var(--color-primary);
     }
 
     &--active {
       background: var(--color-primary);
-      color: var(--color-background);
+      color: #ffffff;
       border-color: var(--color-primary);
 
       &:hover {
+        background: var(--color-primary);
         filter: brightness(1.1);
+        color: #ffffff;
       }
     }
   }

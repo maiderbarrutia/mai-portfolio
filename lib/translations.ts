@@ -11,9 +11,10 @@ export const translations = {
     
     // Hero Section
     hero: {
+      badge: 'Abierta a nuevos desafíos',
       title: 'Maider Barrutia',
       subtitle: 'Fullstack Developer & UI Architect',
-      description: 'Construyo <strong>aplicaciones full-stack</strong> con mentalidad de <strong>arquitecta UI</strong>. Combino código robusto y diseño centrado en el usuario, optimizando el desarrollo con IA para crear soluciones nativas, fluidas y escalables.',
+      description: 'Diseño y desarrollo <strong>aplicaciones FullStack</strong> centradas en la <strong>experiencia de usuario</strong>. Trabajo con <strong>React</strong>, <strong>Node.js</strong> y <strong>herramientas de IA</strong> para crear productos rápidos, escalables y bien estructurados.',
       ctaProjects: 'Ver Proyectos',
       ctaContact: 'Contacto',
     },
@@ -41,17 +42,20 @@ export const translations = {
     // Tech Stack Section
     tech: {
       tag: 'Habilidades',
-      title: 'Stack Tecnológico',
+      title: 'Cómo construyo productos',
       subtitle: 'Las herramientas y tecnologías que utilizo para construir productos digitales de alta calidad.',
     },
     techStack: {
-      title: 'Stack Tecnológico',
-      subtitle: 'Las herramientas y tecnologías que utilizo para construir productos digitales de alta calidad.',
       frontend: 'Frontend',
       backend: 'Backend & BBDD',
       design: 'Diseño',
       ai: 'IA',
       tools: 'Herramientas',
+      frontendDesc: 'Construyo interfaces modernas y accesibles con componentes reutilizables, priorizando rendimiento y experiencia de usuario.',
+      backendDesc: 'Diseño APIs escalables y gestiono bases de datos relacionales para aplicaciones fullStack robustas.',
+      designDesc: 'Creo diseños funcionales y atractivos, desde wireframes hasta prototipos pixel-perfect.',
+      aiDesc: 'Integro herramientas de IA en el flujo de desarrollo para optimizar código, automatizar tareas y acelerar entregas.',
+      toolsDesc: 'Utilizo metodologías ágiles y herramientas de testing para mantener calidad y organización en cada proyecto.',
     },
     
     // Experience Section
@@ -73,7 +77,7 @@ export const translations = {
       title: 'Hablemos',
       subtitle: 'Tanto si tienes un proyecto entre manos como una oportunidad profesional, estaré encantada de escucharte.',
       letsConnect: 'Conectemos',
-      description: 'Si buscas una perfil Full Stack con experiencia en arquitectura UI, desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
+      description: 'Si buscas un perfil Full Stack con experiencia en arquitectura UI, desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
       name: 'Nombre',
       email: 'Email',
       message: 'Mensaje',
@@ -82,7 +86,7 @@ export const translations = {
       success: '¡Mensaje enviado con éxito!',
       error: 'Error al enviar. Intenta de nuevo.',
       namePlaceholder: 'Tu nombre',
-      emailPlaceholder: 'tu@email.com',
+      emailPlaceholder: 'ejemplo@email.com',
       messagePlaceholder: 'Cuéntame sobre tu proyecto...',
       alternativeContact: '¿Prefieres otro medio? Escríbeme a',
     },
@@ -95,6 +99,7 @@ export const translations = {
       using: 'usando',
       designedBy: 'Diseñado y desarrollado por',
       privacy: 'Política de Privacidad',
+      legal: 'Aviso Legal',
     },
     
     // Theme
@@ -124,9 +129,10 @@ export const translations = {
     
     // Hero Section
     hero: {
+      badge: 'Open to new challenges',
       title: 'Maider Barrutia',
       subtitle: 'Fullstack Developer & UI Architect',
-      description: 'I build <strong>full-stack applications</strong> with a <strong>UI architect mindset</strong>. I combine robust code and user-centered design, leveraging AI to streamline development and deliver native, seamless, and scalable solutions.',
+      description: 'Design and develop <strong>FullStack applications</strong> focused on <strong>user experience</strong>. Work with <strong>React</strong>, <strong>Node.js</strong>, and <strong>AI-powered tools</strong> to build fast, scalable, and well-structured products.',
       ctaProjects: 'View Projects',
       ctaContact: 'Contact',
     },
@@ -154,17 +160,20 @@ export const translations = {
     // Tech Stack Section
     tech: {
       tag: 'Skills',
-      title: 'Tech Stack',
+      title: 'How I Build Products',
       subtitle: 'The tools and technologies I use to build high-quality digital products.',
     },
     techStack: {
-      title: 'Tech Stack',
-      subtitle: 'The tools and technologies I use to build high-quality digital products.',
       frontend: 'Frontend',
       backend: 'Backend & DB',
       design: 'Design',
       ai: 'AI',
       tools: 'Tools',
+      frontendDesc: 'I build modern, accessible interfaces with reusable components, prioritizing performance and user experience.',
+      backendDesc: 'I design scalable APIs and manage relational databases for robust fullStack applications.',
+      designDesc: 'I create functional and attractive designs, from wireframes to pixel-perfect prototypes.',
+      aiDesc: 'I integrate AI tools into the development workflow to optimize code, automate tasks, and speed up delivery.',
+      toolsDesc: 'I use agile methodologies and testing tools to maintain quality and organization in every project.',
     },
     
     // Experience Section
@@ -195,7 +204,7 @@ export const translations = {
       success: 'Message sent successfully!',
       error: 'Error sending. Please try again.',
       namePlaceholder: 'Your name',
-      emailPlaceholder: 'you@email.com',
+      emailPlaceholder: 'example@email.com',
       messagePlaceholder: 'Tell me about your project...',
       alternativeContact: 'Prefer another way? Email me at',
     },
@@ -208,6 +217,7 @@ export const translations = {
       using: 'using',
       designedBy: 'Designed and developed by',
       privacy: 'Privacy Policy',
+      legal: 'Legal Notice',
     },
     
     // Theme

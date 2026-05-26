@@ -14,13 +14,13 @@ export default function Hero() {
         <div className={styles.hero__content}>
           <div className={styles.hero__badge}>
             <span className={styles['hero__badge-dot']}></span>
-            <span>Open to new challenges</span>
+            <span>{t('hero.badge')}</span>
           </div>
 
-          <div className={styles.hero__title}>
+          <h1 className={styles.hero__title}>
             <span className={styles.hero__name}>{t('hero.title')}</span>
             <span className={styles.hero__role}>{t('hero.subtitle')}</span>
-          </div>
+          </h1>
 
           <SanitizedHTML html={tHtml('hero.description')} className={styles.hero__description} />
 

@@ -71,11 +71,11 @@ export default function Contact() {
             <p className={styles['contact__info-text']}>{t('contact.description')}</p>
 
             <div className={styles.contact__links}>
-              <a href="mailto:hello@maiderbarrutia.com" className={styles.contact__link} aria-label="Email">
+              <a href="mailto:maiderbarrutia@hotmail.com" className={styles.contact__link} aria-label="Email">
                 <Mail size={20} />
-                hello@maiderbarrutia.com
+                maiderbarrutia@hotmail.com
               </a>
-              <a href="https://linkedin.com/in/maiderbarrutia" target="_blank" rel="noopener noreferrer" className={styles.contact__link} aria-label="LinkedIn">
+              <a href="https://linkedin.com/in/maiderbarrutiaunzueta" target="_blank" rel="noopener noreferrer" className={styles.contact__link} aria-label="LinkedIn">
                 <Linkedin size={20} />
                 LinkedIn
               </a>

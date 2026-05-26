@@ -66,11 +66,12 @@
     font-weight: 600;
     color: var(--color-text-muted);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
 
     &:hover {
-      color: var(--color-text);
       border-color: var(--color-primary);
+      background: var(--color-primary-alpha);
+      color: var(--color-primary);
     }
 
     &--active {
@@ -79,6 +80,8 @@
       border-color: var(--color-primary);
 
       &:hover {
+        background: var(--color-primary);
+        filter: brightness(1.1);
         color: #ffffff;
       }
     }
@@ -102,13 +105,13 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
+  display: block;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   overflow: hidden;
   text-decoration: none;
+  color: inherit;
   height: 100%;
   transition: all 0.25s ease;
 
@@ -116,17 +119,42 @@
     transform: translateY(-4px);
     border-color: var(--color-primary);
     box-shadow: 0 10px 30px var(--color-primary-alpha);
+
+    .card__image-wrapper::after {
+      opacity: 1;
+    }
+
+    .card__link svg {
+      transform: translateX(4px);
+    }
   }
 
   &__image {
+    position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
     background-color: var(--color-background-alt);
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       transition: transform 0.25s ease;
     }
 
@@ -174,6 +202,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
+    margin-bottom: 1.5rem;
   }
 
   &__tag {
@@ -184,5 +213,24 @@
     font-size: 0.75rem;
     font-weight: 500;
     border-radius: 0.5rem;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: auto;
+    text-decoration: none;
+
+    svg {
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover & svg {
+      transform: translateX(4px);
+    }
   }
 }

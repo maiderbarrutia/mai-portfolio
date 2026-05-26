@@ -3,7 +3,6 @@
 @use 'fonts' as *;
 @use 'texts';
 @use 'common';
-@use 'animations';
 
 :root {
   --color-background: #{$light-bg};

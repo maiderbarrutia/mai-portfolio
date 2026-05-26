@@ -42,24 +42,29 @@ export default function TechStack() {
           ))}
         </div>
 
+          
         <div
           key={activeTab}
-          className={styles['tech-stack__grid']}
+          className={styles['tech-stack__panel']}
           role="tabpanel"
           aria-label={tabLabel(activeTab)}
         >
-          {filtered.map((tech, index) => (
-            <div
-              key={tech.techKey}
-              className={styles['tech-stack__tech-card']}
-              style={{ animationDelay: `${index * 0.06}s` }}
-            >
-              <span className={styles['tech-stack__icon']}>
-                <TechnologyIcon techKey={tech.techKey} className="w-full h-full" />
-              </span>
-              <span className={styles['tech-stack__name']}>{tech.name}</span>
-            </div>
-          ))}
+          <p className={styles['tech-stack__desc']}>{t(`techStack.${activeTab}Desc`)}</p>
+
+          <div className={styles['tech-stack__grid']}>
+            {filtered.map((tech, index) => (
+              <div
+                key={tech.techKey}
+                className={styles['tech-stack__tech-card']}
+                style={{ animationDelay: `${index * 0.06}s` }}
+              >
+                <span className={styles['tech-stack__icon']}>
+                  <TechnologyIcon techKey={tech.techKey} className="w-full h-full" />
+                </span>
+                <span className={styles['tech-stack__name']}>{tech.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

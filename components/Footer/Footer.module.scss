@@ -90,12 +90,19 @@
     @include media-min(md) {
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
       text-align: left;
     }
+  }
 
-    p {
-      font-size: 0.875rem;
-      color: var(--color-text-muted);
+  &__legal-link {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--color-primary);
     }
   }
 

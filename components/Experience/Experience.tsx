@@ -31,7 +31,7 @@ const experiences = [
         'Responsible for Full Stack development of corporate web applications, leading the adoption of **AI** tools to optimize development times, critical code refactoring, and advanced layout of high-concurrency platforms.',
       ],
     },
-    technologies: ['php', 'scss', 'typescript', 'react'],
+    technologies: ['scss', 'javaScript', 'php', 'mySql', 'wordpress', 'figma', 'Copilot'],
   },
   {
     role: { es: 'Fullstack Developer', en: 'Fullstack Developer' },
@@ -46,7 +46,7 @@ const experiences = [
         'End-to-end management of custom development projects for independent clients, handling everything from database architecture and robust **API** creation on the backend, to **UI/UX** design and development of mobile-optimized interfaces.',
       ],
     },
-    technologies: ['mysql', 'nodejs', 'express', 'react', 'figma', 'scss'],
+    technologies: ['react', 'figma', 'scss', 'mySql', 'nodejs', 'express'],
   },
   {
     role: { es: 'Frontend UI Developer', en: 'Frontend UI Developer' },
@@ -61,7 +61,7 @@ const experiences = [
         'Specialist in user interface development for major accounts (**Health, Insurance, and Media**), focused on extreme web performance optimization (**WPO**), resolution of critical security incidents, and structuring scalable workflows under agile methodologies.',
       ],
     },
-    technologies: ['wordpress', 'scss', 'javascript', 'scrum', 'kanban', 'jira'],
+    technologies: ['wordpress', 'scss', 'javascript', 'scrum', 'kanban'],
   },
 ]
 

@@ -82,6 +82,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     demoUrl: 'https://aisiplan.vercel.app/',
+    repoUrl: 'https://github.com/maiderbarrutia/fullstack-aisiplan',
     challenge: {
       es: 'Desarrollar una plataforma web completa para la gestión de actividades de ocio, con autenticación de usuarios, perfiles y paneles de administración.',
       en: 'Develop a complete web platform for managing leisure activities, with user authentication, profiles and administration panels.',
@@ -95,8 +96,8 @@ export const projects: Project[] = [
       en: 'Frontend with React + Vite + SASS. Backend with Node.js + Express + MySQL. REST API with Postman for testing.',
     },
     aiIntegration: {
-      es: 'Sin integración de IA en este proyecto.',
-      en: 'No AI integration in this project.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -130,8 +131,8 @@ export const projects: Project[] = [
       en: 'Design in Photoshop, layout with HTML5 and CSS3.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -166,8 +167,8 @@ export const projects: Project[] = [
       en: 'Design in Photoshop, responsive layout with HTML5 and CSS3.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -201,8 +202,8 @@ export const projects: Project[] = [
       en: 'Design in Photoshop with standard web layout.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -237,8 +238,8 @@ export const projects: Project[] = [
       en: 'Design in Photoshop with responsive layout.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -276,8 +277,8 @@ export const projects: Project[] = [
       en: 'Vector design with Illustrator.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -318,8 +319,8 @@ export const projects: Project[] = [
       en: 'Layout with InDesign, illustrations and image processing with Illustrator and Photoshop.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -354,8 +355,8 @@ export const projects: Project[] = [
       en: 'Layout with InDesign and vector illustrations with Illustrator.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -391,8 +392,8 @@ export const projects: Project[] = [
       en: 'Layout with InDesign and illustrations with Illustrator.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -429,8 +430,8 @@ export const projects: Project[] = [
       en: 'Vector design with Illustrator and InDesign.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -465,8 +466,8 @@ export const projects: Project[] = [
       en: 'Vector design with Illustrator and layout with InDesign.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -500,8 +501,8 @@ export const projects: Project[] = [
       en: 'Design with Illustrator, image processing with Photoshop and layout with InDesign.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -535,8 +536,8 @@ export const projects: Project[] = [
       en: 'Design and image processing with Photoshop.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
   {
@@ -571,8 +572,8 @@ export const projects: Project[] = [
       en: 'Vector design with Illustrator and image processing with Photoshop.',
     },
     aiIntegration: {
-      es: 'No aplica.',
-      en: 'Not applicable.',
+      es: '',
+      en: '',
     },
   },
 ];
