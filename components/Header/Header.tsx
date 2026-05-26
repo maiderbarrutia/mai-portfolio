@@ -50,12 +50,14 @@ export default function Header() {
 
         <div className={styles.header__controls}>
           <button
-            className={styles['header__control-btn']}
+            className={styles['header__lang-btn']}
             onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
             aria-label={t('language.toggle')}
             title={t('language.toggle')}
           >
-            <span className={styles['header__lang-text']}>{language === 'es' ? 'EN' : 'ES'}</span>
+            <span className={`${styles['header__lang-opt']} ${language === 'es' ? styles['header__lang-opt--active'] : ''}`}>ES</span>
+            <span className={styles['header__lang-sep']}>/</span>
+            <span className={`${styles['header__lang-opt']} ${language === 'en' ? styles['header__lang-opt--active'] : ''}`}>EN</span>
           </button>
 
           <button

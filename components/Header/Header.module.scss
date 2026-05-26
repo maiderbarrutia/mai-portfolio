@@ -111,9 +111,41 @@
     }
   }
 
-  &__lang-text {
+  &__lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    height: 40px;
+    padding: 0 0.75rem;
+    border-radius: 0.75rem;
+    background-color: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    transition: all 0.15s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      background-color: var(--color-primary-alpha);
+    }
+  }
+
+  &__lang-opt {
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    transition: color 0.15s ease;
+
+    &--active {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+  }
+
+  &__lang-sep {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
   }
 
   &__menu-toggle {
@@ -179,8 +211,8 @@
     transition: all 0.25s ease;
 
     &--open {
-      max-height: 300px;
-      padding: 1.5rem 0;
+      max-height: 400px;
+      padding: 1.5rem 0 2rem;
     }
 
     @include media-min(lg) {
