@@ -16,7 +16,6 @@ export const technologiesRegistry: TechnologyItem[] = [
   { techKey: 'scss', name: 'CSS3/SCSS', category: 'frontend' },
   { techKey: 'tailwind', name: 'Tailwind CSS', category: 'frontend' },
   { techKey: 'vite', name: 'Vite', category: 'frontend' },
-  { techKey: 'angular', name: 'Angular', category: 'frontend' },
   { techKey: 'wordpress', name: 'WordPress', category: 'frontend' },
   { techKey: 'bem', name: 'BEM', category: 'frontend' },
 

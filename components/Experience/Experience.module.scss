@@ -262,7 +262,7 @@
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     padding: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.75rem;
     transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     animation: eduCardIn 0.5s ease forwards;
     opacity: 0;
@@ -293,6 +293,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text);
+    margin-top: 3rem;
     margin-bottom: 1.25rem;
   }
 

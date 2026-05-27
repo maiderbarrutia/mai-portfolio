@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maiderbarrutia.com/sitemap.xml
+Sitemap: https://maiderbarrutia.vercel.app/sitemap.xml

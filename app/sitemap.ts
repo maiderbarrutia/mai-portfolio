@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { projects } from '@/data/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://maiderbarrutia.com'
+  const baseUrl = 'https://maiderbarrutia.vercel.app'
 
   const staticRoutes = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 1 },

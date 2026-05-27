@@ -4,13 +4,13 @@ import {
   SiGit, SiFigma, SiJest,
   SiVite, SiAngular, SiWordpress, SiExpress,
   SiPhp, SiMysql, SiVitest, 
-  SiTestinglibrary, SiJira, SiScrumalliance, 
+  SiTestinglibrary, SiJira,
   SiGithubcopilot, SiOpenai, SiAnthropic,
 } from 'react-icons/si';
 
 import { DiPhotoshop, DiIllustrator } from 'react-icons/di';
 import { FaDatabase, FaRobot } from 'react-icons/fa';
-import { MdViewKanban, MdBuild, MdStorage } from 'react-icons/md';
+import { MdViewKanban, MdBuild, MdStorage, MdAutorenew } from 'react-icons/md';
 
 interface TechnologyIconProps {
   techKey: string;
@@ -75,7 +75,7 @@ export default function TechnologyIcon({ techKey, className = "w-5 h-5" }: Techn
     case 'jira':
       return <SiJira className={`${className} text-[#0052CC]`} />;
     case 'scrum':
-      return <SiScrumalliance className={`${className} text-[#01487E]`} />;
+      return <MdAutorenew className={`${className} text-[#01487E]`} />;
     case 'kanban':
       return <MdViewKanban className={`${className} text-[#007ACC]`} />;
 
