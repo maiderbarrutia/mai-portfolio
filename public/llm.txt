@@ -1,0 +1,61 @@
+# Maider Barrutia — Fullstack Developer & UI Architect
+
+## About
+Portfolio website of Maider Barrutia, a Fullstack Developer based in Spain with 6+ years of experience specializing in React, TypeScript, Next.js, and AI-driven development workflows.
+
+## Tech Stack
+- **Frontend**: React, TypeScript, Next.js, JavaScript, HTML5, CSS3/SCSS, Tailwind CSS, Vite, WordPress
+- **Backend & DB**: Node.js, Express, PHP, MySQL, Oracle
+- **Design**: Figma, Photoshop, Illustrator
+- **Tools**: Git, Jest, Vitest, React Testing Library, Jira, Scrum, Kanban
+- **AI**: GitHub Copilot, ChatGPT/OpenAI, Claude AI, OpenCode
+
+## Experience
+1. **Fullstack Developer** @ Desarrollos Online (Madrid, 2025–Present)
+   - Full Stack development of corporate web apps, AI tool adoption, critical code refactoring, high-concurrency platforms
+2. **Fullstack Developer** @ Freelance (Remote, 2023–2025)
+   - End-to-end custom projects: database architecture, REST APIs, UI/UX design, mobile-optimized interfaces
+3. **Frontend UI Developer** @ Corus Consulting (Madrid, 2017–2023)
+   - UI development for major Health, Insurance & Media accounts, WPO optimization, security incident resolution, agile workflows
+
+## Education
+- Técnico Superior en Desarrollo de Aplicaciones Web (DAW) — Ilerna Online (2023–2025)
+- Confección y Publicación de Páginas Web — Centro San Luis, Bilbao (2014–2015)
+- Técnico Superior de Artes Plásticas y Diseño en Gráfica Publicitaria — Instituto Ibarrekolanda, Bilbao (2009–2013)
+
+## Certifications
+- Bootcamp TS + React + Vitest (TDD) — Lemoncode (114h)
+- Full Stack Development (Node.js, Angular, TypeScript, REST APIs) — Samsung (350h)
+- Oracle SQL-PL/SQL Development — Cas-training (135h)
+- AI-Assisted Development — Big School (6h)
+
+## Language
+The site is bilingual: Spanish (es) and English (en). Default locale: es_ES.
+
+## Routes
+- `/` — Home page (Hero, About, Featured Projects x3, Tech Stack, Experience, Contact)
+- `/projects` (EN) / `/proyectos` (ES) — Full project listing by category tabs
+- `/projects/[id]` (EN) / `/proyectos/[id]` (ES) — Individual project detail with gallery + lightbox
+- `/legal` — Legal notice, privacy policy, cookies
+
+## Navigation
+- **Header**: Logo, nav links (#about, #projects, #tech, #experience, #contact), ES/EN toggle, dark/light theme toggle, hamburger menu (mobile)
+- **Footer**: Copyright, social links (GitHub, LinkedIn, Twitter/X), legal link
+
+## Key Sections (Home)
+- **Hero**: Title, subtitle, CTA buttons, floating decorative circles, bento stats grid (Frontend 6+ years, UI Design, Quality, AI)
+- **About**: Avatar, bio paragraphs, technology badges, scroll-triggered animations
+- **Featured Projects**: 3 featured projects, each with image (object-position: center top), tags, description, full-card link + "Ver Proyecto" button
+- **Tech Stack**: Tabbed (Frontend / Backend & BBDD / Diseño / IA / Herramientas) with description per tab + icon grid
+- **Experience**: Tabbed (Experiencia / Educación), timeline with animated entry, Download CV button, education cards with hover effects
+- **Contact**: Form → Web3Forms → maiwebdevelop@gmail.com, social links, entrance animations, success bounce
+
+## Project Categories
+1. **web-development** (Aisiplan, Zurich Wings, Zurich Store, Kimuloradenda, Vipernake, Web Fictizia Quirón Salud)
+2. **web-design** (GasNature, TCS, Itzulpen Translator, Araex)
+3. **graphic-design** (Piatto Restaurant, GrafiK Magazine, Bilbao Chamber of Commerce, Summer Camps, Pop Eye, Zensación, Bodegas Ubide, Advertisements, Aste Nagusia & Jazzaldia Posters, Jazzaldia, Exponatur)
+
+## Social
+- GitHub: https://github.com/maiderbarrutia
+- LinkedIn: https://linkedin.com/in/maiderbarrutia
+- Email: maiwebdevelop@gmail.com

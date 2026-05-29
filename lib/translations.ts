@@ -21,7 +21,7 @@ export const translations = {
     
     // Projects Section
     projects: {
-      title: 'Proyectos Destacados',
+      title: 'Proyectos FullStack',
       subtitle: 'Una selección de mis trabajos más relevantes donde combino diseño UI, desarrollo frontend, backend y estrategias de IA.',
       viewProject: 'Ver Proyecto',
       viewAll: 'Ver Más Proyectos',
@@ -46,7 +46,7 @@ export const translations = {
     // Tech Stack Section
     tech: {
       tag: 'Habilidades',
-      title: 'Cómo construyo productos',
+      title: 'Cómo construyo productos web',
       subtitle: 'Las herramientas y tecnologías que utilizo para construir productos digitales de alta calidad.',
     },
     techStack: {
@@ -65,7 +65,7 @@ export const translations = {
     // Experience Section
     experience: {
       tag: 'Trayectoria',
-      title: 'Experiencia Profesional',
+      title: 'Experiencia como desarrolladora web',
       subtitle: 'Mi recorrido en el sector tecnológico, combinando desarrollo y diseño.',
       experienceTab: 'Experiencia',
       educationTab: 'Educación',
@@ -78,7 +78,7 @@ export const translations = {
     // Contact Section
     contact: {
       tag: 'Contacto',
-      title: 'Hablemos',
+      title: '¿Buscas desarrolladora FullStack? Hablemos',
       subtitle: 'Tanto si tienes un proyecto entre manos como una oportunidad profesional, estaré encantada de escucharte.',
       letsConnect: 'Conectemos',
       description: 'Si buscas un perfil Full Stack con experiencia en arquitectura UI, desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
@@ -143,12 +143,12 @@ export const translations = {
     
     // Projects Section
     projects: {
-      title: 'Featured Projects',
+      title: 'FullStack projects',
       subtitle: 'A selection of my most relevant work where I combine frontend, backend development, and AI strategies.',
-      viewProject: 'View Project',
-      viewAll: 'View More Projects',
-      backToHome: 'Back to Home',
-      allTitle: 'All Projects',
+      viewProject: 'View project',
+      viewAll: 'View more projects',
+      backToHome: 'Back to home',
+      allTitle: 'All projects',
       allSubtitle: 'Explore all my work organized by categories.',
       categoryGraphic: 'Graphic Design',
       categoryWebDesign: 'Web Design',
@@ -168,7 +168,7 @@ export const translations = {
     // Tech Stack Section
     tech: {
       tag: 'Skills',
-      title: 'How I Build Products',
+      title: 'How I build web products',
       subtitle: 'The tools and technologies I use to build high-quality digital products.',
     },
     techStack: {
@@ -187,7 +187,7 @@ export const translations = {
     // Experience Section
     experience: {
       tag: 'Journey',
-      title: 'Professional Experience',
+      title: 'Experience as a Web Developer',
       subtitle: 'My path in the tech industry, combining development and design.',
       experienceTab: 'Experience',
       educationTab: 'Education',
@@ -200,7 +200,7 @@ export const translations = {
     // Contact Section
     contact: {
       tag: 'Contact',
-      title: 'Let\'s Talk',
+      title: 'Looking for a Full-Stack Developer? Let\'s talk',
       subtitle: 'Whether you have a project in mind or a professional opportunity, I\'d love to hear about it.',
       letsConnect: 'Let\'s Connect',
       description: 'If you\'re looking for a Full Stack profile with experience in UI architecture, backend development, and AI integration, let\'s talk and see if we\'re a match.',
