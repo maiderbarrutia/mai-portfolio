@@ -70,6 +70,7 @@ export interface Project {
     es: string;
     en: string;
   };
+  confidentialNote?: string;
 }
 
 const placeholder = '/projects/text-gen.svg';
@@ -141,6 +142,156 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 'ecommerce-branding',
+    category: 'web-development',
+    title: { es: 'Ecommerce + Branding', en: 'E-commerce + Branding' },
+    subtitle: {
+      es: 'Identidad corporativa completa y tienda online multilingüe',
+      en: 'Complete corporate identity and multilingual online store',
+    },
+    description: {
+      es: 'Proyecto integral que abarca desde el diseño de logotipo, packaging e identidad corporativa hasta el desarrollo completo de una tienda online WooCommerce multilingüe (6 idiomas) con catálogo de productos, carrito de compra, pasarela de pago internacional y panel de administración.',
+      en: 'Comprehensive project covering logo design, packaging, corporate identity, and complete multilingual WooCommerce online store development (6 languages) with product catalog, shopping cart, international payment gateway, and admin panel.',
+    },
+    tags: ['WordPress', 'WooCommerce', 'PHP', 'MySQL', 'HTML/CSS', 'JavaScript', 'Illustrator', 'Photoshop', 'Identidad Corporativa', 'Packaging'],
+    image: '/projects/branding-ecommerce.svg',
+    media: [],
+    featured: false,
+    challenge: {
+      es: 'El cliente necesitaba una identidad de marca completa desde cero: logotipo, paleta cromática, tipografía corporativa, diseño de packaging para múltiples líneas de producto, y una tienda online funcional en 6 idiomas. El reto era mantener la coherencia visual en todos los soportes (físico y digital) mientras se construía una experiencia de compra fluida y profesional.',
+      en: 'The client needed a complete brand identity from scratch: logo, color palette, corporate typography, packaging design for multiple product lines, and a functional online store in 6 languages. The challenge was maintaining visual consistency across all media (physical and digital) while building a smooth and professional shopping experience.',
+    },
+    uxDecisions: {
+      es: 'Diseño limpio y profesional con enfoque en la presentación de productos. Navegación por categorías clara, fichas de producto detalladas, carrito visible en todo momento. Proceso de checkout optimizado en varios pasos con selector de idioma accesible desde cualquier página. La identidad visual se trasladó del packaging al digital manteniendo colores, tipografía y estilo gráfico.',
+      en: 'Clean and professional design focused on product presentation. Clear category navigation, detailed product sheets, always-visible cart. Optimized multi-step checkout process with language selector accessible from any page. The visual identity was carried from packaging to digital, maintaining colors, typography, and graphic style.',
+    },
+    architecture: {
+      es: 'Identidad corporativa diseñada en Illustrator y Photoshop. Arquitectura web basada en WordPress + WooCommerce con tema personalizado. Base de datos MySQL relacional para productos, pedidos y usuarios. Integración de plugins para multilingüismo (WPML), pasarela de pago internacional, y envíos. Caché y optimización de rendimiento.',
+      en: 'Corporate identity designed in Illustrator and Photoshop. Web architecture based on WordPress + WooCommerce with custom theme. MySQL relational database for products, orders, and users. Plugin integration for multilingual support (WPML), international payment gateway, and shipping. Cache and performance optimization.',
+    },
+    aiIntegration: {
+      es: '',
+      en: '',
+    },
+    problemsSolved: {
+      es: 'Unifica la imagen de marca en todos los canales (packaging, web, redes sociales). Centraliza la venta online de múltiples líneas de producto en un único ecommerce multilingüe. Gestión eficiente de inventario y pedidos desde el panel de administración. Visibilidad internacional con dominio .com y configuración multi-moneda.',
+      en: 'Unifies brand image across all channels (packaging, web, social media). Centralizes online sales of multiple product lines in a single multilingual e-commerce. Efficient inventory and order management from the admin panel. International visibility with .com domain and multi-currency setup.',
+    },
+    metrics: {
+      es: '• Identidad corporativa completa: logotipo, paleta, tipografía, manual de marca\n• Diseño de packaging para 3 líneas de producto\n• Tienda online funcional con WooCommerce\n• Soporte para 6 idiomas con traducciones completas\n• Pasarela de pago internacional integrada\n• Sistema de seguimiento de pedidos para clientes\n• Diseño responsive adaptado a todos los dispositivos\n• Optimización SEO para motores de búsqueda\n• Integración con redes sociales',
+      en: '• Complete corporate identity: logo, palette, typography, brand guidelines\n• Packaging design for 3 product lines\n• Functional online store with WooCommerce\n• Support for 6 languages with full translations\n• Integrated international payment gateway\n• Order tracking system for customers\n• Responsive design adapted to all devices\n• SEO optimization for search engines\n• Social media integration',
+    },
+    myRole: {
+      es: 'Dirección de arte integral: diseño de logotipo, identidad corporativa, packaging para 3 líneas de producto, y desarrollo completo del ecommerce (WordPress + WooCommerce, personalización de tema, integración multilingüe, pasarela de pago, SEO, rendimiento y despliegue en producción).',
+      en: 'Complete art direction: logo design, corporate identity, packaging for 3 product lines, and full e-commerce development (WordPress + WooCommerce, theme customization, multilingual integration, payment gateway, SEO, performance, and production deployment).',
+    },
+    techDetails: {
+      es: '• **Identidad corporativa:** Illustrator, Photoshop — logotipo, paleta cromática, tipografía, manual de marca\n• **Packaging:** Illustrator, Photoshop — diseño de envases para 3 líneas de producto\n• **CMS:** WordPress + WooCommerce con tema personalizado\n• **Idiomas:** WPML para gestión multilingüe (6 idiomas)\n• **Frontend:** HTML5, CSS3, JavaScript, tema hijo personalizado\n• **Backend:** PHP, MySQL con tablas relacionales de WooCommerce\n• **Plugins:** WPML, pasarela de pago, SEO, caché, seguridad\n• **Rendimiento:** Caché server-side, optimización de imágenes, minificación de assets\n• **SEO:** Sitemaps, meta tags multilingües, datos estructurados\n• **Hosting:** Servidor dedicado con SSL y CDN',
+      en: '• **Corporate identity:** Illustrator, Photoshop — logo, color palette, typography, brand guidelines\n• **Packaging:** Illustrator, Photoshop — packaging design for 3 product lines\n• **CMS:** WordPress + WooCommerce with custom theme\n• **Languages:** WPML for multilingual management (6 languages)\n• **Frontend:** HTML5, CSS3, JavaScript, custom child theme\n• **Backend:** PHP, MySQL with WooCommerce relational tables\n• **Plugins:** WPML, payment gateway, SEO, cache, security\n• **Performance:** Server-side cache, image optimization, asset minification\n• **SEO:** Sitemaps, multilingual meta tags, structured data\n• **Hosting:** Dedicated server with SSL and CDN',
+    },
+    confidentialNote: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+  },
+  {
+    id: 'energy-distribution-portal',
+    category: 'web-development',
+    title: { es: 'Portal Corporativo de Gas', en: 'Gas Corporate Portal' },
+    subtitle: {
+      es: 'Maquetación completa del portal corporativo para una de las mayores compañías energéticas del país',
+      en: 'Complete markup of the corporate portal for one of the largest energy companies in the country',
+    },
+    description: {
+      es: 'Maquetación completa en WordPress con Elementor y SASS del portal corporativo de la división de gas butano y propano de una gran compañía energética. Desarrollo visual de todas las páginas a partir de diseños proporcionados, incluyendo home, catálogo de productos, FAQ y contenido corporativo bilingüe.',
+      en: 'Complete markup in WordPress with Elementor and SASS of the butane and propane gas division corporate portal of a major energy company. Visual development of all pages from provided designs, including home, product catalog, FAQ, and bilingual corporate content.',
+    },
+    tags: ['WordPress', 'Elementor', 'SASS', 'HTML/CSS', 'JavaScript'],
+    image: '/projects/energy-portal.svg',
+    media: [],
+    featured: true,
+    challenge: {
+      es: 'Una de las mayores compañías energéticas del país necesitaba un portal web moderno y funcional para su división de gas butano y propano. El reto era maquetar con Elementor + SASS un sitio completo que mantuviera la identidad corporativa de una gran empresa, fuera visualmente coherente en todas sus secciones, responsive en todos los dispositivos y accesible para un público diverso (particulares y empresas), cumpliendo con los estándares de calidad del sector energético.',
+      en: 'One of the largest energy companies in the country needed a modern, functional web portal for its butane and propane gas division. The challenge was to build with Elementor + SASS a complete site that maintained the corporate identity of a large company, was visually coherent across all sections, responsive on all devices, and accessible to a diverse audience (individuals and businesses), meeting energy sector quality standards.',
+    },
+    uxDecisions: {
+      es: 'Diseño corporativo que transmite seguridad y confianza, alineado con la identidad de marca de una gran compañía energética. Navegación clara separando canales (particulares vs empresas). Contenido educativo sobre seguridad y mantenimiento. Blog y FAQ con información útil. Coherencia visual en todas las secciones del portal.',
+      en: 'Corporate design conveying security and trust, aligned with the brand identity of a major energy company. Clear navigation separating channels (individuals vs businesses). Educational content on safety and maintenance. Blog and FAQ with useful information. Visual consistency across all portal sections.',
+    },
+    architecture: {
+      es: 'WordPress con Elementor para la maquetación visual y SASS para estilos personalizados avanzados. Tema hijo personalizado con overrides de CSS vía SASS. Gestión de contenidos bilingüe. Diseño responsive con breakpoints personalizados. Optimización de rendimiento y SEO on-page.',
+      en: 'WordPress with Elementor for visual markup and SASS for advanced custom styles. Custom child theme with CSS overrides via SASS. Bilingual content management. Responsive design with custom breakpoints. Performance optimization and on-page SEO.',
+    },
+    aiIntegration: {
+      es: '',
+      en: '',
+    },
+    problemsSolved: {
+      es: 'Proporciona una presencia digital corporativa y profesional para la división de gas de una gran compañía energética. Unifica el diseño visual de todas las secciones del portal. Mantiene la coherencia de marca en cada página. Ofrece una experiencia de usuario fluida y responsive.',
+      en: 'Provides a corporate, professional digital presence for the gas division of a major energy company. Unifies visual design across all portal sections. Maintains brand consistency on every page. Delivers a smooth, responsive user experience.',
+    },
+    metrics: {
+      es: '• Portal corporativo completo para gran compañía del sector energético\n• Maquetación de todas las páginas con Elementor + SASS\n• Diseño responsive para todos los dispositivos\n• Soporte bilingüe (español/inglés)\n• Contenido educativo, blog y FAQ\n• Coherencia visual corporativa\n• Optimización SEO on-page\n• Integración de estilos SASS personalizados',
+      en: '• Complete corporate portal for a major energy sector company\n• Markup of all pages with Elementor + SASS\n• Responsive design for all devices\n• Bilingual support (Spanish/English)\n• Educational content, blog, and FAQ\n• Corporate visual consistency\n• On-page SEO optimization\n• Custom SASS style integration',
+    },
+    myRole: {
+      es: 'Maquetación completa de todas las páginas del portal en WordPress con Elementor y SASS a partir de diseños proporcionados, incluyendo la personalización avanzada de estilos con SASS, diseño responsive, y optimización visual general.',
+      en: 'Complete markup of all portal pages in WordPress with Elementor and SASS from provided designs, including advanced style customization with SASS, responsive design, and overall visual optimization.',
+    },
+    techDetails: {
+      es: '• **CMS:** WordPress con Elementor\n• **Frontend:** SASS, HTML5, CSS3, JavaScript\n• **Maquetación:** Elementor con estilos SASS personalizados en tema hijo\n• **Estilos:** SASS con variables, mixins, nesting y partials\n• **Diseño:** Responsive con breakpoints personalizados\n• **SEO:** Meta tags, datos estructurados, optimización on-page\n• **Rendimiento:** Optimización de imágenes, minificación, caché\n• **Idiomas:** Bilingüe español/inglés',
+      en: '• **CMS:** WordPress with Elementor\n• **Frontend:** SASS, HTML5, CSS3, JavaScript\n• **Markup:** Elementor with custom SASS styles in child theme\n• **Styles:** SASS with variables, mixins, nesting, and partials\n• **Design:** Responsive with custom breakpoints\n• **SEO:** Meta tags, structured data, on-page optimization\n• **Performance:** Image optimization, minification, cache\n• **Languages:** Bilingual Spanish/English',
+    },
+    confidentialNote: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+  },
+  {
+    id: 'ai-sales-simulator',
+    category: 'web-development',
+    title: { es: 'Simulador de Ventas con IA', en: 'AI Sales Simulator' },
+    subtitle: {
+      es: 'Desarrollo completo en Webflow para plataforma de ventas con IA',
+      en: 'Complete Webflow development for an AI sales platform',
+    },
+    description: {
+      es: 'Desarrollo completo en Webflow de la web corporativa para una plataforma SaaS de simulación de ventas con IA. Maquetación pixel-perfect a partir de diseños proporcionados, con animaciones avanzadas, diseño responsive y experiencia de usuario fluida. La web comunica el valor del producto a través de storytelling visual, métricas impactantes y un diseño moderno y profesional.',
+      en: 'Complete Webflow development of the corporate website for an AI-powered sales simulation SaaS platform. Pixel-perfect markup from provided designs, with advanced animations, responsive design, and smooth user experience. The website communicates product value through visual storytelling, impactful metrics, and a modern, professional design.',
+    },
+    tags: ['Webflow', 'HTML/CSS', 'JavaScript', 'Animaciones', 'Responsive Design'],
+    image: '/projects/ai-sales-simulator.svg',
+    media: [],
+    featured: true,
+    challenge: {
+      es: 'Necesitaban una web corporativa que reflejara la innovación tecnológica del producto (simulador de ventas con IA) y transmitiera confianza a grandes empresas. El diseño debía ser moderno, con animaciones sutiles, storytelling visual y una arquitectura de contenidos que guiara al usuario desde el interés hasta la solicitud de demo. El reto era traducir diseños estáticos a una web interactiva y fluida, manteniendo la fidelidad pixel-perfect.',
+      en: 'They needed a corporate website that reflected the technological innovation of the product (AI sales simulator) and conveyed trust to large companies. The design had to be modern, with subtle animations, visual storytelling, and content architecture guiding users from interest to demo request. The challenge was translating static designs into an interactive, fluid website while maintaining pixel-perfect fidelity.',
+    },
+    uxDecisions: {
+      es: 'Diseño limpio y profesional con jerarquía visual clara. Hero impactante con propuesta de valor. Secciones de beneficios con iconografía y métricas. Comparativa interactiva (formación clásica vs role play con IA). Testimonios de clientes reales. FAQ optimizada. Llamadas a la acción estratégicamente ubicadas. Animaciones que mejoran la narrativa sin saturar.',
+      en: 'Clean, professional design with clear visual hierarchy. Impactful hero with value proposition. Benefits sections with icons and metrics. Interactive comparison (traditional training vs AI role play). Real client testimonials. Optimized FAQ. Strategically placed calls to action. Animations that enhance narrative without overwhelming.',
+    },
+    architecture: {
+      es: 'Web desarrollada íntegramente en Webflow con CMS para gestión de contenidos. Animaciones CSS y JavaScript personalizadas. Diseño responsive con breakpoints optimizados. Integración de formularios con automatizaciones. Optimización de rendimiento y SEO on-page. Hosting en Webflow con CDN global.',
+      en: 'Website built entirely in Webflow with CMS for content management. Custom CSS and JavaScript animations. Responsive design with optimized breakpoints. Form integration with automations. Performance optimization and on-page SEO. Webflow hosting with global CDN.',
+    },
+    aiIntegration: {
+      es: '',
+      en: '',
+    },
+    problemsSolved: {
+      es: 'Proporciona una presencia digital profesional y moderna que refleja la innovación del producto. Comunica eficazmente el valor diferencial frente a métodos tradicionales. Genera confianza en grandes empresas mediante testimonios y casos de uso. Optimiza la conversión a demo con un recorrido de usuario bien definido.',
+      en: 'Provides a professional, modern digital presence that reflects product innovation. Effectively communicates differential value vs traditional methods. Builds trust in large companies through testimonials and use cases. Optimizes demo conversion with a well-defined user journey.',
+    },
+    metrics: {
+      es: '• Web corporativa completa desarrollada en Webflow\n• Maquetación pixel-perfect a partir de diseños\n• Animaciones avanzadas CSS y JavaScript\n• Diseño responsive para todos los dispositivos\n• CMS para gestión autónoma de contenidos\n• Formularios integrados con automatización\n• Optimización SEO completa\n• Hosting con CDN global y alto rendimiento',
+      en: '• Complete corporate website built in Webflow\n• Pixel-perfect markup from designs\n• Advanced CSS and JavaScript animations\n• Responsive design for all devices\n• CMS for autonomous content management\n• Forms with automation integration\n• Complete SEO optimization\n• Hosting with global CDN and high performance',
+    },
+    myRole: {
+      es: 'Desarrollo completo de la web en Webflow: maquetación pixel-perfect a partir de diseños proporcionados, implementación de animaciones, diseño responsive, integración de CMS y formularios, optimización de rendimiento y SEO, y despliegue en producción.',
+      en: 'Complete website development in Webflow: pixel-perfect markup from provided designs, animation implementation, responsive design, CMS and form integration, performance and SEO optimization, and production deployment.',
+    },
+    techDetails: {
+      es: '• **CMS:** Webflow con sistema de gestión de contenidos integrado\n• **Frontend:** Webflow Designer + Custom Code (CSS, JavaScript)\n• **Animaciones:** Animaciones CSS personalizadas, interacciones Webflow, JavaScript\n• **Diseño:** Responsive con breakpoints optimizados\n• **Formularios:** Webflow Forms con integración de automatizaciones\n• **SEO:** Meta tags, sitemap, datos estructurados, optimización on-page\n• **Rendimiento:** CDN global, lazy loading, minificación automática\n• **Hosting:** Webflow Enterprise hosting con SSL y CDN',
+      en: '• **CMS:** Webflow with integrated content management system\n• **Frontend:** Webflow Designer + Custom Code (CSS, JavaScript)\n• **Animations:** Custom CSS animations, Webflow interactions, JavaScript\n• **Design:** Responsive with optimized breakpoints\n• **Forms:** Webflow Forms with automation integration\n• **SEO:** Meta tags, sitemap, structured data, on-page optimization\n• **Performance:** Global CDN, lazy loading, automatic minification\n• **Hosting:** Webflow Enterprise hosting with SSL and CDN',
+    },
+    confidentialNote: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+  },
+  {
     id: 'landing-gasnature',
     category: 'web-design',
     title: { es: 'Landing GasNature', en: 'GasNature Landing Page' },
@@ -157,7 +308,7 @@ export const projects: Project[] = [
     media: [
       { src: '/projects/web-design/gasnature-landing.jpg', type: 'image', alt: { es: 'Landing GasNature', en: 'GasNature Landing Page' } },
     ],
-    featured: true,
+    featured: false,
     challenge: {
       es: 'Crear una landing page atractiva y funcional que comunique los servicios de la empresa.',
       en: 'Create an attractive and functional landing page that communicates the company services.',
@@ -193,7 +344,7 @@ export const projects: Project[] = [
       { src: '/projects/web-design/tcs.jpg', type: 'image', alt: { es: 'Landing TCS', en: 'TCS Landing Page' } },
       { src: '/projects/tcs.svg', type: 'image', alt: { es: 'Landing TCS detalle', en: 'TCS Landing detail' } },
     ],
-    featured: true,
+    featured: false,
     challenge: {
       es: 'Diseñar una landing page profesional que refleje la experiencia técnica de la empresa.',
       en: 'Design a professional landing page that reflects the company technical expertise.',
@@ -228,7 +379,7 @@ export const projects: Project[] = [
     media: [
       { src: '/projects/web-design/traductor-web-itzulpen.png', type: 'image', alt: { es: 'Landing Itzulpen', en: 'Itzulpen Landing Page' } },
     ],
-    featured: true,
+    featured: false,
     challenge: {
       es: 'Crear una página que transmita confianza y profesionalidad en servicios lingüísticos.',
       en: 'Create a page that conveys trust and professionalism in language services.',
@@ -345,7 +496,7 @@ export const projects: Project[] = [
       { src: '/projects/graphic-design/editorial/revista-grafik/revistaMuebles.jpg', type: 'image', alt: { es: 'Revista GrafiK muebles', en: 'GrafiK furniture issue' } },
       { src: '/projects/graphic-design/editorial/revista-grafik/revistaSillas.jpg', type: 'image', alt: { es: 'Revista GrafiK sillas', en: 'GrafiK chairs issue' } },
     ],
-    featured: true,
+    featured: false,
     challenge: {
       es: 'Maquetar una revista con contenido variado manteniendo coherencia visual en todas las páginas.',
       en: 'Layout a magazine with varied content maintaining visual coherence across all pages.',
@@ -598,7 +749,7 @@ export const projects: Project[] = [
       { src: '/projects/graphic-design/carteles-jazzaldia-aste-nagusia.jpg', type: 'image', alt: { es: 'Carteles Aste Nagusia y Jazzaldia', en: 'Aste Nagusia & Jazzaldia posters' } },
       { src: '/projects/graphic-design/jazzaldia/Jazzaldia.jpg', type: 'image', alt: { es: 'Cartel Jazzaldia', en: 'Jazzaldia poster' } },
     ],
-    featured: true,
+    featured: false,
     challenge: {
       es: 'Crear carteles que capturen la esencia y el espíritu de cada festival.',
       en: 'Create posters that capture the essence and spirit of each festival.',

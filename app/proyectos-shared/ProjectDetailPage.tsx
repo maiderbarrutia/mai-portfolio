@@ -138,6 +138,10 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             </section>
           )}
 
+          {project.confidentialNote && (
+            <p className={styles['project-detail__confidential']}>{project.confidentialNote}</p>
+          )}
+
           <div className={styles['project-detail__sections']}>
             {hasContent(project.challenge[language]) && (
               <section className={styles['project-detail__section']}>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a1414"/>
+  <rect width="800" height="500" fill="url(#bg)" opacity="0.12"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500"><stop offset="0%" stop-color="#f39c12"/><stop offset="100%" stop-color="#d35400"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f1c40f"/><stop offset="100%" stop-color="#e67e22"/></linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a2828"/><stop offset="100%" stop-color="#0f1a1a"/></linearGradient>
+  </defs>
+
+  <!-- Monitor / Desktop screen -->
+  <rect x="60" y="80" width="380" height="260" rx="12" fill="#0d1818" stroke="#2a3a3a" stroke-width="1.5"/>
+  <!-- Browser chrome -->
+  <rect x="60" y="80" width="380" height="40" rx="12" fill="#1a2828"/>
+  <rect x="60" y="108" width="380" height="12" fill="#1a2828"/>
+  <circle cx="80" cy="100" r="5" fill="#e74c3c" opacity="0.6"/>
+  <circle cx="95" cy="100" r="5" fill="#f1c40f" opacity="0.6"/>
+  <circle cx="110" cy="100" r="5" fill="#2ecc71" opacity="0.6"/>
+  <!-- URL bar -->
+  <rect x="130" y="93" width="220" height="14" rx="7" fill="#0a1414" stroke="#2a3a3a" stroke-width="0.5"/>
+
+  <!-- Page content -->
+  <!-- Hero section -->
+  <rect x="80" y="135" width="340" height="80" rx="8" fill="url(#accent)" opacity="0.08"/>
+  <rect x="100" y="150" width="120" height="6" rx="3" fill="#e67e22" opacity="0.5"/>
+  <rect x="100" y="163" width="200" height="5" rx="2.5" fill="#3a4a4a"/>
+  <rect x="100" y="174" width="160" height="5" rx="2.5" fill="#3a4a4a"/>
+  <rect x="100" y="190" width="100" height="14" rx="7" fill="#e67e22" opacity="0.3"/>
+
+  <!-- Card grid -->
+  <rect x="80" y="230" width="110" height="95" rx="8" fill="#1a2828" stroke="#2a3a3a" stroke-width="0.5"/>
+  <!-- Flame icon in card -->
+  <path d="M125 265 Q130 250 135 265 Q138 275 135 280 Q130 278 125 280 Q122 275 125 265Z" fill="#e67e22" opacity="0.5"/>
+  <rect x="90" y="293" width="70" height="4" rx="2" fill="#3a4a4a"/>
+  <rect x="95" y="303" width="60" height="3" rx="1.5" fill="#2a3a3a"/>
+
+  <rect x="200" y="230" width="110" height="95" rx="8" fill="#1a2828" stroke="#2a3a3a" stroke-width="0.5"/>
+  <circle cx="255" cy="265" r="12" fill="#e67e22" opacity="0.15"/>
+  <circle cx="255" cy="265" r="6" fill="#e67e22" opacity="0.3"/>
+  <rect x="210" y="293" width="70" height="4" rx="2" fill="#3a4a4a"/>
+  <rect x="215" y="303" width="60" height="3" rx="1.5" fill="#2a3a3a"/>
+
+  <rect x="320" y="230" width="110" height="95" rx="8" fill="#1a2828" stroke="#2a3a3a" stroke-width="0.5"/>
+  <path d="M365 258 L375 258 L375 272 L365 272Z" fill="none" stroke="#e67e22" stroke-width="2" opacity="0.5"/>
+  <path d="M370 258 L370 255" stroke="#e67e22" stroke-width="2" opacity="0.5"/>
+  <rect x="330" y="293" width="70" height="4" rx="2" fill="#3a4a4a"/>
+  <rect x="335" y="303" width="60" height="3" rx="1.5" fill="#2a3a3a"/>
+
+  <!-- Stand -->
+  <rect x="230" y="340" width="40" height="15" rx="2" fill="#1a2828"/>
+  <rect x="210" y="355" width="80" height="8" rx="4" fill="#1a2828"/>
+
+  <!-- Right panel: Order flow / Process -->
+  <rect x="480" y="80" width="260" height="340" rx="16" fill="#0d1818" stroke="#2a3a3a" stroke-width="1.5"/>
+
+  <!-- Step 1 -->
+  <rect x="500" y="100" width="220" height="60" rx="10" fill="url(#accent)" opacity="0.1"/>
+  <circle cx="520" cy="130" r="12" fill="#e67e22" opacity="0.3"/>
+  <text x="520" y="134" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#e67e22" text-anchor="middle">1</text>
+  <rect x="540" y="120" width="100" height="4" rx="2" fill="#a8b8b8" opacity="0.4"/>
+  <rect x="540" y="130" width="70" height="3" rx="1.5" fill="#3a4a4a"/>
+
+  <!-- Connector arrow -->
+  <line x1="610" y1="160" x2="610" y2="180" stroke="#2a3a3a" stroke-width="1.5"/>
+  <polyline points="605,175 610,185 615,175" fill="none" stroke="#2a3a3a" stroke-width="1"/>
+
+  <!-- Step 2 -->
+  <rect x="500" y="185" width="220" height="60" rx="10" fill="#1a2828" stroke="#2a3a3a" stroke-width="0.5"/>
+  <circle cx="520" cy="215" r="12" fill="#2a3a3a"/>
+  <text x="520" y="219" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#5a6a6a" text-anchor="middle">2</text>
+  <rect x="540" y="205" width="90" height="4" rx="2" fill="#3a4a4a"/>
+  <rect x="540" y="215" width="60" height="3" rx="1.5" fill="#2a3a3a"/>
+
+  <!-- Connector arrow -->
+  <line x1="610" y1="245" x2="610" y2="265" stroke="#2a3a3a" stroke-width="1.5"/>
+  <polyline points="605,260 610,270 615,260" fill="none" stroke="#2a3a3a" stroke-width="1"/>
+
+  <!-- Step 3 -->
+  <rect x="500" y="270" width="220" height="60" rx="10" fill="#1a2828" stroke="#2a3a3a" stroke-width="0.5"/>
+  <circle cx="520" cy="300" r="12" fill="#2a3a3a"/>
+  <text x="520" y="304" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#5a6a6a" text-anchor="middle">3</text>
+  <rect x="540" y="290" width="110" height="4" rx="2" fill="#3a4a4a"/>
+  <rect x="540" y="300" width="80" height="3" rx="1.5" fill="#2a3a3a"/>
+
+  <!-- Checkout card bottom -->
+  <rect x="500" y="355" width="220" height="45" rx="10" fill="#e67e22" opacity="0.15"/>
+  <rect x="520" y="368" width="80" height="5" rx="2.5" fill="#e67e22" opacity="0.5"/>
+  <rect x="620" y="368" width="60" height="14" rx="7" fill="#e67e22" opacity="0.3"/>
+
+  <!-- Bottom text -->
+  <text x="300" y="480" font-family="Inter, sans-serif" font-size="10" fill="#2a3a3a" text-anchor="middle" letter-spacing="2">PORTAL DE PEDIDOS · DISTRIBUCIÓN · LOGÍSTICA</text>
+</svg>

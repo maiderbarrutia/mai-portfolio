@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a1414"/>
+  <rect width="800" height="500" fill="url(#bg)" opacity="0.12"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500"><stop offset="0%" stop-color="#6c5ce7"/><stop offset="100%" stop-color="#2d1b69"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a29bfe"/><stop offset="100%" stop-color="#6c5ce7"/></linearGradient>
+    <linearGradient id="msg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c5ce7"/><stop offset="100%" stop-color="#4a3ba8"/></linearGradient>
+    <linearGradient id="msg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a2828"/><stop offset="100%" stop-color="#0f1a1a"/></linearGradient>
+  </defs>
+
+  <!-- Chat interface -->
+  <rect x="80" y="80" width="360" height="360" rx="16" fill="#0d1818" stroke="#2a3a3a" stroke-width="1.5"/>
+  <!-- Header -->
+  <rect x="80" y="80" width="360" height="60" rx="16" fill="#1a2828"/>
+  <rect x="80" y="120" width="360" height="20" fill="#1a2828"/>
+  <circle cx="110" cy="110" r="16" fill="url(#accent)" opacity="0.3"/>
+  <circle cx="110" cy="110" r="8" fill="url(#accent)" opacity="0.6"/>
+  <rect x="135" y="102" width="80" height="6" rx="3" fill="#a8b8b8" opacity="0.6"/>
+  <rect x="135" y="113" width="50" height="4" rx="2" fill="#3a4a4a"/>
+
+  <!-- Messages -->
+  <!-- User message -->
+  <rect x="100" y="155" width="200" height="40" rx="12" fill="url(#msg1)" opacity="0.15"/>
+  <rect x="100" y="155" width="200" height="40" rx="12" fill="url(#msg1)" opacity="0.08"/>
+  <rect x="110" y="166" width="140" height="5" rx="2.5" fill="url(#accent)" opacity="0.5"/>
+  <rect x="110" y="177" width="100" height="5" rx="2.5" fill="url(#accent)" opacity="0.35"/>
+
+  <!-- AI response -->
+  <rect x="280" y="210" width="140" height="55" rx="12" fill="url(#msg2)" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="290" y="220" width="100" height="4" rx="2" fill="#a8b8b8" opacity="0.4"/>
+  <rect x="290" y="230" width="80" height="4" rx="2" fill="#a8b8b8" opacity="0.3"/>
+  <rect x="290" y="240" width="110" height="4" rx="2" fill="#a8b8b8" opacity="0.35"/>
+  <rect x="290" y="250" width="60" height="4" rx="2" fill="#a8b8b8" opacity="0.25"/>
+
+  <!-- User message 2 -->
+  <rect x="100" y="280" width="180" height="40" rx="12" fill="url(#msg1)" opacity="0.12"/>
+  <rect x="110" y="291" width="120" height="5" rx="2.5" fill="url(#accent)" opacity="0.4"/>
+  <rect x="110" y="302" width="90" height="5" rx="2.5" fill="url(#accent)" opacity="0.3"/>
+
+  <!-- AI response 2 -->
+  <rect x="260" y="335" width="160" height="55" rx="12" fill="url(#msg2)" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="270" y="345" width="120" height="4" rx="2" fill="#a8b8b8" opacity="0.4"/>
+  <rect x="270" y="355" width="90" height="4" rx="2" fill="#a8b8b8" opacity="0.3"/>
+  <rect x="270" y="365" width="130" height="4" rx="2" fill="#a8b8b8" opacity="0.35"/>
+  <rect x="270" y="375" width="70" height="4" rx="2" fill="#a8b8b8" opacity="0.25"/>
+
+  <!-- Input bar -->
+  <rect x="90" y="405" width="260" height="24" rx="12" fill="#0a1414" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="100" y="412" width="100" height="4" rx="2" fill="#2a3a3a"/>
+  <circle cx="335" cy="417" r="8" fill="url(#accent)" opacity="0.5"/>
+
+  <!-- Right side: Analytics / Dashboard preview -->
+  <rect x="480" y="80" width="240" height="360" rx="16" fill="#0d1818" stroke="#2a3a3a" stroke-width="1.5"/>
+  <!-- KPI cards -->
+  <rect x="495" y="95" width="105" height="50" rx="8" fill="#1a2828"/>
+  <rect x="505" y="103" width="30" height="4" rx="2" fill="#3a4a4a"/>
+  <text x="505" y="130" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#accent)">+75%</text>
+
+  <rect x="610" y="95" width="95" height="50" rx="8" fill="#1a2828"/>
+  <rect x="620" y="103" width="25" height="4" rx="2" fill="#3a4a4a"/>
+  <text x="620" y="130" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#accent)">+20%</text>
+
+  <!-- Chart area -->
+  <rect x="495" y="160" width="210" height="120" rx="8" fill="#1a2828"/>
+  <!-- Line chart -->
+  <polyline points="505,260 530,240 555,250 580,220 605,230 630,200 655,210 680,180 695,190" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.6"/>
+  <polyline points="505,260 530,245 555,240 580,225 605,215 630,195 655,185 680,170 695,175" fill="none" stroke="#a29bfe" stroke-width="1.5" opacity="0.3"/>
+  <!-- X axis -->
+  <line x1="505" y1="265" x2="695" y2="265" stroke="#2a3a3a" stroke-width="1"/>
+  <rect x="505" y="273" width="4" height="2" rx="1" fill="#2a3a3a"/>
+  <rect x="555" y="273" width="4" height="2" rx="1" fill="#2a3a3a"/>
+  <rect x="605" y="273" width="4" height="2" rx="1" fill="#2a3a3a"/>
+  <rect x="655" y="273" width="4" height="2" rx="1" fill="#2a3a3a"/>
+
+  <!-- Bottom metrics -->
+  <rect x="495" y="295" width="210" height="45" rx="8" fill="#1a2828"/>
+  <rect x="505" y="303" width="60" height="4" rx="2" fill="#3a4a4a"/>
+  <rect x="505" y="313" width="80" height="4" rx="2" fill="#3a4a4a"/>
+  <rect x="505" y="323" width="40" height="4" rx="2" fill="#3a4a4a"/>
+
+  <!-- User avatars bottom -->
+  <rect x="495" y="355" width="210" height="70" rx="8" fill="#1a2828"/>
+  <rect x="505" y="363" width="80" height="4" rx="2" fill="#3a4a4a"/>
+  <circle cx="515" cy="388" r="10" fill="#2a3a3a"/>
+  <circle cx="540" cy="388" r="10" fill="#2a3a3a"/>
+  <circle cx="565" cy="388" r="10" fill="#2a3a3a"/>
+  <circle cx="590" cy="388" r="10" fill="#2a3a3a"/>
+  <circle cx="615" cy="388" r="10" fill="#2a3a3a"/>
+  <circle cx="640" cy="388" r="10" fill="#2a3a3a" opacity="0.5"/>
+  <text x="652" y="392" font-family="Inter, sans-serif" font-size="9" fill="#5a6a6a">+3</text>
+
+  <!-- Bottom text -->
+  <text x="300" y="475" font-family="Inter, sans-serif" font-size="10" fill="#2a3a3a" text-anchor="middle" letter-spacing="2">SIMULADOR CON IA · ROLE PLAYS · MÉTRICAS</text>
+</svg>
