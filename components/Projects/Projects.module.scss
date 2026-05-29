@@ -22,6 +22,19 @@
     }
   }
 
+  &__section-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary-alpha);
+    color: var(--color-primary);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
   &__title {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;

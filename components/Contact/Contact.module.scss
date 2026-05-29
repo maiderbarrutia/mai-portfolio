@@ -59,6 +59,10 @@
     line-height: 1.2;
   }
 
+  &__title-action {
+    display: block;
+  }
+
   &__subtitle {
     font-size: 1.125rem;
     color: var(--color-text-muted);
@@ -118,6 +122,12 @@
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.25s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    text-align: left;
 
     svg {
       width: 20px;

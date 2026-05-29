@@ -43,7 +43,7 @@ export default function Hero() {
                   <Code size={32} />
                 </span>
                 <span className={styles['hero__bento-label']}>Frontend</span>
-                <span className={styles['hero__bento-stat']}>6+ years</span>
+                <span className={styles['hero__bento-stat']}>{t('hero.yearsExperience')}</span>
               </div>
             </div>
 

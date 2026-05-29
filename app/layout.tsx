@@ -8,8 +8,9 @@ const siteUrl = 'https://maiderbarrutia.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Maider Barrutia | Fullstack Developer & UI Architect',
-  description: 'Desarrolladora FullStack especializada en SASS, React.js, TypeScript y arquitecturas escalables. Optimizando la lógica backend y el diseño UI con flujos de trabajo de IA para crear aplicaciones de alto rendimiento.',
+  title: 'Maider Barrutia | FullStack Developer & UI Architect',
+  description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
+  applicationName: 'Maider Barrutia',
   verification: {
     google: 'u5RYPfHJK4Dpht8OzUfbzKo1KYyeyIPy01n0BCT-198',
   },
@@ -21,16 +22,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Maider Barrutia' }],
   openGraph: {
-    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
-    description: 'Desarrolladora FullStack especializada en SASS, React.js, TypeScript y arquitecturas escalables.',
+    title: 'Maider Barrutia | FullStack Developer & UI Architect',
+    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
     type: 'website',
-    siteName: 'Maider Barrutia Portfolio',
+    siteName: 'Maider Barrutia',
     locale: 'es_ES',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maider Barrutia | Fullstack Developer & UI Architect',
-    description: 'Desarrolladora FullStack especializada en SASS, React.js, TypeScript y arquitecturas escalables.',
+    title: 'Maider Barrutia | FullStack Developer & UI Architect',
+    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
   },
   robots: {
     index: true,
@@ -51,8 +52,8 @@ const jsonLd = {
       name: 'Maider Barrutia',
       givenName: 'Maider',
       familyName: 'Barrutia',
-      jobTitle: 'Fullstack Developer & UI Architect',
-      description: 'Desarrolladora FullStack especializada en SASS, React.js, TypeScript y arquitecturas escalables.',
+      jobTitle: 'FullStack Developer & UI Architect',
+      description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
       url: siteUrl,
       image: `${siteUrl}/mai-logo.svg`,
       sameAs: [
@@ -91,8 +92,9 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
       url: siteUrl,
-      name: 'Maider Barrutia | Fullstack Developer & UI Architect',
-      description: 'Portfolio profesional de Maider Barrutia.',
+      name: 'Maider Barrutia',
+      alternateName: ['Maider Barrutia', 'Maider Barrutia Portfolio'],
+      description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
       inLanguage: ['es', 'en'],
     },
   ],
@@ -106,6 +108,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <script dangerouslySetInnerHTML={{
           __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})()`
         }} />
@@ -119,7 +122,6 @@ export default function RootLayout({
          <ClientProviders>
           <LanguageProvider>
             {children}
-            {process.env.NODE_ENV === 'production' && <Analytics />}
           </LanguageProvider>
         </ClientProviders>
       </body>

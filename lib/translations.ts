@@ -13,14 +13,16 @@ export const translations = {
     hero: {
       badge: 'Abierta a nuevos desafíos',
       title: 'Maider Barrutia',
-      subtitle: 'Fullstack Developer & UI Architect',
-      description: 'Diseño y desarrollo <strong>aplicaciones FullStack</strong> centradas en la <strong>experiencia de usuario</strong>. Trabajo con <strong>React</strong>, <strong>Node.js</strong> y <strong>herramientas de IA</strong> para crear productos rápidos, escalables y bien estructurados.',
+      subtitle: 'FullStack Developer & UI Architect',
+      description: 'Diseño y desarrollo <strong>aplicaciones FullStack</strong> centradas en la <strong>experiencia de usuario</strong>. Trabajo con <strong>Sass</strong>, <strong>React</strong>, <strong>Node.js</strong> y <strong>herramientas de IA</strong> para crear productos rápidos, escalables y bien estructurados.',
       ctaProjects: 'Ver Proyectos',
       ctaContact: 'Contactar',
+      yearsExperience: '6+ años',
     },
     
     // Projects Section
     projects: {
+      tag: 'Portfolio',
       title: 'Proyectos FullStack',
       subtitle: 'Una selección de mis trabajos más relevantes donde combino diseño UI, desarrollo frontend, backend y estrategias de IA.',
       viewProject: 'Ver Proyecto',
@@ -78,10 +80,11 @@ export const translations = {
     // Contact Section
     contact: {
       tag: 'Contacto',
-      title: '¿Buscas desarrolladora FullStack? Hablemos',
+      title: '¿Buscas desarrolladora FullStack?',
+      titleAction: 'Hablemos',
       subtitle: 'Tanto si tienes un proyecto entre manos como una oportunidad profesional, estaré encantada de escucharte.',
       letsConnect: 'Conectemos',
-      description: 'Si buscas un perfil Full Stack con experiencia en arquitectura UI, desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
+      description: 'Si buscas un perfil FullStack con experiencia en arquitectura UI, desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
       name: 'Nombre',
       email: 'Email',
       message: 'Mensaje',
@@ -92,7 +95,11 @@ export const translations = {
       namePlaceholder: 'Tu nombre',
       emailPlaceholder: 'ejemplo@email.com',
       messagePlaceholder: 'Cuéntame sobre tu proyecto...',
+      errorName: 'El nombre debe tener al menos 2 caracteres',
+      errorEmail: 'Email inválido',
+      errorMessage: 'El mensaje debe tener al menos 10 caracteres',
       alternativeContact: '¿Prefieres otro medio? Escríbeme a',
+      emailCopied: '¡Email copiado!',
     },
     
     // Footer
@@ -135,14 +142,16 @@ export const translations = {
     hero: {
       badge: 'Open to new challenges',
       title: 'Maider Barrutia',
-      subtitle: 'Fullstack Developer & UI Architect',
-      description: 'Design and develop <strong>FullStack applications</strong> focused on <strong>user experience</strong>. Work with <strong>React</strong>, <strong>Node.js</strong>, and <strong>AI-powered tools</strong> to build fast, scalable, and well-structured products.',
+      subtitle: 'FullStack Developer & UI Architect',
+      description: 'Design and develop <strong>FullStack applications</strong> focused on <strong>user experience</strong>. Work with <strong>Sass</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>AI-powered tools</strong> to build fast, scalable, and well-structured products.',
       ctaProjects: 'View Projects',
       ctaContact: 'Contact',
+      yearsExperience: '6+ years',
     },
     
     // Projects Section
     projects: {
+      tag: 'Portfolio',
       title: 'FullStack projects',
       subtitle: 'A selection of my most relevant work where I combine frontend, backend development, and AI strategies.',
       viewProject: 'View project',
@@ -200,10 +209,11 @@ export const translations = {
     // Contact Section
     contact: {
       tag: 'Contact',
-      title: 'Looking for a Full-Stack Developer? Let\'s talk',
+      title: 'Looking for a FullStack Developer?',
+      titleAction: "Let's talk",
       subtitle: 'Whether you have a project in mind or a professional opportunity, I\'d love to hear about it.',
       letsConnect: 'Let\'s Connect',
-      description: 'If you\'re looking for a Full Stack profile with experience in UI architecture, backend development, and AI integration, let\'s talk and see if we\'re a match.',
+      description: 'If you\'re looking for a FullStack profile with experience in UI architecture, backend development, and AI integration, let\'s talk and see if we\'re a match.',
       name: 'Name',
       email: 'Email',
       message: 'Message',
@@ -214,7 +224,11 @@ export const translations = {
       namePlaceholder: 'Your name',
       emailPlaceholder: 'example@email.com',
       messagePlaceholder: 'Tell me about your project...',
+      errorName: 'Name must be at least 2 characters',
+      errorEmail: 'Invalid email',
+      errorMessage: 'Message must be at least 10 characters',
       alternativeContact: 'Prefer another way? Email me at',
+      emailCopied: 'Email copied!',
     },
     
     // Footer

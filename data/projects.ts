@@ -80,10 +80,10 @@ export const projects: Project[] = [
       en: 'Platform for managing leisure and free time activities',
     },
     description: {
-      es: 'Plataforma para la gestión de actividades de ocio y tiempo libre',
-      en: 'Platform for managing leisure and free time activities',
+      es: 'Plataforma fullStack que centraliza actividades de ocio, permitiendo a usuarios descubrir e inscribirse, y a empresas gestionar sus publicaciones desde un panel.',
+      en: 'FullStack platform that centralizes leisure activities, letting users discover and register, and companies manage their listings from a dashboard.',
     },
-    tags: ['TypeScript', 'React.js', 'MySQL', 'Vite', 'SASS', 'Node.js', 'Express'],
+    tags: ['TypeScript', 'React.js', 'Vite', 'SASS', 'Node.js', 'Express', 'MySQL', 'TypeORM', 'JWT', 'Figma'],
     image: '/projects/web-develop/aisiplan/cabecera-sin-login.jpg',
     media: [
       { src: '/projects/web-develop/aisiplan/pagina-inicio.jpg', type: 'image', alt: { es: 'Página de inicio Aisiplan', en: 'Aisiplan home page' } },
@@ -100,36 +100,36 @@ export const projects: Project[] = [
     demoUrl: 'https://aisiplan.vercel.app/',
     repoUrl: 'https://github.com/maiderbarrutia/fullstack-aisiplan',
     challenge: {
-      es: 'Desarrollar una plataforma web completa para la gestión de actividades de ocio, con autenticación de usuarios, perfiles y paneles de administración.',
-      en: 'Develop a complete web platform for managing leisure activities, with user authentication, profiles and administration panels.',
+      es: 'No existía una plataforma que unificara toda la oferta de ocio local. Las alternativas (Eventbrite, Meetup, Airbnb Experiences, Fever) están fragmentadas: unas enfocadas al turismo, otras solo a música, y ninguna facilita el descubrimiento de actividades pequeñas o gratuitas de empresas locales. El reto era construir una web que centralizara toda la oferta y permitiera a pequeñas empresas publicar sin barreras.',
+      en: 'No platform existed that unified all local leisure offerings. Alternatives (Eventbrite, Meetup, Airbnb Experiences, Fever) are fragmented: some focused on tourism, others only on music, and none facilitate discovery of small or free activities from local businesses. The challenge was to build a site that centralizes all offerings and lets small businesses publish without barriers.',
     },
     uxDecisions: {
-      es: 'Interfaz limpia y moderna con formularios optimizados. Navegación intuitiva para búsqueda y gestión de actividades.',
-      en: 'Clean and modern interface with optimized forms. Intuitive navigation for searching and managing activities.',
+      es: 'Identidad visual propia con logotipo y paleta naranja que transmite energía. Header fijo con navegación adaptativa al iniciar sesión. Página de inicio con buscador, actividades destacadas, categorías visuales y carrusel de empresas. Formularios con validación en tiempo real y mensajes claros. Accesibilidad: contraste suficiente, tipografía legible y etiquetas semánticas.',
+      en: 'Custom visual identity with logo and orange palette conveying energy. Fixed header with adaptive navigation when logged in. Home page with search bar, featured activities, visual categories, and company carousel. Forms with real-time validation and clear messages. Accessibility: sufficient contrast, readable typography, semantic labels.',
     },
     architecture: {
-      es: 'Frontend con React + Vite + SASS. Backend con Node.js + Express + MySQL. API REST con Postman para testing.',
-      en: 'Frontend with React + Vite + SASS. Backend with Node.js + Express + MySQL. REST API with Postman for testing.',
+      es: 'Frontend con React + Vite + TypeScript + SASS. Backend con Node.js + Express + TypeORM sobre MySQL. API RESTful con autenticación JWT, subida de archivos con Multer y middlewares de validación. Base de datos relacional con 5 tablas, claves foráneas y restricciones de integridad.',
+      en: 'Frontend with React + Vite + TypeScript + SASS. Backend with Node.js + Express + TypeORM on MySQL. RESTful API with JWT authentication, Multer file upload, and validation middlewares. Relational database with 5 tables, foreign keys, and integrity constraints.',
     },
     aiIntegration: {
       es: '',
       en: '',
     },
     problemsSolved: {
-      es: 'Organizadores de actividades necesitaban una plataforma centralizada para gestionar inscripciones, pagos y comunicación con los asistentes, reemplazando procesos manuales con hojas de cálculo y correos electrónicos.',
-      en: 'Activity organizers needed a centralized platform to manage registrations, payments, and communication with attendees, replacing manual processes with spreadsheets and emails.',
+      es: 'Centraliza la oferta de ocio en un único acceso, eliminando búsquedas dispersas. Pequeñas empresas locales publican sin coste. Usuarios buscan por localización y categorías, se inscriben directamente. Empresas gestionan publicaciones e inscripciones desde un panel.',
+      en: 'Centralizes leisure offerings in one place, eliminating scattered searches. Small local businesses publish at no cost. Users search by location and categories, register directly. Companies manage listings and registrations from a dashboard.',
     },
     metrics: {
-      es: '• Gestión centralizada de actividades, usuarios y pagos\n• Autenticación segura con roles (admin/usuario)\n• Panel de administración para gestión de contenidos',
-      en: '• Centralized management of activities, users, and payments\n• Secure authentication with roles (admin/user)\n• Admin panel for content management',
+      es: '• Sistema de autenticación con JWT y roles (empresa/usuario)\n• CRUD completo de actividades con formularios dinámicos\n• Panel de perfil para empresas con gestión de actividades e inscripciones\n• Buscador con filtros por texto, localización y categorías\n• Subida de imágenes y vídeos con Multer\n• Arquitectura modular escalable (backend separado del frontend)\n• Base de datos relacional con 5 tablas y relaciones normalizadas\n• Seeders para carga inicial de datos',
+      en: '• JWT authentication system with roles (company/user)\n• Full CRUD for activities with dynamic forms\n• Company profile panel with activity and registration management\n• Search with text, location, and category filters\n• Image and video upload with Multer\n• Scalable modular architecture (separated backend and frontend)\n• Relational database with 5 tables and normalized relationships\n• Seeders for initial data loading',
     },
     myRole: {
-      es: 'Desarrollo full-stack completo: diseño de base de datos, implementación del backend con Node.js y Express, desarrollo del frontend con React, y despliegue en Vercel y Render.',
-      en: 'Complete full-stack development: database design, backend implementation with Node.js and Express, frontend development with React, and deployment on Vercel and Render.',
+      es: 'Desarrollo fullStack completo: investigación de mercado, diseño de identidad visual y prototipos en Figma, base de datos MySQL, backend con Node.js + Express + TypeORM, frontend con React + Vite + TypeScript + SASS, autenticación JWT, pruebas con Postman, despliegue en Vercel y documentación técnica.',
+      en: 'Complete fullStack development: market research, visual identity design and prototypes in Figma, MySQL database, backend with Node.js + Express + TypeORM, frontend with React + Vite + TypeScript + SASS, JWT authentication, Postman testing, Vercel deployment, and technical documentation.',
     },
     techDetails: {
-      es: '• **Autenticación:** Sistema de login/registro con JWT y protección de rutas\n• **Base de datos:** MySQL con esquema relacional para usuarios, actividades e inscripciones\n• **API REST:** Endpoints completos con Express, validación con Postman\n• **Arquitectura:** MVC con separación de concerns (routes, controllers, models)\n• **Frontend:** React + Vite con SASS, componentes reutilizables y manejo de estado',
-      en: '• **Authentication:** Login/register system with JWT and route protection\n• **Database:** MySQL with relational schema for users, activities, and registrations\n• **REST API:** Complete endpoints with Express, validated with Postman\n• **Architecture:** MVC with separation of concerns (routes, controllers, models)\n• **Frontend:** React + Vite with SASS, reusable components, and state management',
+      es: '• **Frontend:** React + Vite + TypeScript + SASS. Componentes reutilizables, React Router para navegación, Context API para estado de autenticación\n• **Backend:** Node.js + Express + TypeORM. Arquitectura MVC con controladores, entidades, rutas y middlewares\n• **Base de datos:** MySQL relacional con 5 tablas (Category, UserData, Company, Activity, Registration), claves foráneas e índices\n• **Autenticación:** JWT con middlewares de protección de rutas y contexto de sesión en frontend\n• **API REST:** Endpoints completos para usuarios, empresas, actividades, categorías e inscripciones\n• **Subida de archivos:** Multer para imágenes y vídeos, almacenados en carpeta pública\n• **Validación:** Postman para pruebas de endpoints y middlewares de validación server-side\n• **Metodología:** Kanban con Trello, documentación en Notion, control de versiones con Git + GitHub',
+      en: '• **Frontend:** React + Vite + TypeScript + SASS. Reusable components, React Router for navigation, Context API for auth state\n• **Backend:** Node.js + Express + TypeORM. MVC architecture with controllers, entities, routes, and middlewares\n• **Database:** MySQL relational with 5 tables (Category, UserData, Company, Activity, Registration), foreign keys and indexes\n• **Authentication:** JWT with route protection middlewares and session context in frontend\n• **REST API:** Complete endpoints for users, companies, activities, categories, and registrations\n• **File upload:** Multer for images and videos, stored in public folder\n• **Validation:** Postman for endpoint testing and server-side validation middlewares\n• **Methodology:** Kanban with Trello, documentation in Notion, version control with Git + GitHub',
     },
   },
   {

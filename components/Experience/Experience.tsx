@@ -19,22 +19,22 @@ type Lang = 'es' | 'en'
 
 const experiences = [
   {
-    role: { es: 'Fullstack Developer', en: 'Fullstack Developer' },
+    role: { es: 'FullStack Developer', en: 'FullStack Developer' },
     company: { es: 'Desarrollos Online', en: 'Desarrollos Online' },
     location: { es: 'Madrid', en: 'Madrid' },
     period: { es: '2025 - Actualidad', en: '2025 - Present' },
     achievements: {
       es: [
-        'Responsable del desarrollo Full Stack de aplicaciones web corporativas, liderando la adopción de herramientas de **IA** para optimizar tiempos de desarrollo, la refactorización de código crítico y la maquetación avanzada de plataformas de alta concurrencia.',
+        'Responsable del desarrollo FullStack de aplicaciones web corporativas, liderando la adopción de herramientas de **IA** para optimizar tiempos de desarrollo, la refactorización de código crítico y la maquetación avanzada de plataformas de alta concurrencia.',
       ],
       en: [
-        'Responsible for Full Stack development of corporate web applications, leading the adoption of **AI** tools to optimize development times, critical code refactoring, and advanced layout of high-concurrency platforms.',
+        'Responsible for FullStack development of corporate web applications, leading the adoption of **AI** tools to optimize development times, critical code refactoring, and advanced layout of high-concurrency platforms.',
       ],
     },
     technologies: ['Sass', 'JavaScript', 'Php', 'MySql', 'Wordpress', 'Figma', 'Copilot'],
   },
   {
-    role: { es: 'Fullstack Developer', en: 'Fullstack Developer' },
+    role: { es: 'FullStack Developer', en: 'FullStack Developer' },
     company: { es: 'Freelance', en: 'Freelance' },
     location: { es: 'Online', en: 'Remote' },
     period: { es: '2023 - 2025', en: '2023 - 2025' },
@@ -107,13 +107,13 @@ const education = [
 const certifications = {
   es: [
     { title: 'Bootcamp TS + React + Vitest (TDD)', institution: 'Lemoncode', hours: '114h' },
-    { title: 'Desarrollo Full Stack (Node.js, Angular, TypeScript, APIs REST)', institution: 'Samsung', hours: '350h' },
+    { title: 'Desarrollo FullStack (Node.js, Angular, TypeScript, APIs REST)', institution: 'Samsung', hours: '350h' },
     { title: 'Desarrollo Oracle SQL-PL/SQL', institution: 'Cas-training', hours: '135h' },
     { title: 'Desarrollo con IA', institution: 'Big School', hours: '6h' },
   ],
   en: [
     { title: 'Bootcamp TS + React + Vitest (TDD)', institution: 'Lemoncode', hours: '114h' },
-    { title: 'Full Stack Development (Node.js, Angular, TypeScript, REST APIs)', institution: 'Samsung', hours: '350h' },
+    { title: 'FullStack Development (Node.js, Angular, TypeScript, REST APIs)', institution: 'Samsung', hours: '350h' },
     { title: 'Oracle SQL-PL/SQL Development', institution: 'Cas-training', hours: '135h' },
     { title: 'AI-Assisted Development', institution: 'Big School', hours: '6h' },
   ],

@@ -30,6 +30,7 @@ export default function Projects() {
     <section className={styles.projects} id="projects">
       <div className={styles['projects__container']}>
         <header className={styles['projects__header']}>
+          <span className={styles['projects__section-tag']}>{t('projects.tag')}</span>
           <h2 className={styles['projects__title']}>{t('projects.title')}</h2>
           <p className={styles['projects__subtitle']}>{t('projects.subtitle')}</p>
         </header>

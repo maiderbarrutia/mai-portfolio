@@ -8,16 +8,25 @@ import { z } from 'zod';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Contact.module.scss';
 
-const contactSchema = z.object({
-  name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
-  email: z.string().email('Email inválido'),
-  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
-
 export default function Contact() {
   const { t } = useLanguage();
+
+  const contactSchema = z.object({
+    name: z.string().min(2, t('contact.errorName')),
+    email: z.string().email(t('contact.errorEmail')),
+    message: z.string().min(10, t('contact.errorMessage')),
+  });
+  type ContactFormData = z.infer<typeof contactSchema>;
+  const [copied, setCopied] = useState(false);
+  const emailUser = 'maiderbarrutia';
+  const emailDomain = 'hotmail.com';
+  const emailFull = `${emailUser}@${emailDomain}`;
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(emailFull);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   const {
     register,
     handleSubmit,
@@ -41,16 +50,11 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const WEB3FORMS_KEY = '51ffc07c-9503-4bf8-a837-98cede1289cb';
-
   const onSubmit = async (data: ContactFormData) => {
-    const response = await fetch('https://api.web3forms.com/submit', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        ...data,
-      }),
+      body: JSON.stringify(data),
     });
     if (!response.ok) throw new Error('Failed to send');
     reset();
@@ -61,7 +65,7 @@ export default function Contact() {
       <div className={styles.contact__container} ref={sectionRef}>
         <div className={`${styles.contact__header} ${isVisible ? styles['contact__header--visible'] : ''}`}>
           <span className={styles['contact__section-tag']}>{t('contact.tag')}</span>
-          <h2 className={styles.contact__title}>{t('contact.title')}</h2>
+          <h2 className={styles.contact__title}>{t('contact.title')} <span className={styles['contact__title-action']}>{t('contact.titleAction')}</span></h2>
           <p className={styles.contact__subtitle}>{t('contact.subtitle')}</p>
         </div>
 
@@ -71,10 +75,14 @@ export default function Contact() {
             <p className={styles['contact__info-text']}>{t('contact.description')}</p>
 
             <div className={styles.contact__links}>
-              <a href="mailto:maiderbarrutia@hotmail.com" className={styles.contact__link} aria-label="Email">
+              <button onClick={handleCopyEmail} className={styles.contact__link} aria-label="Copy email">
                 <Mail size={20} />
-                maiderbarrutia@hotmail.com
-              </a>
+                {copied ? (
+                  <><CheckCircle2 size={16} /> {t('contact.emailCopied')}</>
+                ) : (
+                  'Email'
+                )}
+              </button>
               <a href="https://linkedin.com/in/maiderbarrutiaunzueta" target="_blank" rel="noopener noreferrer" className={styles.contact__link} aria-label="LinkedIn">
                 <Linkedin size={20} />
                 LinkedIn
