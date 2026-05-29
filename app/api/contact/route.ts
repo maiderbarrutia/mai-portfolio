@@ -9,6 +9,7 @@ const contactSchema = z.object({
 
 const ALLOWED_ORIGINS = [
   'https://maiderbarrutia.vercel.app',
+  'https://maiderbarrutia.com',
   'http://localhost:3000',
   'http://localhost:43977',
 ]

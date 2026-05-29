@@ -18,6 +18,7 @@ export default function Contact() {
   });
   type ContactFormData = z.infer<typeof contactSchema>;
   const [copied, setCopied] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
   const emailUser = 'maiderbarrutia';
   const emailDomain = 'hotmail.com';
   const emailFull = `${emailUser}@${emailDomain}`;
@@ -51,13 +52,22 @@ export default function Contact() {
   }, []);
 
   const onSubmit = async (data: ContactFormData) => {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    if (!response.ok) throw new Error('Failed to send');
-    reset();
+    setApiError(null);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.error || 'Failed to send');
+      }
+      reset();
+    } catch (e) {
+      setApiError(e instanceof Error ? e.message : 'Failed to send');
+      throw e;
+    }
   };
 
   return (
@@ -144,6 +154,7 @@ export default function Contact() {
                     <span id="message-error" className={styles.contact__error}>{errors.message.message}</span>
                   )}
                 </div>
+                {apiError && <p className={styles.contact__error}>{apiError}</p>}
                 <button type="submit" className={styles.contact__submit} disabled={isSubmitting}>
                   {isSubmitting ? (
                     <><Loader2 size={16} className={styles.contact__spinner} /> {t('contact.sending')}</>
