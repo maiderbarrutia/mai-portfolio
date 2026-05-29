@@ -54,15 +54,27 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     setApiError(null);
     try {
-      const response = await fetch('/api/contact', {
+      const keyRes = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
+      if (!keyRes.ok) {
+        const errData = await keyRes.json().catch(() => ({}));
         throw new Error(errData.error || 'Failed to send');
       }
+      const { accessKey } = await keyRes.json();
+
+      const wfRes = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ access_key: accessKey, ...data }),
+      });
+      const wfData = await wfRes.json();
+      if (!wfRes.ok || !wfData.success) {
+        throw new Error(wfData.message || 'Failed to send');
+      }
+
       reset();
     } catch (e) {
       setApiError(e instanceof Error ? e.message : 'Failed to send');

@@ -11,7 +11,7 @@ const ALLOWED_ORIGINS = [
   'https://maiderbarrutia.vercel.app',
   'https://maiderbarrutia.com',
   'http://localhost:3000',
-  'http://localhost:43977',
+  'http://localhost:3001',
 ]
 
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
@@ -75,35 +75,7 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  const { name, email, message } = result.data
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY || '0b493378-2b92-41d3-93a7-31ba5376ea95'
 
-  const accessKey = process.env.WEB3FORMS_ACCESS_KEY || '51ffc07c-9503-4bf8-a837-98cede1289cb'
-
-  try {
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        access_key: accessKey,
-        name,
-        email,
-        message,
-      }),
-    })
-
-    const responseData = await res.json().catch(() => ({}))
-    console.log('[Web3Forms]', res.status, JSON.stringify(responseData))
-
-    if (!res.ok) {
-      throw new Error(responseData?.message || `Web3Forms error (${res.status})`)
-    }
-
-    return NextResponse.json({ success: true })
-  } catch (e) {
-    const message = e instanceof Error ? e.message : 'Failed to send message'
-    return NextResponse.json(
-      { error: message },
-      { status: 500 }
-    )
-  }
+  return NextResponse.json({ accessKey })
 }
