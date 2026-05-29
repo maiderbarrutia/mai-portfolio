@@ -77,24 +77,32 @@ export async function POST(request: NextRequest) {
 
   const { name, email, message } = result.data
 
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY || '51ffc07c-9503-4bf8-a837-98cede1289cb'
+
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: process.env.WEB3FORMS_ACCESS_KEY || '51ffc07c-9503-4bf8-a837-98cede1289cb',
+        access_key: accessKey,
         name,
         email,
         message,
       }),
     })
 
-    if (!res.ok) throw new Error('Web3Forms upstream error')
+    const responseData = await res.json().catch(() => ({}))
+    console.log('[Web3Forms]', res.status, JSON.stringify(responseData))
+
+    if (!res.ok) {
+      throw new Error(responseData?.message || `Web3Forms error (${res.status})`)
+    }
 
     return NextResponse.json({ success: true })
-  } catch {
+  } catch (e) {
+    const message = e instanceof Error ? e.message : 'Failed to send message'
     return NextResponse.json(
-      { error: 'Failed to send message. Please try again later.' },
+      { error: message },
       { status: 500 }
     )
   }
