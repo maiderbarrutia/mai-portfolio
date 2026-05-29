@@ -202,6 +202,17 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 </div>
               </section>
             )}
+
+            {project.deployment && hasContent(project.deployment[language]) && (
+              <section className={styles['project-detail__section']}>
+                <h2 className={styles['project-detail__section-title']}>{t('projects.deployment')}</h2>
+                <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
+                  {project.deployment[language].split('\n').map((line, i) => (
+                    <p key={i}>{parseBold(line)}</p>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </div>
       </main>

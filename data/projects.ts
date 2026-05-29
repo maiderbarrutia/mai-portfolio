@@ -66,6 +66,10 @@ export interface Project {
     es: string;
     en: string;
   };
+  deployment?: {
+    es: string;
+    en: string;
+  };
 }
 
 const placeholder = '/projects/text-gen.svg';
@@ -130,6 +134,10 @@ export const projects: Project[] = [
     techDetails: {
       es: '• **Frontend:** React + Vite + TypeScript + SASS. Componentes reutilizables, React Router para navegación, Context API para estado de autenticación\n• **Backend:** Node.js + Express + TypeORM. Arquitectura MVC con controladores, entidades, rutas y middlewares\n• **Base de datos:** MySQL relacional con 5 tablas (Category, UserData, Company, Activity, Registration), claves foráneas e índices\n• **Autenticación:** JWT con middlewares de protección de rutas y contexto de sesión en frontend\n• **API REST:** Endpoints completos para usuarios, empresas, actividades, categorías e inscripciones\n• **Subida de archivos:** Multer para imágenes y vídeos, almacenados en carpeta pública\n• **Validación:** Postman para pruebas de endpoints y middlewares de validación server-side\n• **Metodología:** Kanban con Trello, documentación en Notion, control de versiones con Git + GitHub',
       en: '• **Frontend:** React + Vite + TypeScript + SASS. Reusable components, React Router for navigation, Context API for auth state\n• **Backend:** Node.js + Express + TypeORM. MVC architecture with controllers, entities, routes, and middlewares\n• **Database:** MySQL relational with 5 tables (Category, UserData, Company, Activity, Registration), foreign keys and indexes\n• **Authentication:** JWT with route protection middlewares and session context in frontend\n• **REST API:** Complete endpoints for users, companies, activities, categories, and registrations\n• **File upload:** Multer for images and videos, stored in public folder\n• **Validation:** Postman for endpoint testing and server-side validation middlewares\n• **Methodology:** Kanban with Trello, documentation in Notion, version control with Git + GitHub',
+    },
+    deployment: {
+      es: '• **Frontend:** Vercel\n• **Backend:** Render\n• **Base de datos:** Aiven (MySQL)\n• **Imágenes:** Cloudinary',
+      en: '• **Frontend:** Vercel\n• **Backend:** Render\n• **Database:** Aiven (MySQL)\n• **Images:** Cloudinary',
     },
   },
   {
