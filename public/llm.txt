@@ -53,4 +53,11 @@ The site is bilingual: Spanish (es) and English (en). Default locale: es_ES.
 ## Social
 - GitHub: https://github.com/maiderbarrutia
 - LinkedIn: https://linkedin.com/in/maiderbarrutiaunzueta
-- Email: maiderbarrutia@hotmail.com
+
+## Web Development Projects
+- **Aisiplan** — FullStack leisure activity platform. React + Vite + TypeScript + SASS, Node.js + Express + TypeORM + MySQL, JWT auth. Live: aisiplan.vercel.app. GitHub: github.com/maiderbarrutia/fullstack-aisiplan
+- **Ecommerce + Branding** — WordPress + WooCommerce ecommerce with multilingual (6 languages), art direction, packaging design, payment gateway, SEO. Custom child theme.
+- **Gas Corporate Portal** — WordPress + Elementor + SASS portal for a major energy company. Custom child theme with SASS overrides, bilingual, responsive.
+- **AI Sales Simulator** — Webflow site for an AI sales platform. Pixel-perfect from designs, custom CSS/JS animations, Webflow CMS, responsive.
+- **Real Estate Portal** — WordPress portal for leading real estate agency. Customized purchased theme with SASS, jQuery, PHP template overrides, responsive. All frontend work alongside 2 backend colleagues.
+- **Digital Health Portal** — WordPress custom theme from scratch for a major healthcare company. Medical community platform with videos, events, webinars. SASS, jQuery, PHP. Company provided partial designs; complete frontend layout.

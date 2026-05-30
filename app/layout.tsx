@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 import ClientProviders from '@/components/ClientProviders'
 import { LanguageProvider } from '@/context/LanguageContext'
 import '@/styles/globals.scss'
@@ -119,11 +120,12 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
          <ClientProviders>
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
-        </ClientProviders>
-      </body>
+           <LanguageProvider>
+             {children}
+           </LanguageProvider>
+         </ClientProviders>
+         <Analytics />
+       </body>
     </html>
   )
 }

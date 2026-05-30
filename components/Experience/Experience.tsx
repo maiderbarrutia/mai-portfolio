@@ -46,7 +46,7 @@ const experiences = [
         'End-to-end management of custom development projects for independent clients, handling everything from database architecture and robust **API** creation on the backend, to **UI/UX** design and development of mobile-optimized interfaces.',
       ],
     },
-    technologies: ['React', 'Figma', 'Sass', 'MySql', 'Nodejs', 'Express'],
+    technologies: ['React', 'Figma', 'Sass', 'MySql', 'Nodejs', 'Express', 'Copilot', 'ChatGPT'],
   },
   {
     role: { es: 'Frontend UI Developer', en: 'Frontend UI Developer' },
@@ -61,7 +61,7 @@ const experiences = [
         'Specialist in user interface development for major accounts (**Health, Insurance, and Media**), focused on extreme web performance optimization (**WPO**), resolution of critical security incidents, and structuring scalable workflows under agile methodologies.',
       ],
     },
-    technologies: ['Wordpress', 'Sass', 'JavaScript', 'Scrum', 'Kanban'],
+    technologies: ['Wordpress', 'Sass', 'JQuery', 'Scrum', 'Kanban'],
   },
 ]
 
