@@ -14,6 +14,10 @@ interface CategoryGroup {
   label: { es: string; en: string }
   items: {
     id: string
+    slug: {
+      es: string
+      en: string
+    }
     title: { es: string; en: string }
     subtitle: { es: string; en: string }
     image: string
@@ -61,10 +65,10 @@ export function ProyectosClient({ categories }: Props) {
           {activeCategory && (
             <section className={styles.category}>
               <div className={styles.category__grid}>
-                {activeCategory.items.map((project) => (
+                {activeCategory.items.map((project, index) => (
                   <Link
                     key={project.id}
-                    href={`${language === 'es' ? '/proyectos' : '/projects'}/${project.id}`}
+                    href={`${language === 'es' ? '/proyectos' : '/projects'}/${project.slug[language]}`}
                     className={styles.card}
                     aria-label={project.title[language]}
                   >
@@ -74,6 +78,7 @@ export function ProyectosClient({ categories }: Props) {
                           src={project.image}
                           alt={project.title[language]}
                           fill
+                          priority={index === 0}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>

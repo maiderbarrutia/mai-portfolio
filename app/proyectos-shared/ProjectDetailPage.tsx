@@ -139,7 +139,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           )}
 
           {project.confidentialNote && (
-            <p className={styles['project-detail__confidential']}>{project.confidentialNote}</p>
+            <p className={styles['project-detail__confidential']}>{project.confidentialNote[language]}</p>
           )}
 
           <div className={styles['project-detail__sections']}>

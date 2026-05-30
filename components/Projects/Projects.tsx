@@ -42,7 +42,7 @@ export default function Projects() {
               className={`${styles['projects__grid-item']} ${isVisible ? styles['projects__grid-item--visible'] : ''}`}
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} priority={index === 0} />
             </div>
           ))}
         </div>

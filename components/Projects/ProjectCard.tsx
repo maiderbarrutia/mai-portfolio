@@ -10,12 +10,13 @@ import styles from './ProjectCard.module.scss';
 
 interface ProjectCardProps {
   project: Project;
+  priority?: boolean;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, priority }: ProjectCardProps) {
   const { t, language } = useLanguage();
   const [imgError, setImgError] = useState(false);
-  const href = `${language === 'es' ? '/proyectos' : '/projects'}/${project.id}`;
+  const href = `${language === 'es' ? '/proyectos' : '/projects'}/${project.slug[language]}`;
 
   return (
     <Link href={href} className={styles['project-card']} aria-label={project.title[language]}>
@@ -31,6 +32,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               alt={project.title[language]}
               className={styles['project-card__image']}
               fill
+              priority={priority}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               onError={() => setImgError(true)}
             />

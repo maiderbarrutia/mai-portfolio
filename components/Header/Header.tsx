@@ -1,15 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { Moon, Sun } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTheme } from '@/context/ThemeContext';
+import { projects } from '@/data/projects';
 import styles from './Header.module.scss';
 
 export default function Header() {
   const { t, language, setLanguage } = useLanguage();
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,6 +24,28 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLanguageChange = useCallback(() => {
+    const nextLang = language === 'es' ? 'en' : 'es';
+    setLanguage(nextLang);
+
+    const pathMatch = pathname.match(/^\/(projects|proyectos)(\/.+)?$/);
+    if (pathMatch) {
+      const prefix = pathMatch[1];
+      const rest = pathMatch[2] || '';
+      const otherPrefix = prefix === 'projects' ? 'proyectos' : 'projects';
+      if (rest) {
+        const slug = rest.slice(1);
+        const project = projects.find(p => p.slug.es === slug || p.slug.en === slug);
+        if (project) {
+          router.push(`/${otherPrefix}/${project.slug[nextLang]}`);
+          return;
+        }
+      }
+      router.push(`/${otherPrefix}`);
+      return;
+    }
+  }, [language, pathname, setLanguage, router]);
 
   const navItems = [
     { href: '/#about', label: t('nav.about') },
@@ -51,7 +77,7 @@ export default function Header() {
         <div className={styles.header__controls}>
           <button
             className={styles['header__lang-btn']}
-            onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+            onClick={handleLanguageChange}
             aria-label={t('language.toggle')}
             title={t('language.toggle')}
           >

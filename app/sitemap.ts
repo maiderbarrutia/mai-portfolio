@@ -13,13 +13,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projectRoutes = projects.flatMap((p) => [
     {
-      url: `${baseUrl}/projects/${p.id}`,
+      url: `${baseUrl}/projects/${p.slug.en}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/proyectos/${p.id}`,
+      url: `${baseUrl}/proyectos/${p.slug.es}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,

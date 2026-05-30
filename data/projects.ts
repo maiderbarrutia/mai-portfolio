@@ -15,6 +15,10 @@ export interface ProjectMedia {
 
 export interface Project {
   id: string;
+  slug: {
+    es: string;
+    en: string;
+  };
   category: ProjectCategory;
   title: {
     es: string;
@@ -70,7 +74,10 @@ export interface Project {
     es: string;
     en: string;
   };
-  confidentialNote?: string;
+  confidentialNote?: {
+    es: string;
+    en: string;
+  };
 }
 
 const placeholder = '/projects/text-gen.svg';
@@ -78,6 +85,10 @@ const placeholder = '/projects/text-gen.svg';
 export const projects: Project[] = [
   {
     id: 'aisiplan',
+    slug: {
+      es: 'aisiplan',
+      en: 'aisiplan',
+    },
     category: 'web-development',
     title: { es: 'Aisiplan', en: 'Aisiplan' },
     subtitle: {
@@ -143,6 +154,10 @@ export const projects: Project[] = [
   },
   {
     id: 'ecommerce-branding',
+    slug: {
+      es: 'ecommerce-y-branding',
+      en: 'ecommerce-and-branding',
+    },
     category: 'web-development',
     title: { es: 'Ecommerce + Branding', en: 'E-commerce + Branding' },
     subtitle: {
@@ -153,7 +168,7 @@ export const projects: Project[] = [
       es: 'Proyecto integral que abarca desde el diseño de logotipo, packaging e identidad corporativa hasta el desarrollo completo de una tienda online WooCommerce multilingüe (6 idiomas) con catálogo de productos, carrito de compra, pasarela de pago internacional y panel de administración.',
       en: 'Comprehensive project covering logo design, packaging, corporate identity, and complete multilingual WooCommerce online store development (6 languages) with product catalog, shopping cart, international payment gateway, and admin panel.',
     },
-    tags: ['WordPress', 'WooCommerce', 'PHP', 'MySQL', 'HTML/CSS', 'JavaScript', 'Illustrator', 'Photoshop', 'Identidad Corporativa', 'Packaging'],
+    tags: ['WordPress', 'WooCommerce', 'PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript', 'Illustrator', 'Photoshop', 'Identidad Corporativa', 'Packaging'],
     image: '/projects/branding-ecommerce.svg',
     media: [],
     featured: false,
@@ -189,10 +204,17 @@ export const projects: Project[] = [
       es: '• **Identidad corporativa:** Illustrator, Photoshop — logotipo, paleta cromática, tipografía, manual de marca\n• **Packaging:** Illustrator, Photoshop — diseño de envases para 3 líneas de producto\n• **CMS:** WordPress + WooCommerce con tema personalizado\n• **Idiomas:** WPML para gestión multilingüe (6 idiomas)\n• **Frontend:** HTML5, CSS3, JavaScript, tema hijo personalizado\n• **Backend:** PHP, MySQL con tablas relacionales de WooCommerce\n• **Plugins:** WPML, pasarela de pago, SEO, caché, seguridad\n• **Rendimiento:** Caché server-side, optimización de imágenes, minificación de assets\n• **SEO:** Sitemaps, meta tags multilingües, datos estructurados\n• **Hosting:** Servidor dedicado con SSL y CDN',
       en: '• **Corporate identity:** Illustrator, Photoshop — logo, color palette, typography, brand guidelines\n• **Packaging:** Illustrator, Photoshop — packaging design for 3 product lines\n• **CMS:** WordPress + WooCommerce with custom theme\n• **Languages:** WPML for multilingual management (6 languages)\n• **Frontend:** HTML5, CSS3, JavaScript, custom child theme\n• **Backend:** PHP, MySQL with WooCommerce relational tables\n• **Plugins:** WPML, payment gateway, SEO, cache, security\n• **Performance:** Server-side cache, image optimization, asset minification\n• **SEO:** Sitemaps, multilingual meta tags, structured data\n• **Hosting:** Dedicated server with SSL and CDN',
     },
-    confidentialNote: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+    confidentialNote: {
+      es: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+      en: '📜 Note: Project built for an external company. Real names and logos omitted due to intellectual property.',
+    },
   },
   {
     id: 'energy-distribution-portal',
+    slug: {
+      es: 'portal-corporativo-de-gas',
+      en: 'gas-corporate-portal',
+    },
     category: 'web-development',
     title: { es: 'Portal Corporativo de Gas', en: 'Gas Corporate Portal' },
     subtitle: {
@@ -203,7 +225,7 @@ export const projects: Project[] = [
       es: 'Maquetación completa en WordPress con Elementor y SASS del portal corporativo de la división de gas butano y propano de una gran compañía energética. Desarrollo visual de todas las páginas a partir de diseños proporcionados, incluyendo home, catálogo de productos, FAQ y contenido corporativo bilingüe.',
       en: 'Complete markup in WordPress with Elementor and SASS of the butane and propane gas division corporate portal of a major energy company. Visual development of all pages from provided designs, including home, product catalog, FAQ, and bilingual corporate content.',
     },
-    tags: ['WordPress', 'Elementor', 'SASS', 'HTML/CSS', 'JavaScript'],
+    tags: ['WordPress', 'Elementor', 'SASS', 'HTML5', 'CSS3', 'JavaScript'],
     image: '/projects/energy-portal.svg',
     media: [],
     featured: true,
@@ -239,10 +261,17 @@ export const projects: Project[] = [
       es: '• **CMS:** WordPress con Elementor\n• **Frontend:** SASS, HTML5, CSS3, JavaScript\n• **Maquetación:** Elementor con estilos SASS personalizados en tema hijo\n• **Estilos:** SASS con variables, mixins, nesting y partials\n• **Diseño:** Responsive con breakpoints personalizados\n• **SEO:** Meta tags, datos estructurados, optimización on-page\n• **Rendimiento:** Optimización de imágenes, minificación, caché\n• **Idiomas:** Bilingüe español/inglés',
       en: '• **CMS:** WordPress with Elementor\n• **Frontend:** SASS, HTML5, CSS3, JavaScript\n• **Markup:** Elementor with custom SASS styles in child theme\n• **Styles:** SASS with variables, mixins, nesting, and partials\n• **Design:** Responsive with custom breakpoints\n• **SEO:** Meta tags, structured data, on-page optimization\n• **Performance:** Image optimization, minification, cache\n• **Languages:** Bilingual Spanish/English',
     },
-    confidentialNote: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+    confidentialNote: {
+      es: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+      en: '📜 Note: Project built for an external company. Real names and logos omitted due to intellectual property.',
+    },
   },
   {
     id: 'ai-sales-simulator',
+    slug: {
+      es: 'simulador-de-ventas-con-ia',
+      en: 'ai-sales-simulator',
+    },
     category: 'web-development',
     title: { es: 'Simulador de Ventas con IA', en: 'AI Sales Simulator' },
     subtitle: {
@@ -253,7 +282,7 @@ export const projects: Project[] = [
       es: 'Desarrollo completo en Webflow de la web corporativa para una plataforma SaaS de simulación de ventas con IA. Maquetación pixel-perfect a partir de diseños proporcionados, con animaciones avanzadas, diseño responsive y experiencia de usuario fluida. La web comunica el valor del producto a través de storytelling visual, métricas impactantes y un diseño moderno y profesional.',
       en: 'Complete Webflow development of the corporate website for an AI-powered sales simulation SaaS platform. Pixel-perfect markup from provided designs, with advanced animations, responsive design, and smooth user experience. The website communicates product value through visual storytelling, impactful metrics, and a modern, professional design.',
     },
-    tags: ['Webflow', 'HTML/CSS', 'JavaScript', 'Animaciones', 'Responsive Design'],
+    tags: ['Webflow', 'HTML5', 'CSS3', 'JavaScript', 'Animaciones', 'Responsive Design'],
     image: '/projects/ai-sales-simulator.svg',
     media: [],
     featured: true,
@@ -289,10 +318,131 @@ export const projects: Project[] = [
       es: '• **CMS:** Webflow con sistema de gestión de contenidos integrado\n• **Frontend:** Webflow Designer + Custom Code (CSS, JavaScript)\n• **Animaciones:** Animaciones CSS personalizadas, interacciones Webflow, JavaScript\n• **Diseño:** Responsive con breakpoints optimizados\n• **Formularios:** Webflow Forms con integración de automatizaciones\n• **SEO:** Meta tags, sitemap, datos estructurados, optimización on-page\n• **Rendimiento:** CDN global, lazy loading, minificación automática\n• **Hosting:** Webflow Enterprise hosting con SSL y CDN',
       en: '• **CMS:** Webflow with integrated content management system\n• **Frontend:** Webflow Designer + Custom Code (CSS, JavaScript)\n• **Animations:** Custom CSS animations, Webflow interactions, JavaScript\n• **Design:** Responsive with optimized breakpoints\n• **Forms:** Webflow Forms with automation integration\n• **SEO:** Meta tags, sitemap, structured data, on-page optimization\n• **Performance:** Global CDN, lazy loading, automatic minification\n• **Hosting:** Webflow Enterprise hosting with SSL and CDN',
     },
-    confidentialNote: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+    confidentialNote: {
+      es: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+      en: '📜 Note: Project built for an external company. Real names and logos omitted due to intellectual property.',
+    },
+  },
+  {
+    id: 'real-estate-portal',
+    slug: {
+      es: 'portal-inmobiliario',
+      en: 'real-estate-portal',
+    },
+    category: 'web-development',
+    title: { es: 'Portal Inmobiliario', en: 'Real Estate Portal' },
+    subtitle: {
+      es: 'Adaptación de tema WordPress para portal inmobiliario de una de las agencias líderes del sector',
+      en: 'WordPress theme adaptation for a leading real estate agency portal',
+    },
+    description: {
+      es: 'Adaptación y personalización de un tema WordPress comprado para el portal web de una importante agencia inmobiliaria. Se adaptó el tema existente al diseño proporcionado, trabajando con SASS para ajustar estilos, maquetación y componentes, logrando una web profesional y coherente con la identidad de marca.',
+      en: 'Adaptation and customization of a purchased WordPress theme for a major real estate agency website. The existing theme was adapted to match the provided design, working with SASS to adjust styles, layout, and components, achieving a professional look consistent with the brand identity.',
+    },
+    tags: ['WordPress', 'SASS', 'HTML5', 'CSS3', 'jQuery', 'PHP'],
+    image: '/projects/real-estate-portal.svg',
+    media: [],
+    featured: false,
+    challenge: {
+      es: 'Partir de un tema WordPress comprado y transformarlo visualmente para que se ajustara exactamente al diseño proporcionado por el cliente, una de las agencias inmobiliarias más reconocidas del país. El reto era adaptar la estructura y estilos del tema sin perder la funcionalidad base, trabajando con SASS para sobreescribir y personalizar cada sección.',
+      en: 'Start from a purchased WordPress theme and visually transform it to exactly match the design provided by the client, one of the most recognized real estate agencies in the country. The challenge was adapting the theme structure and styles without losing base functionality, working with SASS to override and customize each section.',
+    },
+    uxDecisions: {
+      es: 'Diseño limpio y profesional enfocado en la presentación de propiedades. Navegación intuitiva con buscador destacado. Fichas de propiedad con información clara y llamadas a la acción. Galería de imágenes y mapas de ubicación. Adaptación responsive para consultar propiedades desde cualquier dispositivo.',
+      en: 'Clean, professional design focused on property presentation. Intuitive navigation with prominent search. Property listings with clear information and calls to action. Image gallery and location maps. Responsive adaptation for browsing properties from any device.',
+    },
+    architecture: {
+      es: 'WordPress con tema comprado personalizado vía SASS. Tema hijo con overrides de estilos. Personalización de plantillas PHP del tema. SASS con variables, mixins y partials para mantener el código organizado y reutilizable. Diseño responsive adaptado a todos los dispositivos.',
+      en: 'WordPress with purchased theme customized via SASS. Child theme with style overrides. Customization of theme PHP templates. SASS with variables, mixins, and partials for organized, reusable code. Responsive design adapted to all devices.',
+    },
+    aiIntegration: {
+      es: '',
+      en: '',
+    },
+    problemsSolved: {
+      es: 'Transforma un tema genérico comprado en un portal web profesional y único para una agencia inmobiliaria de primer nivel. Mantiene la funcionalidad robusta del tema base mientras se adapta visualmente al diseño y la identidad de marca del cliente.',
+      en: 'Transforms a generic purchased theme into a unique, professional web portal for a top-tier real estate agency. Maintains the robust functionality of the base theme while visually adapting to the client\'s design and brand identity.',
+    },
+    metrics: {
+      es: '• Portal inmobiliario completo con tema WordPress adaptado\n• Personalización visual completa con SASS\n• Tema hijo con overrides de estilos y plantillas\n• Diseño responsive para todos los dispositivos\n• Integración de buscador y fichas de propiedad\n• Optimización de rendimiento y SEO',
+      en: '• Complete real estate portal with adapted WordPress theme\n• Full visual customization with SASS\n• Child theme with style and template overrides\n• Responsive design for all devices\n• Search and property listing integration\n• Performance and SEO optimization',
+    },
+    myRole: {
+      es: 'Me encargué del desarrollo integral de la capa frontend, trabajando en coordinación con el equipo encargado del backend. Mi trabajo incluyó la adaptación y personalización del tema WordPress con SASS, maquetación responsive, el ajuste de plantillas PHP y la implementación del portal garantizando la máxima fidelidad con el diseño UI proporcionado.',
+      en: 'I developed all the frontend work alongside two colleagues. My work included: WordPress theme adaptation and customization with SASS, responsive layout, PHP template adjustments, and portal configuration to match the provided design.',
+    },
+    techDetails: {
+      es: '• **CMS:** WordPress con tema comprado personalizado\n• **Frontend:** SASS, HTML5, CSS3, jQuery\n• **Estilos:** SASS con variables, mixins, nesting, partials y tema hijo\n• **Plantillas:** Personalización de plantillas PHP del tema\n• **Diseño:** Responsive con breakpoints personalizados\n• **Rendimiento:** Optimización de assets, caché, carga diferida de imágenes\n• **SEO:** Meta tags, datos estructurados, sitemap',
+      en: '• **CMS:** WordPress with customized purchased theme\n• **Frontend:** SASS, HTML5, CSS3, jQuery\n• **Styles:** SASS with variables, mixins, nesting, partials, and child theme\n• **Templates:** Customization of theme PHP templates\n• **Design:** Responsive with custom breakpoints\n• **Performance:** Asset optimization, cache, lazy image loading\n• **SEO:** Meta tags, structured data, sitemap',
+    },
+    confidentialNote: {
+      es: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+      en: '📜 Note: Project built for an external company. Real names and logos omitted due to intellectual property.',
+    },
+  },
+  {
+    id: 'doryos',
+    slug: {
+      es: 'portal-salud-digital',
+      en: 'digital-health-portal',
+    },
+    category: 'web-development',
+    title: { es: 'Portal de Salud Digital', en: 'Digital Health Portal' },
+    subtitle: {
+      es: 'Plataforma de conocimiento médico digital para una gran compañía de salud',
+      en: 'Digital medical knowledge platform for a major healthcare company',
+    },
+    description: {
+      es: 'Desarrollo completo desde cero de un portal WordPress para una gran compañía de salud. Una plataforma de comunidad médica digital con vídeos didácticos, eventos, webinars y rutas formativas.',
+      en: 'Complete WordPress development from scratch for a major healthcare company. A digital medical community platform with educational videos, events, webinars, and training paths.',
+    },
+    tags: ['WordPress', 'SASS', 'HTML5', 'CSS3', 'jQuery', 'PHP'],
+    image: '/projects/health-portal.svg',
+    media: [],
+    featured: false,
+    confidentialNote: {
+      es: '📜 Nota: Proyecto realizado para cliente de empresa externa. Nombres y logos reales omitidos por propiedad intelectual.',
+      en: '📜 Note: Project built for an external company. Real names and logos omitted due to intellectual property.',
+    },
+    challenge: {
+      es: 'Crear desde cero un portal WordPress completamente customizado, sin partir de un tema comprado. La empresa nos pasó parte de los diseños y a partir de ahí desarrollé la maquetación completa. El reto era construir una plataforma escalable para una comunidad médica global con sistema de vídeos, eventos, webinars, rutas formativas y gestión de usuarios, manteniendo un diseño profesional acorde al sector sanitario.',
+      en: 'Build a fully customized WordPress portal from scratch, without using a purchased theme. The company provided us with some of the designs, and from there I developed the complete layout. The challenge was to create a scalable platform for a global medical community with a video system, events, webinars, training paths, and user management, maintaining a professional design befitting the healthcare sector.',
+    },
+    uxDecisions: {
+      es: 'Diseño limpio y profesional enfocado en la usabilidad para profesionales sanitarios. Navegación clara con categorización de contenido médico por especialidades. Sistema de búsqueda avanzada. Reproductor de vídeo integrado. Diseño responsive para acceso desde cualquier dispositivo.',
+      en: 'Clean, professional design focused on usability for healthcare professionals. Clear navigation with medical content categorization by specialty. Advanced search system. Integrated video player. Responsive design for access from any device.',
+    },
+    architecture: {
+      es: 'WordPress con tema propio desarrollado desde cero. Maquetación completa con SASS (variables, mixins, partials). Personalización de plantillas PHP. Integración de funcionalidades con jQuery. Optimización de rendimiento y SEO on-page.',
+      en: 'WordPress with custom theme developed from scratch. Complete layout with SASS (variables, mixins, partials). PHP template customization. jQuery functionality integration. Performance optimization and on-page SEO.',
+    },
+    aiIntegration: {
+      es: '',
+      en: '',
+    },
+    problemsSolved: {
+      es: 'Se construyó una plataforma médica digital completa y escalable desde cero, sin depender de temas precomprados, logrando un diseño totalmente adaptado a las necesidades de la comunidad médica.',
+      en: 'A complete, scalable digital medical platform was built from scratch, without relying on pre-purchased themes, achieving a design fully adapted to the medical community\'s needs.',
+    },
+    metrics: {
+      es: '• Portal WordPress con tema propio desarrollado desde cero\n• Maquetación completa con SASS\n• Personalización de plantillas PHP\n• Sistema de vídeos, eventos y webinars\n• Rutas formativas y gestión de contenido\n• Diseño responsive y optimizado\n• SEO on-page',
+      en: '• WordPress portal with custom theme developed from scratch\n• Complete layout with SASS\n• PHP template customization\n• Video, event, and webinar system\n• Training paths and content management\n• Responsive and optimized design\n• On-page SEO',
+    },
+    myRole: {
+      es: 'Maquetación completa de la web con SASS, añadí o modifiqué partes de PHP y algunas funcionalidades con jQuery.',
+      en: 'Complete website layout with SASS, added or modified PHP parts, and implemented some jQuery functionality.',
+    },
+    techDetails: {
+      es: '• **CMS:** WordPress con tema propio desarrollado desde cero\n• **Frontend:** SASS, HTML5, CSS3, jQuery\n• **Estilos:** SASS con variables, mixins, nesting, partials\n• **Plantillas:** Personalización de plantillas PHP del tema\n• **Diseño:** Responsive con breakpoints personalizados\n• **Rendimiento:** Optimización de assets, caché, carga diferida de imágenes\n• **SEO:** Meta tags, datos estructurados, sitemap',
+      en: '• **CMS:** WordPress with custom theme developed from scratch\n• **Frontend:** SASS, HTML5, CSS3, jQuery\n• **Styles:** SASS with variables, mixins, nesting, partials\n• **Templates:** Customization of theme PHP templates\n• **Design:** Responsive with custom breakpoints\n• **Performance:** Asset optimization, cache, lazy image loading\n• **SEO:** Meta tags, structured data, sitemap',
+    },
   },
   {
     id: 'landing-gasnature',
+    slug: {
+      es: 'landing-gasnature',
+      en: 'landing-gasnature',
+    },
     category: 'web-design',
     title: { es: 'Landing GasNature', en: 'GasNature Landing Page' },
     subtitle: {
@@ -328,6 +478,10 @@ export const projects: Project[] = [
   },
   {
     id: 'landing-tcs',
+    slug: {
+      es: 'landing-tcs',
+      en: 'landing-tcs',
+    },
     category: 'web-design',
     title: { es: 'Landing TCS', en: 'TCS Landing Page' },
     subtitle: {
@@ -364,6 +518,10 @@ export const projects: Project[] = [
   },
   {
     id: 'landing-traductor-itzulpen',
+    slug: {
+      es: 'landing-traductor-itzulpen',
+      en: 'landing-translator-itzulpen',
+    },
     category: 'web-design',
     title: { es: 'Landing Traductor Itzulpen', en: 'Itzulpen Translator Landing' },
     subtitle: {
@@ -399,6 +557,10 @@ export const projects: Project[] = [
   },
   {
     id: 'web-araex',
+    slug: {
+      es: 'web-araex',
+      en: 'web-araex',
+    },
     category: 'web-design',
     title: { es: 'Web Araex', en: 'Araex Website' },
     subtitle: {
@@ -435,6 +597,10 @@ export const projects: Project[] = [
   },
   {
     id: 'piatto-ristorante',
+    slug: {
+      es: 'piatto-ristorante',
+      en: 'piatto-ristorante',
+    },
     category: 'graphic-design',
     title: { es: 'Piatto Ristorante Italiano', en: 'Piatto Ristorante Italiano' },
     subtitle: {
@@ -474,6 +640,10 @@ export const projects: Project[] = [
   },
   {
     id: 'revista-grafik',
+    slug: {
+      es: 'revista-grafik',
+      en: 'grafik-magazine',
+    },
     category: 'graphic-design',
     title: { es: 'Revista GrafiK', en: 'GrafiK Magazine' },
     subtitle: {
@@ -516,6 +686,10 @@ export const projects: Project[] = [
   },
   {
     id: 'folleto-camara-comercio-bilbao',
+    slug: {
+      es: 'folleto-camara-comercio-bilbao',
+      en: 'bilbao-chamber-of-commerce-brochure',
+    },
     category: 'graphic-design',
     title: { es: 'Folleto Cámara de Comercio de Bilbao', en: 'Bilbao Chamber of Commerce Brochure' },
     subtitle: {
@@ -552,6 +726,10 @@ export const projects: Project[] = [
   },
   {
     id: 'folleto-colonias-2010',
+    slug: {
+      es: 'folleto-colonias-2010',
+      en: 'summer-camp-brochure-2010',
+    },
     category: 'graphic-design',
     title: { es: 'Folleto Colonias 2010', en: 'Summer Camp 2010 Brochure' },
     subtitle: {
@@ -589,6 +767,10 @@ export const projects: Project[] = [
   },
   {
     id: 'optica-pop-eye',
+    slug: {
+      es: 'optica-pop-eye',
+      en: 'pop-eye-optics',
+    },
     category: 'graphic-design',
     title: { es: 'Óptica Pop Eye', en: 'Pop Eye Optician' },
     subtitle: {
@@ -627,6 +809,10 @@ export const projects: Project[] = [
   },
   {
     id: 'pack-zensacion',
+    slug: {
+      es: 'pack-zensacion',
+      en: 'zensacion-packaging',
+    },
     category: 'graphic-design',
     title: { es: 'Pack Zensación', en: 'Zensación Pack' },
     subtitle: {
@@ -663,6 +849,10 @@ export const projects: Project[] = [
   },
   {
     id: 'bodegas-ubide',
+    slug: {
+      es: 'bodegas-ubide',
+      en: 'ubide-winery',
+    },
     category: 'graphic-design',
     title: { es: 'Bodegas Ubide', en: 'Ubide Wineries' },
     subtitle: {
@@ -698,6 +888,10 @@ export const projects: Project[] = [
   },
   {
     id: 'anuncios-publicitarios',
+    slug: {
+      es: 'anuncios-publicitarios',
+      en: 'print-advertisements',
+    },
     category: 'graphic-design',
     title: { es: 'Anuncios Publicitarios', en: 'Advertising Ads' },
     subtitle: {
@@ -733,6 +927,10 @@ export const projects: Project[] = [
   },
   {
     id: 'carteles-aste-nagusia-jazzaldia',
+    slug: {
+      es: 'carteles-aste-nagusia-jazzaldia',
+      en: 'aste-nagusia-jazzaldia-posters',
+    },
     category: 'graphic-design',
     title: { es: 'Carteles Aste Nagusia y Jazzaldia', en: 'Aste Nagusia & Jazzaldia Posters' },
     subtitle: {
@@ -770,4 +968,4 @@ export const projects: Project[] = [
 ];
 
 export const getFeaturedProjects = () => projects.filter(p => p.featured);
-export const getProjectById = (id: string) => projects.find(p => p.id === id);
+export const getProjectById = (slug: string) => projects.find(p => p.slug.es === slug || p.slug.en === slug);

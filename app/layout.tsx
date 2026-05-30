@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/next'
 import ClientProviders from '@/components/ClientProviders'
 import { LanguageProvider } from '@/context/LanguageContext'
 import '@/styles/globals.scss'
