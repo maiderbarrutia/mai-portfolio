@@ -38,7 +38,7 @@ export function ProyectosClient({ categories }: Props) {
   return (
     <>
       <Header />
-      <div className={styles.page}>
+      <main id="main-content" className={styles.page}>
         <div className={styles.page__container}>
           <Link href="/" className={styles.page__back}>
             <ArrowLeft size={20} />
@@ -50,10 +50,14 @@ export function ProyectosClient({ categories }: Props) {
             <p className={styles.page__subtitle}>{t('projects.allSubtitle')}</p>
           </header>
 
-          <div className={styles.tabs}>
+          <div className={styles.tabs} role="tablist" aria-label="Project categories">
             {categories.map((cat) => (
               <button
                 key={cat.key}
+                id={`tab-${cat.key}`}
+                role="tab"
+                aria-controls={`panel-${cat.key}`}
+                aria-selected={activeTab === cat.key}
                 className={`${styles.tabs__btn} ${activeTab === cat.key ? styles['tabs__btn--active'] : ''}`}
                 onClick={() => setActiveTab(cat.key)}
               >
@@ -63,7 +67,7 @@ export function ProyectosClient({ categories }: Props) {
           </div>
 
           {activeCategory && (
-            <section className={styles.category}>
+            <section id={`panel-${activeCategory.key}`} className={styles.category} role="tabpanel" aria-labelledby={`tab-${activeCategory.key}`}>
               <div className={styles.category__grid}>
                 {activeCategory.items.map((project, index) => (
                   <Link
@@ -104,7 +108,7 @@ export function ProyectosClient({ categories }: Props) {
             </section>
           )}
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   )

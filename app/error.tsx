@@ -8,7 +8,7 @@ export default function Error({
   reset: () => void
 }) {
   return (
-    <div style={{
+    <main id="main-content" style={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -41,6 +41,6 @@ export default function Error({
       >
         Intentar de nuevo
       </button>
-    </div>
+    </main>
   )
 }

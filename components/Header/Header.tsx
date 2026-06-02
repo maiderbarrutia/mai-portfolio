@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { Moon, Sun } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
@@ -59,7 +60,7 @@ export default function Header() {
     <header className={`${styles.header} ${isScrolled ? styles['header--scrolled'] : ''}`}>
       <div className={styles.header__container}>
         <Link href="/" className={styles.header__logo} aria-label="Maider Barrutia - Home">
-          <img src="/mai-logo.svg" alt="Maider Barrutia Logo" />
+          <Image src="/mai-logo.svg" alt="Maider Barrutia Logo" width={44} height={44} />
         </Link>
 
         <nav className={styles['header__desktop-nav']} aria-label="Main navigation">

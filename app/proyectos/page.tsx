@@ -5,8 +5,8 @@ import { ProyectosClient } from '../proyectos-shared/ProyectosClient'
 const siteUrl = 'https://maiderbarrutia.vercel.app'
 
 export const metadata: Metadata = {
-  title: 'Todos los Proyectos | Maider Barrutia',
-  description: 'Explora todos los proyectos de Maider Barrutia organizados por categorías: diseño gráfico, diseño web y desarrollo web.',
+  title: 'Todos los Proyectos',
+  description: 'Explora todos los proyectos de Maider Barrutia organizados por categorías: diseño gráfico, diseño web y desarrollo web. Descubre sitios responsive, landing pages, portales corporativos e identidades de marca.',
   alternates: {
     canonical: `${siteUrl}/proyectos`,
     languages: {
@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Todos los Proyectos | Maider Barrutia',
-    description: 'Explora todos los proyectos de Maider Barrutia organizados por categorías.',
+    description: 'Explora todos los proyectos de Maider Barrutia organizados por categorías: diseño gráfico, diseño web y desarrollo web.',
     locale: 'es_ES',
     alternateLocale: 'en_US',
+    images: [
+      {
+        url: `${siteUrl}/og-image.svg`,
+        width: 1200,
+        height: 630,
+        alt: 'Todos los Proyectos | Maider Barrutia',
+      },
+    ],
+  },
+  twitter: {
+    images: [`${siteUrl}/og-image.svg`],
   },
 }
 

@@ -8,15 +8,15 @@ import { z } from 'zod';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Contact.module.scss';
 
+const contactSchema = z.object({
+  name: z.string().min(2, 'Name is required'),
+  email: z.string().email('Invalid email'),
+  message: z.string().min(10, 'Message is required'),
+});
+type ContactFormData = z.infer<typeof contactSchema>;
+
 export default function Contact() {
   const { t } = useLanguage();
-
-  const contactSchema = z.object({
-    name: z.string().min(2, t('contact.errorName')),
-    email: z.string().email(t('contact.errorEmail')),
-    message: z.string().min(10, t('contact.errorMessage')),
-  });
-  type ContactFormData = z.infer<typeof contactSchema>;
   const [copied, setCopied] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
   const emailUser = 'maiderbarrutia';
@@ -118,7 +118,7 @@ export default function Contact() {
 
           <form className={styles.contact__form} onSubmit={handleSubmit(onSubmit)} noValidate>
             {isSubmitSuccessful ? (
-              <div className={`${styles.contact__success} ${styles['contact__success--visible']}`}>
+              <div className={`${styles.contact__success} ${styles['contact__success--visible']}`} role="status" aria-live="polite">
                 <CheckCircle2 size={48} />
                 <p>{t('contact.success')}</p>
               </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                     <span id="message-error" className={styles.contact__error}>{errors.message.message}</span>
                   )}
                 </div>
-                {apiError && <p className={styles.contact__error}>{apiError}</p>}
+                {apiError && <p className={styles.contact__error} role="alert">{apiError}</p>}
                 <button type="submit" className={styles.contact__submit} disabled={isSubmitting}>
                   {isSubmitting ? (
                     <><Loader2 size={16} className={styles.contact__spinner} /> {t('contact.sending')}</>

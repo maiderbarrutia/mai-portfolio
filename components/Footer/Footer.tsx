@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Footer.module.scss';
@@ -19,7 +20,7 @@ export default function Footer() {
       <div className={styles.footer__container}>
         <div className={styles.footer__content}>
           <div className={styles.footer__brand}>
-            <img src="/mai-logo.svg" alt="Maider Barrutia Logo" />
+            <Image src="/mai-logo.svg" alt="Maider Barrutia Logo" width={60} height={60} />
           </div>
 
           <nav className={styles.footer__nav} aria-label="Footer navigation">

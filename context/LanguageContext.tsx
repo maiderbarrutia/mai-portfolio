@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import { sanitizeHtml } from '@/lib/sanitize';
 import { translations, type Language } from '@/lib/translations';
 
@@ -32,23 +33,27 @@ function getNestedValue(obj: Record<string, unknown>, path: string): string {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
   const [language, setLanguageState] = useState<Language>('es');
   const [mounted, setMounted] = useState(false);
 
-  // === AQUÍ ESTÁ EL CAMBIO REQUERIDO ===
   useEffect(() => {
     setMounted(true);
     const savedLang = localStorage.getItem('portfolio-language') as Language;
     
     if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
-      // Si el usuario ya eligió un idioma en el pasado, lo respetamos
       setLanguageState(savedLang);
+      return;
     }
-  }, []);
+
+    const langFromUrl = pathname?.startsWith('/projects') || pathname === '/legal' ? 'en' : 'es';
+    setLanguageState(langFromUrl);
+  }, [pathname]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('portfolio-language', lang);
+    document.cookie = `portfolio-language=${lang};path=/;max-age=31536000;SameSite=Lax`;
     document.documentElement.lang = lang;
   };
 

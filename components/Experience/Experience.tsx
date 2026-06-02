@@ -150,13 +150,14 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState<'experience' | 'education'>('experience')
 
   const itemRefs = experiences.map(() => useRef<HTMLDivElement>(null))
+  const headerRef = useRef<HTMLDivElement>(null)
   const visible = useInView(itemRefs)
 
   return (
     <section id="experience" className={styles.experience}>
       <div className={styles['experience__container']}>
         <div className={styles['experience__header']}
-          ref={useRef<HTMLDivElement>(null)}
+          ref={headerRef}
         >
           <span className={styles['experience__section-tag']}>{t('experience.tag')}</span>
           <h2 className={styles['experience__title']}>{t('experience.title')}</h2>
@@ -167,9 +168,11 @@ export default function Experience() {
           </a>
         </div>
 
-        <div className={styles.tabs} role="tablist">
+        <div className={styles.tabs} role="tablist" aria-label="Experience tabs">
           <button
+            id="tab-experience"
             role="tab"
+            aria-controls="panel-experience"
             aria-selected={activeTab === 'experience'}
             className={`${styles.tabs__btn} ${activeTab === 'experience' ? styles['tabs__btn--active'] : ''}`}
             onClick={() => setActiveTab('experience')}
@@ -177,7 +180,9 @@ export default function Experience() {
             {t('experience.experienceTab')}
           </button>
           <button
+            id="tab-education"
             role="tab"
+            aria-controls="panel-education"
             aria-selected={activeTab === 'education'}
             className={`${styles.tabs__btn} ${activeTab === 'education' ? styles['tabs__btn--active'] : ''}`}
             onClick={() => setActiveTab('education')}
@@ -187,7 +192,7 @@ export default function Experience() {
         </div>
 
         {activeTab === 'experience' && (
-          <div className={styles['experience__timeline']} role="tabpanel">
+          <div id="panel-experience" className={styles['experience__timeline']} role="tabpanel" aria-labelledby="tab-experience">
             {experiences.map((exp, index) => {
               const lang = language as Lang
               const isVisible = visible.has(index)
@@ -231,7 +236,7 @@ export default function Experience() {
         )}
 
         {activeTab === 'education' && (
-          <div className={styles['education']} role="tabpanel">
+          <div id="panel-education" className={styles['education']} role="tabpanel" aria-labelledby="tab-education">
             {education.map((edu, i) => (
               <div key={i} className={styles['education__card']}>
                 <h3 className={styles['education__title']}>{edu[language as Lang].title}</h3>

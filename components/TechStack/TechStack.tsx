@@ -32,7 +32,9 @@ export default function TechStack() {
           {categoryOrder.map(cat => (
             <button
               key={cat}
+              id={`tab-${cat}`}
               role="tab"
+              aria-controls={`panel-${cat}`}
               aria-selected={activeTab === cat}
               className={`${styles.tabs__btn} ${activeTab === cat ? styles['tabs__btn--active'] : ''}`}
               onClick={() => setActiveTab(cat)}
@@ -45,9 +47,10 @@ export default function TechStack() {
           
         <div
           key={activeTab}
+          id={`panel-${activeTab}`}
           className={styles['tech-stack__panel']}
           role="tabpanel"
-          aria-label={tabLabel(activeTab)}
+          aria-labelledby={`tab-${activeTab}`}
         >
           <p className={styles['tech-stack__desc']}>{t(`techStack.${activeTab}Desc`)}</p>
 

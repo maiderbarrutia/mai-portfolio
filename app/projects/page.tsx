@@ -5,8 +5,8 @@ import { ProyectosClient } from '../proyectos-shared/ProyectosClient'
 const siteUrl = 'https://maiderbarrutia.vercel.app'
 
 export const metadata: Metadata = {
-  title: 'All Projects | Maider Barrutia',
-  description: 'Explore all projects by Maider Barrutia organized by categories: graphic design, web design, and web development.',
+  title: 'All Projects',
+  description: 'Explore all projects by Maider Barrutia organized by categories: graphic design, web design, and web development. Discover responsive websites, landing pages, corporate portals, and brand identities.',
   alternates: {
     canonical: `${siteUrl}/projects`,
     languages: {
@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'All Projects | Maider Barrutia',
-    description: 'Explore all projects by Maider Barrutia organized by categories.',
+    description: 'Explore all projects by Maider Barrutia organized by categories: graphic design, web design, and web development.',
     locale: 'en_US',
     alternateLocale: 'es_ES',
+    images: [
+      {
+        url: `${siteUrl}/og-image.svg`,
+        width: 1200,
+        height: 630,
+        alt: 'All Projects | Maider Barrutia',
+      },
+    ],
+  },
+  twitter: {
+    images: [`${siteUrl}/og-image.svg`],
   },
 }
 

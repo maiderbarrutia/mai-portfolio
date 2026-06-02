@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div style={{
+    <main id="main-content" style={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -34,6 +34,6 @@ export default function NotFound() {
       >
         Volver al inicio
       </Link>
-    </div>
+    </main>
   )
 }

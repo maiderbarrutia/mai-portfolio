@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import ClientProviders from '@/components/ClientProviders'
 import { LanguageProvider } from '@/context/LanguageContext'
+import SkipLink from '@/components/SkipLink/SkipLink'
 import '@/styles/globals.scss'
 
 const siteUrl = 'https://maiderbarrutia.vercel.app'
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     default: 'Maider Barrutia | FullStack Developer & UI Architect',
     template: '%s | Maider Barrutia',
   },
-  description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
+  description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
   applicationName: 'Maider Barrutia',
   verification: {
     google: 'gsIySzRiPF76_1YQhzqYegNvOz2lP-srw10WRuTvzZM',
@@ -26,16 +27,26 @@ export const metadata: Metadata = {
   authors: [{ name: 'Maider Barrutia' }],
   openGraph: {
     title: 'Maider Barrutia | FullStack Developer & UI Architect',
-    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
+    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
     type: 'website',
     siteName: 'Maider Barrutia',
     locale: 'es_ES',
     alternateLocale: 'en_US',
+    url: siteUrl,
+    images: [
+      {
+        url: `${siteUrl}/og-image.svg`,
+        width: 1200,
+        height: 630,
+        alt: 'Maider Barrutia | FullStack Developer & UI Architect',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Maider Barrutia | FullStack Developer & UI Architect',
-    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
+    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
+    images: [`${siteUrl}/og-image.svg`],
   },
   robots: {
     index: true,
@@ -128,7 +139,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body suppressHydrationWarning>
+       <body suppressHydrationWarning>
+         <SkipLink />
          <ClientProviders>
            <LanguageProvider>
              {children}

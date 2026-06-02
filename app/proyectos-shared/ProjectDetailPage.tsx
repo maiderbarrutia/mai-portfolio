@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, use, useEffect, useCallback } from 'react';
+import { useState, use, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -9,10 +9,11 @@ import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { getProjectById } from '@/data/projects';
+import { sanitizeHtml } from '@/lib/sanitize';
 import styles from './ProjectDetail.module.scss';
 
 function htmlContent(html: string) {
-  return { __html: html };
+  return { __html: sanitizeHtml(html) };
 }
 
 export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
@@ -21,6 +22,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
   const project = getProjectById(id);
   const [selectedMedia, setSelectedMedia] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
 
   const goNext = useCallback(() => {
     if (lightboxIndex === null || !project) return;
@@ -38,9 +40,25 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
       if (e.key === 'Escape') setLightboxIndex(null);
       if (e.key === 'ArrowRight') goNext();
       if (e.key === 'ArrowLeft') goPrev();
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        const focusable = lightboxRef.current?.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          first.focus();
+        }
+      }
     };
     document.addEventListener('keydown', handler);
     document.body.style.overflow = 'hidden';
+    const closeBtn = lightboxRef.current?.querySelector<HTMLElement>('.lightbox__close');
+    if (closeBtn) closeBtn.focus();
     return () => {
       document.removeEventListener('keydown', handler);
       document.body.style.overflow = '';
@@ -61,7 +79,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
   return (
     <>
       <Header />
-      <main className={styles['project-detail']}>
+      <main id="main-content" className={styles['project-detail']}>
         <div className={styles['project-detail__container']}>
           <Link href={language === 'es' ? '/proyectos' : '/projects'} className={styles['project-detail__back']}>
             <ArrowLeft size={20} />
@@ -217,7 +235,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
       <Footer />
 
       {lightboxIndex !== null && (
-        <div className={styles.lightbox} onClick={() => setLightboxIndex(null)} role="dialog" aria-label={project.media[lightboxIndex].alt[language]}>
+        <div className={styles.lightbox} onClick={() => setLightboxIndex(null)} role="dialog" aria-label={project.media[lightboxIndex].alt[language]} aria-modal="true" ref={lightboxRef}>
           <button className={styles.lightbox__close} onClick={() => setLightboxIndex(null)} aria-label="Close">
             <X size={28} />
           </button>

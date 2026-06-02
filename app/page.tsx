@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'es_ES',
     alternateLocale: 'en_US',
+    images: [
+      {
+        url: `${siteUrl}/og-image.svg`,
+        width: 1200,
+        height: 630,
+        alt: 'Maider Barrutia | FullStack Developer & UI Architect',
+      },
+    ],
+  },
+  twitter: {
+    images: [`${siteUrl}/og-image.svg`],
   },
 }
 
@@ -27,7 +38,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Projects />
         <TechStack />
