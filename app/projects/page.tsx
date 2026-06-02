@@ -2,9 +2,24 @@ import type { Metadata } from 'next'
 import { projects, type ProjectCategory } from '@/data/projects'
 import { ProyectosClient } from '../proyectos-shared/ProyectosClient'
 
+const siteUrl = 'https://maiderbarrutia.vercel.app'
+
 export const metadata: Metadata = {
   title: 'All Projects | Maider Barrutia',
   description: 'Explore all projects by Maider Barrutia organized by categories: graphic design, web design, and web development.',
+  alternates: {
+    canonical: `${siteUrl}/projects`,
+    languages: {
+      es: `${siteUrl}/proyectos`,
+      en: `${siteUrl}/projects`,
+    },
+  },
+  openGraph: {
+    title: 'All Projects | Maider Barrutia',
+    description: 'Explore all projects by Maider Barrutia organized by categories.',
+    locale: 'en_US',
+    alternateLocale: 'es_ES',
+  },
 }
 
 const categoryLabels: Record<ProjectCategory, { es: string; en: string }> = {

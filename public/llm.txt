@@ -1,7 +1,7 @@
 # Maider Barrutia — Fullstack Developer & UI Architect
 
 ## About
-Portfolio website of Maider Barrutia, a Fullstack Developer based in Spain specializing in React, TypeScript, Next.js, and AI-driven development.
+Portfolio website of Maider Barrutia, a Fullstack Developer based in Spain specializing in React, Scss, TypeScript, Next.js, and AI-driven development.
 
 ## Tech Stack
 - **Frontend**: React, TypeScript, Next.js, JavaScript, HTML5, CSS3/SCSS, Tailwind CSS, Vite, WordPress

@@ -8,11 +8,14 @@ const siteUrl = 'https://maiderbarrutia.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Maider Barrutia | FullStack Developer & UI Architect',
+  title: {
+    default: 'Maider Barrutia | FullStack Developer & UI Architect',
+    template: '%s | Maider Barrutia',
+  },
   description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
   applicationName: 'Maider Barrutia',
   verification: {
-    google: 'u5RYPfHJK4Dpht8OzUfbzKo1KYyeyIPy01n0BCT-198',
+    google: 'gsIySzRiPF76_1YQhzqYegNvOz2lP-srw10WRuTvzZM',
   },
   keywords: [
     'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Architect', 'Web Architect',
@@ -27,6 +30,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Maider Barrutia',
     locale: 'es_ES',
+    alternateLocale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
@@ -43,6 +47,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
+    languages: {
+      es: `${siteUrl}/proyectos`,
+      en: `${siteUrl}/projects`,
+    },
   },
 }
 

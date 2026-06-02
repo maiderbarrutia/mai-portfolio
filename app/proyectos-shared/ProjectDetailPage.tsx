@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, use, useEffect, useCallback, type ReactNode } from 'react';
+import { useState, use, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -11,14 +11,8 @@ import { useLanguage } from '@/context/LanguageContext';
 import { getProjectById } from '@/data/projects';
 import styles from './ProjectDetail.module.scss';
 
-function parseBold(text: string): ReactNode {
-  const parts = text.split(/(\*\*.*?\*\*)/)
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>
-    }
-    return part
-  })
+function htmlContent(html: string) {
+  return { __html: html };
 }
 
 export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
@@ -75,9 +69,9 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           </Link>
 
           <header className={styles['project-detail__header']}>
-            <h1 className={styles['project-detail__title']}>{project.title[language]}</h1>
-            <p className={styles['project-detail__subtitle']}>{project.subtitle[language]}</p>
-            <p className={styles['project-detail__description']}>{project.description[language]}</p>
+            <h1 className={styles['project-detail__title']} dangerouslySetInnerHTML={htmlContent(project.title[language])} />
+            <p className={styles['project-detail__subtitle']} dangerouslySetInnerHTML={htmlContent(project.subtitle[language])} />
+            <p className={styles['project-detail__description']} dangerouslySetInnerHTML={htmlContent(project.description[language])} />
 
             <div className={styles['project-detail__tags']}>
               {project.tags.map((tag) => (
@@ -146,35 +140,35 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             {hasContent(project.challenge[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.challenge')}</h2>
-                <p className={styles['project-detail__section-text']}>{project.challenge[language]}</p>
+                <p className={styles['project-detail__section-text']} dangerouslySetInnerHTML={htmlContent(project.challenge[language])} />
               </section>
             )}
 
             {hasContent(project.uxDecisions[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.uxDecisions')}</h2>
-                <p className={styles['project-detail__section-text']}>{project.uxDecisions[language]}</p>
+                <p className={styles['project-detail__section-text']} dangerouslySetInnerHTML={htmlContent(project.uxDecisions[language])} />
               </section>
             )}
 
             {hasContent(project.architecture[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.architecture')}</h2>
-                <p className={styles['project-detail__section-text']}>{project.architecture[language]}</p>
+                <p className={styles['project-detail__section-text']} dangerouslySetInnerHTML={htmlContent(project.architecture[language])} />
               </section>
             )}
 
             {hasContent(project.aiIntegration[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.aiIntegration')}</h2>
-                <p className={styles['project-detail__section-text']}>{project.aiIntegration[language]}</p>
+                <p className={styles['project-detail__section-text']} dangerouslySetInnerHTML={htmlContent(project.aiIntegration[language])} />
               </section>
             )}
 
             {project.problemsSolved && hasContent(project.problemsSolved[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.problemsSolved')}</h2>
-                <p className={styles['project-detail__section-text']}>{project.problemsSolved[language]}</p>
+                <p className={styles['project-detail__section-text']} dangerouslySetInnerHTML={htmlContent(project.problemsSolved[language])} />
               </section>
             )}
 
@@ -183,7 +177,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <h2 className={styles['project-detail__section-title']}>{t('projects.metrics')}</h2>
                 <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
                   {project.metrics[language].split('\n').map((line, i) => (
-                    <p key={i}>{parseBold(line)}</p>
+                    <p key={i} dangerouslySetInnerHTML={htmlContent(line)} />
                   ))}
                 </div>
               </section>
@@ -192,7 +186,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             {project.myRole && hasContent(project.myRole[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.myRole')}</h2>
-                <p className={styles['project-detail__section-text']}>{parseBold(project.myRole[language])}</p>
+                <p className={styles['project-detail__section-text']} dangerouslySetInnerHTML={htmlContent(project.myRole[language])} />
               </section>
             )}
 
@@ -201,7 +195,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <h2 className={styles['project-detail__section-title']}>{t('projects.techDetails')}</h2>
                 <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
                   {project.techDetails[language].split('\n').map((line, i) => (
-                    <p key={i}>{parseBold(line)}</p>
+                    <p key={i} dangerouslySetInnerHTML={htmlContent(line)} />
                   ))}
                 </div>
               </section>
@@ -212,7 +206,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                 <h2 className={styles['project-detail__section-title']}>{t('projects.deployment')}</h2>
                 <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
                   {project.deployment[language].split('\n').map((line, i) => (
-                    <p key={i}>{parseBold(line)}</p>
+                    <p key={i} dangerouslySetInnerHTML={htmlContent(line)} />
                   ))}
                 </div>
               </section>
