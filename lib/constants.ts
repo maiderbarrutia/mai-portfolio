@@ -7,4 +7,4 @@ if (!rawSiteUrl) {
   )
 }
 
-export const SITE_URL = rawSiteUrl
+export const SITE_URL = rawSiteUrl.replace(/\/+$/, '')
