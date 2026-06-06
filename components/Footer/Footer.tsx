@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './Footer.module.scss';
 
@@ -24,19 +24,19 @@ export default function Footer() {
           </div>
 
           <nav className={styles.footer__nav} aria-label="Footer navigation">
-            <a href="/#about" className={styles['footer__nav-link']}>{t('nav.about')}</a>
-            <a href="/#projects" className={styles['footer__nav-link']}>{t('nav.projects')}</a>
-            <a href="/#tech" className={styles['footer__nav-link']}>{t('nav.tech')}</a>
-            <a href="/#experience" className={styles['footer__nav-link']}>{t('nav.experience')}</a>
-            <a href="/#contact" className={styles['footer__nav-link']}>{t('nav.contact')}</a>
+            <Link href="/#about" className={styles['footer__nav-link']}>{t('nav.about')}</Link>
+            <Link href="/#projects" className={styles['footer__nav-link']}>{t('nav.projects')}</Link>
+            <Link href="/#tech" className={styles['footer__nav-link']}>{t('nav.tech')}</Link>
+            <Link href="/#experience" className={styles['footer__nav-link']}>{t('nav.experience')}</Link>
+            <Link href="/#contact" className={styles['footer__nav-link']}>{t('nav.contact')}</Link>
           </nav>
 
           <div className={styles.footer__social}>
             <a href="https://github.com/maiderbarrutia" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github size={20} />
+              <Github size={20} aria-hidden="true" />
             </a>
             <a href="https://linkedin.com/in/maiderbarrutiaunzueta" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin size={20} />
+              <Linkedin size={20} aria-hidden="true" />
             </a>
           </div>
         </div>

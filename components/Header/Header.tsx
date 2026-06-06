@@ -60,16 +60,16 @@ export default function Header() {
     <header className={`${styles.header} ${isScrolled ? styles['header--scrolled'] : ''}`}>
       <div className={styles.header__container}>
         <Link href="/" className={styles.header__logo} aria-label="Maider Barrutia - Home">
-          <Image src="/mai-logo.svg" alt="Maider Barrutia Logo" width={44} height={44} />
+          <Image src="/mai-logo.svg" alt="Maider Barrutia Logo" width={44} height={44} priority />
         </Link>
 
         <nav className={styles['header__desktop-nav']} aria-label="Main navigation">
           <ul className={styles['header__nav-list']}>
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className={styles['header__nav-link']}>
+                <Link href={item.href} className={styles['header__nav-link']}>
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -120,13 +120,13 @@ export default function Header() {
         <ul className={styles['header__mobile-nav-list']}>
           {navItems.map((item) => (
             <li key={item.href}>
-              <a
+              <Link
                 href={item.href}
                 className={styles['header__mobile-nav-link']}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

@@ -202,13 +202,13 @@ export default function Experience() {
                   key={index}
                   ref={itemRefs[index]}
                   className={`${styles['experience__timeline-item']} ${isVisible ? styles['experience__timeline-item--visible'] : ''}`}
-                  style={{ transitionDelay: `${index * 0.15}s` }}
+                  style={{ '--item-delay': `${index * 0.15}s` } as React.CSSProperties}
                 >
                   <div className={styles['experience__timeline-marker']}>
                     <div className={`${styles['experience__dot']} ${isVisible ? styles['experience__dot--pulse'] : ''}`} />
                     {index !== experiences.length - 1 && (
                       <div className={`${styles['experience__line']} ${isVisible ? styles['experience__line--grow'] : ''}`}
-                        style={{ transitionDelay: `${index * 0.15 + 0.3}s` }}
+                        style={{ '--line-delay': `${index * 0.15 + 0.3}s` } as React.CSSProperties}
                       />
                     )}
                   </div>
@@ -250,7 +250,7 @@ export default function Experience() {
             <div className={styles['education__grid']}>
               {certifications[language as Lang].map((cert, i) => (
                 <div key={i} className={styles['education__cert']}
-                  style={{ animationDelay: `${i * 0.1}s` }}
+                  style={{ '--cert-delay': `${i * 0.1}s` } as React.CSSProperties}
                 >
                   <div className={styles['education__cert-info']}>
                     <h4 className={styles['education__cert-title']}>{cert.title}</h4>

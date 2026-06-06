@@ -70,6 +70,7 @@
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: var(--grid-item-delay, 0s);
 
     &--visible {
       opacity: 1;

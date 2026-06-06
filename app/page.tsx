@@ -6,23 +6,27 @@ import TechStack from '@/components/TechStack/TechStack'
 import Experience from '@/components/Experience/Experience'
 import Contact from '@/components/Contact/Contact'
 import Footer from '@/components/Footer/Footer'
-
-const siteUrl = 'https://maiderbarrutia.vercel.app'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: siteUrl,
+    canonical: SITE_URL,
     languages: {
-      es: siteUrl,
-      en: siteUrl,
+      es: SITE_URL,
+      en: SITE_URL,
     },
   },
   openGraph: {
+    title: 'Maider Barrutia | FullStack Developer & UI Architect',
+    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
+    type: 'website',
+    siteName: 'Maider Barrutia',
     locale: 'es_ES',
     alternateLocale: 'en_US',
+    url: SITE_URL,
     images: [
       {
-        url: `${siteUrl}/og-image.svg`,
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Maider Barrutia | FullStack Developer & UI Architect',
@@ -30,7 +34,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    images: [`${siteUrl}/og-image.svg`],
+    card: 'summary_large_image',
+    title: 'Maider Barrutia | FullStack Developer & UI Architect',
+    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
+    images: ['/og-image.svg'],
   },
 }
 

@@ -88,7 +88,7 @@ export function ProyectosClient({ categories }: Props) {
                       </div>
                     </div>
                     <div className={styles.card__content}>
-                      <h3 className={styles.card__title}>{project.title[language]}</h3>
+                      <h2 className={styles.card__title}>{project.title[language]}</h2>
                       <p className={styles.card__subtitle}>{project.subtitle[language]}</p>
                       <div className={styles.card__tags}>
                         {project.tags.slice(0, 4).map((tag) => (

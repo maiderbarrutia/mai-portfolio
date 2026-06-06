@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { SITE_URL } from '@/lib/constants'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -7,12 +8,21 @@ const contactSchema = z.object({
   message: z.string().min(10, 'Message must be at least 10 characters'),
 })
 
+const vercelUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : null
+const extraOrigins = process.env.CORS_ORIGINS
+  ?.split(',')
+  .map((s) => s.trim())
+  .filter(Boolean) || []
+
 const ALLOWED_ORIGINS = [
-  'https://maiderbarrutia.vercel.app',
-  'https://maiderbarrutia.com',
+  SITE_URL,
+  ...(vercelUrl ? [vercelUrl] : []),
+  ...extraOrigins,
   'http://localhost:3000',
   'http://localhost:3001',
-]
+].filter((s): s is string => Boolean(s))
 
 const rateLimit = new Map<string, { count: number; resetAt: number }>()
 
@@ -75,7 +85,10 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  const accessKey = process.env.WEB3FORMS_ACCESS_KEY || '0b493378-2b92-41d3-93a7-31ba5376ea95'
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY
+  if (!accessKey) {
+    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
+  }
 
   return NextResponse.json({ accessKey })
 }

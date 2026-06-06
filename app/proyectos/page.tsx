@@ -1,35 +1,40 @@
 import type { Metadata } from 'next'
 import { projects, type ProjectCategory } from '@/data/projects'
 import { ProyectosClient } from '../proyectos-shared/ProyectosClient'
-
-const siteUrl = 'https://maiderbarrutia.vercel.app'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Todos los Proyectos',
-  description: 'Explora todos los proyectos de Maider Barrutia organizados por categorías: diseño gráfico, diseño web y desarrollo web. Descubre sitios responsive, landing pages, portales corporativos e identidades de marca.',
+  title: 'Todos los Proyectos - Portfolio',
+  description: 'Explora el portfolio completo de Maider Barrutia: desarrollo web, diseño web y diseño gráfico con sitios responsive, portales corporativos e identidades de marca.',
   alternates: {
-    canonical: `${siteUrl}/proyectos`,
+    canonical: `${SITE_URL}/proyectos`,
     languages: {
-      es: `${siteUrl}/proyectos`,
-      en: `${siteUrl}/projects`,
+      es: `${SITE_URL}/proyectos`,
+      en: `${SITE_URL}/projects`,
     },
   },
   openGraph: {
-    title: 'Todos los Proyectos | Maider Barrutia',
-    description: 'Explora todos los proyectos de Maider Barrutia organizados por categorías: diseño gráfico, diseño web y desarrollo web.',
+    title: 'Todos los Proyectos - Portfolio | Maider Barrutia',
+    description: 'Explora el portfolio completo de Maider Barrutia: desarrollo web, diseño web y diseño gráfico con sitios responsive, portales corporativos e identidades de marca.',
+    type: 'website',
+    siteName: 'Maider Barrutia',
     locale: 'es_ES',
     alternateLocale: 'en_US',
+    url: `${SITE_URL}/proyectos`,
     images: [
       {
-        url: `${siteUrl}/og-image.svg`,
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Todos los Proyectos | Maider Barrutia',
+        alt: 'Todos los Proyectos - Portfolio | Maider Barrutia',
       },
     ],
   },
   twitter: {
-    images: [`${siteUrl}/og-image.svg`],
+    card: 'summary_large_image',
+    title: 'Todos los Proyectos - Portfolio | Maider Barrutia',
+    description: 'Explora el portfolio completo de Maider Barrutia: desarrollo web, diseño web y diseño gráfico con sitios responsive, portales corporativos e identidades de marca.',
+    images: ['/og-image.svg'],
   },
 }
 

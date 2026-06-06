@@ -157,6 +157,7 @@
   border-radius: 0.75rem;
   transition: all 0.25s ease;
   animation: fadeInUp 0.5s ease forwards;
+  animation-delay: var(--delay, 0s);
   opacity: 0;
 
   &:hover {

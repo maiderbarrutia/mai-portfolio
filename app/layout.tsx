@@ -3,12 +3,11 @@ import { Analytics } from '@vercel/analytics/react'
 import ClientProviders from '@/components/ClientProviders'
 import { LanguageProvider } from '@/context/LanguageContext'
 import SkipLink from '@/components/SkipLink/SkipLink'
+import { SITE_URL } from '@/lib/constants'
 import '@/styles/globals.scss'
 
-const siteUrl = 'https://maiderbarrutia.vercel.app'
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Maider Barrutia | FullStack Developer & UI Architect',
     template: '%s | Maider Barrutia',
@@ -32,10 +31,10 @@ export const metadata: Metadata = {
     siteName: 'Maider Barrutia',
     locale: 'es_ES',
     alternateLocale: 'en_US',
-    url: siteUrl,
+    url: SITE_URL,
     images: [
       {
-        url: `${siteUrl}/og-image.svg`,
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Maider Barrutia | FullStack Developer & UI Architect',
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Maider Barrutia | FullStack Developer & UI Architect',
     description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
-    images: [`${siteUrl}/og-image.svg`],
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -59,8 +58,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: {
-      es: `${siteUrl}/proyectos`,
-      en: `${siteUrl}/projects`,
+      es: `${SITE_URL}/proyectos`,
+      en: `${SITE_URL}/projects`,
     },
   },
 }
@@ -70,14 +69,14 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Person',
-      '@id': `${siteUrl}/#person`,
+      '@id': `${SITE_URL}/#person`,
       name: 'Maider Barrutia',
       givenName: 'Maider',
       familyName: 'Barrutia',
       jobTitle: 'FullStack Developer & UI Architect',
       description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
-      url: siteUrl,
-      image: `${siteUrl}/mai-logo.svg`,
+      url: SITE_URL,
+      image: `${SITE_URL}/mai-logo.svg`,
       sameAs: [
         'https://github.com/maiderbarrutia',
         'https://linkedin.com/in/maiderbarrutiaunzueta',
@@ -112,8 +111,8 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': `${siteUrl}/#website`,
-      url: siteUrl,
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
       name: 'Maider Barrutia',
       alternateName: ['Maider Barrutia', 'Maider Barrutia Portfolio'],
       description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
@@ -128,7 +127,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})()`
@@ -138,6 +137,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        <link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/firacode-variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
        <body suppressHydrationWarning>
          <SkipLink />

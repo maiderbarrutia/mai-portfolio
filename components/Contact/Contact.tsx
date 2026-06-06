@@ -78,7 +78,6 @@ export default function Contact() {
       reset();
     } catch (e) {
       setApiError(e instanceof Error ? e.message : 'Failed to send');
-      throw e;
     }
   };
 

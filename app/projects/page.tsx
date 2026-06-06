@@ -1,35 +1,40 @@
 import type { Metadata } from 'next'
 import { projects, type ProjectCategory } from '@/data/projects'
 import { ProyectosClient } from '../proyectos-shared/ProyectosClient'
-
-const siteUrl = 'https://maiderbarrutia.vercel.app'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'All Projects',
-  description: 'Explore all projects by Maider Barrutia organized by categories: graphic design, web design, and web development. Discover responsive websites, landing pages, corporate portals, and brand identities.',
+  title: 'All Projects - Portfolio',
+  description: 'Browse the full portfolio of Maider Barrutia: web development, web design, and graphic design projects featuring responsive sites, corporate portals, and brand identities.',
   alternates: {
-    canonical: `${siteUrl}/projects`,
+    canonical: `${SITE_URL}/projects`,
     languages: {
-      es: `${siteUrl}/proyectos`,
-      en: `${siteUrl}/projects`,
+      es: `${SITE_URL}/proyectos`,
+      en: `${SITE_URL}/projects`,
     },
   },
   openGraph: {
-    title: 'All Projects | Maider Barrutia',
-    description: 'Explore all projects by Maider Barrutia organized by categories: graphic design, web design, and web development.',
+    title: 'All Projects - Portfolio | Maider Barrutia',
+    description: 'Browse the full portfolio of Maider Barrutia: web development, web design, and graphic design projects featuring responsive sites, corporate portals, and brand identities.',
+    type: 'website',
+    siteName: 'Maider Barrutia',
     locale: 'en_US',
     alternateLocale: 'es_ES',
+    url: `${SITE_URL}/projects`,
     images: [
       {
-        url: `${siteUrl}/og-image.svg`,
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'All Projects | Maider Barrutia',
+        alt: 'All Projects - Portfolio | Maider Barrutia',
       },
     ],
   },
   twitter: {
-    images: [`${siteUrl}/og-image.svg`],
+    card: 'summary_large_image',
+    title: 'All Projects - Portfolio | Maider Barrutia',
+    description: 'Browse the full portfolio of Maider Barrutia: web development, web design, and graphic design projects featuring responsive sites, corporate portals, and brand identities.',
+    images: ['/og-image.svg'],
   },
 }
 

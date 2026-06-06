@@ -25,7 +25,7 @@ export default function LegalPage() {
   return (
     <>
       <Header />
-      <main className={styles.page}>
+      <main id="main-content" className={styles.page}>
         <div className={styles.page__container}>
           <Link href="/" className={styles.page__back}>
             <ArrowLeft size={20} />

@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { getProjectById } from '@/data/projects'
 import { stripHtml } from '@/lib/stripHtml'
+import { SITE_URL } from '@/lib/constants'
 import ProjectDetailPage from '../../proyectos-shared/ProjectDetailPage'
-
-const siteUrl = 'https://maiderbarrutia.vercel.app'
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await props.params
@@ -19,20 +18,23 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
     title: project.title.es,
     description,
     alternates: {
-      canonical: `${siteUrl}/proyectos/${project.slug.es}`,
+      canonical: `${SITE_URL}/proyectos/${project.slug.es}`,
       languages: {
-        es: `${siteUrl}/proyectos/${project.slug.es}`,
-        en: `${siteUrl}/projects/${project.slug.en}`,
+        es: `${SITE_URL}/proyectos/${project.slug.es}`,
+        en: `${SITE_URL}/projects/${project.slug.en}`,
       },
     },
     openGraph: {
       title: `${project.title.es} | Maider Barrutia`,
       description,
+      type: 'article',
+      siteName: 'Maider Barrutia',
       locale: 'es_ES',
       alternateLocale: 'en_US',
+      url: `${SITE_URL}/proyectos/${project.slug.es}`,
       images: [
         {
-          url: `${siteUrl}/og-image.svg`,
+          url: '/og-image.svg',
           width: 1200,
           height: 630,
           alt: `${project.title.es} | Maider Barrutia`,
@@ -40,7 +42,10 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
       ],
     },
     twitter: {
-      images: [`${siteUrl}/og-image.svg`],
+      card: 'summary_large_image',
+      title: `${project.title.es} | Maider Barrutia`,
+      description,
+      images: ['/og-image.svg'],
     },
   }
 }

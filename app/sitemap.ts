@@ -1,28 +1,27 @@
 import type { MetadataRoute } from 'next'
 import { projects } from '@/data/projects'
+import { SITE_URL } from '@/lib/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://maiderbarrutia.vercel.app'
-
   const staticRoutes = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 1 },
-    { url: `${baseUrl}/projects`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${baseUrl}/proyectos`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${baseUrl}/legal`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: SITE_URL, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 1 },
+    { url: `${SITE_URL}/projects`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${SITE_URL}/proyectos`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.6 },
+    { url: `${SITE_URL}/legal`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
   ]
 
   const projectRoutes = projects.flatMap((p) => [
     {
-      url: `${baseUrl}/projects/${p.slug.en}`,
+      url: `${SITE_URL}/projects/${p.slug.en}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/proyectos/${p.slug.es}`,
+      url: `${SITE_URL}/proyectos/${p.slug.es}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      priority: 0.6,
     },
   ])
 

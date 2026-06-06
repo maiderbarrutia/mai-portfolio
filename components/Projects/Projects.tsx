@@ -40,7 +40,7 @@ export default function Projects() {
             <div 
               key={project.id} 
               className={`${styles['projects__grid-item']} ${isVisible ? styles['projects__grid-item--visible'] : ''}`}
-              style={{ transitionDelay: `${index * 0.1}s` }}
+              style={{ '--grid-item-delay': `${index * 0.1}s` } as React.CSSProperties}
             >
               <ProjectCard project={project} priority={index === 0} />
             </div>

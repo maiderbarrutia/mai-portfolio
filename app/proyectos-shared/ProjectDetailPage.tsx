@@ -65,6 +65,26 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
     };
   }, [lightboxIndex, goNext, goPrev]);
 
+  useEffect(() => {
+    if (!project) return
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: project.title[language],
+      description: project.subtitle[language] || project.description[language],
+      author: { '@type': 'Person', name: 'Maider Barrutia' },
+      image: `${window.location.origin}${project.image}`,
+      url: `${window.location.origin}/${language === 'en' ? 'projects' : 'proyectos'}/${project.slug[language]}`,
+      inLanguage: language,
+    }
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(jsonLd)
+    script.id = 'project-jsonld'
+    document.head.appendChild(script)
+    return () => { const s = document.getElementById('project-jsonld'); if (s) s.remove() }
+  }, [project, language])
+
   if (!project) {
     notFound();
   }
@@ -129,6 +149,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
                     alt={project.media[selectedMedia].alt[language]}
                     className={styles['project-detail__gallery-media']}
                     fill
+                    priority
                     sizes="(max-width: 768px) 100vw, 800px"
                   />
                 )}
@@ -193,7 +214,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             {project.metrics && hasContent(project.metrics[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.metrics')}</h2>
-                <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
+                <div className={styles['project-detail__section-text']}>
                   {project.metrics[language].split('\n').map((line, i) => (
                     <p key={i} dangerouslySetInnerHTML={htmlContent(line)} />
                   ))}
@@ -211,7 +232,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             {project.techDetails && hasContent(project.techDetails[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.techDetails')}</h2>
-                <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
+                <div className={styles['project-detail__section-text']}>
                   {project.techDetails[language].split('\n').map((line, i) => (
                     <p key={i} dangerouslySetInnerHTML={htmlContent(line)} />
                   ))}
@@ -222,7 +243,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             {project.deployment && hasContent(project.deployment[language]) && (
               <section className={styles['project-detail__section']}>
                 <h2 className={styles['project-detail__section-title']}>{t('projects.deployment')}</h2>
-                <div className={styles['project-detail__section-text']} style={{ whiteSpace: 'pre-line' }}>
+                <div className={styles['project-detail__section-text']}>
                   {project.deployment[language].split('\n').map((line, i) => (
                     <p key={i} dangerouslySetInnerHTML={htmlContent(line)} />
                   ))}

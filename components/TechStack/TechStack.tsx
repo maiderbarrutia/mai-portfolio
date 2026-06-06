@@ -59,7 +59,7 @@ export default function TechStack() {
               <div
                 key={tech.techKey}
                 className={styles['tech-stack__tech-card']}
-                style={{ animationDelay: `${index * 0.06}s` }}
+                style={{ '--delay': `${index * 0.06}s` } as React.CSSProperties}
               >
                 <span className={styles['tech-stack__icon']}>
                   <TechnologyIcon techKey={tech.techKey} className="w-full h-full" />
