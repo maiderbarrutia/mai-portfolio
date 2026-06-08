@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getProjectById } from '@/data/projects'
 import { stripHtml } from '@/lib/stripHtml'
-import { SITE_URL } from '@/lib/constants'
+import { SITE_URL, pageTitle } from '@/lib/constants'
 import ProjectDetailPage from '../../proyectos-shared/ProjectDetailPage'
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -9,13 +9,13 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
   const project = getProjectById(id)
 
   if (!project) {
-    return { title: 'Project Not Found' }
+    return { title: pageTitle('Project Not Found') }
   }
 
   const description = stripHtml(project.subtitle.en || project.description.en)
 
   return {
-    title: project.title.en,
+    title: pageTitle(project.title.en),
     description,
     alternates: {
       canonical: `${SITE_URL}/projects/${project.slug.en}`,

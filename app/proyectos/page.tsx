@@ -1,41 +1,54 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 import { projects, type ProjectCategory } from '@/data/projects'
 import { ProyectosClient } from '../proyectos-shared/ProyectosClient'
-import { SITE_URL } from '@/lib/constants'
+import { SITE_URL, pageTitle } from '@/lib/constants'
 
-export const metadata: Metadata = {
-  title: 'Todos los Proyectos - Portfolio',
-  description: 'Explora el portfolio completo de Maider Barrutia: desarrollo web, diseño web y diseño gráfico con sitios responsive, portales corporativos e identidades de marca.',
-  alternates: {
-    canonical: `${SITE_URL}/proyectos`,
-    languages: {
-      es: `${SITE_URL}/proyectos`,
-      en: `${SITE_URL}/projects`,
-    },
-  },
-  openGraph: {
-    title: 'Todos los Proyectos - Portfolio | Maider Barrutia',
-    description: 'Explora el portfolio completo de Maider Barrutia: desarrollo web, diseño web y diseño gráfico con sitios responsive, portales corporativos e identidades de marca.',
-    type: 'website',
-    siteName: 'Maider Barrutia',
-    locale: 'es_ES',
-    alternateLocale: 'en_US',
-    url: `${SITE_URL}/proyectos`,
-    images: [
-      {
-        url: '/og-image.svg',
-        width: 1200,
-        height: 630,
-        alt: 'Todos los Proyectos - Portfolio | Maider Barrutia',
+export async function generateMetadata(): Promise<Metadata> {
+  const cookieStore = await cookies()
+  const isEn = cookieStore.get('portfolio-language')?.value === 'en'
+
+  const title = isEn
+    ? pageTitle('All Projects - Portfolio')
+    : pageTitle('Todos los Proyectos - Portfolio')
+  const description = isEn
+    ? 'Browse the full portfolio of Maider Barrutia: web development, web design, and graphic design projects featuring responsive sites, corporate portals, and brand identities.'
+    : 'Explora el portfolio completo de Maider Barrutia: desarrollo web, diseño web y diseño gráfico con sitios responsive, portales corporativos e identidades de marca.'
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${SITE_URL}/proyectos`,
+      languages: {
+        es: `${SITE_URL}/proyectos`,
+        en: `${SITE_URL}/projects`,
       },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Todos los Proyectos - Portfolio | Maider Barrutia',
-    description: 'Explora el portfolio completo de Maider Barrutia: desarrollo web, diseño web y diseño gráfico con sitios responsive, portales corporativos e identidades de marca.',
-    images: ['/og-image.svg'],
-  },
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      siteName: 'Maider Barrutia',
+      locale: isEn ? 'en_US' : 'es_ES',
+      alternateLocale: isEn ? 'es_ES' : 'en_US',
+      url: `${SITE_URL}/proyectos`,
+      images: [
+        {
+          url: '/og-image.svg',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og-image.svg'],
+    },
+  }
 }
 
 const categoryLabels: Record<ProjectCategory, { es: string; en: string }> = {

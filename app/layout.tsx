@@ -8,15 +8,9 @@ import '@/styles/globals.scss'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: 'Maider Barrutia | FullStack Developer & UI Architect',
-    template: '%s | Maider Barrutia',
-  },
-  description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
+  title: 'Maider Barrutia | FullStack Developer & UI Architect',
+  description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
   applicationName: 'Maider Barrutia',
-  verification: {
-    google: 'gsIySzRiPF76_1YQhzqYegNvOz2lP-srw10WRuTvzZM',
-  },
   keywords: [
     'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Architect', 'Web Architect',
     'React', 'TypeScript', 'Next.js', 'Node.js', 'JavaScript', 'Git', 'Vite', 'WordPress',
@@ -26,7 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Maider Barrutia' }],
   openGraph: {
     title: 'Maider Barrutia | FullStack Developer & UI Architect',
-    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
+    description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
     type: 'website',
     siteName: 'Maider Barrutia',
     locale: 'es_ES',
@@ -44,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Maider Barrutia | FullStack Developer & UI Architect',
-    description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA.',
+    description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
     images: ['/og-image.svg'],
   },
   robots: {
@@ -74,7 +68,7 @@ const jsonLd = {
       givenName: 'Maider',
       familyName: 'Barrutia',
       jobTitle: 'FullStack Developer & UI Architect',
-      description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
+      description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
       url: SITE_URL,
       image: `${SITE_URL}/mai-logo.svg`,
       sameAs: [
@@ -115,7 +109,7 @@ const jsonLd = {
       url: SITE_URL,
       name: 'Maider Barrutia',
       alternateName: ['Maider Barrutia', 'Maider Barrutia Portfolio'],
-      description: 'Desarrolladora FullStack (Sass, React, TS, Next.js) con experiencias Frontend UI modernas, backend escalable y optimizado con IA. ¡Conoce mi trabajo!',
+      description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
       inLanguage: ['es', 'en'],
     },
   ],

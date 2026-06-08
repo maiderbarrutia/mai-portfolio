@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import LegalContent from './LegalContent'
-import { SITE_URL } from '@/lib/constants'
+import { SITE_URL, pageTitle } from '@/lib/constants'
 
 export async function generateMetadata(): Promise<Metadata> {
   const cookieStore = await cookies()
@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     : 'Aviso legal, política de privacidad y cookies del portfolio de Maider Barrutia. Información sobre protección de datos, términos de uso y derechos.'
 
   return {
-    title,
+    title: pageTitle(title),
     description: desc,
     alternates: {
       canonical: `${SITE_URL}/legal`,

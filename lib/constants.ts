@@ -8,3 +8,7 @@ if (!rawSiteUrl) {
 }
 
 export const SITE_URL = rawSiteUrl.replace(/\/+$/, '')
+
+export function pageTitle(title: string) {
+  return `${title} | Maider Barrutia`
+}
