@@ -13,8 +13,8 @@ export const translations = {
     hero: {
       badge: 'Abierta a nuevos desafíos',
       title: 'Maider Barrutia',
-      subtitle: 'FullStack Developer & UI Architect',
-      description: 'Diseño y desarrollo <strong>aplicaciones FullStack</strong> centradas en la <strong>experiencia de usuario</strong>. Trabajo con <strong>Sass</strong>, <strong>React</strong>, <strong>Node.js</strong> y <strong>herramientas de IA</strong> para crear productos rápidos, escalables y bien estructurados.',
+      subtitle: 'FullStack Developer & UI Specialist',
+      description: 'Diseño y desarrollo aplicaciones robustas con un enfoque especial en la interfaz de usuario y la maquetación avanzada. Trabajo con <strong>SASS</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Node.js</strong> y <strong>herramientas de IA</strong> para crear productos rápidos (<strong>WPO</strong>), accesibles (<strong>WCAG</strong>), escalables y con acabados <strong>pixel-perfect</strong>. ',
       ctaProjects: 'Ver Proyectos',
       ctaContact: 'Contactar',
       yearsExperience: '6+ años',
@@ -143,8 +143,8 @@ export const translations = {
     hero: {
       badge: 'Open to new challenges',
       title: 'Maider Barrutia',
-      subtitle: 'FullStack Developer & UI Architect',
-      description: 'Design and develop <strong>FullStack applications</strong> focused on <strong>user experience</strong>. Work with <strong>Sass</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>AI-powered tools</strong> to build fast, scalable, and well-structured products.',
+      subtitle: 'FullStack Developer & UI Specialist',
+      description: 'I design and develop robust applications with a special focus on user interface and advanced web layout. I work with <strong>SASS</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>AI tools</strong> to create fast (<strong>WPO</strong>), accessible (<strong>WCAG</strong>), scalable products with <strong>pixel-perfect</strong> finishes.',
       ctaProjects: 'View Projects',
       ctaContact: 'Contact',
       yearsExperience: '6+ years',
