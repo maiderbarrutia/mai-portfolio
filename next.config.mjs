@@ -19,6 +19,7 @@ const csp = [
 const nextConfig = {
   experimental: {
     turbopackFileSystemCacheForDev: true,
+    inlineCss: true,
   },
   images: {
     formats: ['image/avif', 'image/webp'],

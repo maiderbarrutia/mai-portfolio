@@ -21,6 +21,10 @@
     "sass": "^1.100.0",
     "zod": "^3.24.1"
   },
+  "browserslist": {
+    "production": ["> 0.5%", "last 2 versions", "not dead", "not ie 11"],
+    "development": ["last 1 chrome version"]
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^22",
