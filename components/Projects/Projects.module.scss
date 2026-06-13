@@ -3,6 +3,7 @@
 .projects {
   padding: 4rem 1rem;
   background-color: var(--color-background-alt);
+  scroll-margin-top: 80px;
 
   @include media-min(md) {
     padding: 6rem 1.5rem;
@@ -71,6 +72,7 @@
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
     transition-delay: var(--grid-item-delay, 0s);
+    will-change: transform, opacity;
 
     &--visible {
       opacity: 1;

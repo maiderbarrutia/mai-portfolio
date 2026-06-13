@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { getFeaturedProjects } from '@/data/projects';
+import { useInView } from '@/hooks/use-intersection-observer';
 import ProjectCard from './ProjectCard';
 import styles from './Projects.module.scss';
 
@@ -12,19 +12,7 @@ export default function Projects() {
   const { t, language } = useLanguage();
   const featuredProjects = getFeaturedProjects().slice(0, 3);
   const projectsHref = language === 'es' ? '/proyectos' : '/en/projects';
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = gridRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, isVisible } = useInView<HTMLDivElement>({ threshold: 0.1 });
 
   return (
     <section className={styles.projects} id="projects">
@@ -34,11 +22,11 @@ export default function Projects() {
           <h2 className={styles['projects__title']}>{t('projects.title')}</h2>
           <p className={styles['projects__subtitle']}>{t('projects.subtitle')}</p>
         </header>
-        
-        <div className={styles['projects__grid']} ref={gridRef}>
+
+        <div className={styles['projects__grid']} ref={ref}>
           {featuredProjects.map((project, index) => (
-            <div 
-              key={project.id} 
+            <div
+              key={project.id}
               className={`${styles['projects__grid-item']} ${isVisible ? styles['projects__grid-item--visible'] : ''}`}
               style={{ '--grid-item-delay': `${index * 0.1}s` } as React.CSSProperties}
             >

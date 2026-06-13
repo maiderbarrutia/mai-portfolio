@@ -5,6 +5,7 @@
   background: var(--color-background);
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 80px;
 
   @include media-min(md) {
     padding: 6rem 1.5rem;
@@ -115,6 +116,7 @@
 
 .tech-stack__panel {
   animation: gridIn 0.35s ease;
+  will-change: transform, opacity;
 }
 
 .tech-stack__desc {
@@ -159,6 +161,7 @@
   animation: fadeInUp 0.5s ease forwards;
   animation-delay: var(--delay, 0s);
   opacity: 0;
+  will-change: transform, opacity;
 
   &:hover {
     transform: translateY(-4px);

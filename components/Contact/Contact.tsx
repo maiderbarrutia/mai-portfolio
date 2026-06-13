@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Mail, Linkedin, Github, CheckCircle2, Send, Loader2 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useLanguage } from '@/context/LanguageContext';
+import { useInView } from '@/hooks/use-intersection-observer';
 import styles from './Contact.module.scss';
 
 const contactSchema = z.object({
@@ -37,19 +38,7 @@ export default function Contact() {
     resolver: zodResolver(contactSchema),
   });
 
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref: sectionRef, isVisible } = useInView<HTMLDivElement>({ threshold: 0.1 });
 
   const onSubmit = async (data: ContactFormData) => {
     setApiError(null);

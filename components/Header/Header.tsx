@@ -7,7 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { Moon, Sun } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTheme } from '@/context/ThemeContext';
-import { projects } from '@/data/projects';
+import { getProjectSlug } from '@/data/slug-lookup';
 import styles from './Header.module.scss';
 
 export default function Header() {
@@ -36,8 +36,8 @@ export default function Header() {
         const rest = pathname.slice('/proyectos'.length);
         if (rest.startsWith('/')) {
           const slug = rest.slice(1);
-          const project = projects.find(p => p.slug.es === slug);
-          if (project) { router.push(`/en/projects/${project.slug.en}`); return }
+          const matched = getProjectSlug(slug, 'en');
+          if (matched) { router.push(`/en/projects/${matched}`); return }
         }
         router.push('/en/projects');
         return
@@ -50,8 +50,8 @@ export default function Header() {
         const rest = pathname.slice('/en/projects'.length);
         if (rest.startsWith('/')) {
           const slug = rest.slice(1);
-          const project = projects.find(p => p.slug.en === slug);
-          if (project) { router.push(`/proyectos/${project.slug.es}`); return }
+          const matched = getProjectSlug(slug, 'es');
+          if (matched) { router.push(`/proyectos/${matched}`); return }
         }
         router.push('/proyectos');
         return

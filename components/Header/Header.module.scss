@@ -9,6 +9,7 @@
   padding: 1rem 0;
   background-color: transparent;
   transition: all 0.25s ease;
+  will-change: transform;
 
   &--scrolled {
     background-color: var(--color-background);

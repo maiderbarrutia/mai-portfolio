@@ -10,6 +10,7 @@
   transition: all 0.25s ease;
   text-decoration: none;
   color: inherit;
+  will-change: transform;
 
   &:hover {
     transform: translateY(-4px);

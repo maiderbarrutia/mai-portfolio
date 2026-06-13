@@ -8,6 +8,7 @@
   padding-top: 130px;
   padding-bottom: 4rem;
   overflow: hidden;
+  scroll-margin-top: 100px;
 
   @include media-min(md) {
     padding-top: 120px;
@@ -29,6 +30,7 @@
 
   &__content {
     animation: fadeInUp 0.6s ease forwards;
+    will-change: transform, opacity;
   }
 
   &__badge {
@@ -51,6 +53,7 @@
     background-color: var(--color-primary);
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
+    will-change: opacity;
   }
 
   &__title {
@@ -124,6 +127,7 @@
     animation: fadeInUp 0.6s ease forwards;
     animation-delay: 0.2s;
     opacity: 0;
+    will-change: transform, opacity;
   }
 
   &__bento-grid {
@@ -148,6 +152,7 @@
     display: flex;
     align-items: flex-end;
     transition: all 0.25s ease;
+    will-change: transform;
 
     &:hover {
       transform: translateY(-4px);
@@ -205,6 +210,7 @@
     opacity: 0.04;
     pointer-events: none;
     animation: hero-float 12s ease-in-out infinite;
+    will-change: transform;
 
     &:nth-child(1) {
       width: 250px;

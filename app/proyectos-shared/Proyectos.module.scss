@@ -114,6 +114,7 @@
   color: inherit;
   height: 100%;
   transition: all 0.25s ease;
+  will-change: transform;
 
   &:hover {
     transform: translateY(-4px);

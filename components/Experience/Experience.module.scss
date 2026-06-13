@@ -4,6 +4,7 @@
   padding: 4rem 1rem;
   background: var(--color-background-alt);
   position: relative;
+  scroll-margin-top: 80px;
 
   @include media-min(md) {
     padding: 6rem 1.5rem;
@@ -122,6 +123,7 @@
   transform: translateX(-30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   transition-delay: var(--item-delay, 0s);
+  will-change: transform, opacity;
 
   @include media-max(sm) {
     gap: 1rem;
@@ -149,6 +151,7 @@
   box-shadow: 0 0 0 3px var(--color-primary-alpha);
   z-index: 1;
   transition: box-shadow 0.4s ease, transform 0.4s ease;
+  will-change: transform, box-shadow;
 
   &--pulse {
     animation: dotPulse 0.6s ease forwards;
@@ -164,6 +167,7 @@
   transform: scaleY(0);
   transition: transform 0.5s ease;
   transition-delay: var(--line-delay, 0s);
+  will-change: transform;
 
   &--grow {
     transform: scaleY(1);
@@ -258,6 +262,7 @@
   max-width: 800px;
   margin: 0 auto;
   animation: fadeInUp 0.5s ease forwards;
+  will-change: transform, opacity;
 
   &__card {
     background: var(--color-surface);
@@ -268,6 +273,7 @@
     transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     animation: eduCardIn 0.5s ease forwards;
     opacity: 0;
+    will-change: transform, opacity;
 
     &:nth-child(1) { animation-delay: 0.1s; }
     &:nth-child(2) { animation-delay: 0.2s; }
@@ -317,6 +323,7 @@
     animation: certReveal 0.5s ease forwards;
     animation-delay: var(--cert-delay, 0s);
     opacity: 0;
+    will-change: transform, opacity;
 
     &:hover {
       border-color: var(--color-primary);

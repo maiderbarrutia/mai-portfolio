@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect, useRef, type ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Download } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { useMultiInView } from '@/hooks/use-intersection-observer'
 import styles from './Experience.module.scss'
 
 function parseBold(text: string): ReactNode {
@@ -119,50 +120,20 @@ const certifications = {
   ],
 }
 
-function useInView(refs: React.RefObject<Element | null>[]) {
-  const [visible, setVisible] = useState<Set<number>>(new Set())
-
-  useEffect(() => {
-    const observers: IntersectionObserver[] = []
-
-    refs.forEach((ref, i) => {
-      if (!ref.current) return
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisible(prev => new Set(prev).add(i))
-          }
-        },
-        { threshold: 0.15 }
-      )
-      observer.observe(ref.current)
-      observers.push(observer)
-    })
-
-    return () => observers.forEach(o => o.disconnect())
-  }, [refs])
-
-  return visible
-}
-
 export default function Experience() {
   const { t, language } = useLanguage()
   const [activeTab, setActiveTab] = useState<'experience' | 'education'>('experience')
 
-  const itemRefs = experiences.map(() => useRef<HTMLDivElement>(null))
-  const headerRef = useRef<HTMLDivElement>(null)
-  const visible = useInView(itemRefs)
+  const { refs, visibleItems } = useMultiInView<HTMLDivElement>(experiences.length, { threshold: 0.15 })
 
   return (
     <section id="experience" className={styles.experience}>
       <div className={styles['experience__container']}>
-        <div className={styles['experience__header']}
-          ref={headerRef}
-        >
+        <div className={styles['experience__header']}>
           <span className={styles['experience__section-tag']}>{t('experience.tag')}</span>
           <h2 className={styles['experience__title']}>{t('experience.title')}</h2>
           <p className={styles['experience__subtitle']}>{t('experience.subtitle')}</p>
-          <a href={language === 'en' ? '/cv-maider-barrutia-en.pdf' : '/cv-maider-barrutia.pdf'} target="_blank" rel="noopener noreferrer" className={styles['experience__cv-btn']}>
+          <a href={`/api/cv?lang=${language}`} target="_blank" rel="noopener noreferrer" className={styles['experience__cv-btn']}>
             <Download size={16} />
             {t('experience.downloadCV')}
           </a>
@@ -195,12 +166,12 @@ export default function Experience() {
           <div id="panel-experience" className={styles['experience__timeline']} role="tabpanel" aria-labelledby="tab-experience">
             {experiences.map((exp, index) => {
               const lang = language as Lang
-              const isVisible = visible.has(index)
+              const isVisible = visibleItems.has(index)
 
               return (
                 <div
                   key={index}
-                  ref={itemRefs[index]}
+                  ref={refs[index]}
                   className={`${styles['experience__timeline-item']} ${isVisible ? styles['experience__timeline-item--visible'] : ''}`}
                   style={{ '--item-delay': `${index * 0.15}s` } as React.CSSProperties}
                 >

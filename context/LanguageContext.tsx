@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef, type ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import { sanitizeHtml } from '@/lib/sanitize';
 import { translations, type Language } from '@/lib/translations';
@@ -17,30 +17,34 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-function getNestedValue(obj: Record<string, unknown>, path: string): string {
-  const keys = path.split('.');
-  let current: unknown = obj;
-  
-  for (const key of keys) {
-    if (current && typeof current === 'object' && key in current) {
-      current = (current as Record<string, unknown>)[key];
-    } else {
-      return path;
+function flattenTranslations(obj: Record<string, unknown>, prefix = ''): Map<string, string> {
+  const result = new Map<string, string>()
+  for (const [key, value] of Object.entries(obj)) {
+    const path = prefix ? `${prefix}.${key}` : key
+    if (typeof value === 'string') {
+      result.set(path, value)
+    } else if (value && typeof value === 'object') {
+      const nested = flattenTranslations(value as Record<string, unknown>, path)
+      nested.forEach((v, k) => result.set(k, v))
     }
   }
-  
-  return typeof current === 'string' ? current : path;
+  return result
 }
+
+const flatCache = new Map<Language, Map<string, string>>()
+flatCache.set('es', flattenTranslations(translations.es as unknown as Record<string, unknown>))
+flatCache.set('en', flattenTranslations(translations.en as unknown as Record<string, unknown>))
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [language, setLanguageState] = useState<Language>('es');
   const [mounted, setMounted] = useState(false);
+  const flatRef = useRef(flatCache)
 
   useEffect(() => {
     setMounted(true);
     const savedLang = localStorage.getItem('portfolio-language') as Language;
-    
+
     if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
       setLanguageState(savedLang);
       return;
@@ -50,12 +54,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguageState(langFromUrl);
   }, [pathname]);
 
-  const setLanguage = (lang: Language) => {
+  const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('portfolio-language', lang);
     document.cookie = `portfolio-language=${lang};path=/;max-age=31536000;SameSite=Lax`;
     document.documentElement.lang = lang;
-  };
+  }, []);
 
   useEffect(() => {
     if (mounted) {
@@ -63,14 +67,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, [language, mounted]);
 
-  const t: TranslationFunction = (key: string) => {
-    return getNestedValue(translations[language] as unknown as Record<string, unknown>, key);
-  };
+  const t: TranslationFunction = useCallback((key: string) => {
+    return flatRef.current.get(language)?.get(key) ?? key;
+  }, [language]);
 
-  const tHtml: TranslationHtmlFunction = (key: string) => {
-    const raw = getNestedValue(translations[language] as unknown as Record<string, unknown>, key);
+  const tHtml: TranslationHtmlFunction = useCallback((key: string) => {
+    const raw = flatRef.current.get(language)?.get(key) ?? key;
     return sanitizeHtml(raw);
-  };
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, tHtml }}>
