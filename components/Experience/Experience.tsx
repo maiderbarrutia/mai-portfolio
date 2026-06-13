@@ -162,7 +162,7 @@ export default function Experience() {
           <span className={styles['experience__section-tag']}>{t('experience.tag')}</span>
           <h2 className={styles['experience__title']}>{t('experience.title')}</h2>
           <p className={styles['experience__subtitle']}>{t('experience.subtitle')}</p>
-          <a href="/cv-maider-barrutia.pdf" target="_blank" rel="noopener noreferrer" className={styles['experience__cv-btn']}>
+          <a href={language === 'en' ? '/cv-maider-barrutia-en.pdf' : '/cv-maider-barrutia.pdf'} target="_blank" rel="noopener noreferrer" className={styles['experience__cv-btn']}>
             <Download size={16} />
             {t('experience.downloadCV')}
           </a>

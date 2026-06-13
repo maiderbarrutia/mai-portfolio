@@ -8,8 +8,8 @@ import '@/styles/globals.scss'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Maider Barrutia | FullStack Developer & UI Architect',
-  description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
+  title: 'Maider Barrutia | FullStack Developer & UI Specialist',
+  description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
   applicationName: 'Maider Barrutia',
   keywords: [
     'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Architect', 'Web Architect',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Maider Barrutia' }],
   openGraph: {
-    title: 'Maider Barrutia | FullStack Developer & UI Architect',
-    description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
+    title: 'Maider Barrutia | FullStack Developer & UI Specialist',
+    description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
     type: 'website',
     siteName: 'Maider Barrutia',
     locale: 'es_ES',
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Maider Barrutia | FullStack Developer & UI Architect',
+        alt: 'Maider Barrutia | FullStack Developer & UI Specialist',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maider Barrutia | FullStack Developer & UI Architect',
-    description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
+    title: 'Maider Barrutia | FullStack Developer & UI Specialist',
+    description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
     images: ['/og-image.svg'],
   },
   robots: {
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: {
-      es: `${SITE_URL}/proyectos`,
-      en: `${SITE_URL}/projects`,
+      es: SITE_URL,
+      en: `${SITE_URL}/en`,
     },
   },
 }
@@ -67,8 +67,8 @@ const jsonLd = {
       name: 'Maider Barrutia',
       givenName: 'Maider',
       familyName: 'Barrutia',
-      jobTitle: 'FullStack Developer & UI Architect',
-      description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
+      jobTitle: 'FullStack Developer & UI Specialist',
+      description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
       url: SITE_URL,
       image: `${SITE_URL}/mai-logo.svg`,
       sameAs: [
@@ -76,7 +76,7 @@ const jsonLd = {
         'https://linkedin.com/in/maiderbarrutiaunzueta',
       ],
       knowsAbout: [
-        'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Architect', 'Web Architect',
+        'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Specialist', 'Web Specialist',
         'React', 'TypeScript', 'Next.js', 'Node.js', 'JavaScript', 'Git', 'Vite', 'WordPress',
         'UI Design', 'UX Design', 'Sass', 'Tailwind CSS', 'figma',
         'AI-Driven Development', 'AI Integration', 'Scalable Solutions',
@@ -85,12 +85,12 @@ const jsonLd = {
         {
           '@type': 'EducationalOrganization',
           name: 'Ilerna Online',
-          description: 'Técnico Superior en Desarrollo de Aplicaciones Web (DAW)',
+          description: 'Técnico superior en Desarrollo de Aplicaciones Web (DAW)',
         },
         {
           '@type': 'EducationalOrganization',
           name: 'Instituto Ibarrekolanda de Bilbao',
-          description: 'Técnico Superior de Artes Plásticas y Diseño en Gráfica Publicitaria',
+          description: 'Técnico superior de Artes Plásticas y Diseño en Gráfica Publicitaria',
         },
       ],
       skills: [
@@ -109,7 +109,7 @@ const jsonLd = {
       url: SITE_URL,
       name: 'Maider Barrutia',
       alternateName: ['Maider Barrutia', 'Maider Barrutia Portfolio'],
-      description: 'Portfolio de desarrolladora FullStack con React, TS, Next.js y Sass. Creación de interfaces UI modernas, backend escalable y soluciones optimizadas con IA.',
+      description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
       inLanguage: ['es', 'en'],
     },
   ],

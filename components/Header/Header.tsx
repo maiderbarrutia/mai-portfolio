@@ -30,36 +30,50 @@ export default function Header() {
     const nextLang = language === 'es' ? 'en' : 'es';
     setLanguage(nextLang);
 
-    const pathMatch = pathname.match(/^\/(projects|proyectos)(\/.+)?$/);
-    if (pathMatch) {
-      const prefix = pathMatch[1];
-      const rest = pathMatch[2] || '';
-      const otherPrefix = prefix === 'projects' ? 'proyectos' : 'projects';
-      if (rest) {
-        const slug = rest.slice(1);
-        const project = projects.find(p => p.slug.es === slug || p.slug.en === slug);
-        if (project) {
-          router.push(`/${otherPrefix}/${project.slug[nextLang]}`);
-          return;
+    if (language === 'es') {
+      if (pathname === '/') { router.push('/en'); return }
+      if (pathname.startsWith('/proyectos')) {
+        const rest = pathname.slice('/proyectos'.length);
+        if (rest.startsWith('/')) {
+          const slug = rest.slice(1);
+          const project = projects.find(p => p.slug.es === slug);
+          if (project) { router.push(`/en/projects/${project.slug.en}`); return }
         }
+        router.push('/en/projects');
+        return
       }
-      router.push(`/${otherPrefix}`);
-      return;
+      if (pathname === '/legal') { router.push('/en/legal'); return }
+      router.push('/en');
+    } else {
+      if (pathname === '/en') { router.push('/'); return }
+      if (pathname.startsWith('/en/projects')) {
+        const rest = pathname.slice('/en/projects'.length);
+        if (rest.startsWith('/')) {
+          const slug = rest.slice(1);
+          const project = projects.find(p => p.slug.en === slug);
+          if (project) { router.push(`/proyectos/${project.slug.es}`); return }
+        }
+        router.push('/proyectos');
+        return
+      }
+      if (pathname === '/en/legal') { router.push('/legal'); return }
+      router.push('/');
     }
   }, [language, pathname, setLanguage, router]);
 
+  const prefix = language === 'en' ? '/en' : '';
   const navItems = [
-    { href: '/#about', label: t('nav.about') },
-    { href: '/#projects', label: t('nav.projects') },
-    { href: '/#tech', label: t('nav.tech') },
-    { href: '/#experience', label: t('nav.experience') },
-    { href: '/#contact', label: t('nav.contact') },
+    { href: `${prefix}/#about`, label: t('nav.about') },
+    { href: `${prefix}/#projects`, label: t('nav.projects') },
+    { href: `${prefix}/#tech`, label: t('nav.tech') },
+    { href: `${prefix}/#experience`, label: t('nav.experience') },
+    { href: `${prefix}/#contact`, label: t('nav.contact') },
   ];
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles['header--scrolled'] : ''}`}>
       <div className={styles.header__container}>
-        <Link href="/" className={styles.header__logo} aria-label="Maider Barrutia - Home">
+        <Link href={language === 'en' ? '/en' : '/'} className={styles.header__logo} aria-label="Maider Barrutia - Home">
           <Image src="/mai-logo.svg" alt="Maider Barrutia Logo" width={44} height={44} priority />
         </Link>
 

@@ -16,7 +16,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, priority }: ProjectCardProps) {
   const { t, language } = useLanguage();
   const [imgError, setImgError] = useState(false);
-  const href = `${language === 'es' ? '/proyectos' : '/projects'}/${project.slug[language]}`;
+  const href = `${language === 'es' ? '/proyectos' : '/en/projects'}/${project.slug[language]}`;
 
   return (
     <Link href={href} className={styles['project-card']} aria-label={project.title[language]}>

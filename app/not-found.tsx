@@ -1,12 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { cookies } from 'next/headers'
+import { headers } from 'next/headers'
 import { pageTitle } from '@/lib/constants'
 import styles from './not-found.module.scss'
 
+async function getLanguageFromUrl(): Promise<'en' | 'es'> {
+  try {
+    const headersList = await headers()
+    const url = headersList.get('x-pathname') || headersList.get('next-url') || ''
+    if (url.startsWith('/en/') || url === '/en') return 'en'
+  } catch {}
+  return 'es'
+}
+
 export async function generateMetadata(): Promise<Metadata> {
-  const cookieStore = await cookies()
-  const isEn = cookieStore.get('portfolio-language')?.value === 'en'
+  const isEn = await getLanguageFromUrl() === 'en'
 
   const title = pageTitle(isEn ? 'Page Not Found' : 'Página no encontrada')
   const description = isEn
@@ -42,8 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function NotFound() {
-  const cookieStore = await cookies()
-  const isEn = cookieStore.get('portfolio-language')?.value === 'en'
+  const isEn = await getLanguageFromUrl() === 'en'
 
   const message = isEn ? 'Page not found' : 'Página no encontrada'
   const linkText = isEn ? 'Back to home' : 'Volver al inicio'
@@ -52,7 +59,7 @@ export default async function NotFound() {
     <main id="main-content" className={styles['not-found']}>
       <h1 className={styles['not-found__title']}>404</h1>
       <p className={styles['not-found__message']}>{message}</p>
-      <Link href="/" className={styles['not-found__link']}>
+      <Link href={isEn ? '/en' : '/'} className={styles['not-found__link']}>
         {linkText}
       </Link>
     </main>

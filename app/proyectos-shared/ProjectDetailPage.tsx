@@ -74,7 +74,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
       description: project.subtitle[language] || project.description[language],
       author: { '@type': 'Person', name: 'Maider Barrutia' },
       image: `${window.location.origin}${project.image}`,
-      url: `${window.location.origin}/${language === 'en' ? 'projects' : 'proyectos'}/${project.slug[language]}`,
+      url: `${window.location.origin}/${language === 'en' ? 'en/projects' : 'proyectos'}/${project.slug[language]}`,
       inLanguage: language,
     }
     const script = document.createElement('script')
@@ -101,7 +101,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
       <Header />
       <main id="main-content" className={styles['project-detail']}>
         <div className={styles['project-detail__container']}>
-          <Link href={language === 'es' ? '/proyectos' : '/projects'} className={styles['project-detail__back']}>
+          <Link href={language === 'es' ? '/proyectos' : '/en/projects'} className={styles['project-detail__back']}>
             <ArrowLeft size={20} />
             {t('projects.backToHome')}
           </Link>

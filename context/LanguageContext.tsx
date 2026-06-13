@@ -46,7 +46,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    const langFromUrl = pathname?.startsWith('/projects') || pathname === '/legal' ? 'en' : 'es';
+    const langFromUrl = pathname?.startsWith('/en/') || pathname === '/en' ? 'en' : 'es';
     setLanguageState(langFromUrl);
   }, [pathname]);
 

@@ -27,7 +27,7 @@ export default function LegalPage() {
       <Header />
       <main id="main-content" className={styles.page}>
         <div className={styles.page__container}>
-          <Link href="/" className={styles.page__back}>
+          <Link href={language === 'en' ? '/en' : '/'} className={styles.page__back}>
             <ArrowLeft size={20} />
             {content.backHome}
           </Link>

@@ -11,7 +11,7 @@ import styles from './Projects.module.scss';
 export default function Projects() {
   const { t, language } = useLanguage();
   const featuredProjects = getFeaturedProjects().slice(0, 3);
-  const projectsHref = language === 'es' ? '/proyectos' : '/projects';
+  const projectsHref = language === 'es' ? '/proyectos' : '/en/projects';
   const gridRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 

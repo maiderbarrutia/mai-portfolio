@@ -40,7 +40,7 @@ export function ProyectosClient({ categories }: Props) {
       <Header />
       <main id="main-content" className={styles.page}>
         <div className={styles.page__container}>
-          <Link href="/" className={styles.page__back}>
+          <Link href={language === 'en' ? '/en' : '/'} className={styles.page__back}>
             <ArrowLeft size={20} />
             {t('projects.backToHome')}
           </Link>
@@ -72,7 +72,7 @@ export function ProyectosClient({ categories }: Props) {
                 {activeCategory.items.map((project, index) => (
                   <Link
                     key={project.id}
-                    href={`${language === 'es' ? '/proyectos' : '/projects'}/${project.slug[language]}`}
+                    href={`${language === 'es' ? '/proyectos' : '/en/projects'}/${project.slug[language]}`}
                     className={styles.card}
                     aria-label={project.title[language]}
                   >

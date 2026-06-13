@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getProjectById } from '@/data/projects'
 import { stripHtml } from '@/lib/stripHtml'
 import { SITE_URL, pageTitle } from '@/lib/constants'
-import ProjectDetailPage from '../../proyectos-shared/ProjectDetailPage'
+import ProjectDetailPage from '../../../proyectos-shared/ProjectDetailPage'
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await props.params
@@ -18,10 +18,10 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
     title: pageTitle(project.title.en),
     description,
     alternates: {
-      canonical: `${SITE_URL}/projects/${project.slug.en}`,
+      canonical: `${SITE_URL}/en/projects/${project.slug.en}`,
       languages: {
         es: `${SITE_URL}/proyectos/${project.slug.es}`,
-        en: `${SITE_URL}/projects/${project.slug.en}`,
+        en: `${SITE_URL}/en/projects/${project.slug.en}`,
       },
     },
     openGraph: {
@@ -31,7 +31,7 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
       siteName: 'Maider Barrutia',
       locale: 'en_US',
       alternateLocale: 'es_ES',
-      url: `${SITE_URL}/projects/${project.slug.en}`,
+      url: `${SITE_URL}/en/projects/${project.slug.en}`,
       images: [
         {
           url: '/og-image.svg',

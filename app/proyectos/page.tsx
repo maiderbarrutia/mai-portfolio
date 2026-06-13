@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: `${SITE_URL}/proyectos`,
       languages: {
         es: `${SITE_URL}/proyectos`,
-        en: `${SITE_URL}/projects`,
+        en: `${SITE_URL}/en/projects`,
       },
     },
     openGraph: {
