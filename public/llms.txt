@@ -1,10 +1,10 @@
-# Maider Barrutia — Fullstack Developer & UI Architect
+# Maider Barrutia — Fullstack Developer & UI Specialist
 
 ## About
 Portfolio website of Maider Barrutia, a Fullstack Developer based in Spain specializing in React, Scss, TypeScript, Next.js, and AI-driven development.
 
 ## Tech Stack
-- **Frontend**: React, TypeScript, Next.js, JavaScript, HTML5, CSS3/SCSS, Tailwind CSS, Vite, WordPress
+- **Frontend**: React, TypeScript, Next.js, JavaScript, HTML5, CSS3/SCSS, Tailwind CSS, Vite, WordPress, Angular
 - **Backend & DB**: Node.js, Express, PHP, MySQL, Oracle
 - **Design**: Figma, Photoshop, Illustrator
 - **Tools**: Git, Jest, Vitest, React Testing Library, Jira, Scrum, Kanban
@@ -43,21 +43,36 @@ The site is bilingual: Spanish (es) and English (en). Default locale: es_ES.
 - **Footer**: Copyright, social links (GitHub, LinkedIn, Twitter/X), legal link
 
 ## Key Sections (Home)
-- **Hero**: Title, subtitle, CTA buttons, floating decorative circles, bento stats grid (Frontend 6+ years, UI Design, Quality, AI)
+- **Hero**: Title, subtitle, CTA buttons, bento stats grid (Frontend 6+ years, UI Design, Quality, AI)
 - **About**: Avatar, bio paragraphs, technology badges, scroll-triggered animations
-- **Featured Projects**: 3 featured projects, each with image (object-position: center top), tags, description, full-card link + "Ver Proyecto" button
+- **Featured Projects**: 3 featured projects, each with image, tags, description, full-card link + "Ver Proyecto" button
 - **Tech Stack**: Tabbed (Frontend / Backend & BBDD / Diseño / IA / Herramientas) with description per tab + icon grid
 - **Experience**: Tabbed (Experiencia / Educación), timeline with animated entry, Download CV button, education cards with hover effects
-- **Contact**: Form → Web3Forms → maiwebdevelop@gmail.com, social links, entrance animations, success bounce
+- **Contact**: Form → Web3Forms, social links
 
 ## Social
 - GitHub: https://github.com/maiderbarrutia
 - LinkedIn: https://linkedin.com/in/maiderbarrutiaunzueta
+- Website: https://maiderbarrutia.com
 
 ## Web Development Projects
-- **Aisiplan** — FullStack leisure activity platform. React + Vite + TypeScript + SASS, Node.js + Express + TypeORM + MySQL, JWT auth. Live: aisiplan.vercel.app. GitHub: github.com/maiderbarrutia/fullstack-aisiplan
-- **Ecommerce + Branding** — WordPress + WooCommerce ecommerce with multilingual (6 languages), art direction, packaging design, payment gateway, SEO. Custom child theme.
-- **Gas Corporate Portal** — WordPress + Elementor + SASS portal for a major energy company. Custom child theme with SASS overrides, bilingual, responsive.
-- **AI Sales Simulator** — Webflow site for an AI sales platform. Pixel-perfect from designs, custom CSS/JS animations, Webflow CMS, responsive.
-- **Real Estate Portal** — WordPress portal for leading real estate agency. Customized purchased theme with SASS, jQuery, PHP template overrides, responsive. All frontend work alongside 2 backend colleagues.
-- **Digital Health Portal** — WordPress custom theme from scratch for a major healthcare company. Medical community platform with videos, events, webinars. SASS, jQuery, PHP. Company provided partial designs; complete frontend layout.
+### 1. Aisiplan
+- **Description:** FullStack leisure activity platform.
+- **Stack:** React, Vite, TypeScript, SASS, Node.js, Express, TypeORM, MySQL, JWT.
+- **Live Demo:** https://aisiplan.vercel.app
+- **Source Code:** https://github.com/maiderbarrutia/fullstack-aisiplan
+
+### 2. Ecommerce + Branding
+- **Description:** WordPress + WooCommerce site with multilingual setup (6 languages), art direction, packaging design, payment gateway, and custom child theme.
+
+### 3. Gas Corporate Portal
+- **Description:** Multilingual portal for a major energy company using WordPress, Elementor, and custom SASS overrides.
+
+### 4. AI Sales Simulator
+- **Description:** Webflow site for an AI sales platform. Pixel-perfect implementation from Figma with custom CSS/JS animations and Webflow CMS.
+
+### 5. Real Estate Portal
+- **Description:** WordPress portal for a leading real estate agency. Core frontend layouts using SASS, jQuery, and PHP template overrides.
+
+### 6. Digital Health Portal
+- **Description:** Custom WordPress theme built from scratch for a major healthcare company. Medical community platform featuring videos, events, and webinars.

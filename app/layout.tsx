@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
   applicationName: 'Maider Barrutia',
   keywords: [
-    'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Architect', 'Web Architect',
+    'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Specialist', 'Web developer',
     'React', 'TypeScript', 'Next.js', 'Node.js', 'JavaScript', 'Git', 'Vite', 'WordPress',
     'UI Design', 'UX Design', 'Sass', 'Tailwind CSS', 'figma',
     'AI-Driven Development', 'AI Integration', 'Scalable Solutions',
@@ -75,7 +75,7 @@ const jsonLd = {
         'https://linkedin.com/in/maiderbarrutiaunzueta',
       ],
       knowsAbout: [
-        'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Specialist', 'Web Specialist',
+        'FullStack Developer', 'Frontend Developer', 'Software Engineer', 'UI Specialist', 'Web developer',
         'React', 'TypeScript', 'Next.js', 'Node.js', 'JavaScript', 'Git', 'Vite', 'WordPress',
         'UI Design', 'UX Design', 'Sass', 'Tailwind CSS', 'figma',
         'AI-Driven Development', 'AI Integration', 'Scalable Solutions',
@@ -133,6 +133,7 @@ export default function RootLayout({
 
         <link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/firacode-variable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="Contexto para LLMs" />
       </head>
        <body suppressHydrationWarning>
          <SkipLink />
