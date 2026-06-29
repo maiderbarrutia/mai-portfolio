@@ -2,9 +2,9 @@
 
 # 👩‍💻 Maider Barrutia
 
-### _FullStack Developer & UI Architect_
+### _FullStack Developer & UI Specialist_
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-00a292?style=for-the-badge&logo=vercel&logoColor=white)](https://maiderbarrutia.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-00a292?style=for-the-badge&logo=vercel&logoColor=white)](https://maiderbarrutia.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/maiderbarrutiaunzueta)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maiderbarrutia)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:maiderbarrutia@hotmail.com)
@@ -25,7 +25,7 @@ Desarrolladora FullStack apasionada por crear interfaces modernas y experiencias
 
 ### 🛠️ Stack principal
 
-`Next.js` `React` `TypeScript` `Sass` `Zod` `Tailwind CSS` `Node.js`
+`Next.js` `React` `TypeScript` `Sass` `Zod` `Node.js`
 
 ### ✨ Funcionalidades
 
@@ -44,28 +44,34 @@ Desarrolladora FullStack apasionada por crear interfaces modernas y experiencias
 
 ```
 app/
-├── projects/              → Rutas en inglés
-├── proyectos/             → Rutas en español
-├── proyectos-shared/      → Componentes compartidos (lista + detalle)
-├── api/contact/           → API rate-limited para el formulario
-├── legal/                 → Aviso legal bilingüe
-├── layout.tsx             → Layout raíz + JSON-LD
-├── page.tsx               → Home con metadata dinámica
-└── not-found.tsx          → Página 404 bilingüe
+├── en/                   → Rutas en inglés (home, projects, legal)
+├── proyectos/            → Rutas en español
+├── proyectos-shared/     → Componentes compartidos (lista + detalle)
+├── api/contact/          → API rate-limited para el formulario
+├── api/cv/               → Sirve PDFs desde private/cv/ con noindex
+├── legal/                → Aviso legal (español)
+├── layout.tsx            → Layout raíz + JSON-LD
+├── page.tsx              → Home (español)
+├── not-found.tsx         → Página 404 bilingüe
+├── sitemap.ts            → Sitemap dinámico bilingüe
+└── robots.ts             → Robots.txt
 
 components/
-├── Header/                → Navegación + toggles de idioma/tema
-├── Hero/                  → Introducción tipo bento grid
-├── Projects/              → Tarjetas de proyectos destacados
-├── TechStack/             → Tecnologías organizadas por categorías
-├── Experience/            → Línea temporal + educación
-├── Contact/               → Formulario + enlaces sociales
-├── Footer/                → Pie de página
-└── SkipLink/              → Enlace de accesibilidad
+├── Header/               → Navegación + toggles de idioma/tema
+├── Hero/                 → Introducción tipo bento grid
+├── Projects/             → Tarjetas de proyectos destacados
+├── TechStack/            → Tecnologías organizadas por categorías
+├── Experience/           → Línea temporal + educación
+├── Contact/              → Formulario + enlaces sociales
+├── Footer/               → Pie de página
+└── SkipLink/             → Enlace de accesibilidad
 
-lib/    → constants, translations, sanitize, stripHtml
-data/   → projects, technologies, legal
+hooks/ → use-intersection-observer, use-mobile
+lib/   → constants, translations, sanitize, stripHtml
+data/  → projects, slug-lookup, technologies
+private/cv/ → PDFs de CV (no accesibles desde public/)
 styles/ → SCSS modular (colors, fonts, mixins, helpers)
+public/ → llms.txt, favicon, fuentes, imágenes
 ```
 
 ### 🚀 Primeros pasos
@@ -106,7 +112,7 @@ FullStack Developer passionate about crafting modern interfaces and memorable di
 
 ### 🛠️ Core Stack
 
-`Next.js` `React` `TypeScript` `Sass` `Zod` `Tailwind CSS` `Node.js`
+`Next.js` `React` `TypeScript` `Sass` `Zod` `Node.js`
 
 ### ✨ Features
 
@@ -125,28 +131,34 @@ FullStack Developer passionate about crafting modern interfaces and memorable di
 
 ```
 app/
-├── projects/              → English routes
-├── proyectos/             → Spanish routes
-├── proyectos-shared/      → Shared components (list + detail)
-├── api/contact/           → Rate-limited contact API
-├── legal/                 → Bilingual legal notice
-├── layout.tsx             → Root layout + JSON-LD
-├── page.tsx               → Home with dynamic metadata
-└── not-found.tsx          → Bilingual 404 page
+├── en/                   → English routes (home, projects, legal)
+├── proyectos/            → Spanish routes
+├── proyectos-shared/     → Shared components (list + detail)
+├── api/contact/          → Rate-limited contact API
+├── api/cv/               → Serves PDFs from private/cv/ with noindex
+├── legal/                → Legal notice (Spanish)
+├── layout.tsx            → Root layout + JSON-LD
+├── page.tsx              → Home (Spanish)
+├── not-found.tsx         → Bilingual 404 page
+├── sitemap.ts            → Dynamic bilingual sitemap
+└── robots.ts             → Robots.txt
 
 components/
-├── Header/                → Navigation + language/theme toggles
-├── Hero/                  → Bento grid introduction
-├── Projects/              → Featured project cards
-├── TechStack/             → Tech organized by category
-├── Experience/            → Timeline + education
-├── Contact/               → Form + social links
-├── Footer/                → Page footer
-└── SkipLink/              → Accessibility skip link
+├── Header/               → Navigation + language/theme toggles
+├── Hero/                 → Bento grid introduction
+├── Projects/             → Featured project cards
+├── TechStack/            → Tech organized by category
+├── Experience/           → Timeline + education
+├── Contact/              → Form + social links
+├── Footer/               → Page footer
+└── SkipLink/             → Accessibility skip link
 
-lib/    → constants, translations, sanitize, stripHtml
-data/   → projects, technologies, legal
+hooks/ → use-intersection-observer, use-mobile
+lib/   → constants, translations, sanitize, stripHtml
+data/  → projects, slug-lookup, technologies
+private/cv/ → CV PDFs (not accessible from public/)
 styles/ → Modular SCSS (colors, fonts, mixins, helpers)
+public/ → llms.txt, favicon, fonts, images
 ```
 
 ### 🚀 Getting Started
@@ -173,12 +185,3 @@ WEB3FORMS_ACCESS_KEY=your-web3forms-key
 
 </details>
 
----
-
-<br>
-
-<div align="center">
-
-**Built with** ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
-
-</div>
