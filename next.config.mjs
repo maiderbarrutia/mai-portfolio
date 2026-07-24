@@ -18,7 +18,6 @@ const csp = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    turbopackFileSystemCacheForDev: true,
     inlineCss: true,
   },
   images: {

@@ -1,7 +1,7 @@
-# Maider Barrutia — Fullstack Developer & UI Specialist
+# Maider Barrutia — Frontend developer & UI Specialist
 
 ## About
-Portfolio website of Maider Barrutia, a Fullstack Developer based in Spain specializing in React, Scss, TypeScript, Next.js, and AI-driven development.
+Portfolio website of Maider Barrutia, a Frontend developer based in Madrid (Spain) specializing in React, Scss, TypeScript, Next.js, and AI-driven development.
 
 ## Tech Stack
 - **Frontend**: React, TypeScript, Next.js, JavaScript, HTML5, CSS3/SCSS, Tailwind CSS, Vite, WordPress, Angular
@@ -11,9 +11,9 @@ Portfolio website of Maider Barrutia, a Fullstack Developer based in Spain speci
 - **AI**: GitHub Copilot, ChatGPT/OpenAI, Claude AI, OpenCode
 
 ## Experience
-1. **Fullstack Developer** @ Desarrollos Online (Madrid, 2025–Present)
+1. **Fullstack Developer (Frontend focus)** @ Desarrollos Online (Madrid, 2025–Present)
    - Full Stack development of corporate web apps, AI tool adoption, critical code refactoring, high-concurrency platforms
-2. **Fullstack Developer** @ Freelance (Remote, 2023–2025)
+2. **Fullstack Developer (Frontend focus)** @ Freelance (Remote, 2023–2025)
    - End-to-end custom projects: database architecture, REST APIs, UI/UX design, mobile-optimized interfaces
 3. **Frontend UI Developer** @ Corus Consulting (Madrid, 2017–2023)
    - UI development for major Health, Insurance & Media accounts, WPO optimization, security incident resolution, agile workflows

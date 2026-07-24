@@ -24,6 +24,7 @@ export const technologiesRegistry: TechnologyItem[] = [
   { techKey: 'express', name: 'Express', category: 'backend' },
   { techKey: 'php', name: 'PHP', category: 'backend' },
   { techKey: 'mysql', name: 'MySQL', category: 'backend' },
+  { techKey: 'postgresql', name: 'PostgreSQL', category: 'backend' },
   { techKey: 'oracle', name: 'Oracle', category: 'backend' },
 
   // --- DESIGN ---

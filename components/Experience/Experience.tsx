@@ -20,7 +20,7 @@ type Lang = 'es' | 'en'
 
 const experiences = [
   {
-    role: { es: 'FullStack Developer', en: 'FullStack Developer' },
+    role: { es: 'FullStack Developer (Frontend focus)', en: 'FullStack Developer (Frontend focus)' },
     company: { es: 'Desarrollos Online', en: 'Desarrollos Online' },
     location: { es: 'Madrid', en: 'Madrid' },
     period: { es: '2025 - Actualidad', en: '2025 - Present' },
@@ -35,7 +35,7 @@ const experiences = [
     technologies: ['Sass', 'JavaScript', 'Php', 'MySql', 'Wordpress', 'Figma', 'Copilot'],
   },
   {
-    role: { es: 'FullStack Developer', en: 'FullStack Developer' },
+    role: { es: 'FullStack Developer (Frontend focus)', en: 'FullStack Developer (Frontend focus)' },
     company: { es: 'Freelance', en: 'Freelance' },
     location: { es: 'Online', en: 'Remote' },
     period: { es: '2023 - 2025', en: '2023 - 2025' },

@@ -13,8 +13,8 @@ export const translations = {
     hero: {
       badge: 'Abierta a nuevos desafíos',
       title: 'Maider Barrutia',
-      subtitle: 'FullStack Developer & UI Specialist',
-      description: 'Diseño y desarrollo aplicaciones robustas con un enfoque especial en la interfaz de usuario y la maquetación avanzada. Trabajo con <strong>SASS</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Node.js</strong> y <strong>herramientas de IA</strong> para crear productos rápidos (<strong>WPO</strong>), accesibles (<strong>WCAG</strong>), escalables y con acabados <strong>pixel-perfect</strong>. ',
+      subtitle: 'Frontend developer & UI Specialist',
+      description: 'Diseño y desarrollo aplicaciones robustas con foco en <strong>maquetación avanzada</strong> y detalle visual. Combino <strong>React</strong>, <strong>TypeScript</strong> y <strong>SASS</strong> junto a una base backend en <strong>Node.js</strong> y <strong>herramientas IA</strong> para construir productos rápidos (<strong>WPO</strong>), accesibles (<strong>WCAG</strong>), escalables y con un acabado <strong>pixel-perfect</strong>.',
       ctaProjects: 'Ver Proyectos',
       ctaContact: 'Contactar',
       yearsExperience: '6+ años',
@@ -23,7 +23,7 @@ export const translations = {
     // Projects Section
     projects: {
       tag: 'Portfolio',
-      title: 'Proyectos FullStack',
+      title: 'Proyectos destacados',
       subtitle: 'Una selección de mis trabajos más relevantes donde combino diseño UI, desarrollo frontend, backend y estrategias de IA.',
       viewProject: 'Ver Proyecto',
       viewAll: 'Ver Más Proyectos',
@@ -81,11 +81,11 @@ export const translations = {
     // Contact Section
     contact: {
       tag: 'Contacto',
-      title: '¿Buscas desarrolladora FullStack?',
+      title: '¿Buscas desarrolladora web?',
       titleAction: 'Hablemos',
       subtitle: 'Tanto si tienes un proyecto entre manos como una oportunidad profesional, estaré encantada de escucharte.',
       letsConnect: 'Conectemos',
-      description: 'Si buscas un perfil FullStack con experiencia en arquitectura UI, desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
+      description: 'Si buscas un perfil Frontend con experiencia en desarrollo backend e integración de IA, hablemos y vemos si encajamos.',
       name: 'Nombre',
       email: 'Email',
       message: 'Mensaje',
@@ -143,8 +143,8 @@ export const translations = {
     hero: {
       badge: 'Open to new challenges',
       title: 'Maider Barrutia',
-      subtitle: 'FullStack Developer & UI Specialist',
-      description: 'I design and develop robust applications with a special focus on user interface and advanced web layout. I work with <strong>SASS</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Node.js</strong>, and <strong>AI tools</strong> to create fast (<strong>WPO</strong>), accessible (<strong>WCAG</strong>), scalable products with <strong>pixel-perfect</strong> finishes.',
+      subtitle: 'Frontend developer & UI Specialist',
+      description: 'I design and build robust applications with a strong focus on <strong>advanced layout</strong> and visual precision. I bring together <strong>React</strong>, <strong>TypeScript</strong>, and <strong>SASS</strong> with a solid <strong>Node.js</strong> backend foundation and <strong>AI-driven tools</strong> to create fast (<strong>Performance</strong>), accessible (<strong>WCAG</strong>), scalable, and <strong>pixel-perfect</strong> products.',
       ctaProjects: 'View Projects',
       ctaContact: 'Contact',
       yearsExperience: '6+ years',
@@ -153,7 +153,7 @@ export const translations = {
     // Projects Section
     projects: {
       tag: 'Portfolio',
-      title: 'FullStack projects',
+      title: 'Featured Projects',
       subtitle: 'A selection of my most relevant work where I combine frontend, backend development, and AI strategies.',
       viewProject: 'View project',
       viewAll: 'View more projects',
@@ -211,11 +211,11 @@ export const translations = {
     // Contact Section
     contact: {
       tag: 'Contact',
-      title: 'Looking for a FullStack Developer?',
+      title: 'Looking for a web Developer?',
       titleAction: "Let's talk",
       subtitle: 'Whether you have a project in mind or a professional opportunity, I\'d love to hear about it.',
       letsConnect: 'Let\'s Connect',
-      description: 'If you\'re looking for a FullStack profile with experience in UI architecture, backend development, and AI integration, let\'s talk and see if we\'re a match.',
+      description: 'If you\'re looking for a Frontend profile with experience in backend development, and AI integration, let\'s talk and see if we\'re a match.',
       name: 'Name',
       email: 'Email',
       message: 'Message',

@@ -3,7 +3,7 @@ import {
   SiHtml5, SiSass, SiTailwindcss, SiNodedotjs, 
   SiGit, SiFigma, SiJest,
   SiVite, SiAngular, SiWordpress, SiExpress,
-  SiPhp, SiMysql, SiVitest, 
+  SiPhp, SiMysql, SiVitest, SiPostgresql, 
   SiTestinglibrary, SiJira,
   SiGithubcopilot, SiOpenai, SiAnthropic,
 } from 'react-icons/si';
@@ -33,6 +33,7 @@ const iconLabel: Record<string, string> = {
   express: 'Express',
   php: 'PHP',
   mysql: 'MySQL',
+  postgresql: 'PostgreSQL',
   oracle: 'Oracle',
   figma: 'Figma',
   photoshop: 'Photoshop',
@@ -86,6 +87,8 @@ export default function TechnologyIcon({ techKey, className = "w-5 h-5" }: Techn
       return <SiPhp aria-label={label} className={`${className} text-[#777BB4]`} />;
     case 'mysql':
       return <SiMysql aria-label={label} className={`${className} text-[#4479A1]`} />;
+    case 'postgresql':
+      return <SiPostgresql aria-label={label} className={`${className} text-[#336791]`} />;
     case 'oracle':
       return <FaDatabase aria-label={label} className={`${className} text-[#F80000]`} />;
 
