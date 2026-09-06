@@ -52,7 +52,7 @@ export default function Hero() {
                 <span className={styles['hero__bento-icon']}>
                   <Palette size={24} />
                 </span>
-                <span className={styles['hero__bento-label']}>UI Design (pixel-perfect)</span>
+                <span className={styles['hero__bento-label']}>UI design (pixel-perfect)</span>
               </div>
             </div>
 
@@ -70,7 +70,7 @@ export default function Hero() {
                 <span className={styles['hero__bento-icon']}>
                   <Bot size={24} />
                 </span>
-                <span className={styles['hero__bento-label']}>AI-Driven Development & Workflows</span>
+                <span className={styles['hero__bento-label']}>AI-driven development & Workflows</span>
               </div>
             </div>
           </div>

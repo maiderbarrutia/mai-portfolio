@@ -8,14 +8,14 @@ import '@/styles/globals.scss'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Maider Barrutia | Frontend Developer & UI Specialist',
+  title: 'Maider Barrutia | Frontend developer & UI Specialist',
   description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
   applicationName: 'Maider Barrutia',
   keywords: [
-    'Frontend Developer', 'Software Engineer', 'UI Specialist', 'FullStack Developer', 'Web developer',
+    'Frontend developer', 'Software Engineer', 'UI Specialist', 'FullStack developer', 'Web developer',
     'React', 'TypeScript', 'Next.js', 'Node.js', 'JavaScript', 'Git', 'Vite', 'WordPress',
-    'UI Design', 'UX Design', 'Sass', 'Tailwind CSS', 'figma',
-    'AI-Driven Development', 'AI Integration', 'Scalable Solutions',
+    'UI design', 'UX design', 'Sass', 'Tailwind CSS', 'figma',
+    'AI-driven development', 'AI integration', 'Scalable solutions',
   ],
   authors: [{ name: 'Maider Barrutia' }],
   openGraph: {
@@ -66,7 +66,7 @@ const jsonLd = {
       name: 'Maider Barrutia',
       givenName: 'Maider',
       familyName: 'Barrutia',
-      jobTitle: 'Frontend Developer & UI Specialist',
+      jobTitle: 'Frontend developer & UI Specialist',
       description: 'Portfolio web enfocado en interfaz y maquetación avanzada. SASS, React, Node.js e IA para crear productos rápidos (WPO), accesibles y pixel-perfect.',
       url: SITE_URL,
       image: `${SITE_URL}/mai-logo.svg`,
@@ -75,10 +75,10 @@ const jsonLd = {
         'https://linkedin.com/in/maiderbarrutiaunzueta',
       ],
       knowsAbout: [
-        'Frontend Developer', 'Software Engineer', 'UI Specialist', 'FullStack Developer', 'Web developer',
+        'Frontend developer', 'Software Engineer', 'UI Specialist', 'FullStack developer', 'Web developer',
         'React', 'TypeScript', 'Next.js', 'Node.js', 'JavaScript', 'Git', 'Vite', 'WordPress',
-        'UI Design', 'UX Design', 'Sass', 'Tailwind CSS', 'figma',
-        'AI-Driven Development', 'AI Integration', 'Scalable Solutions',
+        'UI design', 'UX design', 'Sass', 'Tailwind CSS', 'figma',
+        'AI-driven development', 'AI integration', 'Scalable solutions',
       ],
       alumniOf: [
         {

@@ -11,11 +11,11 @@ Portfolio website of Maider Barrutia, a Frontend developer based in Madrid (Spai
 - **AI**: GitHub Copilot, ChatGPT/OpenAI, Claude AI, OpenCode
 
 ## Experience
-1. **Frontend Developer** @ Desarrollos Online (Madrid, 2025–Present)
+1. **Frontend developer** @ Desarrollos Online (Madrid, 2025–Present)
    - Full Stack development of corporate web apps, AI tool adoption, critical code refactoring, high-concurrency platforms
-2. **Frontend Developer** @ Freelance (Remote, 2023–2025)
+2. **Frontend developer** @ Freelance (Remote, 2023–2025)
    - End-to-end custom projects: database architecture, REST APIs, UI/UX design, mobile-optimized interfaces
-3. **UI Developer** @ Corus Consulting (Madrid, 2017–2023)
+3. **UI developer** @ Corus Consulting (Madrid, 2017–2023)
    - UI development for major health, banking, insurance & media accounts, WPO optimization, security incident resolution, agile workflows
 
 ## Education
@@ -45,8 +45,8 @@ The site is bilingual: Spanish (es) and English (en). Default locale: es_ES.
 ## Key Sections (Home)
 - **Hero**: Title, subtitle, CTA buttons, bento stats grid (Frontend 6+ years, UI Design, Quality, AI)
 - **About**: Avatar, bio paragraphs, technology badges, scroll-triggered animations
-- **Featured Projects**: 3 featured projects, each with image, tags, description, full-card link + "Ver Proyecto" button
-- **Tech Stack**: Tabbed (Frontend / Backend & BBDD / Diseño / IA / Herramientas) with description per tab + icon grid
+- **Featured projects**: 3 featured projects, each with image, tags, description, full-card link + "Ver Proyecto" button
+- **Tech stack**: Tabbed (Frontend / Backend & BBDD / Diseño / IA / Herramientas) with description per tab + icon grid
 - **Experience**: Tabbed (Experiencia / Educación), timeline with animated entry, Download CV button, education cards with hover effects
 - **Contact**: Form → Web3Forms, social links
 

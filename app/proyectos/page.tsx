@@ -52,9 +52,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const categoryLabels: Record<ProjectCategory, { es: string; en: string }> = {
-  'web-development': { es: 'Desarrollo Web', en: 'Web Development' },
-  'web-design': { es: 'Diseño Web', en: 'Web Design' },
-  'graphic-design': { es: 'Diseño Gráfico', en: 'Graphic Design' },
+  'web-development': { es: 'Desarrollo web', en: 'Web development' },
+  'web-design': { es: 'Diseño web', en: 'Web design' },
+  'graphic-design': { es: 'Diseño gráfico', en: 'Graphic design' },
 }
 
 const webDevOrder: Record<string, number> = {

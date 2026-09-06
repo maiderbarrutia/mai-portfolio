@@ -158,7 +158,7 @@ export const projects: Project[] = [
       en: 'ecommerce-and-branding',
     },
     category: 'web-development',
-    title: { es: 'Ecommerce + Branding', en: 'E-commerce + Branding' },
+    title: { es: 'Ecommerce + branding', en: 'E-commerce + branding' },
     subtitle: {
       es: 'Identidad corporativa completa y tienda online multilingüe',
       en: 'Complete corporate identity and multilingual online store',
@@ -215,7 +215,7 @@ export const projects: Project[] = [
       en: 'gas-corporate-portal',
     },
     category: 'web-development',
-    title: { es: 'Portal Corporativo de Gas', en: 'Gas Corporate Portal' },
+    title: { es: 'Portal corporativo de gas', en: 'Gas corporate portal' },
     subtitle: {
       es: 'Desarrollo integral del portal corporativo para una de las mayores compañías energéticas del país',
       en: 'Comprehensive development of the corporate portal for one of the largest energy companies in the country',
@@ -272,7 +272,7 @@ export const projects: Project[] = [
       en: 'ai-sales-simulator',
     },
     category: 'web-development',
-    title: { es: 'Simulador de Ventas con IA', en: 'AI Sales Simulator' },
+    title: { es: 'Simulador de ventas con IA', en: 'AI sales simulator' },
     subtitle: {
       es: 'Desarrollo completo en Webflow para plataforma de ventas con IA',
       en: 'Complete Webflow development for an AI sales platform',
@@ -329,7 +329,7 @@ export const projects: Project[] = [
       en: 'real-estate-portal',
     },
     category: 'web-development',
-    title: { es: 'Portal Inmobiliario', en: 'Real Estate Portal' },
+    title: { es: 'Portal inmobiliario', en: 'Real estate portal' },
     subtitle: {
       es: 'Adaptación de tema WordPress para portal inmobiliario de una de las agencias líderes del sector',
       en: 'WordPress theme adaptation for a leading real estate agency portal',
@@ -386,7 +386,7 @@ export const projects: Project[] = [
       en: 'digital-health-portal',
     },
     category: 'web-development',
-    title: { es: 'Portal de Salud Digital', en: 'Digital Health Portal' },
+    title: { es: 'Portal de salud digital', en: 'Digital health portal' },
     subtitle: {
       es: 'Plataforma de conocimiento médico digital para una gran compañía de salud',
       en: 'Digital medical knowledge platform for a major healthcare company',

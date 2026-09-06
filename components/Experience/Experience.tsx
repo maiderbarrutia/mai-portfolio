@@ -20,7 +20,7 @@ type Lang = 'es' | 'en'
 
 const experiences = [
   {
-    role: { es: 'Frontend Developer', en: 'Frontend Developer' },
+    role: { es: 'Frontend developer', en: 'Frontend developer' },
     company: { es: 'Desarrollos Online', en: 'Desarrollos Online' },
     location: { es: 'Madrid', en: 'Madrid' },
     period: { es: '2025 - Actualidad', en: '2025 - Present' },
@@ -35,7 +35,7 @@ const experiences = [
     technologies: ['Sass', 'JavaScript', 'Wordpress', 'Figma', 'Copilot', 'Claude', 'Php', 'MySql'],
   },
   {
-    role: { es: 'Frontend Developer', en: 'Frontend Developer' },
+    role: { es: 'Frontend developer', en: 'Frontend developer' },
     company: { es: 'Freelance', en: 'Freelance' },
     location: { es: 'Online', en: 'Remote' },
     period: { es: '2023 - 2025', en: '2023 - 2025' },
@@ -50,7 +50,7 @@ const experiences = [
     technologies: ['React', 'Figma', 'Sass', 'MySql', 'Nodejs', 'Express', 'Copilot', 'ChatGPT'],
   },
   {
-    role: { es: 'UI Developer', en: 'UI Developer' },
+    role: { es: 'UI developer', en: 'UI developer' },
     company: { es: 'Corus Consulting', en: 'Corus Consulting' },
     location: { es: 'Madrid', en: 'Madrid' },
     period: { es: '2017 - 2023', en: '2017 - 2023' },
@@ -69,36 +69,36 @@ const experiences = [
 const education = [
   {
     es: {
-      title: 'Técnico Superior en Desarrollo de Aplicaciones Web (DAW)',
+      title: 'Técnico superior en Desarrollo de Aplicaciones Web (DAW)',
       institution: 'Ilerna (Online)',
       period: '2023 - 2025',
     },
     en: {
-      title: 'Advanced Vocational Diploma in Web Application Development',
+      title: 'Advanced vocational diploma in web Application Development',
       institution: 'Ilerna (Online)',
       period: '2023 - 2025',
     },
   },
   {
     es: {
-      title: 'Confección y Publicación de Páginas Web',
+      title: 'Confección y publicación de páginas web',
       institution: 'Centro San Luis (Bilbao)',
       period: '2014 - 2015',
     },
     en: {
-      title: 'Web Page Design and Publishing',
+      title: 'Web page design and publishing',
       institution: 'Centro San Luis (Bilbao)',
       period: '2014 - 2015',
     },
   },
   {
     es: {
-      title: 'Técnico Superior de Artes Plásticas y Diseño en Gráfica Publicitaria',
+      title: 'Técnico superior de artes plásticas y diseño en gráfica publicitaria',
       institution: 'Instituto Ibarrekolanda (Bilbao)',
       period: '2009 - 2013',
     },
     en: {
-      title: 'Advanced Vocational Diploma in Plastic Arts and Graphic Design',
+      title: 'Advanced vocational diploma in plastic arts and graphic design',
       institution: 'Instituto Ibarrekolanda (Bilbao)',
       period: '2009 - 2013',
     },
@@ -114,9 +114,9 @@ const certifications = {
   ],
   en: [
     { title: 'Bootcamp TS + React + Vitest (TDD)', institution: 'Lemoncode', hours: '114h' },
-    { title: 'FullStack Development (Node.js, Angular, TypeScript, REST APIs)', institution: 'Samsung', hours: '350h' },
+    { title: 'FullStack development (Node.js, Angular, TypeScript, REST APIs)', institution: 'Samsung', hours: '350h' },
     { title: 'Oracle SQL-PL/SQL Development', institution: 'Cas-training', hours: '135h' },
-    { title: 'AI-Assisted Development', institution: 'Big School', hours: '6h' },
+    { title: 'AI-assisted development', institution: 'Big School', hours: '6h' },
   ],
 }
 
