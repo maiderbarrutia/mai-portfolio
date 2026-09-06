@@ -20,9 +20,7 @@ export default function Contact() {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
-  const emailUser = 'maiderbarrutia';
-  const emailDomain = 'hotmail.com';
-  const emailFull = `${emailUser}@${emailDomain}`;
+  const emailFull = 'info@maiderbarrutia.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailFull);

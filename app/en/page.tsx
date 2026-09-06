@@ -9,7 +9,7 @@ import Footer from '@/components/Footer/Footer'
 import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Maider Barrutia | FullStack Developer & UI Specialist',
+  title: 'Maider Barrutia | Frontend Developer & UI Specialist',
   description: 'Web portfolio focused on UI and advanced layout. SASS, React, Node.js and AI to create fast (WPO), accessible and pixel-perfect products.',
   alternates: {
     canonical: `${SITE_URL}/en`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Maider Barrutia | FullStack Developer & UI Specialist',
+    title: 'Maider Barrutia | Frontend Developer & UI Specialist',
     description: 'Web portfolio focused on UI and advanced layout. SASS, React, Node.js and AI to create fast (WPO), accessible and pixel-perfect products.',
     type: 'website',
     siteName: 'Maider Barrutia',
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Maider Barrutia | FullStack Developer & UI Specialist',
+        alt: 'Maider Barrutia | Frontend Developer & UI Specialist',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maider Barrutia | FullStack Developer & UI Specialist',
+    title: 'Maider Barrutia | Frontend Developer & UI Specialist',
     description: 'Web portfolio focused on UI and advanced layout. SASS, React, Node.js and AI to create fast (WPO), accessible and pixel-perfect products.',
     images: ['/og-image.svg'],
   },

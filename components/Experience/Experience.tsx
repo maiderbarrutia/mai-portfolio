@@ -20,46 +20,46 @@ type Lang = 'es' | 'en'
 
 const experiences = [
   {
-    role: { es: 'FullStack Developer (Frontend focus)', en: 'FullStack Developer (Frontend focus)' },
+    role: { es: 'Frontend Developer', en: 'Frontend Developer' },
     company: { es: 'Desarrollos Online', en: 'Desarrollos Online' },
     location: { es: 'Madrid', en: 'Madrid' },
     period: { es: '2025 - Actualidad', en: '2025 - Present' },
     achievements: {
       es: [
-        'Responsable del desarrollo FullStack de aplicaciones web corporativas, liderando la adopción de herramientas de **IA** para optimizar tiempos de desarrollo, la refactorización de código crítico y la maquetación avanzada de plataformas de alta concurrencia.',
+        'Responsable del desarrollo frontend de aplicaciones web corporativas, liderando la adopción de herramientas de **IA** para optimizar tiempos de desarrollo, la refactorización de código crítico y la maquetación avanzada de plataformas de alta concurrencia.',
       ],
       en: [
-        'Responsible for FullStack development of corporate web applications, leading the adoption of **AI** tools to optimize development times, critical code refactoring, and advanced layout of high-concurrency platforms.',
+        'Responsible for frontend development of corporate web applications, leading the adoption of **AI** tools to optimize development times, critical code refactoring, and advanced layout of high-concurrency platforms.',
       ],
     },
-    technologies: ['Sass', 'JavaScript', 'Php', 'MySql', 'Wordpress', 'Figma', 'Copilot'],
+    technologies: ['Sass', 'JavaScript', 'Wordpress', 'Figma', 'Copilot', 'Claude', 'Php', 'MySql'],
   },
   {
-    role: { es: 'FullStack Developer (Frontend focus)', en: 'FullStack Developer (Frontend focus)' },
+    role: { es: 'Frontend Developer', en: 'Frontend Developer' },
     company: { es: 'Freelance', en: 'Freelance' },
     location: { es: 'Online', en: 'Remote' },
     period: { es: '2023 - 2025', en: '2023 - 2025' },
     achievements: {
       es: [
-        'Gestión integral de proyectos de desarrollo a medida para clientes independientes, encargándome desde la arquitectura de bases de datos y creación de **APIs** robustas en el backend, hasta el diseño **UI/UX** y desarrollo de interfaces optimizadas para dispositivos móviles.',
+        'Desarrollo de interfaces web a medida para clientes independientes, desde el diseño **UI/UX** hasta la implementación de soluciones **frontend** optimizadas para dispositivos móviles. Complementariamente, participación en el desarrollo **backend** mediante el diseño de **bases de datos** y la creación de **APIs** robustas, cubriendo de forma integral las distintas fases de los proyectos.',
       ],
       en: [
-        'End-to-end management of custom development projects for independent clients, handling everything from database architecture and robust **API** creation on the backend, to **UI/UX** design and development of mobile-optimized interfaces.',
+        'Development of custom web interfaces for independent clients, from **UI/UX** design to the implementation of **frontend** solutions optimized for mobile devices. Additionally, contributed to **backend** development through **database** design and the creation of robust **APIs**, covering the different stages of the projects end to end.',
       ],
     },
     technologies: ['React', 'Figma', 'Sass', 'MySql', 'Nodejs', 'Express', 'Copilot', 'ChatGPT'],
   },
   {
-    role: { es: 'Frontend UI Developer', en: 'Frontend UI Developer' },
+    role: { es: 'UI Developer', en: 'UI Developer' },
     company: { es: 'Corus Consulting', en: 'Corus Consulting' },
     location: { es: 'Madrid', en: 'Madrid' },
     period: { es: '2017 - 2023', en: '2017 - 2023' },
     achievements: {
       es: [
-        'Especialista en desarrollo de interfaces de usuario para grandes cuentas (**Salud, Seguros y Media**), enfocada en la optimización extrema del rendimiento web (**WPO**), la resolución de incidentes críticos de seguridad y la estructuración de flujos de trabajo escalables bajo metodologías ágiles.',
+        'Especialista en desarrollo de interfaces de usuario para grandes cuentas (**Salud, banca, seguros y media**), enfocada en la optimización extrema del rendimiento web (**WPO**), la resolución de incidentes críticos de seguridad y la estructuración de flujos de trabajo escalables bajo metodologías ágiles.',
       ],
       en: [
-        'Specialist in user interface development for major accounts (**Health, Insurance, and Media**), focused on extreme web performance optimization (**WPO**), resolution of critical security incidents, and structuring scalable workflows under agile methodologies.',
+        'Specialist in user interface development for major accounts (**Health, banking, insurance, and media**), focused on extreme web performance optimization (**WPO**), resolution of critical security incidents, and structuring scalable workflows under agile methodologies.',
       ],
     },
     technologies: ['Wordpress', 'Sass', 'JQuery', 'Scrum', 'Kanban'],

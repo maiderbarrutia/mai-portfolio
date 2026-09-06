@@ -9,7 +9,7 @@ export const legalContent = {
         content: `En cumplimiento con la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa que el titular de esta web es:
 
 • **Titular:** Maider Barrutia
-• **Correo electrónico:** maiderbarrutia@hotmail.com
+• **Correo electrónico:** info@maiderbarrutia.com
 • **Finalidad:** Presentación del portfolio profesional y curricular, así como exhibición de proyectos de desarrollo web, diseño UI/UX e integración de IA.
 
 El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación plena de las condiciones aquí recogidas. El titular se reserva el derecho de modificar la presentación y configuración del sitio web sin previo aviso.`,
@@ -28,7 +28,7 @@ Queda prohibida la reproducción, distribución, comunicación pública o transf
 **Destinatarios:** Los datos se envían a Web3Forms (https://web3forms.com) como encargado del tratamiento para la gestión y envío de mensajes por correo electrónico. No se realizan transferencias internacionales fuera del Espacio Económico Europeo.
 **Plazo de conservación:** Los datos se conservarán durante el tiempo necesario para atender tu consulta y, posteriormente, durante el plazo legal de prescripción de responsabilidades.
 
-**Derechos del usuario:** Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición escribiendo a maiderbarrutia@hotmail.com. Tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD).`,
+**Derechos del usuario:** Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición escribiendo a info@maiderbarrutia.com. Tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD).`,
       },
       {
         title: '4. Política de Cookies',
@@ -52,7 +52,7 @@ Queda prohibida la reproducción, distribución, comunicación pública o transf
         content: `In compliance with applicable information society and electronic commerce regulations, the owner of this website is:
 
 • **Owner:** Maider Barrutia
-• **Email:** maiderbarrutia@hotmail.com
+• **Email:** info@maiderbarrutia.com
 • **Purpose:** Professional portfolio and CV showcase, including web development, UI/UX design, and AI integration projects.
 
 Access to and use of this website implies full acceptance of the terms set forth herein. The owner reserves the right to modify the website's presentation and configuration without prior notice.`,
@@ -71,7 +71,7 @@ Reproduction, distribution, public communication, or transformation of these con
 **Recipients:** Data is sent to Web3Forms (https://web3forms.com) as a data processor for managing and forwarding messages via email. No international transfers outside the European Economic Area are made.
 **Retention period:** Data will be retained for as long as necessary to address your inquiry and subsequently for the legal prescription period.
 
-**User rights:** You may exercise your rights of access, rectification, erasure, restriction of processing, portability, and objection by writing to maiderbarrutia@hotmail.com. You have the right to file a complaint with the Spanish Data Protection Agency (AEPD).`,
+**User rights:** You may exercise your rights of access, rectification, erasure, restriction of processing, portability, and objection by writing to info@maiderbarrutia.com. You have the right to file a complaint with the Spanish Data Protection Agency (AEPD).`,
       },
       {
         title: '4. Cookie Policy',

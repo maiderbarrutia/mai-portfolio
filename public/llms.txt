@@ -11,12 +11,12 @@ Portfolio website of Maider Barrutia, a Frontend developer based in Madrid (Spai
 - **AI**: GitHub Copilot, ChatGPT/OpenAI, Claude AI, OpenCode
 
 ## Experience
-1. **Fullstack Developer (Frontend focus)** @ Desarrollos Online (Madrid, 2025–Present)
+1. **Frontend Developer** @ Desarrollos Online (Madrid, 2025–Present)
    - Full Stack development of corporate web apps, AI tool adoption, critical code refactoring, high-concurrency platforms
-2. **Fullstack Developer (Frontend focus)** @ Freelance (Remote, 2023–2025)
+2. **Frontend Developer** @ Freelance (Remote, 2023–2025)
    - End-to-end custom projects: database architecture, REST APIs, UI/UX design, mobile-optimized interfaces
-3. **Frontend UI Developer** @ Corus Consulting (Madrid, 2017–2023)
-   - UI development for major Health, Insurance & Media accounts, WPO optimization, security incident resolution, agile workflows
+3. **UI Developer** @ Corus Consulting (Madrid, 2017–2023)
+   - UI development for major health, banking, insurance & media accounts, WPO optimization, security incident resolution, agile workflows
 
 ## Education
 - **Advanced Diploma in Web Application Development (DAW)** — Ilerna Online (2023–2025)
