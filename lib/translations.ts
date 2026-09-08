@@ -144,7 +144,7 @@ export const translations = {
       badge: 'Open to new challenges',
       title: 'Maider Barrutia',
       subtitle: 'Frontend developer & UI Specialist',
-      description: 'I design and develop robust web applications, with a focus on <strong>advanced UI implementation</strong>, visual detail, and <strong>pixel-perfect</strong> finishes. I work with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>SASS</strong> to build high-performance (<strong>WPO</strong>), accessible (<strong>WCAG</strong>), and scalable interfaces, complementing frontend development with <strong>Node.js</strong> on the backend and <strong>AI tools</strong> to optimize the development process.',
+      description: 'I build robust web interfaces with a focus on <strong>advanced layout engineering</strong> and <strong>pixel-perfect</strong> finishes. I work with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>SASS</strong> to create high-performance (<strong>WPO</strong>), accessible (<strong>WCAG</strong>), and scalable products. I also bring experience in <strong>WordPress</strong>, backend knowledge with <strong>Node.js</strong>, and the integration of <strong>AI tools</strong> into my workflow to optimize development.',
       ctaProjects: 'View projects',
       ctaContact: 'Contact',
       yearsExperience: '6+ years',
