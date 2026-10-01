@@ -64,18 +64,25 @@ if (!Array.isArray(projects) || projects.length === 0) {
   process.exit(1);
 }
 
-for (const [i, p] of projects.entries()) {
-  const missing = ['title', 'url', 'tech'].filter(
-    (k) => p[k] === undefined || p[k] === null
-  );
-  if (missing.length) {
-    console.error(`ERROR: proyecto #${i + 1} le faltan campos: ${missing.join(', ')}`);
-    process.exit(1);
+const { z } = await import('zod');
+const projectSchema = z.object({
+  title: z.string().min(1),
+  url: z.string().url(),
+  description: z.preprocess(
+    (v) => (v === '' || v === null ? undefined : v),
+    z.string().min(1).optional()
+  ),
+  tech: z.array(z.string().min(1)),
+  accent: z.boolean().optional(),
+});
+
+const validation = z.array(projectSchema).min(1).safeParse(projects);
+if (!validation.success) {
+  console.error('ERROR: los datos no pasan la validación (la API devolvería 500):');
+  for (const issue of validation.error.issues) {
+    console.error(`  - proyecto #${issue.path[0] + 1} · ${issue.path.slice(1).join('.') || '(raíz)'}: ${issue.message}`);
   }
-  if (!Array.isArray(p.tech)) {
-    console.error(`ERROR: proyecto #${i + 1}: "tech" debe ser un array de strings.`);
-    process.exit(1);
-  }
+  process.exit(1);
 }
 
 const key = Buffer.from(keyHex, 'hex');

@@ -7,7 +7,10 @@ import encryptedPayload from '@/app/otros-proyectos/data.enc.json';
 const projectSchema = z.object({
   title: z.string().min(1),
   url: z.string().url(),
-  description: z.string().min(1).optional(),
+  description: z.preprocess(
+    (v) => (v === '' || v === null ? undefined : v),
+    z.string().min(1).optional()
+  ),
   tech: z.array(z.string().min(1)),
   accent: z.boolean().optional(),
 });
