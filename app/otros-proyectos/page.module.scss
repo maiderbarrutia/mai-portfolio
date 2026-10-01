@@ -493,6 +493,153 @@
     color: var(--color-error);
   }
 
+  // --- lista desplegable de códigos generados (localStorage) ---
+  &__access-list {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__access-list-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+    background: transparent;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    svg {
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    &[aria-expanded='true'] svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__access-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+    animation: fadeInUp 0.35s ease forwards;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  &__access-list-empty {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    padding: 0.5rem 0.25rem;
+  }
+
+  &__access-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'label actions'
+      'code actions'
+      'date actions';
+    gap: 0.15rem 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+
+    @include media-min(sm) {
+      grid-template-columns: minmax(0, 1.2fr) auto auto auto;
+      grid-template-areas: 'label code date actions';
+      gap: 0.75rem;
+    }
+  }
+
+  &__access-item-label {
+    grid-area: label;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__access-item-code {
+    grid-area: code;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-primary);
+    word-break: break-all;
+  }
+
+  &__access-item-date {
+    grid-area: date;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  &__access-item-actions {
+    grid-area: actions;
+    display: flex;
+    gap: 0.35rem;
+    justify-self: end;
+  }
+
+  &__access-item-copy,
+  &__access-item-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  &__access-item-copy {
+    color: var(--color-primary);
+
+    &:hover {
+      background: var(--color-primary-alpha);
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__access-item-remove {
+    color: var(--color-error);
+
+    &:hover {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: var(--color-error);
+    }
+  }
+
+  &__access-list-note {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
   // --- aviso confidencial ---
   &__notice {
     display: flex;

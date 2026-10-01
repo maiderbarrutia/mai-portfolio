@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import { Lock, Eye, EyeOff, ArrowRight, Copy, Check } from 'lucide-react';
+import { Lock, Eye, EyeOff, ArrowRight, Copy, Check, ChevronDown, X } from 'lucide-react';
 import styles from './page.module.scss';
 
 interface ConfidentialProject {
@@ -29,6 +29,31 @@ interface GenResult {
   expiresAt: string;
 }
 
+const ACCESS_LIST_KEY = 'otros-proyectos-accesses';
+const ACCESS_LIST_MAX = 100;
+
+function loadAccessList(): GenResult[] {
+  try {
+    const raw = localStorage.getItem(ACCESS_LIST_KEY);
+    if (!raw) return [];
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    const today = new Date().toISOString().slice(0, 10);
+    return parsed
+      .filter(
+        (item): item is GenResult =>
+          Boolean(item) &&
+          typeof (item as GenResult).password === 'string' &&
+          typeof (item as GenResult).label === 'string' &&
+          typeof (item as GenResult).expiresAt === 'string' &&
+          (item as GenResult).expiresAt >= today
+      )
+      .slice(0, ACCESS_LIST_MAX);
+  } catch {
+    return [];
+  }
+}
+
 export default function OtrosProyectosPage() {
   const [mounted, setMounted] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
@@ -44,7 +69,9 @@ export default function OtrosProyectosPage() {
   const [genLoading, setGenLoading] = useState(false);
   const [genError, setGenError] = useState<string | null>(null);
   const [genResult, setGenResult] = useState<GenResult | null>(null);
-  const [copied, setCopied] = useState(false);
+  const [copiedCode, setCopiedCode] = useState<string | null>(null);
+  const [accessList, setAccessList] = useState<GenResult[]>([]);
+  const [listOpen, setListOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -67,6 +94,12 @@ export default function OtrosProyectosPage() {
       sessionStorage.removeItem('otros-proyectos-auth');
     }
   }, []);
+
+  useEffect(() => {
+    if (authenticated && authVia === 'master') {
+      setAccessList(loadAccessList());
+    }
+  }, [authenticated, authVia]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,6 +148,15 @@ export default function OtrosProyectosPage() {
     }
   };
 
+  const saveAccessList = (list: GenResult[]) => {
+    setAccessList(list);
+    try {
+      localStorage.setItem(ACCESS_LIST_KEY, JSON.stringify(list));
+    } catch {
+      /* almacenamiento no disponible (modo privado, cuota…) */
+    }
+  };
+
   const handleLogout = () => {
     setAuthenticated(false);
     setProjects([]);
@@ -123,7 +165,8 @@ export default function OtrosProyectosPage() {
     setAccessLabel('');
     setGenError(null);
     setGenResult(null);
-    setCopied(false);
+    setCopiedCode(null);
+    setListOpen(false);
     sessionStorage.removeItem('otros-proyectos-auth');
     sessionStorage.removeItem('otros-proyectos-data');
     sessionStorage.removeItem('otros-proyectos-via');
@@ -139,7 +182,7 @@ export default function OtrosProyectosPage() {
 
     setGenLoading(true);
     setGenError(null);
-    setCopied(false);
+    setCopiedCode(null);
 
     try {
       const res = await fetch('/api/gen-access', {
@@ -156,6 +199,12 @@ export default function OtrosProyectosPage() {
         const data: GenResult = await res.json();
         setGenResult(data);
         setAccessLabel('');
+        const today = new Date().toISOString().slice(0, 10);
+        const next = [
+          data,
+          ...accessList.filter((a) => a.password !== data.password && a.expiresAt >= today),
+        ].slice(0, ACCESS_LIST_MAX);
+        saveAccessList(next);
       } else if (res.status === 401) {
         setGenError('Sesión caducada. Cierra sesión y vuelve a entrar con la contraseña maestra.');
       } else if (res.status === 429) {
@@ -175,15 +224,18 @@ export default function OtrosProyectosPage() {
     }
   };
 
-  const handleCopy = async () => {
-    if (!genResult) return;
+  const handleCopyCode = async (code: string) => {
     try {
-      await navigator.clipboard.writeText(genResult.password);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(code);
+      setCopiedCode(code);
+      setTimeout(() => setCopiedCode((c) => (c === code ? null : c)), 2000);
     } catch {
       setGenError('No se pudo copiar. Selecciona y copia a mano.');
     }
+  };
+
+  const handleRemoveAccess = (code: string) => {
+    saveAccessList(accessList.filter((a) => a.password !== code));
   };
 
   if (!mounted) {
@@ -346,11 +398,15 @@ export default function OtrosProyectosPage() {
                     <code className={styles['page__access-token']}>{genResult.password}</code>
                     <button
                       type="button"
-                      onClick={handleCopy}
+                      onClick={() => handleCopyCode(genResult.password)}
                       className={styles['page__access-copy']}
                     >
-                      {copied ? <Check size={15} aria-hidden="true" /> : <Copy size={15} aria-hidden="true" />}
-                      <span>{copied ? 'Copiada' : 'Copiar'}</span>
+                      {copiedCode === genResult.password ? (
+                        <Check size={15} aria-hidden="true" />
+                      ) : (
+                        <Copy size={15} aria-hidden="true" />
+                      )}
+                      <span>{copiedCode === genResult.password ? 'Copiada' : 'Copiar'}</span>
                     </button>
                   </div>
                 </div>
@@ -361,6 +417,67 @@ export default function OtrosProyectosPage() {
                   {genError}
                 </p>
               )}
+
+              <div className={styles['page__access-list']}>
+                <button
+                  type="button"
+                  onClick={() => setListOpen((v) => !v)}
+                  className={styles['page__access-list-toggle']}
+                  aria-expanded={listOpen}
+                >
+                  <span>Códigos generados ({accessList.length})</span>
+                  <ChevronDown size={16} aria-hidden="true" />
+                </button>
+
+                {listOpen && (
+                  <>
+                    <ul className={styles['page__access-list-items']}>
+                      {accessList.length === 0 && (
+                        <li className={styles['page__access-list-empty']}>
+                          Aún no has generado códigos en este dispositivo.
+                        </li>
+                      )}
+                      {accessList.map((item) => (
+                        <li key={item.password} className={styles['page__access-item']}>
+                          <span className={styles['page__access-item-label']}>{item.label}</span>
+                          <code className={styles['page__access-item-code']}>{item.password}</code>
+                          <span className={styles['page__access-item-date']}>
+                            Caduca {item.expiresAt.split('-').reverse().join('/')}
+                          </span>
+                          <div className={styles['page__access-item-actions']}>
+                            <button
+                              type="button"
+                              onClick={() => handleCopyCode(item.password)}
+                              className={styles['page__access-item-copy']}
+                              aria-label={`Copiar código de ${item.label}`}
+                            >
+                              {copiedCode === item.password ? (
+                                <Check size={14} aria-hidden="true" />
+                              ) : (
+                                <Copy size={14} aria-hidden="true" />
+                              )}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleRemoveAccess(item.password)}
+                              className={styles['page__access-item-remove']}
+                              aria-label={`Quitar ${item.label} de la lista`}
+                            >
+                              <X size={14} aria-hidden="true" />
+                            </button>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                    {accessList.length > 0 && (
+                      <p className={styles['page__access-list-note']}>
+                        Quitar de la lista no invalida el código; para invalidar todos a la vez,
+                        cambia la contraseña maestra.
+                      </p>
+                    )}
+                  </>
+                )}
+              </div>
             </section>
           )}
 
