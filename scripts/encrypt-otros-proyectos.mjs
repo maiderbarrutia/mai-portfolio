@@ -65,7 +65,7 @@ if (!Array.isArray(projects) || projects.length === 0) {
 }
 
 for (const [i, p] of projects.entries()) {
-  const missing = ['title', 'url', 'description', 'tech'].filter(
+  const missing = ['title', 'url', 'tech'].filter(
     (k) => p[k] === undefined || p[k] === null
   );
   if (missing.length) {

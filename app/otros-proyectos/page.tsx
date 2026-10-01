@@ -9,7 +9,7 @@ import styles from './page.module.scss';
 interface ConfidentialProject {
   title: string;
   url: string;
-  description: string;
+  description?: string;
   tech: string[];
   accent?: boolean;
 }
@@ -205,14 +205,18 @@ export default function OtrosProyectosPage() {
                 style={{ animationDelay: `${150 + index * 100}ms` }}
               >
                 <h2 className={styles['page__card-title']}>{project.title}</h2>
-                <p className={styles['page__card-desc']}>{project.description}</p>
-                <ul className={styles['page__card-tags']}>
-                  {project.tech.map((item) => (
-                    <li key={item} className={styles['page__card-tag']}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {project.description && (
+                  <p className={styles['page__card-desc']}>{project.description}</p>
+                )}
+                {project.tech.length > 0 && (
+                  <ul className={styles['page__card-tags']}>
+                    {project.tech.map((item) => (
+                      <li key={item} className={styles['page__card-tag']}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <a
                   href={project.url}
                   target="_blank"
