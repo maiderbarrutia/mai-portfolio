@@ -198,7 +198,7 @@ export function verifyRecruiterToken(token: string): TokenCheck {
   if (raw.toString('base64url') !== token) return { status: 'invalid' };
 
   const total = raw.length;
-  if (total < 13 || total > 51) return { status: 'invalid' }; // 11 fijos + etiqueta 1..40
+  if (total < 12 || total > 51) return { status: 'invalid' }; // 11 fijos + etiqueta 1..40
 
   const dayXor = raw.subarray(0, 2);
   const rand = raw.subarray(2, 5);
