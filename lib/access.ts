@@ -1,4 +1,4 @@
-import { createHmac, timingSafeEqual } from 'node:crypto';
+import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
 import type { NextRequest } from 'next/server';
 import { SITE_URL } from '@/lib/constants';
 
@@ -100,10 +100,17 @@ export function verifyMasterSession(token: string | null | undefined): boolean {
 }
 
 // ---------------------------------------------------------------------------
-// Contraseñas de reclutador — `${label}.${YYYY-MM-DD}.${sig}`
+// Contraseñas de reclutador — código opaco de 15 caracteres.
+// Contiene la fecha de caducidad cifrada (XOR con pad derivado de la clave)
+// + 3 bytes aleatorios + HMAC-SHA256 de 6 bytes (48 bits, protegido además
+// por el rate limit). No lleva etiqueta ni fecha a la vista: la etiqueta
+// queda en el log de generación y el código en el de acceso (se cruzan
+// buscando el código).
 // ---------------------------------------------------------------------------
 
 export const ALLOWED_DAYS = [7, 30, 60, 90, 180] as const;
+
+const TOKEN_EPOCH = Date.parse('2024-01-01');
 
 export function normalizeLabel(raw: string): string | null {
   const label = raw.trim().replace(/\s+/g, ' ');
@@ -115,26 +122,60 @@ export function expiryDate(days: number): string {
   return new Date(Date.now() + days * 86_400_000).toISOString().slice(0, 10);
 }
 
-export function buildRecruiterToken(label: string, date: string): string | null {
-  const sig = hmac(`${label}.${date}`);
-  return sig ? `${label}.${date}.${sig}` : null;
+function dayNumber(date: string): number | null {
+  const t = Date.parse(`${date}T00:00:00Z`);
+  if (!Number.isFinite(t)) return null;
+  const n = Math.round((t - TOKEN_EPOCH) / 86_400_000);
+  return n >= 0 && n <= 0xffff ? n : null;
+}
+
+function dateFromDay(n: number): string {
+  return new Date(TOKEN_EPOCH + n * 86_400_000).toISOString().slice(0, 10);
+}
+
+function dayPad(key: Buffer): number {
+  const h = createHmac('sha256', key).update('otros-day-pad').digest();
+  return (h[0] << 8) | h[1];
+}
+
+function tokenMac(key: Buffer, head: Buffer): Buffer {
+  return createHmac('sha256', key).update('otros-token').update(head).digest().subarray(0, 6);
+}
+
+export function buildRecruiterToken(date: string): string | null {
+  const key = signingKey();
+  const n = dayNumber(date);
+  if (!key || n === null) return null;
+
+  const head = Buffer.alloc(5);
+  head.writeUInt16BE((n ^ dayPad(key)) & 0xffff, 0);
+  randomBytes(3).copy(head, 2);
+
+  return Buffer.concat([head, tokenMac(key, head)]).toString('base64url');
 }
 
 export type TokenCheck =
-  | { status: 'ok'; label: string }
-  | { status: 'expired'; label: string }
+  | { status: 'ok'; date: string }
+  | { status: 'expired'; date: string }
   | { status: 'invalid' };
 
 export function verifyRecruiterToken(token: string): TokenCheck {
-  const parts = token.split('.');
-  if (parts.length !== 3) return { status: 'invalid' };
-  const [label, date, sig] = parts;
-  if (!label || !/^\d{4}-\d{2}-\d{2}$/.test(date) || !sig) return { status: 'invalid' };
+  const key = signingKey();
+  if (!key) return { status: 'invalid' };
 
-  const expected = hmac(`${label}.${date}`);
-  if (!expected || !safeEqual(sig, expected)) return { status: 'invalid' };
+  const raw = Buffer.from(token, 'base64url');
+  if (raw.length !== 11 || raw.toString('base64url') !== token) {
+    return { status: 'invalid' };
+  }
 
+  const head = raw.subarray(0, 5);
+  const mac = raw.subarray(5);
+  if (!timingSafeEqual(mac, tokenMac(key, head))) {
+    return { status: 'invalid' };
+  }
+
+  const date = dateFromDay(head.readUInt16BE(0) ^ dayPad(key));
   const today = new Date().toISOString().slice(0, 10);
-  if (date < today) return { status: 'expired', label };
-  return { status: 'ok', label };
+  if (date < today) return { status: 'expired', date };
+  return { status: 'ok', date };
 }

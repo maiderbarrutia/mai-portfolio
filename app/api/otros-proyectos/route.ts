@@ -86,7 +86,6 @@ export async function POST(request: NextRequest) {
   }
 
   let via: 'master' | 'token';
-  let label: string | undefined;
 
   if (safeEqual(password, expected)) {
     via = 'master';
@@ -98,12 +97,15 @@ export async function POST(request: NextRequest) {
       return json({ error: 'invalid_password' }, 401);
     }
     if (check.status === 'expired') {
-      console.log(`[otros-proyectos] login expired etiqueta=${check.label} ip=${ip}`);
+      console.log(
+        `[otros-proyectos] login expired codigo=${password} exp=${check.date} ip=${ip}`
+      );
       return json({ error: 'expired' }, 401);
     }
     via = 'token';
-    label = check.label;
-    console.log(`[otros-proyectos] login via=token etiqueta=${label} ip=${ip}`);
+    console.log(
+      `[otros-proyectos] login via=token codigo=${password} exp=${check.date} ip=${ip}`
+    );
   }
 
   const projects = decryptProjects();
@@ -119,5 +121,5 @@ export async function POST(request: NextRequest) {
     return json({ projects, via, session });
   }
 
-  return json({ projects, via, label });
+  return json({ projects, via });
 }

@@ -8,7 +8,6 @@ import {
   normalizeLabel,
   buildRecruiterToken,
   expiryDate,
-  ALLOWED_DAYS,
 } from '@/lib/access';
 
 const requestSchema = z.object({
@@ -67,12 +66,14 @@ export async function POST(request: NextRequest) {
 
   const days = result.data.days;
   const date = expiryDate(days);
-  const password = buildRecruiterToken(label, date);
+  const password = buildRecruiterToken(date);
   if (!password) {
     return json({ error: 'Server configuration error' }, 500);
   }
 
-  console.log(`[otros-proyectos] gen etiqueta=${label} hasta=${date} ip=${ip}`);
+  console.log(
+    `[otros-proyectos] gen codigo=${password} etiqueta=${label} hasta=${date} ip=${ip}`
+  );
 
-  return json({ password, label, expiresAt: date, allowedDays: ALLOWED_DAYS });
+  return json({ password, label, expiresAt: date });
 }

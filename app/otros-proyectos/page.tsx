@@ -287,8 +287,9 @@ export default function OtrosProyectosPage() {
             <section className={styles['page__access']} aria-label="Generar accesos para reclutadores">
               <h2 className={styles['page__access-title']}>Generar acceso para reclutadores</h2>
               <p className={styles['page__access-hint']}>
-                Cada contraseña es de un solo uso compartible, caduca sola y queda registrada
-                en los logs con el nombre que le pongas.
+                Genera un código por reclutador: es corto, no lleva ni tu nombre ni la fecha
+                a la vista, y caduca solo. Apúntalo junto al nombre — en los logs aparece tu
+                etiqueta al generarlo y el código al usarlo.
               </p>
 
               <form onSubmit={handleGenerate} className={styles['page__access-form']}>
