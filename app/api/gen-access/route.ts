@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
 
   const days = result.data.days;
   const date = expiryDate(days);
-  const password = buildRecruiterToken(date);
+  const password = buildRecruiterToken(label, date);
   if (!password) {
     return json({ error: 'Server configuration error' }, 500);
   }

@@ -98,13 +98,13 @@ export async function POST(request: NextRequest) {
     }
     if (check.status === 'expired') {
       console.log(
-        `[otros-proyectos] login expired codigo=${password} exp=${check.date} ip=${ip}`
+        `[otros-proyectos] login expired codigo=${password} etiqueta=${check.label} exp=${check.date} ip=${ip}`
       );
       return json({ error: 'expired' }, 401);
     }
     via = 'token';
     console.log(
-      `[otros-proyectos] login via=token codigo=${password} exp=${check.date} ip=${ip}`
+      `[otros-proyectos] login via=token codigo=${password} etiqueta=${check.label} exp=${check.date} ip=${ip}`
     );
   }
 

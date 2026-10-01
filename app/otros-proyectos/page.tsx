@@ -213,7 +213,7 @@ export default function OtrosProyectosPage() {
         const body = await res.json().catch(() => null);
         setGenError(
           body?.error === 'label'
-            ? 'Nombre no válido: máximo 50 caracteres y sin puntos.'
+            ? 'Nombre no válido: máximo 40 caracteres y sin puntos.'
             : 'No se pudo generar. Inténtalo más tarde.'
         );
       }
@@ -339,9 +339,9 @@ export default function OtrosProyectosPage() {
             <section className={styles['page__access']} aria-label="Generar accesos para reclutadores">
               <h2 className={styles['page__access-title']}>Generar acceso para reclutadores</h2>
               <p className={styles['page__access-hint']}>
-                Genera un código por reclutador: es corto, no lleva ni tu nombre ni la fecha
-                a la vista, y caduca solo. Apúntalo junto al nombre — en los logs aparece tu
-                etiqueta al generarlo y el código al usarlo.
+                Genera un código por reclutador: tu nombre y la fecha van cifrados dentro del
+                código — el reclutador solo ve una cadena opaca, y a ti te aparece tu etiqueta
+                en los logs al entrar. Guárdalo en la lista de abajo.
               </p>
 
               <form onSubmit={handleGenerate} className={styles['page__access-form']}>
@@ -356,7 +356,7 @@ export default function OtrosProyectosPage() {
                     onChange={(e) => setAccessLabel(e.target.value)}
                     className={styles['page__access-input']}
                     placeholder="Ej: Gentec Talent"
-                    maxLength={80}
+                    maxLength={40}
                     required
                   />
                 </div>

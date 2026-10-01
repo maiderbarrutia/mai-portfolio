@@ -100,21 +100,28 @@ export function verifyMasterSession(token: string | null | undefined): boolean {
 }
 
 // ---------------------------------------------------------------------------
-// Contraseñas de reclutador — código opaco de 15 caracteres.
-// Contiene la fecha de caducidad cifrada (XOR con pad derivado de la clave)
-// + 3 bytes aleatorios + HMAC-SHA256 de 6 bytes (48 bits, protegido además
-// por el rate limit). No lleva etiqueta ni fecha a la vista: la etiqueta
-// queda en el log de generación y el código en el de acceso (se cruzan
-// buscando el código).
+// Contraseñas de reclutador — código opaco que lleva dentro, cifrado, la
+// etiqueta y la fecha de caducidad. Estructura en bytes:
+//   [fechaXor 2][nonce 3][etiqueta XOR keystream N][HMAC 6]
+// El reclutador solo ve la cadena opaca; el servidor descifra la etiqueta y
+// la escribe en el log de acceso. Sin base de datos: todo es stateless.
 // ---------------------------------------------------------------------------
 
 export const ALLOWED_DAYS = [7, 30, 60, 90, 180] as const;
 
 const TOKEN_EPOCH = Date.parse('2024-01-01');
+const MAX_LABEL_BYTES = 40;
 
 export function normalizeLabel(raw: string): string | null {
   const label = raw.trim().replace(/\s+/g, ' ');
-  if (!label || label.includes('.') || label.length > 50) return null;
+  if (
+    !label ||
+    label.includes('.') ||
+    label.length > 50 ||
+    Buffer.byteLength(label, 'utf8') > MAX_LABEL_BYTES
+  ) {
+    return null;
+  }
   return label;
 }
 
@@ -138,25 +145,49 @@ function dayPad(key: Buffer): number {
   return (h[0] << 8) | h[1];
 }
 
+function labelKeystream(key: Buffer, dayXor: Buffer, rand: Buffer, len: number): Buffer {
+  const info = Buffer.concat([Buffer.from('otros-enc'), dayXor, rand]);
+  const blocks: Buffer[] = [];
+  let total = 0;
+  let counter = 0;
+  while (total < len) {
+    const block = createHmac('sha256', key)
+      .update(info)
+      .update(Buffer.from([counter++]))
+      .digest();
+    blocks.push(block);
+    total += block.length;
+  }
+  return Buffer.concat(blocks).subarray(0, len);
+}
+
 function tokenMac(key: Buffer, head: Buffer): Buffer {
   return createHmac('sha256', key).update('otros-token').update(head).digest().subarray(0, 6);
 }
 
-export function buildRecruiterToken(date: string): string | null {
+export function buildRecruiterToken(label: string, date: string): string | null {
   const key = signingKey();
   const n = dayNumber(date);
-  if (!key || n === null) return null;
+  const norm = normalizeLabel(label);
+  if (!key || n === null || !norm) return null;
 
-  const head = Buffer.alloc(5);
-  head.writeUInt16BE((n ^ dayPad(key)) & 0xffff, 0);
-  randomBytes(3).copy(head, 2);
+  const labelBuf = Buffer.from(norm, 'utf8');
 
+  const dayXor = Buffer.alloc(2);
+  dayXor.writeUInt16BE((n ^ dayPad(key)) & 0xffff, 0);
+  const rand = randomBytes(3);
+
+  const encLabel = Buffer.from(labelBuf);
+  const ks = labelKeystream(key, dayXor, rand, encLabel.length);
+  for (let i = 0; i < encLabel.length; i++) encLabel[i] ^= ks[i];
+
+  const head = Buffer.concat([dayXor, rand, encLabel]);
   return Buffer.concat([head, tokenMac(key, head)]).toString('base64url');
 }
 
 export type TokenCheck =
-  | { status: 'ok'; date: string }
-  | { status: 'expired'; date: string }
+  | { status: 'ok'; date: string; label: string }
+  | { status: 'expired'; date: string; label: string }
   | { status: 'invalid' };
 
 export function verifyRecruiterToken(token: string): TokenCheck {
@@ -164,18 +195,28 @@ export function verifyRecruiterToken(token: string): TokenCheck {
   if (!key) return { status: 'invalid' };
 
   const raw = Buffer.from(token, 'base64url');
-  if (raw.length !== 11 || raw.toString('base64url') !== token) {
-    return { status: 'invalid' };
-  }
+  if (raw.toString('base64url') !== token) return { status: 'invalid' };
 
-  const head = raw.subarray(0, 5);
-  const mac = raw.subarray(5);
-  if (!timingSafeEqual(mac, tokenMac(key, head))) {
-    return { status: 'invalid' };
-  }
+  const total = raw.length;
+  if (total < 13 || total > 51) return { status: 'invalid' }; // 11 fijos + etiqueta 1..40
 
-  const date = dateFromDay(head.readUInt16BE(0) ^ dayPad(key));
+  const dayXor = raw.subarray(0, 2);
+  const rand = raw.subarray(2, 5);
+  const encLabel = raw.subarray(5, total - 6);
+  const mac = raw.subarray(total - 6);
+
+  const head = Buffer.concat([dayXor, rand, encLabel]);
+  if (!timingSafeEqual(mac, tokenMac(key, head))) return { status: 'invalid' };
+
+  const date = dateFromDay(dayXor.readUInt16BE(0) ^ dayPad(key));
+
+  const labelBuf = Buffer.from(encLabel);
+  const ks = labelKeystream(key, dayXor, rand, labelBuf.length);
+  for (let i = 0; i < labelBuf.length; i++) labelBuf[i] ^= ks[i];
+  const label = labelBuf.toString('utf8');
+  if (normalizeLabel(label) !== label) return { status: 'invalid' };
+
   const today = new Date().toISOString().slice(0, 10);
-  if (date < today) return { status: 'expired', date };
-  return { status: 'ok', date };
+  if (date < today) return { status: 'expired', date, label };
+  return { status: 'ok', date, label };
 }
