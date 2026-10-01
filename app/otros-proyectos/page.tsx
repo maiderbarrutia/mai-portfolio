@@ -46,7 +46,8 @@ function loadAccessList(): GenResult[] {
           typeof (item as GenResult).password === 'string' &&
           typeof (item as GenResult).label === 'string' &&
           typeof (item as GenResult).expiresAt === 'string' &&
-          (item as GenResult).expiresAt >= today
+          item.password.length >= 20 && // códigos del formato antiguo (15) ya no sirven
+          item.expiresAt >= today
       )
       .slice(0, ACCESS_LIST_MAX);
   } catch {
