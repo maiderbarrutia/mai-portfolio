@@ -311,6 +311,188 @@
     }
   }
 
+  // --- generador de accesos (solo contraseña maestra) ---
+  &__access {
+    padding: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.6s ease 0.25s forwards;
+    opacity: 0;
+    will-change: transform, opacity;
+
+    @include media-min(md) {
+      padding: 2rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__access-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+  }
+
+  &__access-hint {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  &__access-form {
+    display: grid;
+    gap: 1rem;
+
+    @include media-min(sm) {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+
+    @include media-min(md) {
+      grid-template-columns: 1fr auto auto;
+    }
+  }
+
+  &__access-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  &__access-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  &__access-input,
+  &__access-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    font-family: inherit;
+    transition: all 0.25s ease;
+
+    &::placeholder {
+      color: var(--color-text-muted);
+      opacity: 0.5;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-primary-alpha);
+    }
+  }
+
+  &__access-select {
+    cursor: pointer;
+    min-width: 140px;
+  }
+
+  &__access-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--color-primary-alpha);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+
+  &__access-result {
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background: var(--color-background);
+    border: 1px dashed var(--color-border);
+    border-radius: 0.75rem;
+    animation: fadeInUp 0.4s ease forwards;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  &__access-result-title {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+
+    strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+  }
+
+  &__access-token-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  &__access-token {
+    flex: 1 1 260px;
+    min-width: 0;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    word-break: break-all;
+  }
+
+  &__access-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--color-primary-alpha);
+    }
+  }
+
+  &__access-error {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--color-error);
+  }
+
   // --- aviso confidencial ---
   &__notice {
     display: flex;

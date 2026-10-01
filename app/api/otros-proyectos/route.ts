@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { timingSafeEqual, createDecipheriv } from 'node:crypto';
+import { createDecipheriv } from 'node:crypto';
 import { z } from 'zod';
-import { SITE_URL } from '@/lib/constants';
 import encryptedPayload from '@/app/otros-proyectos/data.enc.json';
+import {
+  isValidOrigin,
+  getClientIp,
+  rateLimitCheck,
+  safeEqual,
+  signMasterSession,
+  verifyRecruiterToken,
+} from '@/lib/access';
 
 const projectSchema = z.object({
   title: z.string().min(1),
@@ -31,57 +38,6 @@ function json(data: unknown, status = 200) {
   });
 }
 
-const vercelUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null;
-const extraOrigins =
-  process.env.CORS_ORIGINS?.split(',')
-    .map((s) => s.trim())
-    .filter(Boolean) || [];
-
-const ALLOWED_ORIGINS = [
-  SITE_URL,
-  ...(vercelUrl ? [vercelUrl] : []),
-  ...extraOrigins,
-  'http://localhost:3000',
-  'http://localhost:3001',
-].filter((s): s is string => Boolean(s));
-
-const MAX_ATTEMPTS = 10;
-const WINDOW_MS = 900_000; // 15 min
-const rateLimit = new Map<string, { count: number; resetAt: number }>();
-
-function getClientIp(request: NextRequest): string {
-  return (
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('x-real-ip')?.trim() ||
-    'unknown'
-  );
-}
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimit.get(ip);
-
-  if (!entry || now > entry.resetAt) {
-    rateLimit.set(ip, { count: 1, resetAt: now + WINDOW_MS });
-    return true;
-  }
-
-  if (entry.count >= MAX_ATTEMPTS) return false;
-
-  entry.count++;
-  return true;
-}
-
-function safeEqual(a: string, b: string): boolean {
-  const bufA = Buffer.from(a, 'utf8');
-  const bufB = Buffer.from(b, 'utf8');
-  if (bufA.length !== bufB.length) {
-    timingSafeEqual(bufA, bufA);
-    return false;
-  }
-  return timingSafeEqual(bufA, bufB);
-}
-
 function decryptProjects() {
   const keyHex = process.env.OTROS_PROYECTOS_KEY;
   if (!keyHex || !/^[0-9a-f]{64}$/i.test(keyHex)) return null;
@@ -102,22 +58,12 @@ function decryptProjects() {
 }
 
 export async function POST(request: NextRequest) {
-  const origin = request.headers.get('origin');
-  const referer = request.headers.get('referer');
-
-  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+  if (!isValidOrigin(request)) {
     return json({ error: 'Invalid origin' }, 403);
   }
 
-  if (referer) {
-    const isValid = ALLOWED_ORIGINS.some((o) => referer.startsWith(o));
-    if (!isValid) {
-      return json({ error: 'Invalid referer' }, 403);
-    }
-  }
-
   const ip = getClientIp(request);
-  if (!checkRateLimit(ip)) {
+  if (!rateLimitCheck(ip, 'login', 10, 900_000)) {
     return json({ error: 'Too many attempts. Try again later.' }, 429);
   }
 
@@ -133,25 +79,45 @@ export async function POST(request: NextRequest) {
     return json({ error: 'Password required' }, 400);
   }
 
+  const { password } = result.data;
   const expected = process.env.OTROS_PROYECTOS_PASSWORD;
   if (!expected) {
     return json({ error: 'Server configuration error' }, 500);
   }
 
-  if (!safeEqual(result.data.password, expected)) {
-    return json({ error: 'Invalid password' }, 401);
+  let via: 'master' | 'token';
+  let label: string | undefined;
+
+  if (safeEqual(password, expected)) {
+    via = 'master';
+    console.log(`[otros-proyectos] login via=master ip=${ip}`);
+  } else {
+    const check = verifyRecruiterToken(password);
+    if (check.status === 'invalid') {
+      console.log(`[otros-proyectos] login fail ip=${ip}`);
+      return json({ error: 'invalid_password' }, 401);
+    }
+    if (check.status === 'expired') {
+      console.log(`[otros-proyectos] login expired etiqueta=${check.label} ip=${ip}`);
+      return json({ error: 'expired' }, 401);
+    }
+    via = 'token';
+    label = check.label;
+    console.log(`[otros-proyectos] login via=token etiqueta=${label} ip=${ip}`);
   }
 
-  let projects: ReturnType<typeof decryptProjects>;
-  try {
-    projects = decryptProjects();
-  } catch {
-    projects = null;
-  }
-
+  const projects = decryptProjects();
   if (!projects) {
     return json({ error: 'Server configuration error' }, 500);
   }
 
-  return json({ projects });
+  if (via === 'master') {
+    const session = signMasterSession();
+    if (!session) {
+      return json({ error: 'Server configuration error' }, 500);
+    }
+    return json({ projects, via, session });
+  }
+
+  return json({ projects, via, label });
 }
