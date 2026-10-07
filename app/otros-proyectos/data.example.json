@@ -4,6 +4,7 @@
     "url": "https://url-del-proyecto.com",
     "description": "Explicación de lo que hiciste en el proyecto (qué te encargaron, qué resolviste, qué resultados tuvo).",
     "tech": ["Tecnologia1", "Tecnologia2"],
+    "sector": "Sector al que pertenece el proyecto (Energía, Salud, Retail…)",
     "accent": false
   }
 ]

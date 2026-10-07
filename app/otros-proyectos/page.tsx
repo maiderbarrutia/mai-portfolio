@@ -11,6 +11,7 @@ interface ConfidentialProject {
   url: string;
   description?: string;
   tech: string[];
+  sector?: string;
   accent?: boolean;
 }
 
@@ -495,7 +496,18 @@ export default function OtrosProyectosPage() {
                   .join(' ')}
                 style={{ animationDelay: `${150 + index * 100}ms` }}
               >
+                {project.sector && (
+                  <span className={styles['page__card-sector']}>{project.sector}</span>
+                )}
                 <h2 className={styles['page__card-title']}>{project.title}</h2>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles['page__card-url']}
+                >
+                  {project.url}
+                </a>
                 {project.description && (
                   <p className={styles['page__card-desc']}>{project.description}</p>
                 )}
@@ -508,14 +520,6 @@ export default function OtrosProyectosPage() {
                     ))}
                   </ul>
                 )}
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles['page__card-url']}
-                >
-                  {project.url}
-                </a>
                 
               </article>
             ))}

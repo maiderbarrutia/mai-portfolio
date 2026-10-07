@@ -733,6 +733,12 @@
         color: #ffffff;
       }
 
+      .page__card-sector {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+      }
+
       .page__card-desc {
         color: rgba(255, 255, 255, 0.85);
       }
@@ -758,6 +764,32 @@
       .page__card-dot {
         background: #ffffff;
       }
+    }
+  }
+
+  &__card-sector {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.65rem;
+    background: var(--color-primary-alpha);
+    border: 1px solid transparent;
+    color: var(--color-primary);
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+
+    &::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: currentColor;
+      border-radius: 50%;
     }
   }
 

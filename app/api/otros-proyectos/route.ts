@@ -19,6 +19,7 @@ const projectSchema = z.object({
     z.string().min(1).optional()
   ),
   tech: z.array(z.string().min(1)),
+  sector: z.string().min(1).optional(),
   accent: z.boolean().optional(),
 });
 
