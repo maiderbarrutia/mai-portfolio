@@ -1,78 +1,69 @@
-# Maider Barrutia — Frontend developer & UI Specialist
+# Maider Barrutia — Frontend Developer & UI Specialist
 
-## About
-Portfolio website of Maider Barrutia, a Frontend developer based in Madrid (Spain) specializing in React, Scss, TypeScript, Next.js, and AI-driven development.
+> Professional portfolio of Maider Barrutia, a Frontend Developer and UI Specialist based in Madrid, Spain, specializing in React, TypeScript, Next.js, SCSS, UI/UX and AI-assisted development.
 
-## Tech Stack
-- **Frontend**: React, TypeScript, Next.js, JavaScript, HTML5, CSS3/SCSS, Tailwind CSS, Vite, WordPress, Angular
-- **Backend & DB**: Node.js, Express, PHP, MySQL, Oracle
-- **Design**: Figma, Photoshop, Illustrator
-- **Tools**: Git, Jest, Vitest, React Testing Library, Jira, Scrum, Kanban
-- **AI**: GitHub Copilot, ChatGPT/OpenAI, Claude AI, OpenCode
+This portfolio showcases professional experience, technical skills, web development projects, education and certifications.
 
-## Experience
-1. **Frontend developer** @ Desarrollos Online (Madrid, 2025–Present)
-   - Full Stack development of corporate web apps, AI tool adoption, critical code refactoring, high-concurrency platforms
-2. **Frontend developer** @ Freelance (Remote, 2023–2025)
-   - End-to-end custom projects: database architecture, REST APIs, UI/UX design, mobile-optimized interfaces
-3. **UI developer** @ Corus Consulting (Madrid, 2017–2023)
-   - UI development for major health, banking, insurance & media accounts, WPO optimization, security incident resolution, agile workflows
+The website is bilingual: Spanish (es) and English (en), with Spanish as the default language.
+
+## Main Pages
+
+- [Home](https://maiderbarrutia.com/): Professional introduction and portfolio overview.
+- [About](https://maiderbarrutia.com/#about): Professional background and specialization.
+- [Projects in Spanish](https://maiderbarrutia.com/proyectos): Complete portfolio of web development and design projects.
+- [Projects in English](https://maiderbarrutia.com/projects): English project listing.
+- [Tech Stack](https://maiderbarrutia.com/#tech): Technologies, frameworks and development tools.
+- [Experience](https://maiderbarrutia.com/#experience): Professional experience, education and certifications.
+- [Contact](https://maiderbarrutia.com/#contact): Professional contact information.
+
+## Technical Skills
+
+- Frontend: React, TypeScript, Next.js, JavaScript, HTML5, CSS3, SCSS, Tailwind CSS, Vite, WordPress, Angular.
+- Backend and databases: Node.js, Express, PHP, MySQL, Oracle.
+- Design: Figma, Photoshop, Illustrator.
+- Testing: Jest, Vitest, React Testing Library, TDD.
+- Development tools: Git, Jira, Scrum, Kanban.
+- AI-assisted development: GitHub Copilot, ChatGPT, OpenAI, Claude AI, OpenCode.
+
+## Professional Experience
+
+- Frontend Developer at Desarrollos Online (Madrid, 2025–Present): Full-stack corporate web applications, AI tool adoption, code refactoring and high-concurrency platforms.
+- Freelance Frontend Developer (Remote, 2023–2025): Custom web applications, database architecture, REST APIs, UI/UX design and responsive interfaces.
+- UI Developer at Corus Consulting (Madrid, 2017–2023): UI development for healthcare, banking, insurance and media clients, web performance optimization, security incident resolution and agile development.
+
+## Featured Projects
+
+- [Aisiplan — Live Demo](https://aisiplan.vercel.app): Full-stack leisure activity platform built with React, Vite, TypeScript, SASS, Node.js, Express, TypeORM, MySQL and JWT.
+- [Aisiplan — Source Code](https://github.com/maiderbarrutia/fullstack-aisiplan): Full-stack application source code.
+- [Web Development Portfolio](https://maiderbarrutia.com/proyectos): Additional projects including ecommerce, branding, corporate portals, AI platforms, real estate and digital healthcare.
+
+## Additional Projects
+
+- Ecommerce and Branding: WordPress and WooCommerce, multilingual implementation, art direction, packaging and custom child theme.
+- Gas Corporate Portal: Multilingual energy company portal using WordPress, Elementor and custom SASS.
+- AI Sales Simulator: Webflow implementation from Figma, custom CSS and JavaScript animations, and CMS integration.
+- Real Estate Portal: WordPress frontend development using SASS, jQuery and PHP.
+- Digital Health Portal: Custom WordPress theme for a healthcare community platform featuring videos, events and webinars.
 
 ## Education
-- **Advanced Diploma in Web Application Development (DAW)** — Ilerna Online (2023–2025)
-- **Certificate in Web Page Design and Publishing** — Centro San Luis, Bilbao (2014–2015)
-- **Associate Degree in Graphic Design & Advertising Art** — Instituto Ibarrekolanda, Bilbao (2009–2013)
+
+- Advanced Diploma in Web Application Development (DAW) — Ilerna Online (2023–2025).
+- Certificate in Web Page Design and Publishing — Centro San Luis, Bilbao (2014–2015).
+- Associate Degree in Graphic Design and Advertising Art — Instituto Ibarrekolanda, Bilbao (2009–2013).
 
 ## Certifications
-- Bootcamp TS + React + Vitest (TDD) — Lemoncode (114h)
-- Full Stack Development (Node.js, Angular, TypeScript, REST APIs) — Samsung (350h)
-- Oracle SQL-PL/SQL Development — Cas-training (135h)
-- AI-Assisted Development — Big School (6h)
 
-## Language
-The site is bilingual: Spanish (es) and English (en). Default locale: es_ES.
+- TypeScript, React and Vitest Bootcamp (TDD) — Lemoncode (114h).
+- Full Stack Development — Samsung (350h).
+- Oracle SQL and PL/SQL Development — Cas-training (135h).
+- AI-Assisted Development — Big School (6h).
 
-## Routes
-- `/` — Home page (Hero, About, Featured Projects x3, Tech Stack, Experience, Contact)
-- `/projects` (EN) / `/proyectos` (ES) — Full project listing by category tabs
-- `/projects/[id]` (EN) / `/proyectos/[id]` (ES) — Individual project detail with gallery + lightbox
-- `/legal` — Legal notice, privacy policy, cookies
+## Professional Profiles
 
-## Navigation
-- **Header**: Logo, nav links (#about, #projects, #tech, #experience, #contact), ES/EN toggle, dark/light theme toggle, hamburger menu (mobile)
-- **Footer**: Copyright, social links (GitHub, LinkedIn, Twitter/X), legal link
+- [GitHub](https://github.com/maiderbarrutia): Source code and development repositories.
+- [LinkedIn](https://linkedin.com/in/maiderbarrutiaunzueta): Professional profile and career history.
+- [Official Website](https://maiderbarrutia.com/): Professional portfolio.
 
-## Key Sections (Home)
-- **Hero**: Title, subtitle, CTA buttons, bento stats grid (Frontend 6+ years, UI Design, Quality, AI)
-- **About**: Avatar, bio paragraphs, technology badges, scroll-triggered animations
-- **Featured projects**: 3 featured projects, each with image, tags, description, full-card link + "Ver Proyecto" button
-- **Tech stack**: Tabbed (Frontend / Backend & BBDD / Diseño / IA / Herramientas) with description per tab + icon grid
-- **Experience**: Tabbed (Experiencia / Educación), timeline with animated entry, Download CV button, education cards with hover effects
-- **Contact**: Form → Web3Forms, social links
+## Optional
 
-## Social
-- GitHub: https://github.com/maiderbarrutia
-- LinkedIn: https://linkedin.com/in/maiderbarrutiaunzueta
-- Website: https://maiderbarrutia.com
-
-## Web Development Projects
-### 1. Aisiplan
-- **Description:** FullStack leisure activity platform.
-- **Stack:** React, Vite, TypeScript, SASS, Node.js, Express, TypeORM, MySQL, JWT.
-- **Live Demo:** https://aisiplan.vercel.app
-- **Source Code:** https://github.com/maiderbarrutia/fullstack-aisiplan
-
-### 2. Ecommerce + Branding
-- **Description:** WordPress + WooCommerce site with multilingual setup (6 languages), art direction, packaging design, payment gateway, and custom child theme.
-
-### 3. Gas Corporate Portal
-- **Description:** Multilingual portal for a major energy company using WordPress, Elementor, and custom SASS overrides.
-
-### 4. AI Sales Simulator
-- **Description:** Webflow site for an AI sales platform. Pixel-perfect implementation from Figma with custom CSS/JS animations and Webflow CMS.
-
-### 5. Real Estate Portal
-- **Description:** WordPress portal for a leading real estate agency. Core frontend layouts using SASS, jQuery, and PHP template overrides.
-
-### 6. Digital Health Portal
-- **Description:** Custom WordPress theme built from scratch for a major healthcare company. Medical community platform featuring videos, events, and webinars.
+- [Legal Information](https://maiderbarrutia.com/legal): Legal notice, privacy policy and cookies.

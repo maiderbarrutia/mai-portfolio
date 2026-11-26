@@ -3,7 +3,6 @@
 Personal portfolio of Maider Barrutia — Next.js 16.2.6 + React 19 + pnpm.
 
 ## Quick start
-
 ```bash
 pnpm install
 pnpm dev          # next dev on localhost:3000
@@ -34,6 +33,7 @@ pnpm typecheck    # npx tsc --noEmit (not in scripts, run explicitly)
 - **inlineCss: true** (Next.js experimental) — eliminates render-blocking CSS requests (~150ms saved).
 - **browserslist** targeting modern browsers — skips legacy polyfills (~14 KB saved).
 - **prefers-reduced-motion** global rule disables animations for users who prefer reduced motion.
+- **prefers-reduced-motion** global rule disables animations for users who prefer reduced motion.
 
 ## Key paths
 
@@ -55,7 +55,6 @@ pnpm typecheck    # npx tsc --noEmit (not in scripts, run explicitly)
 | `app/robots.ts` | Robots.txt allowing all, pointing to sitemap |
 | `app/api/contact/route.ts` | Rate-limited contact form (Zod + Web3Forms) |
 | `app/api/cv/route.ts` | Serves CV PDFs from `private/cv/` with `X-Robots-Tag: noindex` |
-| `private/cv/` | CV PDF files: `cv-maider-barrutia.pdf`, `cv-maider-barrutia-en.pdf` |
 | `data/projects.ts` | Project data (bilingual slugs, media, categories, full detail fields) |
 | `data/slug-lookup.ts` | Lightweight ES↔EN slug mapping (no project data) |
 | `data/technologies.ts` | Tech stack data (categories, icons via `react-icons`) |
@@ -87,6 +86,7 @@ pnpm typecheck    # npx tsc --noEmit (not in scripts, run explicitly)
 | `styles/_common.scss` | Common styles |
 | `styles/_texts.scss` | Typography utilities |
 | `public/llms.txt` | LLM context file with profile, stack, projects |
+| `public/llms.txt/route.ts` | Route handler for serving llms.txt |
 | `public/fonts/` | Inter Variable + Fira Code Variable (woff2) |
 | `public/projects/` | Project images/media |
 
@@ -200,3 +200,5 @@ Optional: `CORS_ORIGINS`.
 - **CSP**: still uses `'unsafe-eval'` and `'unsafe-inline'` — can be hardened later with nonces/hashes
 - **No tests / CI**: consider adding Vitest + Playwright + GitHub Actions
 - **Images**: all in `public/projects/`, served via `next/image` with `priority` on hero
+
+Today's date: Thu Nov 26 2026
