@@ -98,7 +98,7 @@
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
     border-radius: 2rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     width: fit-content;
@@ -116,7 +116,7 @@
   }
 
   &__description {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     color: var(--color-text-muted);
     max-width: 500px;
     margin-bottom: 2rem;
@@ -135,6 +135,7 @@
     gap: 0.5rem;
     padding: 1rem 2rem;
     border-radius: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.25s ease;
@@ -253,6 +254,27 @@
         border-color: var(--color-primary-hover);
         box-shadow: 0 10px 30px var(--color-primary-alpha);
       }
+    }
+  }
+
+  /* Móvil/tablet: máximo 2 cajas por fila y altura adaptable al contenido */
+  @include media-max(md) {
+    &__bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+      /* Sin altura fija: cada fila crece según la caja con más contenido */
+      grid-auto-rows: auto;
+    }
+
+    .hero__bento-item:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .hero__bento-item:nth-child(2),
+    .hero__bento-item:nth-child(3),
+    .hero__bento-item:nth-child(4),
+    .hero__bento-item:nth-child(5),
+    .hero__bento-item:nth-child(6) {
+      grid-column: span 1;
     }
   }
 

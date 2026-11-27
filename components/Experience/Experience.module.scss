@@ -42,7 +42,7 @@
   }
 
   &__subtitle {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     color: var(--color-text-muted);
     max-width: 600px;
     margin: 0 auto 1.5rem;
@@ -58,7 +58,7 @@
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
     border-radius: 2rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.25s ease;
@@ -85,7 +85,7 @@
     border: 1px solid var(--color-border);
     background: var(--color-surface);
     color: var(--color-text-muted);
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.25s ease;
@@ -338,14 +338,14 @@
   }
 
   &__cert-title {
-    font-size: 0.9375rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: 0.25rem;
   }
 
   &__cert-meta {
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     color: var(--color-text-muted);
   }
 
