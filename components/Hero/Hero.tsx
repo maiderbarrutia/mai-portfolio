@@ -1,12 +1,12 @@
 'use client';
 
-import { Code, Palette, ShieldCheck, Bot, ArrowRight } from 'lucide-react';
+import { Code, Download, Palette, ShieldCheck, Bot, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { SanitizedHTML } from '@/components/SanitizedHTML';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
-  const { t, tHtml } = useLanguage();
+  const { t, tHtml, language } = useLanguage();
 
   return (
     <section className={styles.hero} id="about">
@@ -21,6 +21,9 @@ export default function Hero() {
             <span className={styles.hero__name}>{t('hero.title')}</span>
             <span className={styles.hero__role}>{t('hero.subtitle')}</span>
           </h1>
+          <a href={`/api/cv?lang=${language}`} target="_blank" rel="noopener noreferrer" className={styles['hero__cv-btn']}>
+            <Download size={16} /> {t('hero.downloadCV')}
+          </a>
 
           <SanitizedHTML html={tHtml('hero.description')} className={styles.hero__description} />
 

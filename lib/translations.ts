@@ -11,10 +11,11 @@ export const translations = {
     
     // Hero Section
     hero: {
-      badge: 'Abierta a nuevos desafíos',
+      badge: 'Abierta a nuevas oportunidades profesionales',
       title: 'Maider Barrutia',
       subtitle: 'Frontend developer & UI Specialist',
-      description: 'Desarrollo interfaces web robustas con foco en <strong>maquetación avanzada</strong> y acabados <strong>pixel-perfect</strong>. Trabajo con <strong>React</strong>, <strong>TypeScript</strong> y <strong>SASS</strong> para crear productos de alto rendimiento (<strong>WPO</strong>), accesibles (<strong>WCAG</strong>) y escalables. Aporto además experiencia en <strong>WordPress</strong>, conocimientos backend con <strong>Node.js</strong> e integración de <strong>herramientas de IA</strong> en mi flujo de trabajo para optimizar el desarrollo.',
+      downloadCV: 'Descargar CV',
+      description: 'Desarrollo interfaces web <strong>accesibles</strong>, <strong>rápidas</strong> y <strong>escalables</strong>. Mi especialidad es llevar diseños de <strong>Figma</strong> a código con <strong>HTML</strong>, <strong>CSS</strong> y <strong>Sass</strong>, cuidando la maquetación y los acabados <strong>pixel-perfect</strong>. Tengo experiencia práctica con <strong>JavaScript</strong>, <strong>PHP</strong> y <strong>WordPress</strong>, además de conocimientos de <strong>React</strong> y <strong>TypeScript</strong>. Aplico los estándares de <strong>accesibilidad</strong> (<strong>WCAG</strong>) y buenas prácticas de <strong>optimización del rendimiento web</strong> (<strong>WPO</strong>). También integro herramientas de <strong>IA</strong> en mi flujo de trabajo para agilizar el desarrollo.',
       ctaProjects: 'Ver proyectos',
       ctaContact: 'Contactar',
       yearsExperience: '6+ años',
@@ -141,10 +142,11 @@ export const translations = {
     
     // Hero Section
     hero: {
-      badge: 'Open to new challenges',
+      badge: 'Open to new professional opportunities',
       title: 'Maider Barrutia',
       subtitle: 'Frontend developer & UI Specialist',
-      description: 'I build robust web interfaces with a focus on <strong>advanced layout engineering</strong> and <strong>pixel-perfect</strong> finishes. I work with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>SASS</strong> to create high-performance (<strong>WPO</strong>), accessible (<strong>WCAG</strong>), and scalable products. I also bring experience in <strong>WordPress</strong>, backend knowledge with <strong>Node.js</strong>, and the integration of <strong>AI tools</strong> into my workflow to optimize development.',
+      downloadCV: 'Download CV',
+      description: 'I develop <strong>accessible</strong>, <strong>fast</strong>, and <strong>scalable</strong> web interfaces. My specialty is taking <strong>Figma</strong> designs to code with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>Sass</strong>, caring for the layout and <strong>pixel-perfect</strong> finishes. I have practical experience with <strong>JavaScript</strong>, <strong>PHP</strong>, and <strong>WordPress</strong>, as well as knowledge of <strong>React</strong> and <strong>TypeScript</strong>. I apply <strong>accessibility</strong> standards (<strong>WCAG</strong>) and best practices for <strong>web performance optimization</strong> (<strong>WPO</strong>). I also integrate <strong>AI</strong> tools into my workflow to speed up development.',
       ctaProjects: 'View projects',
       ctaContact: 'Contact',
       yearsExperience: '6+ years',
