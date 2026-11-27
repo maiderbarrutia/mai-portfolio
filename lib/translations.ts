@@ -18,7 +18,19 @@ export const translations = {
       description: 'Desarrollo interfaces web <strong>accesibles</strong>, <strong>rápidas</strong> y <strong>escalables</strong>. Mi especialidad es llevar diseños de <strong>Figma</strong> a código con <strong>HTML</strong>, <strong>CSS</strong> y <strong>Sass</strong>, cuidando la maquetación y los acabados <strong>pixel-perfect</strong>. Tengo experiencia práctica con <strong>JavaScript</strong>, <strong>PHP</strong> y <strong>WordPress</strong>, además de conocimientos de <strong>React</strong> y <strong>TypeScript</strong>. Aplico los estándares de <strong>accesibilidad</strong> (<strong>WCAG</strong>) y buenas prácticas de <strong>optimización del rendimiento web</strong> (<strong>WPO</strong>). También integro herramientas de <strong>IA</strong> en mi flujo de trabajo para agilizar el desarrollo.',
       ctaProjects: 'Ver proyectos',
       ctaContact: 'Contactar',
-      yearsExperience: '6+ años',
+      yearsExperience: '9+ años',
+      // Hero bento cards
+      bentoFrontendSub: 'Desarrollo frontend',
+      bentoPixel: 'Pixel-perfect',
+      bentoPixelSub: 'Ingeniería UI',
+      bentoCss: 'CSS avanzado',
+      bentoCssSub: 'Estilos y animación',
+      bentoArch: 'Arquitectura UI',
+      bentoArchSub: 'Sistemas de diseño',
+      bentoWpo: 'WPO & WCAG',
+      bentoWpoSub: 'Rendimiento y accesibilidad',
+      bentoAi: 'Desarrollo con IA',
+      bentoAiSub: 'Desarrollo y flujos de trabajo',
     },
     
     // Projects Section
@@ -149,7 +161,19 @@ export const translations = {
       description: 'I develop <strong>accessible</strong>, <strong>fast</strong>, and <strong>scalable</strong> web interfaces. My specialty is taking <strong>Figma</strong> designs to code with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>Sass</strong>, caring for the layout and <strong>pixel-perfect</strong> finishes. I have practical experience with <strong>JavaScript</strong>, <strong>PHP</strong>, and <strong>WordPress</strong>, as well as knowledge of <strong>React</strong> and <strong>TypeScript</strong>. I apply <strong>accessibility</strong> standards (<strong>WCAG</strong>) and best practices for <strong>web performance optimization</strong> (<strong>WPO</strong>). I also integrate <strong>AI</strong> tools into my workflow to speed up development.',
       ctaProjects: 'View projects',
       ctaContact: 'Contact',
-      yearsExperience: '6+ years',
+      yearsExperience: '9+ years',
+      // Hero bento cards
+      bentoFrontendSub: 'Frontend development',
+      bentoPixel: 'Pixel-perfect',
+      bentoPixelSub: 'UI engineering',
+      bentoCss: 'Advanced CSS',
+      bentoCssSub: 'Styling & Animations',
+      bentoArch: 'UI architecture',
+      bentoArchSub: 'Design systems',
+      bentoWpo: 'WPO & WCAG',
+      bentoWpoSub: 'Performance & Accessibility',
+      bentoAi: 'AI-driven',
+      bentoAiSub: 'Development & Workflows',
     },
     
     // Projects Section

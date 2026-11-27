@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, Download, Palette, ShieldCheck, Bot, ArrowRight } from 'lucide-react';
+import { Code, Download, Palette, ShieldCheck, Bot, Layers, Clock, Zap, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { SanitizedHTML } from '@/components/SanitizedHTML';
 import styles from './Hero.module.scss';
@@ -40,40 +40,63 @@ export default function Hero() {
 
         <div className={styles.hero__visual}>
           <div className={styles['hero__bento-grid']}>
-            <div className={`${styles['hero__bento-item']} ${styles['hero__bento-item--large']}`}>
+            <div className={styles['hero__bento-item']}>
+              <span className={styles['hero__bento-icon']}>
+                <Code size={32} />
+              </span>
               <div className={styles['hero__bento-content']}>
-                <span className={styles['hero__bento-icon']}>
-                  <Code size={32} />
-                </span>
-                <span className={styles['hero__bento-label']}>Frontend</span>
-                <span className={styles['hero__bento-stat']}>{t('hero.yearsExperience')}</span>
+                <span className={styles['hero__bento-label']}>{t('hero.bentoFrontendSub')}</span>
+                <span className={styles['hero__bento-subtitle']}>{t('hero.yearsExperience')}</span>
               </div>
             </div>
 
             <div className={styles['hero__bento-item']}>
+              <span className={styles['hero__bento-icon']}>
+                <Palette size={24} />
+              </span>
               <div className={styles['hero__bento-content']}>
-                <span className={styles['hero__bento-icon']}>
-                  <Palette size={24} />
-                </span>
-                <span className={styles['hero__bento-label']}>UI design (pixel-perfect)</span>
+                <span className={styles['hero__bento-label']}>{t('hero.bentoPixel')}</span>
+                <span className={styles['hero__bento-subtitle']}>{t('hero.bentoPixelSub')}</span>
               </div>
             </div>
 
             <div className={styles['hero__bento-item']}>
+              <span className={styles['hero__bento-icon']}>
+                <Palette size={24} />
+              </span>
               <div className={styles['hero__bento-content']}>
-                <span className={styles['hero__bento-icon']}>
-                  <ShieldCheck size={24} />
-                </span>
-                <span className={styles['hero__bento-label']}>Backend (Node.js)</span>
+                <span className={styles['hero__bento-label']}>{t('hero.bentoCss')}</span>
+                <span className={styles['hero__bento-subtitle']}>{t('hero.bentoCssSub')}</span>
               </div>
             </div>
 
-            <div className={`${styles['hero__bento-item']} ${styles['hero__bento-item--accent']}`}>
+            <div className={styles['hero__bento-item']}>
+              <span className={styles['hero__bento-icon']}>
+                <Layers size={24} />
+              </span>
               <div className={styles['hero__bento-content']}>
-                <span className={styles['hero__bento-icon']}>
-                  <Bot size={24} />
-                </span>
-                <span className={styles['hero__bento-label']}>AI-driven development & Workflows</span>
+                <span className={styles['hero__bento-label']}>{t('hero.bentoArch')}</span>
+                <span className={styles['hero__bento-subtitle']}>{t('hero.bentoArchSub')}</span>
+              </div>
+            </div>
+
+            <div className={styles['hero__bento-item']}>
+              <span className={styles['hero__bento-icon']}>
+                <Clock size={24} />
+              </span>
+              <div className={styles['hero__bento-content']}>
+                <span className={styles['hero__bento-label']}>{t('hero.bentoWpo')}</span>
+                <span className={styles['hero__bento-subtitle']}>{t('hero.bentoWpoSub')}</span>
+              </div>
+            </div>
+
+            <div className={styles['hero__bento-item']}>
+              <span className={styles['hero__bento-icon']}>
+                <Zap size={24} />
+              </span>
+              <div className={styles['hero__bento-content']}>
+                <span className={styles['hero__bento-label']}>{t('hero.bentoAi')}</span>
+                <span className={styles['hero__bento-subtitle']}>{t('hero.bentoAiSub')}</span>
               </div>
             </div>
           </div>

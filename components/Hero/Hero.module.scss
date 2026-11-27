@@ -168,17 +168,40 @@
     will-change: transform, opacity;
   }
 
+  /* Grid de 6 columnas para permitir mitades exactas en la última fila:
+     - Fila 1: 1 caja (6/6 columnas)
+     - Fila 2: 3 cajas (2 columnas cada una)
+     - Fila 3: 2 cajas (3 columnas cada una = 50%)
+   */
   &__bento-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 140px;
     gap: 1rem;
-    max-width: 400px;
-    margin: 0 auto;
+  }
 
-    @include media-min(lg) {
-      max-width: 450px;
-      margin-left: auto;
+  /* Caja 1: fila completa, destacada con fondo verde y texto blanco */
+  .hero__bento-item:first-child {
+    grid-column: 1 / -1;
+    background: #00a292;
+    .hero__bento-icon,
+    .hero__bento-label,
+    .hero__bento-subtitle {
+      color: #FFFFFF;
     }
+  }
+
+  /* Fila 2: 3 cajas, cada una ocupa 2 de las 6 columnas */
+  .hero__bento-item:nth-child(2),
+  .hero__bento-item:nth-child(3),
+  .hero__bento-item:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  /* Fila 3: 2 cajas, cada una ocupa 3 de las 6 columnas (50%) */
+  .hero__bento-item:nth-child(5),
+  .hero__bento-item:nth-child(6) {
+    grid-column: span 3;
   }
 
   &__bento-item {
@@ -186,9 +209,13 @@
     border: 1px solid var(--color-border);
     border-radius: 1rem;
     padding: 1.5rem;
-    min-height: 120px;
+    min-height: 140px;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Icono arriba y contenido pegado abajo */
+    justify-content: space-between;
+    gap: 0.75rem;
     transition: all 0.25s ease;
     will-change: transform;
 
@@ -198,23 +225,33 @@
       box-shadow: 0 10px 30px var(--color-primary-alpha);
     }
 
-    &--large {
-      grid-column: span 2;
-      min-height: 160px;
-    }
-
     &--accent {
       background-color: var(--color-primary);
       border-color: var(--color-primary);
 
       .hero__bento-icon,
-      .hero__bento-label {
+      .hero__bento-label,
+      .hero__bento-subtitle {
         color: #ffffff;
       }
 
       &:hover {
         background-color: var(--color-primary-hover);
         border-color: var(--color-primary-hover);
+      }
+    }
+
+    &--large {
+      min-height: 180px;
+    }
+
+    &--frontend {
+      border-color: var(--color-primary);
+      background: linear-gradient(135deg, var(--color-primary-alpha), var(--color-surface));
+
+      &:hover {
+        border-color: var(--color-primary-hover);
+        box-shadow: 0 10px 30px var(--color-primary-alpha);
       }
     }
   }
@@ -234,6 +271,12 @@
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-text);
+  }
+
+  &__bento-subtitle {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
   }
 
   &__bento-stat {
