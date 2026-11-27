@@ -17,7 +17,7 @@ export default function Footer() {
       <div className={styles.footer__container}>
         <div className={styles.footer__content}>
           <div className={styles.footer__brand}>
-            <Image src="/mai-logo.svg" alt="Maider Barrutia Logo" width={60} height={60} />
+            <Image src="/mai-logo.svg" alt="Maider Barrutia footer logo" width={60} height={60} />
           </div>
 
           <nav className={styles.footer__nav} aria-label="Footer navigation">
